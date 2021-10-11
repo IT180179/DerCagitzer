@@ -1,2 +1,2 @@
 # DerCagitzer
-Eine Reservierungsapp für das Gasthaus Cagitz
+Eine Reservierungsapp für das Gasthaus Cagitz.
