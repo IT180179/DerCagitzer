@@ -1,7 +1,8 @@
 # DerCagitzer
 
-Reservierungsplattform die sowohl von Mitarbeitern als auch von Kunden genutzt werden kann. Leichterer Reservierungsvorgang und übersichtlichere Darstellung der Reservierungen.
-Responsive und corperate Design für die Web-Anwendung bedienbar für alle Altersgruppen.
-Alle Termine einhalten, konfliktfreies Arbeiten und Zufriedenheit des Kunden.
+Reservierungsplattform die sowohl von Mitarbeitern als auch von Kunden genutzt werden kann. Einfache und übersichtliche Darstellung der Reservierungen.
+Responsive und corporative design für die Web-Anwendung, bedienbar für alle Altersgruppen.
+Dieses Programm verbessert die Möglichkeit der Termineinhaltung und führt daher zu einem konfliktfreien Arbeiten. Oberstes Ziel ist die Zufriedenheit der Kunden.
 
-Das Gasthaus Cagitz verfügt derzeit über kein Reservierungsprogramm. Reservierungen werden handschriftlich in einem Buch eingetragen und sind sehr unübersichtlich. Deshalb wurden wir vom Gasthaus Cagitz beauftragt ein webbasiertes Reservierungsprogramm für Kunden und Mitarbeiter zu entwickeln. Mit diesem Reservierungssystem wollen wir dem Gasthaus Cagitz und dessen Kunden die Reservierung vereinfachen.
+
+
