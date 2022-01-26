@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+languageCode = "de-de"
 theme = "hyde"
 title = "Gasthaus Cagitz"
 [params]
