@@ -10,6 +10,8 @@ public class Table_Entity {
     @Id
     @GeneratedValue
     private Long table_num;
+
+    @Column(nullable = false)
     private int seats;
 
     @ManyToOne
