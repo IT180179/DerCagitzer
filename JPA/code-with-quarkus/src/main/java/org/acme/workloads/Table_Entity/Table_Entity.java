@@ -15,7 +15,16 @@ public class Table_Entity {
     private int seats;
 
     @ManyToOne
-    private Room room_id;
+    @JoinColumn(name = "room_id")
+    private Room room;
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 
     public Long getTable_num() {
         return table_num;
@@ -31,13 +40,5 @@ public class Table_Entity {
 
     public void setSeats(int seats) {
         this.seats = seats;
-    }
-
-    public Room getRoom_id() {
-        return room_id;
-    }
-
-    public void setRoom_id(Room room_id) {
-        this.room_id = room_id;
     }
 }
