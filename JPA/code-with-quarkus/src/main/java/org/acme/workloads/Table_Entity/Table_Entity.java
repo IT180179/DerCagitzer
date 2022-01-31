@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Table_Entity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long table_num;
 
     @Column(nullable = false)

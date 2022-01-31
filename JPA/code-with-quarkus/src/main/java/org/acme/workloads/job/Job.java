@@ -11,7 +11,6 @@ public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer job_id;
-
     private String job_title;
     private boolean permission;
 

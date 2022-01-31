@@ -1,6 +1,7 @@
 package org.acme.workloads.Reservation;
 
 import org.acme.workloads.Customer.Customer;
+import org.acme.workloads.Employee.Employee;
 import org.acme.workloads.Table_Entity.Table_Entity;
 
 import javax.persistence.*;
@@ -16,9 +17,9 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservation_id;
 
-    /** @ManyToOne
-     * @JoinColumn(name = "employee_id")
-    private Employee employee;*/
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
