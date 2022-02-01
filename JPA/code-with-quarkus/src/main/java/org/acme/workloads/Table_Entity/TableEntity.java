@@ -4,6 +4,8 @@ import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Room.Room;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class TableEntity {
@@ -19,17 +21,8 @@ public class TableEntity {
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @ManyToOne
-    @JoinColumn(name = "reservation_id")
-    private Reservation reservation;
 
-    public Reservation getReservation() {
-        return reservation;
-    }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
 
     public Room getRoom() {
         return room;

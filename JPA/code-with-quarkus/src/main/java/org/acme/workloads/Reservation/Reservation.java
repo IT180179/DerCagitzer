@@ -30,8 +30,17 @@ public class Reservation {
     private Timestamp timestamp;
     private Integer person_amount;
 
-    @OneToMany(mappedBy = "reservation")
-    private List<TableEntity> tableEntities = new ArrayList<TableEntity>();
+    @ManyToOne
+    @JoinColumn(name = "tableno")
+    private TableEntity tableEntity;
+
+    public TableEntity getTableEntity() {
+        return tableEntity;
+    }
+
+    public void setTableEntity(TableEntity tableEntity) {
+        this.tableEntity = tableEntity;
+    }
 
     public Long getReservation_id() {
         return reservation_id;
@@ -97,11 +106,5 @@ public class Reservation {
         this.person_amount = person_amount;
     }
 
-    public List<TableEntity> getTableEntities() {
-        return tableEntities;
-    }
 
-    public void setTable_Entities(List<TableEntity> tableEntities) {
-        this.tableEntities = tableEntities;
-    }
 }
