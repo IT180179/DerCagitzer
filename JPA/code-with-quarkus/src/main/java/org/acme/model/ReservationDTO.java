@@ -15,9 +15,9 @@ public class ReservationDTO implements Serializable {
     private final Date date;
     private final Timestamp timestamp;
     private final Integer person_amount;
-    private final List<Table_EntityDTO> table_Entities;
+    private final List<TableEntityDTO> table_Entities;
 
-    public ReservationDTO(Long reservation_id, EmployeeDTO employee, CustomerDTO customer, Timestamp start_time, Timestamp end_time, Date date, Timestamp timestamp, Integer person_amount, List<Table_EntityDTO> table_Entities) {
+    public ReservationDTO(Long reservation_id, EmployeeDTO employee, CustomerDTO customer, Timestamp start_time, Timestamp end_time, Date date, Timestamp timestamp, Integer person_amount, List<TableEntityDTO> table_Entities) {
         this.reservation_id = reservation_id;
         this.employee = employee;
         this.customer = customer;
@@ -61,7 +61,7 @@ public class ReservationDTO implements Serializable {
         return person_amount;
     }
 
-    public List<Table_EntityDTO> getTable_Entities() {
+    public List<TableEntityDTO> getTable_Entities() {
         return table_Entities;
     }
 
