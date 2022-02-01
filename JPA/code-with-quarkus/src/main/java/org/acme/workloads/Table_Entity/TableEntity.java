@@ -2,16 +2,15 @@ package org.acme.workloads.Table_Entity;
 
 import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Room.Room;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.persistence.*;
 
 @Entity
-public class Table_Entity {
+public class TableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long table_num;
+    private Long tableno;
 
     @Column(nullable = false)
     private int seats;
@@ -40,12 +39,12 @@ public class Table_Entity {
         this.room = room;
     }
 
-    public Long getTable_num() {
-        return table_num;
+    public Long getTableno() {
+        return tableno;
     }
 
-    public void setTable_num(Long table_num) {
-        this.table_num = table_num;
+    public void setTableno(Long table_num) {
+        this.tableno = table_num;
     }
 
     public int getSeats() {

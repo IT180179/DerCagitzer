@@ -2,8 +2,7 @@ package org.acme.workloads.Reservation;
 
 import org.acme.workloads.Customer.Customer;
 import org.acme.workloads.Employee.Employee;
-import org.acme.workloads.Table_Entity.Table_Entity;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.acme.workloads.Table_Entity.TableEntity;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -25,16 +24,14 @@ public class Reservation {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-
-
     private Timestamp start_time;
     private Timestamp end_time;
     private Date date;
     private Timestamp timestamp;
     private Integer person_amount;
 
-    @OneToMany(mappedBy = "reservation", orphanRemoval = true)
-    private List<Table_Entity> table_Entities = new ArrayList<>();
+    @OneToMany(mappedBy = "reservation")
+    private List<TableEntity> tableEntities = new ArrayList<TableEntity>();
 
     public Long getReservation_id() {
         return reservation_id;
@@ -100,11 +97,11 @@ public class Reservation {
         this.person_amount = person_amount;
     }
 
-    public List<Table_Entity> getTable_Entities() {
-        return table_Entities;
+    public List<TableEntity> getTableEntities() {
+        return tableEntities;
     }
 
-    public void setTable_Entities(List<Table_Entity> table_Entities) {
-        this.table_Entities = table_Entities;
+    public void setTable_Entities(List<TableEntity> tableEntities) {
+        this.tableEntities = tableEntities;
     }
 }
