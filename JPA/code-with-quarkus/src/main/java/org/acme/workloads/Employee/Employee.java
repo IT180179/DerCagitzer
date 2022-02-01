@@ -1,6 +1,6 @@
 package org.acme.workloads.Employee;
 
-import org.acme.workloads.job.Job;
+import org.acme.workloads.Job.Job;
 
 import javax.persistence.*;
 

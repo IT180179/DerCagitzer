@@ -1,4 +1,4 @@
-package org.acme.workloads.job;
+package org.acme.workloads.Job;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

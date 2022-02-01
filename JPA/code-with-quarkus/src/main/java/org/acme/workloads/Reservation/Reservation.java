@@ -3,6 +3,7 @@ package org.acme.workloads.Reservation;
 import org.acme.workloads.Customer.Customer;
 import org.acme.workloads.Employee.Employee;
 import org.acme.workloads.Table_Entity.Table_Entity;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -24,16 +25,16 @@ public class Reservation {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany
-    @JoinColumn(name = "table_num")
-    @Column(nullable = false)
-    private List<Table_Entity> table_num = new ArrayList<>();
+
 
     private Timestamp start_time;
     private Timestamp end_time;
     private Date date;
     private Timestamp timestamp;
     private Integer person_amount;
+
+    @OneToMany(mappedBy = "reservation", orphanRemoval = true)
+    private List<Table_Entity> table_Entities = new ArrayList<>();
 
     public Long getReservation_id() {
         return reservation_id;
@@ -43,20 +44,20 @@ public class Reservation {
         this.reservation_id = reservation_id;
     }
 
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public List<Table_Entity> getTable_num() {
-        return table_num;
-    }
-
-    public void setTable_num(List<Table_Entity> table_num) {
-        this.table_num = table_num;
     }
 
     public Timestamp getStart_time() {
@@ -97,5 +98,13 @@ public class Reservation {
 
     public void setPerson_amount(Integer person_amount) {
         this.person_amount = person_amount;
+    }
+
+    public List<Table_Entity> getTable_Entities() {
+        return table_Entities;
+    }
+
+    public void setTable_Entities(List<Table_Entity> table_Entities) {
+        this.table_Entities = table_Entities;
     }
 }

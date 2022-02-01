@@ -1,5 +1,7 @@
 package org.acme.workloads.Room;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

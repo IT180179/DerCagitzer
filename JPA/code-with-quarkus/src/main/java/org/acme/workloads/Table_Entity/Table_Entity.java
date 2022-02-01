@@ -1,6 +1,8 @@
 package org.acme.workloads.Table_Entity;
 
+import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Room.Room;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.persistence.*;
 
@@ -17,6 +19,18 @@ public class Table_Entity {
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
+
+    @ManyToOne
+    @JoinColumn(name = "reservation_id")
+    private Reservation reservation;
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
 
     public Room getRoom() {
         return room;
