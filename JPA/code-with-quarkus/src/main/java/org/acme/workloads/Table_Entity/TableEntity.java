@@ -17,12 +17,22 @@ public class TableEntity {
     @Column(nullable = false)
     private int seats;
 
+
+
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
 
+    @OneToMany(mappedBy = "tableEntity", orphanRemoval = true)
+    private List<Reservation> reservations = new ArrayList<>();
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
 
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 
     public Room getRoom() {
         return room;
