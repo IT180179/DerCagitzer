@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gasthaus Cagitz Homepage">
+<meta name="author" content="Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung">
+<title>Gasthaus Cagitz - Startseite</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link type="text/css" rel="stylesheet"
+    href="../css/style.css">
+<body class="index has-navbar-fixed-top">
+    <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand"> <a href="./index.html"> <img class="cagitzer-logo"
+                        src="../img/logo.png" />
+                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                        aria-hidden="true"></span> </a>
+            </div>
+            <div id="cagitzerNavbar" class="navbar-menu">
+                <div class="navbar-end"> <a class="navbar-item" href="./geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="./kulinarisches.html">Kulinarisches</a> <a class="navbar-item"
+                        href="./location.html">Location</a> <a class="navbar-item" href="./team.html">Team</a> <a
+                        class="navbar-item" href="./cagitzer.html">Reservieren</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-main hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-fifths">
+                        <h1>Österreichische Familientradition</h1>
+                        <p class="body1">zum Genießen.</p>
+                        <img src="../img/gasthaus.jpg">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="section features">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-third has-text-centered">
+                    <div class="box">
+                        <h3>Wochenplan</h3>
+                        <p class="body2">Sehen Sie sich hier unseren Wochenplan an.</p>
+                    </div>
+                </div>
+                <div class="column is-third has-text-centered">
+                    <div class="box">
+                        <h3>Speisekarte</h3>
+                        <p class="body2">Sehen Sie sich hier unsere Speisekarte an.</p>
+                    </div>
+                </div>
+                <div class="column is-third has-text-centered">
+                    <div class="box">
+                        <h3>Reservieren</h3>
+                        <p class="body2">Reservieren Sie jetzt bei uns im Gasthaus Cagitz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column"> <strong>Familie Cagitz:</strong>
+                    <ul>
+                        <li> <p>Mühlbachstraße 91 4063 Hörsching</p></li>
+                        <li> <p>Tel. 07221/72294</p></li>
+                        <li> <p>E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p></li>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Öffnungszeiten:</strong>
+                    <ul>
+                        <li> <p>MO u. DI Ruhetag</p></li>
+                        <li> <p>MI-SO von 11.00-24.00</p></li>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Gasthaus:</strong>
+                    <ul>
+                        <li> <a href="">Kontakt</a>
+                        <li> <a href="">Impressum</a>
+                        <li> <a href="">Stellenangebote beim Cagitz</a>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Terminvorschau:</strong>
+                    <ul>
+                        <li> <a href="">Rindfleischwochen! 12.01.2022</a>
+                        <hr style="background-color: #000;">
+                        <li><p>Wir sind: <a href="https://www.kulinarisches-erbe.at/" target="_blank">Kulinarisches Erbe</a></p></li>
+                        <li><p>Wir sind: <a href="https://www.kultiwirte.at/" target="_blank">KultiWirt</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript"
+        src="/assets/vendor/jquery-3.5.1.min-a6ed45d15e46615f8c15931ca254e398a912e770b10122a4435529a1a523180d.js"></script>
+    <script type="text/javascript"
+        src="/assets/vendor/lottie-player-0.5.1.min-7b15c2adfdb246be3414fb8d6966f54c06cc82f090a5d23c77f079de4c16fef3.js"></script>
+    <script
+        type="text/javascript"> const $langSelectors = Array.prototype.slice.call(document.querySelectorAll('a[data-lang]')); $langSelectors.forEach((el) => { el.addEventListener('click', (ev) => { const lang = ev.getAttribute('data-lang'); if (lang) { document.cookie = 'selected_language=' + lang + '; samesite; secure; path=/; max-age=7776000;'; } }); }); document.addEventListener('DOMContentLoaded', () => { var userAgent = navigator.userAgent.toLowerCase(); var isIOS = (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1); var isAndroid = userAgent.indexOf('android') !== -1; var $downloadSignal = $('.get-signal'); if (isIOS || isAndroid) { var url = isIOS ? 'https://apps.apple.com/us/app/signal-private-messenger/id874139669' : 'https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms'; $downloadSignal.prop('href', url); $downloadSignal.html('<span>Herunterladen</span> <i class="icon icon-external-link-alt"></i>'); } const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger')); if ($navbarBurgers.length > 0) { $navbarBurgers.forEach((el) => { el.addEventListener('click', () => { const target = el.dataset.target; const $target = document.getElementById(target); el.classList.toggle('is-active'); $target.classList.toggle('is-active'); }); }); } }); </script>
+    <script data-signalcounter="https://us-central1-signal-data-science.cloudfunctions.net/ping" defer
+        src="/assets/ping-5466b638a1abe764ac4db91c764bcf45af6e11033f07523b1152ff401ad8be7c.js"></script>
