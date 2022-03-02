@@ -38,3 +38,4 @@ jobs:
         run: 
           mvnw clean package
           ln -s ./target
+        working-directory: JPA/code-with-quarkus
