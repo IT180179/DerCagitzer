@@ -36,6 +36,6 @@ jobs:
           echo test, and deploy your project.
       - name: build-application-server
         run: 
-          mvnw clean package
+          mvn clean package
           ln -s ./target
         working-directory: JPA/code-with-quarkus
