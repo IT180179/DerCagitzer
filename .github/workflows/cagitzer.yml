@@ -37,5 +37,4 @@ jobs:
       - name: build-application-server
         run: 
           mvn clean package
-          ln -s ./target
         working-directory: JPA/code-with-quarkus
