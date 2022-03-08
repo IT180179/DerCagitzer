@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Gasthaus Cagitz</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Gasthaus Cagitz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ambiente</title>
+      <link>http://example.org/posts/whats-hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/whats-hugo/</guid>
+      <description>Unsere Urahnen haben schon gewusst warum sie hier ein Gasthaus betreiben. Das am Mühlbach gelegene Ausflugsgasthaus lädt einfach ein. Egal ob unter den 100 jährigen Kastanienbäumen, im Restaurant oder der Gaststube. Sie werden auf jeden Fall von der Vielfalt des Speisenangebotes überrascht sein. Dem Gast alle Annehmlichkeiten bei vertrauter Umgebung zu bieten ist oberstes Anliegen. Tradition und Ursprünglichkeit zeichnen das Gasthaus aus. Hier feiert man, lebt man, genießt man,&amp;hellip;
+d&amp;rsquo;Gastsubn Die Gaststube ist das Herz vom Wirtshaus.</description>
+    </item>
+    
+    <item>
+      <title>Klassiker</title>
+      <link>http://example.org/posts/example-content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/example-content/</guid>
+      <description>Die Küchenchefin empfiehlt Wir wollen Ihnen das Kochen nicht lernen, sondern nur zeigen wie es geht. Die Klassiker unserer Küche kurz erklärt.
+Der gebackene Karpfen Unser Karpfen wird schon seit 80 Jahren nach der gleichen Methode paniert und in heimischen Gewässern gezüchtet.
+s&amp;rsquo;Backhendl Die österreichischen Hendl werden von uns sorgfältig geteilt, paniert und 15 Minuten gebacken.
+Zwiebelrostbraten Rosa gebratene Beiriedschnitte mit frischem gerösteten Zwiebel dazu hausgemachte Schupfnudeln und Speckfisolen</description>
+    </item>
+    
+    <item>
+      <title>Willkommen auf unserer Website!</title>
+      <link>http://example.org/posts/introducing-hyde/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/introducing-hyde/</guid>
+      <description>Die Wirtsleute Josef und Nicole führen dieses traditionsreiche Gasthaus als Familienbetrieb mit bodenständiger regionaler Küche. Mit viel Liebe haben sie ein Gasthaus geschaffen, das sich durch ehrliche Gastlichkeit, persönliche und familiäre Atmosphäre sowie gepflegte Qualität auszeichnet. Größten Wert legt die Küchenchefin auf saisonale Produkte der umliegenden Bauern um Ihnen frischeste Qualität garantieren zu können.</description>
+    </item>
+    
+  </channel>
+</rss>
