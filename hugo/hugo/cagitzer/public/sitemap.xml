@@ -12,6 +12,8 @@
   </url><url>
     <loc>http://example.org/posts/</loc>
   </url><url>
+    <loc>http://example.org/posts/speisekarte/</loc>
+  </url><url>
     <loc>http://example.org/tags/</loc>
   </url><url>
     <loc>http://example.org/posts/introducing-hyde/</loc>

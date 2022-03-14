@@ -1,12 +1,80 @@
 {{ define "main" -}}
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gasthaus Cagitz Homepage">
+<meta name="author" content="Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung">
+<title>Gasthaus Cagitz - Startseite</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link type="text/css" rel="stylesheet"
+    href="./css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<body class="index has-navbar-fixed-top">
+    <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand"> <a href="./index.html"> <img class="cagitzer-logo"
+                        src="img/logo.png" alt="Logo">
+                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                        aria-hidden="true"></span> </a>
+            </div>
+            <div id="cagitzerNavbar" class="navbar-menu">
+                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="kulinarisches.html">Kulinarisches</a> <a class="navbar-item"
+                        href="location.html">Location</a> <a class="navbar-item" href="team.html">Team</a> <a
+                        class="navbar-item" href="cagitzer.html">Reservieren</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 <div class="post">
   <h1>{{ .Title }}</h1>
-  <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
   {{ .Content }}
 </div>
 
 {{ if .Site.DisqusShortname -}}
 <h2>Comments</h2>
-{{ template "_internal/disqus.html" . }}
+
+<footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column"> <strong>Familie Cagitz:</strong>
+                    <ul>
+                        <li> <p>Mühlbachstraße 91 4063 Hörsching</p></li>
+                        <li> <p>Tel. 07221/72294</p></li>
+                        <li> <p>E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p></li>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Öffnungszeiten:</strong>
+                    <ul>
+                        <li> <p>MO u. DI Ruhetag</p></li>
+                        <li> <p>MI-SO von 11.00-24.00</p></li>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Gasthaus:</strong>
+                    <ul>
+                        <li> <a href="./html/kontakt.html">Kontakt</a>
+                        <li> <a href="./html/impressum.html">Impressum</a>
+                        <li> <a href="./html/team.html">Stellenangebote beim Cagitz</a>
+                    </ul>
+                </div>
+                <div class="column"> <strong>Terminvorschau:</strong>
+                    <ul>
+                        <li> <a href="">Rindfleischwochen! 12.01.2022</a>
+                        <hr style="background-color: #000;">
+                        <li><p>Wir sind: <a href="https://www.kulinarisches-erbe.at/" target="_blank">Kulinarisches Erbe</a></p></li>
+                        <li><p>Wir sind: <a href="https://www.kultiwirte.at/" target="_blank">KultiWirt</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
 {{- end }}
 {{- end }}
