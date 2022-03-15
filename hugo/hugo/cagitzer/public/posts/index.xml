@@ -16,5 +16,14 @@
 Küche von 11 – 14 Uhr und 17:30 bis 21 Uhr  UNSERE LIEFERANTEN  Saibling/Karpfen Fischerei Taschner, Schleißheim</description>
     </item>
     
+    <item>
+      <title>Wochenkarte</title>
+      <link>http://example.org/posts/wochenkarte/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/wochenkarte/</guid>
+      <description>Menü 1 Menü 2     14. - 18.3 11.- 10.-   Montag Ruhetag    Dienstag Ruhetag    Mittwoch Gurkenschaumsuppe Gurkenschaumsuppe    Piccata milanese mit Tomatenspaghetti und Salat Spinatknödel mit Butter/Parmesan/Ruccola/Tomaten   Donnerstag Eintropfsuppe Eintropfsuppe    Hühnerbrüstchen im Speckmantel mit Grillgemüse und Erdäpfel Fleckerlspeis mit Blattsalat   Freitag Tomatencremesuppe Tomatencremesuppe    Fischpfanne mit Reis und Salat Gebackene Champignons mit Sc.</description>
+    </item>
+    
   </channel>
 </rss>

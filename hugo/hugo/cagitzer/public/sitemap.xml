@@ -12,6 +12,8 @@
   </url><url>
     <loc>http://example.org/tags/</loc>
   </url><url>
+    <loc>http://example.org/posts/wochenkarte/</loc>
+  </url><url>
     <loc>http://example.org/about/</loc>
   </url>
 </urlset>

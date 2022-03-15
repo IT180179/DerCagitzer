@@ -52,3 +52,55 @@ Getränk | Preis
 0,25 l Lillet Berry | 4,90
 0,25 l Hugo | 4,--
 0,25 l Schilerol | 4,--
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Vorspeisen</center>
+------
+Speisen | Preis
+:--- | ---:
+**GEGRILLTER SCHAFKÄSE** <br> im Speckmantel mit Zucchini und Tomaten | 9,--
+**CARPACCIO VOM RINDSFILET** <br> mit Olivenöl / Ruccola / Parmesan  | 13,-- 
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Suppen</center>
+------
+Suppen | Preis
+:--- | ---:
+**RINDSUPPE** <br> mit Frittaten <br> oder Leberknödel | 4,--
+**KNOBLAUCHCREMESUPPE** | 5,--
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Hauptspeisen</center>
+------
+Speisen | Preis
+:--- | ---:
+**ALTWIENER BACKFLEISCH** <br> (Beiried in Senf Kren Panade) <br> mit Erdäpfelsalat | 17,-- 
+**CORDON BLEU** <br> von der Pute <br> mit Preiselbeeren / Erdäpfel / Salat | 14,-- 
+**WIENER SCHNITZEL** <br> vom Schwein <br> mit Preiselbeeren / Erdäpfel / Salat | 13,--
+**BACKHENDL** <br> mit Erdäpfel / Salat | 14,-- 
+**GEKOCHTES RINDFLEISCH** <br> mit Schnittlauchsauce / Rösterdäpfel | 15,-- 
+**KALBSBRATEN** <br> mit Reis / Erdäpfel / Salat | 16,--
+**SCHWEINSBRATEN** <br> mit Semmelknödel / Krautsalat | 13,-- 
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Vegetarisches</center>
+------
+Speisen | Preis
+:--- | ---:
+**ZUCCHINI ERDÄPFEL TASCHERL** <br> mit brauner Butter/Parmesan/Rucola/Tomaten | 11,-- 
+**BÄRLAUCHRISOTTO** <br> mit gebackenen Kräuterseitlingen | 12,--
+**GEBACKENER EMMENTALER** <br> mit Sc. Tartar / Erdäpfel / Salat | 10,-- 
+**GEMÜSELAIBCHEN** <br> mit Kräuterdip / Erdäpfel | 9,-- 
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Salatiges</center>
+------
+Salate | Preis
+:--- | ---:
+**STEIRISCHER HENDLSALAT** | 9,-- 
+**RUTZINGER BAUERNSALAT** <br> mit Grammelknöderl/Speck/Zwiebel/Erdäpfel | 10,--
