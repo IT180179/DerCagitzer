@@ -9,3 +9,5 @@ layoutReverse = false
 theme = "hyde"
 themeColor = "theme-base-0b"
 description = "Willkommen im Gasthaus Cagitz"
+[markup.goldmark.renderer]
+unsafe= true
