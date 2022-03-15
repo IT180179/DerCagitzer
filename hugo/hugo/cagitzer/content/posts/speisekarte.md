@@ -39,8 +39,11 @@ Wir kochen mit Natursalz!
 - **Most /Apfelsaft** Stockingerhof, Gunskirchen
  
   </details>
- # <center>Aperitif</center>
-
+  <br>
+  <br>
+------
+ # <center style="color:#999977">Aperitif</center>
+------
 Getränk | Preis
 :--- | ---:
 0,1 l Birnencider  vom Hirschvogel | 3,20 
