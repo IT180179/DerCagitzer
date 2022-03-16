@@ -34,8 +34,8 @@ jobs:
           alias: server
 
       - name: build-application-server
-        run: |
+        run: 
           mvn clean packages                                       
-          ls -a ./target
+
         working-directory: JPA/code-with-quarkus
         
