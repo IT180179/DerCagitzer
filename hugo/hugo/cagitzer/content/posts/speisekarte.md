@@ -46,7 +46,7 @@ Wir kochen mit Natursalz!
 ------
 Getränk | Preis
 :--- | ---:
-0,1 l Birnencider  vom Hirschvogel | 3,20 
+0,1 l Birnencider  vom Hirschvogel | 4,-- 
 0,25 l Barita | 4,--
 0,25l Aperol Sprizz | 4,40
 0,25 l Lillet Berry | 4,90
