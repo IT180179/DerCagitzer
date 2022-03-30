@@ -33,9 +33,17 @@ jobs:
           server: ${{ secrets.SERVER }}
           alias: server
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.94.2'
+          # extended: true
+
       - name: build-application-server
         run: |
-          mvn clean package                                      
-          ls -a ./target
-        working-directory: JPA/code-with-quarkus
-        
+          hugo --minify
+        working-directory: hugo/hugo/cagitzer
+      
+      
+    
+       
