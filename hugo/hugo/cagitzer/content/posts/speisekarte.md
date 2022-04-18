@@ -42,19 +42,7 @@ Wir kochen mit Natursalz!
   </details>
   <br>
   <br>
-------
- # <center style="color:#999977">Aperitif</center>
-------
-Getränk | Preis
-:--- | ---:
-0,1 l Birnencider  vom Hirschvogel | 4,-- 
-0,25 l Barita | 4,--
-0,25l Aperol Sprizz | 4,40
-0,25 l Lillet Berry | 4,90
-0,25 l Hugo | 4,--
-0,25 l Schilerol | 4,--
-  <br>
-  <br>
+
 ------
  # <center style="color:#999977">Vorspeisen</center>
 ------
@@ -105,3 +93,43 @@ Salate | Preis
 :--- | ---:
 **STEIRISCHER HENDLSALAT** | 9,-- 
 **RUTZINGER BAUERNSALAT** <br> mit Grammelknöderl/Speck/Zwiebel/Erdäpfel | 10,--
+
+  <br>
+  <br>
+
+------
+ # <center style="color:#999977">Desserts</center>
+------
+Dessert | Preis
+:--- | ---:
+**Dessertvariation** <br> Himbeermousse/Schokokuchen/Pistazienschaum | 7,80
+**Schokomousse** <br> mit frischen Beeren| 6,80
+**Hollerröster** <br> mit Vanilleeis | 6,00
+**Gebackene Apfelradl** <br> mit Zimteis und Schlagobers| 6,50
+**Mohr im Hemd** <br> mit Vanilleeis und Schlagobers | 6,00
+**Palatschinken (2 Stk.)** <br> mit Marillen-,Preiselbeer- oder Rumtopfmarmelade| 5,00
+**Eispalatschinke**  | 6,00
+**Kardinalschnitte** | 3,80
+**Besoffener Kapuziner**  | 3,80
+**Topfennockerl** <br> mit WaldBeeren| 6,30
+
+  <br>
+  <br>
+
+
+------
+ # <center style="color:#999977">Eisbecher</center>
+------
+Eisbecher | Preis
+:--- | ---:
+**Heiße Liebe** <br> Vanilleeis/Himbeeren/Schlagobers | 6,50
+**Coupe Dänemark** <br> Vanilleeis/Schokosauce/Schlagobers | 6,00
+**Bananensplit** <br> Vanilleeis/Bananen/Schokosauce/Schlagobers | 6,50
+**Hausbecher** <br> Fruchteis/Früchte/Beerensauce/Schlagobers | 7,-
+**Eiscafe** <br> Vanilleeis/Kaffee/Schlagobers | 6,00
+**Jogurtbecher** <br> Jogurt/Fruchteis/Früchte/Schlagobers | 6,50
+**Haselnussbecher** <br> Haselnusseis/Schokoeis/Walnüsse/Schokosauce/Schlagobers | 6,40
+**Gemischtes Eis** <br> Vanilleeis/Schokoeis/Erdbeereis/Schlagobers | 5,20
+
+<br>
+<br>
