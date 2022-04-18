@@ -10,33 +10,34 @@ auf saisonale Produkte der umliegenden Bauern um ihnen frischeste Qualität
 garantieren zu können.
 Wir kochen mit Natursalz! 
 
-##  Küche von 11 – 14 Uhr und 17:30 bis 21 Uhr
+###  Geöffnet  Mittwoch - Sonntag von 11:00 - 24:00 Uhr
+####  Küche von 11 – 14 Uhr und 17 - 21 Uhr
 
 
 <details>
 <summary> UNSERE LIEFERANTEN</summary>
 
-- **Saibling/Karpfen** Fischerei Taschner, Schleißheim
-- **Karpfenfilet** Fischerei Haas, Schiedlberg
-- **Schwein/Kalb/Rind** Fleischhauerei Weiß, Hörsching
-- **Schwein** Fleischhauerei Steiner, Marchtrenk
+- **Saibling/Karpfen** **[Fischerei Taschner](https://fischzucht-taschner.sta.io/)** , Schleißheim 
+- **Karpfenfilet** **[Fischerei Haas](https://fische-haas.sta.io/piberbach-quelle/)** , Schiedlberg
+- **Schwein/Kalb/Rind** **[Fleischhauerei Weiß](https://www.fleischerei-weiss.at/)** , Hörsching
+- **Schwein** **[Fleischhauerei Steiner](https://www.steiner-fleischer.at/)**, Marchtrenk
 - **Rindfleisch** Biohof Pacher, Spital/Phyrn (Mutterkuhhaltung)
 - **Wild** Jagdgenossenschaften Steinhaus/Molln/Sipachzell, Hörsching/Traun
-- **Hendl/Pute** Wech, St. Andrä/Lavanttal
+- **Hendl/Pute** **[Wech](https://www.wech.at/)**, St. Andrä/Lavanttal
 - **Milch/Michprodukte** aus Österreich mit AMA Gütesiegel
-- **Eier** Hochleitner Gunskirchen
+- **Eier** **[Hochleitner](https://www.ab-hof-schickmair.at/familie-hochleitner/)**, Gunskirchen
 - **Kartoffel** Buschmüllerhof, Rutzing
-- **Spargel** Stöttingerhof, Rufling
+- **Spargel**  **[Stöttingerhof](https://www.spargelhof-stoettinger.at/)**, Rufling
 - **Gemüse, Salat** Neulingerhof, Hörsching
-- **Natursalz** Salzkontor, St. Wolfgang
-- **Gebäck** Bäckerei Resch & frisch, Wels
-- **Brot** Bäckerei Bauer, Marchtrenk
-- **Kernöl** Steinhausergut, Oftering
+- **Natursalz** **[Salzkontor](https://www.salzkontor.at/)**, St. Wolfgang
+- **Gebäck** **[ Bäckerei Resch & frisch ](https://www.resch-frisch.com/)**, Wels
+- **Brot** **[Bäckerei Bauer](https://www.marchtrenk.at/betrieb/baeckerei-bauer/)**, Marchtrenk
+- **Kernöl**  **[Steinhausergut](http://www.steinhausergut.at/steinhausergut/)**, Oftering
 - **Schnaps** 
-    + Reisetbauer, Axberg
-    + Rohrhuber, Wilhering
+    + **[Reisetbauer](https://www.reisetbauer.at/)**, Axberg
+    + **[Rohrhuber](https://rohrhuber.at/)**, Wilhering
     + Höhlhubmerhof, Rutzing
-- **Most /Apfelsaft** Stockingerhof, Gunskirchen
+- **Most /Apfelsaft** **[Stockingerhof](http://www.stockingerhof.at/deutsch/index.php)**, Gunskirchen
  
   </details>
   <br>
