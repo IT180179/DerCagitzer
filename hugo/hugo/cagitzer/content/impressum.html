@@ -12,13 +12,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="./index.html"> <img class="cagitzer-logo"
                         src="img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">

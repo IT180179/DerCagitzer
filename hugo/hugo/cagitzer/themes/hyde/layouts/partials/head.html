@@ -35,4 +35,13 @@
   {{ end -}}
 
   {{ partial "hook_head_end.html" . }}
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
