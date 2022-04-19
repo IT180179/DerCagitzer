@@ -48,8 +48,8 @@ jobs:
       - name: deploy
         run: | 
           scp *.tgz server
-          tar -xvzf *.tgzx
-          ls
+          ssh server ls -a
+          tar -xvzf *.tgz
         working-directory: hugo/hugo/cagitzer
 
       
