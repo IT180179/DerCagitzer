@@ -47,7 +47,7 @@ jobs:
       - name: deploy
         run: | 
           tar -czf public.tgz public
-          scp *.tgz server
+          scp public.tgz server /nginx/html
           tar -xvzf *.tgz
         working-directory: hugo/hugo/cagitzer
 
