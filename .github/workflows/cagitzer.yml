@@ -49,9 +49,9 @@ jobs:
         run: | 
           ls
           pwd
-          scp *.tgz server
+          cp public.tgz server
           ssh server ls -a
-          ssh server tar -xvzf *.tgz
+          ssh server tar -xvzf public.tgz
         working-directory: hugo/hugo/cagitzer
 
       
