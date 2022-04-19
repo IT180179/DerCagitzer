@@ -184,6 +184,7 @@ html.has-navbar-fixed-top {
 }
 
 @media (min-width: 1024px) {
+
 	body.has-navbar-fixed-top,
 	html.has-navbar-fixed-top {
 		padding-top: 85px
