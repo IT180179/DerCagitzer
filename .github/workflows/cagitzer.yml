@@ -45,12 +45,10 @@ jobs:
           tar -czf public.tgz public
         working-directory: hugo/hugo/cagitzer
       - name: deploy
-        run: | 
-          ls
-          pwd
+        run: |           
           scp *.tgz server:
-          ssh server ls -a
-          ssh server tar -xvzf public.tgz
+          ssh server sudo tar -xvzf public.tgz 
+          ssh server sudo mv public/* /var/www/html
         working-directory: hugo/hugo/cagitzer
 
       
