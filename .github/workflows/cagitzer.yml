@@ -42,12 +42,12 @@ jobs:
       - name: build-application-server
         run: |
           hugo --minify
-          tar -czf public.tgz public
         working-directory: hugo/hugo/cagitzer
 
       - name: deploy
         run: | 
-          scp *.tgz server
+          tar -czf public.tgz public
+          scp public.tgz server/usr/share/nginx/html
           tar -xvzf *.tgz
         working-directory: hugo/hugo/cagitzer
 
