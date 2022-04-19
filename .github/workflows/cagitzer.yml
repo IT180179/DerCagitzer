@@ -43,13 +43,13 @@ jobs:
         run: |
           hugo --minify
           tar -czf public.tgz public
-        working-directory: hugo/hugo/cagitzer
+       
 
       - name: deploy
         run: | 
           ls
           pwd
-          cp public.tgz server
+          scp public.tgz server
           ssh server ls -a
           ssh server tar -xvzf public.tgz
         working-directory: hugo/hugo/cagitzer
