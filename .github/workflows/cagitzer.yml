@@ -49,7 +49,7 @@ jobs:
         run: | 
           scp *.tgz server
           tar -xvzf *.tgz
-          ls
+          pwd
         working-directory: hugo/hugo/cagitzer
 
       
