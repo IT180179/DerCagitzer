@@ -25,16 +25,16 @@ title: Getränke
 ------
 Getränk | Preis
 :--- | ---:
-0,1 l Birnencider  vom Hirschvogel | 4,-- 
-0,25 l Barita | 4,--
+0,1 l Birnencider  vom Hirschvogel | 4,00
+0,25 l Barita | 4,00
 0,25l Aperol Sprizz | 4,40
 0,25 l Lillet Berry | 4,90
-0,25 l Hugo | 4,--
-0,25 l Schilerol | 4,--
+0,25 l Hugo | 4,00
+0,25 l Schilerol | 4,00
+
   <br><br>
+
 ------
-
-
  # <center style="color:#999977">Bier</center>
 ------
 Getränke | Preis
@@ -49,11 +49,10 @@ Getränke | Preis
 **0,3 Gösser Zwickl** |  3,80
 **1 Flasche Edelweiss alkoholfrei** |  4,30
 **1 Flasche Gösser alkoholfrei** |  4,30
+
   <br><br>
+
 ------
-
-
-
  # <center style="color:#999977">Hausweine (1/8l)</center>
 ------
 Getränk | Preis
@@ -61,10 +60,11 @@ Getränk | Preis
 **Grüner Ventliner Landwein, Schloss Gobelsburg** | 2,20
 **Zweigelt, Weingut Kolkmann** | 2,20
 **Gespritzer weiss oder rot** | 2,80
+
   <br><br>
+
+
 ------
-
-
  # <center style="color:#999977">Most</center>
 ------
 Getränk | Preis
@@ -73,6 +73,7 @@ Getränk | Preis
 **0,3l Most**  | 2,70
 **0,5l Most mit Almdudler**  | 3,70
 **0,3l Most mit Almdudler** | 3,20
+
   <br>
   <br>
 
@@ -87,8 +88,8 @@ Getränk | Preis
 **0,25l Spezi**  | 2,20
 **1 Flasche Pago Johannisbeer/Marille/Mango/Erdbeer/Zwetschke/Drachenfrucht**  | 3,40
 **1 Flasche Gasteiner Mineralwasser**  | 2,70
-**0,5l Limo gespritzt**  | 4,-
-**0,5l Soda Zitone**  | 3,-
+**0,5l Limo gespritzt**  | 4,00
+**0,5l Soda Zitone**  | 3,00
 
   <br>
   <br>
@@ -100,7 +101,7 @@ Getränk | Preis
 :--- | ---:
 **Kleiner Brauner** | 2,30
 **Großer Brauner**  | 3,40
-**Verlängerter**  | 3,-
+**Verlängerter**  | 3,00
 **Melange**  | 3,20
 **Capuccino**  | 3,20
 **Caffee Late**  | 3,40

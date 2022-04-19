@@ -17,9 +17,9 @@ Wir kochen mit Natursalz!
 <details>
 <summary> UNSERE LIEFERANTEN</summary>
 
-- **Saibling/Karpfen** **[Fischerei Taschner](https://fischzucht-taschner.sta.io/)** , Schleißheim 
-- **Karpfenfilet** **[Fischerei Haas](https://fische-haas.sta.io/piberbach-quelle/)** , Schiedlberg
-- **Schwein/Kalb/Rind** **[Fleischhauerei Weiß](https://www.fleischerei-weiss.at/)** , Hörsching
+- **Saibling/Karpfen** **[Fischerei Taschner](https://fischzucht-taschner.sta.io/)**, Schleißheim 
+- **Karpfenfilet** **[Fischerei Haas](https://fische-haas.sta.io/piberbach-quelle/)**, Schiedlberg
+- **Schwein/Kalb/Rind** **[Fleischhauerei Weiß](https://www.fleischerei-weiss.at/)**, Hörsching
 - **Schwein** **[Fleischhauerei Steiner](https://www.steiner-fleischer.at/)**, Marchtrenk
 - **Rindfleisch** Biohof Pacher, Spital/Phyrn (Mutterkuhhaltung)
 - **Wild** Jagdgenossenschaften Steinhaus/Molln/Sipachzell, Hörsching/Traun
@@ -48,51 +48,59 @@ Wir kochen mit Natursalz!
 ------
 Speisen | Preis
 :--- | ---:
-**GEGRILLTER SCHAFKÄSE** <br> im Speckmantel mit Zucchini und Tomaten | 9,--
-**CARPACCIO VOM RINDSFILET** <br> mit Olivenöl / Ruccola / Parmesan  | 13,-- 
+**GEGRILLTER SCHAFKÄSE** <br> im Speckmantel mit Zucchini und Tomaten | 9,00
+**CARPACCIO VOM RINDSFILET** <br> mit Olivenöl / Ruccola / Parmesan  | 13,00
+  
   <br>
   <br>
+
 ------
  # <center style="color:#999977">Suppen</center>
 ------
 Suppen | Preis
 :--- | ---:
-**RINDSUPPE** <br> mit Frittaten <br> oder Leberknödel | 4,--
-**KNOBLAUCHCREMESUPPE** | 5,--
+**RINDSUPPE** <br> mit Frittaten <br> oder Leberknödel | 4,00
+**KNOBLAUCHCREMESUPPE** | 5,00
+
   <br>
   <br>
+
 ------
  # <center style="color:#999977">Hauptspeisen</center>
 ------
 Speisen | Preis
 :--- | ---:
-**ALTWIENER BACKFLEISCH** <br> (Beiried in Senf Kren Panade) <br> mit Erdäpfelsalat | 17,-- 
-**CORDON BLEU** <br> von der Pute <br> mit Preiselbeeren / Erdäpfel / Salat | 14,-- 
-**WIENER SCHNITZEL** <br> vom Schwein <br> mit Preiselbeeren / Erdäpfel / Salat | 13,--
-**BACKHENDL** <br> mit Erdäpfel / Salat | 14,-- 
-**GEKOCHTES RINDFLEISCH** <br> mit Schnittlauchsauce / Rösterdäpfel | 15,-- 
-**KALBSBRATEN** <br> mit Reis / Erdäpfel / Salat | 16,--
-**SCHWEINSBRATEN** <br> mit Semmelknödel / Krautsalat | 13,-- 
+**ALTWIENER BACKFLEISCH** <br> (Beiried in Senf Kren Panade) <br> mit Erdäpfelsalat | 17,00 
+**CORDON BLEU** <br> von der Pute <br> mit Preiselbeeren / Erdäpfel / Salat | 14,00
+**WIENER SCHNITZEL** <br> vom Schwein <br> mit Preiselbeeren / Erdäpfel / Salat | 13,00
+**BACKHENDL** <br> mit Erdäpfel / Salat | 14,00
+**GEKOCHTES RINDFLEISCH** <br> mit Schnittlauchsauce / Rösterdäpfel | 15,00
+**KALBSBRATEN** <br> mit Reis / Erdäpfel / Salat | 16,00
+**SCHWEINSBRATEN** <br> mit Semmelknödel / Krautsalat | 13,00
+
   <br>
   <br>
+
 ------
  # <center style="color:#999977">Vegetarisches</center>
 ------
 Speisen | Preis
 :--- | ---:
-**ZUCCHINI ERDÄPFEL TASCHERL** <br> mit brauner Butter/Parmesan/Rucola/Tomaten | 11,-- 
-**BÄRLAUCHRISOTTO** <br> mit gebackenen Kräuterseitlingen | 12,--
-**GEBACKENER EMMENTALER** <br> mit Sc. Tartar / Erdäpfel / Salat | 10,-- 
-**GEMÜSELAIBCHEN** <br> mit Kräuterdip / Erdäpfel | 9,-- 
+**ZUCCHINI ERDÄPFEL TASCHERL** <br> mit brauner Butter/Parmesan/Rucola/Tomaten | 11,00
+**BÄRLAUCHRISOTTO** <br> mit gebackenen Kräuterseitlingen | 12,00
+**GEBACKENER EMMENTALER** <br> mit Sc. Tartar / Erdäpfel / Salat | 10,00
+**GEMÜSELAIBCHEN** <br> mit Kräuterdip / Erdäpfel | 9,00
+
   <br>
   <br>
+
 ------
  # <center style="color:#999977">Salatiges</center>
 ------
 Salate | Preis
 :--- | ---:
-**STEIRISCHER HENDLSALAT** | 9,-- 
-**RUTZINGER BAUERNSALAT** <br> mit Grammelknöderl/Speck/Zwiebel/Erdäpfel | 10,--
+**STEIRISCHER HENDLSALAT** | 9,00
+**RUTZINGER BAUERNSALAT** <br> mit Grammelknöderl/Speck/Zwiebel/Erdäpfel | 10,00
 
   <br>
   <br>
@@ -116,7 +124,6 @@ Dessert | Preis
   <br>
   <br>
 
-
 ------
  # <center style="color:#999977">Eisbecher</center>
 ------
@@ -125,7 +132,7 @@ Eisbecher | Preis
 **Heiße Liebe** <br> Vanilleeis/Himbeeren/Schlagobers | 6,50
 **Coupe Dänemark** <br> Vanilleeis/Schokosauce/Schlagobers | 6,00
 **Bananensplit** <br> Vanilleeis/Bananen/Schokosauce/Schlagobers | 6,50
-**Hausbecher** <br> Fruchteis/Früchte/Beerensauce/Schlagobers | 7,-
+**Hausbecher** <br> Fruchteis/Früchte/Beerensauce/Schlagobers | 7,00
 **Eiscafe** <br> Vanilleeis/Kaffee/Schlagobers | 6,00
 **Jogurtbecher** <br> Jogurt/Fruchteis/Früchte/Schlagobers | 6,50
 **Haselnussbecher** <br> Haselnusseis/Schokoeis/Walnüsse/Schokosauce/Schlagobers | 6,40
