@@ -47,6 +47,8 @@ jobs:
 
       - name: deploy
         run: | 
+          ls
+          pwd
           scp *.tgz server
           ssh server ls -a
           ssh server tar -xvzf *.tgz
