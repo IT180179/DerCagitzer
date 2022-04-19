@@ -50,8 +50,7 @@ jobs:
           pwd
           scp *.tgz server:
           ssh server ls -a
-          ssh server scp public.tgz /var/www/html
-          ssh server tar -xvzf public.tgz
+          ssh server tar -xvzf public.tgz -C /var/www/html 
           
         working-directory: hugo/hugo/cagitzer
 
