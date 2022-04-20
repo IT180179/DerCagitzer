@@ -48,8 +48,8 @@ jobs:
         run: |           
           scp *.tgz server:
           ssh server sudo tar -xvzf public.tgz
-          ssh server sudo rm -r /var/www/html/*
-          ssh server sudo mv public/* /var/www/html
+          ssh server sudo rm -rf /var/www/html/*
+          ssh server sudo mv public/* /var/www/html/s
         working-directory: hugo/hugo/cagitzer
 
       
