@@ -82,11 +82,11 @@ Getränk | Preis
 ------
 Getränk | Preis
 :--- | ---:
-**1 Flasche Schartner orange, Schartner zitrone, Coca Cola oder Almdundler**  | 3,20
+**1 Flasche Schartner orange, <br>Schartner zitrone, <br>Coca Cola oder Almdundler**  | 3,20
 **0,25l Apfelsaft oder Orangensaft** | 3,20
 **0,5l Apfelsaft oder Orangensaft gespritzt**  | 4,20
 **0,25l Spezi**  | 2,20
-**1 Flasche Pago Johannisbeer/Marille/Mango/Erdbeer/Zwetschke/Drachenfrucht**  | 3,40
+**1 Flasche Pago Johannisbeer/Marille/<br>Mango/Erdbeer/<br>Zwetschke/Drachenfrucht**  | 3,40
 **1 Flasche Gasteiner Mineralwasser**  | 2,70
 **0,5l Limo gespritzt**  | 4,00
 **0,5l Soda Zitone**  | 3,00

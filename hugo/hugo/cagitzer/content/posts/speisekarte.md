@@ -110,7 +110,7 @@ Salate | Preis
 ------
 Dessert | Preis
 :--- | ---:
-**Dessertvariation** <br> Himbeermousse/Schokokuchen/Pistazienschaum | 7,80
+**Dessertvariation** <br> Himbeermousse/Schokokuchen/<br>Pistazienschaum | 7,80
 **Schokomousse** <br> mit frischen Beeren| 6,80
 **Hollerröster** <br> mit Vanilleeis | 6,00
 **Gebackene Apfelradl** <br> mit Zimteis und Schlagobers| 6,50
@@ -131,12 +131,12 @@ Eisbecher | Preis
 :--- | ---:
 **Heiße Liebe** <br> Vanilleeis/Himbeeren/Schlagobers | 6,50
 **Coupe Dänemark** <br> Vanilleeis/Schokosauce/Schlagobers | 6,00
-**Bananensplit** <br> Vanilleeis/Bananen/Schokosauce/Schlagobers | 6,50
-**Hausbecher** <br> Fruchteis/Früchte/Beerensauce/Schlagobers | 7,00
+**Bananensplit** <br> Vanilleeis/Bananen/Schokosauce/<br>Schlagobers | 6,50
+**Hausbecher** <br> Fruchteis/Früchte/Beerensauce/<br>Schlagobers | 7,00
 **Eiscafe** <br> Vanilleeis/Kaffee/Schlagobers | 6,00
 **Jogurtbecher** <br> Jogurt/Fruchteis/Früchte/Schlagobers | 6,50
-**Haselnussbecher** <br> Haselnusseis/Schokoeis/Walnüsse/Schokosauce/Schlagobers | 6,40
-**Gemischtes Eis** <br> Vanilleeis/Schokoeis/Erdbeereis/Schlagobers | 5,20
+**Haselnussbecher** <br> Haselnusseis/Schokoeis/Walnüsse/<br>Schokosauce/Schlagobers | 6,40
+**Gemischtes Eis** <br> Vanilleeis/Schokoeis/Erdbeereis/<br>Schlagobers | 5,20
 
 <br>
 <br>

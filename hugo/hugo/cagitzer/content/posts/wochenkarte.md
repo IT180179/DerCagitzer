@@ -15,7 +15,7 @@ title: Wochenkarte
 | _14. - 18.3_ | 11.-                                                                        | 10.-                                                                        |
 | _Montag_     | Ruhetag                                                                     |                                                                             |
 | _Dienstag_   | Ruhetag                                                                     |                                                                             |
-| _Mittwoch_   | Gurkenschaumsuppe <br> Piccata milanese  mit Tomatenspaghetti und Salat     | Gurkenschaumsuppe <br>  Spinatknödel  mit Butter/Parmesan/Ruccola/Tomaten   |
+| _Mittwoch_   | Gurkenschaumsuppe <br> Piccata milanese  mit Tomatenspaghetti und Salat     | Gurkenschaumsuppe <br>  Spinatknödel  mit Butter/Parmesan/<br>Ruccola/Tomaten   |
 | _Donnerstag_ | Eintropfsuppe <br> Hühnerbrüstchen im Speckmantel  mit Grillgemüse und Erdäpfel | Eintropfsuppe <br>  Fleckerlspeis  mit Blattsalat                       |
 | _Freitag_    | Tomatencremesuppe <br> Fischpfanne  mit Reis und Salat                      | Tomatencremesuppe <br> Gebackene Champignons  mit Sc. Tatar, Erdäpfel und Salat |
 
