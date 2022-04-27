@@ -46,10 +46,12 @@ jobs:
         working-directory: hugo/hugo/cagitzer
       - name: deploy
         run: |           
+          ssh server pwd
           scp *.tgz server:
+          ssh server pwd
           ssh server sudo ls /var/www/html/
           ssh server sudo tar -xvzf public.tgz
-          ssh server sudo rm -rfvd /var/www/html/*
+          ssh server sudo rm -rfv /var/www/html/*
           ssh server sudo mv public/* /var/www/html/
         working-directory: hugo/hugo/cagitzer 
 
