@@ -13,7 +13,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
     <script src="../node_modules/bulma-calendar/dist/js/bulma-calendar.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+      const toggleBurger = () => {
+      let burgerIcon = document.getElementById('burger');
+      let dropMenu = document.getElementById('cagitzerNavbar');
+      burgerIcon.classList.toggle('is-active');
+      dropMenu.classList.toggle('is-active');
+      }
+    </script>
     <body>
     <div class="field is-grouped is-grouped-centered">
         <div class="control">

@@ -4,11 +4,6 @@ body {
 	overflow-x: hidden
 }
 
-a {
-	color: #000;
-	text-decoration: none;
-}
-
 a:hover {
 	color: #000;
 	text-decoration: underline
@@ -184,7 +179,6 @@ html.has-navbar-fixed-top {
 }
 
 @media (min-width: 1024px) {
-
 	body.has-navbar-fixed-top,
 	html.has-navbar-fixed-top {
 		padding-top: 85px
