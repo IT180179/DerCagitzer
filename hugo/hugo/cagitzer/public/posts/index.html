@@ -29,6 +29,15 @@
   
   <link href="http://example.org/posts/index.xml" rel="alternate" type="application/rss+xml" title="Gasthaus Cagitz" />
   
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
 
   <body class="theme-base-0b ">
@@ -39,6 +48,8 @@
     <span><a href="http://example.org/posts/getraenkekarte/">Getränke</a> <time class="pull-right post-list" datetime="0001-01-01T00:00:00Z">Mon, Jan 1, 0001</time></span>
   </li><li>
     <span><a href="http://example.org/posts/speisekarte/">Speisekarte</a> <time class="pull-right post-list" datetime="0001-01-01T00:00:00Z">Mon, Jan 1, 0001</time></span>
+  </li><li>
+    <span><a href="http://example.org/posts/lieferanten/">Unsere Lieferanten</a> <time class="pull-right post-list" datetime="0001-01-01T00:00:00Z">Mon, Jan 1, 0001</time></span>
   </li><li>
     <span><a href="http://example.org/posts/wochenkarte/">Wochenkarte</a> <time class="pull-right post-list" datetime="0001-01-01T00:00:00Z">Mon, Jan 1, 0001</time></span>
   </li>

@@ -12,26 +12,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="../index.html"> <img class="cagitzer-logo"
                         src="../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
                 <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
                         class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
                         href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a> 
                 </div>
             </div>
     </nav>
 	<section>
         <div style="position: absolute; z-index: 1; color: #fff; border-radius: 16px; margin-left: 2%; margin-top: 18%;">
-            <h1>Kulinarisches</h1>
+            <h1>Spezialitäten</h1>
             <h3>beim Cagitz.</h3>
         </div>
         <img class="hero-main hero" style="width: 100%; width: 100%; filter: brightness(0.5); z-index: 0;" src="../img/hero_new.jpg" alt="Gasthaus Cagitz">
@@ -108,18 +117,30 @@
         <br>
         <hr style="background-color: #999977;">
         <br>
-        <br>
         <div class="container">
-            <div class="column is-centered has-text-centered">
-                <div class="box">
-                    <h3>Weiter zu unserer <a href="../content/posts/wochenkarte.md">Speisekarte</a></h3>
-                    <h3>Weiter zu unserer <a href="../content/posts/getraenkekarte.md">Getränkekarte</a></h3>
+            <div class="columns is-centered">
+				<div class="column is-half has-text-centered">
+                    <a href="posts/speisekarte">
+                    <div class="box">
+                        <img style="border-radius: 16px; width:25%" src="img/menu.png">
+                        <hr style="background-color: #999977;">
+                        <h3>Speisekarte</h3>
+                        <p class="body2">Sehen Sie sich hier unsere Speisekarte an.</p>
+					</div>
+                </a>
+                </div>
+                <div class="column is-half has-text-centered">
+                    <a href="posts/getraenkekarte">
+                    <div class="box">
+                        <img style="border-radius: 16px; width: 25%;" src="img/drinklist.png">
+                        <hr style="background-color: #999977;">
+                        <h3>Getränkekarte</h3>
+                        <p class="body2">Sehen Sie sich hier unsere Getränkekarte an.</p>
+                    </div>
+                    </a>
                 </div>
             </div>
-            <br>
         </div>
-        <br>
-        <br>
     </section>
     <footer class="footer">
         <div class="container">
@@ -142,6 +163,7 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>

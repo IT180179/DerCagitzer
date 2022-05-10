@@ -12,20 +12,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+    console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="../index.html"> <img class="cagitzer-logo"
                         src="../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
                 <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
                         class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
                         href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a>
                 </div>
             </div>
         </div>
@@ -40,12 +49,14 @@
     <section class="section features">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-full is-centered">
+                <div class="column is-half has-text-centered">
                     <div class="box" style="text-align: center;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2553599141565!2d14.17876865368693!3d48.204127360073024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4773947db9bd08ab%3A0xde44467a4527c14e!2sGasthaus%20Cagitz!5e0!3m2!1sde!2sat!4v1585657155223!5m2!1sde!2sat" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        <br>
-                        <br>
                         <p class="body2">Unsere Urahnen haben schon gewusst warum sie hier ein Gasthaus betreiben. Das am Mühlbach gelegene Ausflugsgasthaus lädt einfach ein. Egal ob unter den 100 jährigen Kastanienbäumen, im Restaurant oder der Gaststube. Sie werden auf jeden Fall von der Vielfalt des Speisenangebotes überrascht sein. Dem Gast alle Annehmlichkeiten bei vertrauter Umgebung zu bieten ist oberstes Anliegen. Tradition und Ursprünglichkeit zeichnen das Gasthaus aus. Hier feiert man, lebt man, genießt man,...</p>
+                    </div>
+                </div>
+                <div class="column is-half has-text-centered">
+                    <div class="box" style="text-align: center;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2553599141565!2d14.17876865368693!3d48.204127360073024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4773947db9bd08ab%3A0xde44467a4527c14e!2sGasthaus%20Cagitz!5e0!3m2!1sde!2sat!4v1585657155223!5m2!1sde!2sat" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -144,6 +155,7 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>

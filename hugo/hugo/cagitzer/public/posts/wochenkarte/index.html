@@ -28,25 +28,63 @@
 
   
   
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
 
   <body class="theme-base-0b ">
   
     <main class="content container">
     <body class="index has-navbar-fixed-top">
+    <style>
+        body {
+            margin: 5%;
+        }
+
+        @media (max-width: 900px) {
+        h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 44px
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 32px
+        }
+        p.body1 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px
+        }
+        strong {
+            font-size: 16px;
+        }
+        td {
+            font-size: 12px;
+        }
+}
+    </style>
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand"> <a href="index.html"> <img class="cagitzer-logo"
+            <div class="navbar-brand"> <a href="../../index.html"> <img class="cagitzer-logo"
                         src="../../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                data-target="cagitzerNavbar" onclick="toggleBurger()" > <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
-                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
-                        class="navbar-item" href="kulinarisches.html">Kulinarisches</a> <a class="navbar-item"
-                        href="location.html">Location</a> <a class="navbar-item" href="team.html">Team</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a>
+                <div class="navbar-end"> <a class="navbar-item" href="../../geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="../../kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
+                        href="../../location.html">Standort</a> <a class="navbar-item" href="../../team.html">Über uns</a> <a
+                        class="navbar-item" href="../../cagitzer.html">Reservieren</a><a class="navbar-item" href="../../posts/speisekarte">Speisekarte</a><a class="navbar-item" href="../../posts/lieferanten">Lieferanten</a> 
                 </div>
             </div>
         </div>
@@ -85,7 +123,7 @@
 <tr>
 <td><em>Mittwoch</em></td>
 <td>Gurkenschaumsuppe <br> Piccata milanese  mit Tomatenspaghetti und Salat</td>
-<td>Gurkenschaumsuppe <br>  Spinatknödel  mit Butter/Parmesan/Ruccola/Tomaten</td>
+<td>Gurkenschaumsuppe <br>  Spinatknödel  mit Butter/Parmesan/<br>Ruccola/Tomaten</td>
 </tr>
 <tr>
 <td><em>Donnerstag</em></td>

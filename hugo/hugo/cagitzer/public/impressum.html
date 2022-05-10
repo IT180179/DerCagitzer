@@ -12,63 +12,65 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="./index.html"> <img class="cagitzer-logo"
                         src="img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
                 <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
                         class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
                         href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a>
                 </div>
             </div>
         </div>
     </nav>
     <section>
         <div style="position: absolute; z-index: 1; color: #fff; border-radius: 16px; margin-left: 2%; margin-top: 18%;">
-            <h1>Österreichische Familientradition</h1>
-            <h3>zum Genießen.</h3>
+            <h1>Impressum</h1>
         </div>
         <img class="hero-main hero" style="width: 100%; width: 100%; filter: brightness(0.5); z-index: 0;" src="img/hero_new.jpg" alt="Gasthaus Cagitz">
     </section>
     <section class="section features">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-third has-text-centered">
-                    <a href="posts/wochenkarte">
+                <div class="column is-half has-text-centered">
                     <div class="box">
-                        <img style="border-radius: 16px;" src="img/DSC_0280_bearbeitet.jpg">
-                        <hr style="background-color: #000;">
-                        <h3>Wochenplan</h3>
-                        <p class="body2">Sehen Sie sich hier unseren Wochenplan an.</p>
+                        <h3>Für den Inhalt verantwortlich:</h3>
+                        <hr style="background-color: #000; margin-bottom: 10%;">
+                        <p class="body2">Familienbetrieb Gasthaus Cagitz</p>
+                        <p class="body2">Mühlbachstraße 91</p>
+                        <p class="body2">A - 4063 Hörsching</p>
+                        <p class="body2">Telefon: <a href="tel:+43722172294">07221 72294</a></p>
+                        <p class="body2">Fax: 07221 / 722944</p>
+                        <p class="body2">Homepage: <a href="index.html">www.cagitz.at</a></p>
+                        <p class="body2">E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p>
+                        <p class="body2">UID-Nummer: ATU 22615105</p>
+                        <p class="body2">Firmenbuchnummer: 227940g</p>
                     </div>
-                  </a>
                 </div>
-                <div class="column is-third has-text-centered">
-                    <a href="posts/speisekarte">
-                    <div class="box" >
-                        <img style="border-radius: 16px;" src="img/DSC_0288_bearbeitet.jpg">
-                        <hr style="background-color: #000;">
-                        <h3>Speisekarte</h3>
-                        <p class="body2">Sehen Sie sich hier unsere Speisekarte an.</p>
-                    </div>
-                </a>
-                </div>
-                <div class="column is-third has-text-centered">
-                    <a href="cagitzer.html">
+                <div class="column is-half has-text-centered">
                     <div class="box">
-                        <img style="border-radius: 16px;" src="img/DSC_0328_bearbeitet.jpg">
+                        <h3>Allgemeine Informationen</h3>
                         <hr style="background-color: #000;">
-                        <h3>Reservieren</h3>
-                        <p class="body2">Reservieren Sie jetzt bei uns im Gasthaus Cagitz.</p>
+                        <p class="body2">Konzept, Design, Programmierung & Suchmaschinen-Optimierung:</p>
+                        <p>Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung</p>
+                        <img style="border-radius: 16px; margin-top: 10%; width: 100%;" src="../img/gasthaus2.jpg" alt="Gasthaus Cagitz">
                     </div>
-                </a>
                 </div>
             </div>
         </div>
@@ -94,6 +96,7 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>

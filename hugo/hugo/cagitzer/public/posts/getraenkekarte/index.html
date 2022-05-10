@@ -28,25 +28,63 @@
 
   
   
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
 
   <body class="theme-base-0b ">
   
     <main class="content container">
     <body class="index has-navbar-fixed-top">
+    <style>
+        body {
+            margin: 5%;
+        }
+
+        @media (max-width: 900px) {
+        h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 44px
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 32px
+        }
+        p.body1 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px
+        }
+        strong {
+            font-size: 16px;
+        }
+        td {
+            font-size: 12px;
+        }
+}
+    </style>
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand"> <a href="index.html"> <img class="cagitzer-logo"
+            <div class="navbar-brand"> <a href="../../index.html"> <img class="cagitzer-logo"
                         src="../../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                data-target="cagitzerNavbar" onclick="toggleBurger()" > <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
-                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
-                        class="navbar-item" href="kulinarisches.html">Kulinarisches</a> <a class="navbar-item"
-                        href="location.html">Location</a> <a class="navbar-item" href="team.html">Team</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a>
+                <div class="navbar-end"> <a class="navbar-item" href="../../geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="../../kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
+                        href="../../location.html">Standort</a> <a class="navbar-item" href="../../team.html">Über uns</a> <a
+                        class="navbar-item" href="../../cagitzer.html">Reservieren</a><a class="navbar-item" href="../../posts/speisekarte">Speisekarte</a><a class="navbar-item" href="../../posts/lieferanten">Lieferanten</a> 
                 </div>
             </div>
         </div>
@@ -86,11 +124,11 @@
 <tbody>
 <tr>
 <td style="text-align:left">0,1 l Birnencider  vom Hirschvogel</td>
-<td style="text-align:right">4,&ndash;</td>
+<td style="text-align:right">4,00</td>
 </tr>
 <tr>
 <td style="text-align:left">0,25 l Barita</td>
-<td style="text-align:right">4,&ndash;</td>
+<td style="text-align:right">4,00</td>
 </tr>
 <tr>
 <td style="text-align:left">0,25l Aperol Sprizz</td>
@@ -102,18 +140,15 @@
 </tr>
 <tr>
 <td style="text-align:left">0,25 l Hugo</td>
-<td style="text-align:right">4,&ndash;</td>
+<td style="text-align:right">4,00</td>
 </tr>
 <tr>
 <td style="text-align:left">0,25 l Schilerol</td>
-<td style="text-align:right">4,&ndash;</td>
-</tr>
-<tr>
-<td style="text-align:left"><br><br></td>
-<td></td>
+<td style="text-align:right">4,00</td>
 </tr>
 </tbody>
 </table>
+<p><br><br></p>
 <hr>
 <h1 id="center-stylecolor999977biercenter"><center style="color:#999977">Bier</center></h1>
 <hr>
@@ -165,12 +200,9 @@
 <td style="text-align:left"><strong>1 Flasche Gösser alkoholfrei</strong></td>
 <td style="text-align:right">4,30</td>
 </tr>
-<tr>
-<td style="text-align:left"><br><br></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p><br><br></p>
 <hr>
 <h1 id="center-stylecolor999977hausweine-18lcenter"><center style="color:#999977">Hausweine (1/8l)</center></h1>
 <hr>
@@ -194,12 +226,9 @@
 <td style="text-align:left"><strong>Gespritzer weiss oder rot</strong></td>
 <td style="text-align:right">2,80</td>
 </tr>
-<tr>
-<td style="text-align:left"><br><br></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p><br><br></p>
 <hr>
 <h1 id="center-stylecolor999977mostcenter"><center style="color:#999977">Most</center></h1>
 <hr>
@@ -227,16 +256,10 @@
 <td style="text-align:left"><strong>0,3l Most mit Almdudler</strong></td>
 <td style="text-align:right">3,20</td>
 </tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+  <br>
+  <br>
 <hr>
 <h1 id="center-stylecolor999977alkoholfreie-getränkecenter"><center style="color:#999977">Alkoholfreie Getränke</center></h1>
 <hr>
@@ -249,7 +272,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><strong>1 Flasche Schartner orange, Schartner zitrone, Coca Cola oder Almdundler</strong></td>
+<td style="text-align:left"><strong>1 Flasche Schartner orange, <br>Schartner zitrone, <br>Coca Cola oder Almdundler</strong></td>
 <td style="text-align:right">3,20</td>
 </tr>
 <tr>
@@ -265,7 +288,7 @@
 <td style="text-align:right">2,20</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>1 Flasche Pago Johannisbeer/Marille/Mango/Erdbeer/Zwetschke/Drachenfrucht</strong></td>
+<td style="text-align:left"><strong>1 Flasche Pago Johannisbeer/Marille/<br>Mango/Erdbeer/<br>Zwetschke/Drachenfrucht</strong></td>
 <td style="text-align:right">3,40</td>
 </tr>
 <tr>
@@ -274,11 +297,11 @@
 </tr>
 <tr>
 <td style="text-align:left"><strong>0,5l Limo gespritzt</strong></td>
-<td style="text-align:right">4,-</td>
+<td style="text-align:right">4,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>0,5l Soda Zitone</strong></td>
-<td style="text-align:right">3,-</td>
+<td style="text-align:right">3,00</td>
 </tr>
 </tbody>
 </table>
@@ -305,7 +328,7 @@
 </tr>
 <tr>
 <td style="text-align:left"><strong>Verlängerter</strong></td>
-<td style="text-align:right">3,-</td>
+<td style="text-align:right">3,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Melange</strong></td>

@@ -28,25 +28,63 @@
 
   
   
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
 
   <body class="theme-base-0b ">
   
     <main class="content container">
     <body class="index has-navbar-fixed-top">
+    <style>
+        body {
+            margin: 5%;
+        }
+
+        @media (max-width: 900px) {
+        h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 44px
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 32px
+        }
+        p.body1 {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px
+        }
+        strong {
+            font-size: 16px;
+        }
+        td {
+            font-size: 12px;
+        }
+}
+    </style>
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand"> <a href="index.html"> <img class="cagitzer-logo"
+            <div class="navbar-brand"> <a href="../../index.html"> <img class="cagitzer-logo"
                         src="../../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                data-target="cagitzerNavbar" onclick="toggleBurger()" > <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
-                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
-                        class="navbar-item" href="kulinarisches.html">Kulinarisches</a> <a class="navbar-item"
-                        href="location.html">Location</a> <a class="navbar-item" href="team.html">Team</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a>
+                <div class="navbar-end"> <a class="navbar-item" href="../../geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="../../kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
+                        href="../../location.html">Standort</a> <a class="navbar-item" href="../../team.html">Über uns</a> <a
+                        class="navbar-item" href="../../cagitzer.html">Reservieren</a><a class="navbar-item" href="../../posts/speisekarte">Speisekarte</a><a class="navbar-item" href="../../posts/lieferanten">Lieferanten</a> 
                 </div>
             </div>
         </div>
@@ -66,13 +104,13 @@ Wir kochen mit Natursalz!</p>
 <summary> UNSERE LIEFERANTEN</summary>
 <ul>
 <li>
-<p><strong>Saibling/Karpfen</strong> <strong><a href="https://fischzucht-taschner.sta.io/">Fischerei Taschner</a></strong> , Schleißheim</p>
+<p><strong>Saibling/Karpfen</strong> <strong><a href="https://fischzucht-taschner.sta.io/">Fischerei Taschner</a></strong>, Schleißheim</p>
 </li>
 <li>
-<p><strong>Karpfenfilet</strong> <strong><a href="https://fische-haas.sta.io/piberbach-quelle/">Fischerei Haas</a></strong> , Schiedlberg</p>
+<p><strong>Karpfenfilet</strong> <strong><a href="https://fische-haas.sta.io/piberbach-quelle/">Fischerei Haas</a></strong>, Schiedlberg</p>
 </li>
 <li>
-<p><strong>Schwein/Kalb/Rind</strong> <strong><a href="https://www.fleischerei-weiss.at/">Fleischhauerei Weiß</a></strong> , Hörsching</p>
+<p><strong>Schwein/Kalb/Rind</strong> <strong><a href="https://www.fleischerei-weiss.at/">Fleischhauerei Weiß</a></strong>, Hörsching</p>
 </li>
 <li>
 <p><strong>Schwein</strong> <strong><a href="https://www.steiner-fleischer.at/">Fleischhauerei Steiner</a></strong>, Marchtrenk</p>
@@ -141,22 +179,16 @@ Wir kochen mit Natursalz!</p>
 <tbody>
 <tr>
 <td style="text-align:left"><strong>GEGRILLTER SCHAFKÄSE</strong> <br> im Speckmantel mit Zucchini und Tomaten</td>
-<td style="text-align:right">9,&ndash;</td>
+<td style="text-align:right">9,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>CARPACCIO VOM RINDSFILET</strong> <br> mit Olivenöl / Ruccola / Parmesan</td>
-<td style="text-align:right">13,&ndash;</td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
+<td style="text-align:right">13,00</td>
 </tr>
 </tbody>
 </table>
+  <br>
+  <br>
 <hr>
 <h1 id="center-stylecolor999977suppencenter"><center style="color:#999977">Suppen</center></h1>
 <hr>
@@ -170,22 +202,16 @@ Wir kochen mit Natursalz!</p>
 <tbody>
 <tr>
 <td style="text-align:left"><strong>RINDSUPPE</strong> <br> mit Frittaten <br> oder Leberknödel</td>
-<td style="text-align:right">4,&ndash;</td>
+<td style="text-align:right">4,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>KNOBLAUCHCREMESUPPE</strong></td>
-<td style="text-align:right">5,&ndash;</td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
+<td style="text-align:right">5,00</td>
 </tr>
 </tbody>
 </table>
+  <br>
+  <br>
 <hr>
 <h1 id="center-stylecolor999977hauptspeisencenter"><center style="color:#999977">Hauptspeisen</center></h1>
 <hr>
@@ -199,42 +225,36 @@ Wir kochen mit Natursalz!</p>
 <tbody>
 <tr>
 <td style="text-align:left"><strong>ALTWIENER BACKFLEISCH</strong> <br> (Beiried in Senf Kren Panade) <br> mit Erdäpfelsalat</td>
-<td style="text-align:right">17,&ndash;</td>
+<td style="text-align:right">17,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>CORDON BLEU</strong> <br> von der Pute <br> mit Preiselbeeren / Erdäpfel / Salat</td>
-<td style="text-align:right">14,&ndash;</td>
+<td style="text-align:right">14,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>WIENER SCHNITZEL</strong> <br> vom Schwein <br> mit Preiselbeeren / Erdäpfel / Salat</td>
-<td style="text-align:right">13,&ndash;</td>
+<td style="text-align:right">13,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>BACKHENDL</strong> <br> mit Erdäpfel / Salat</td>
-<td style="text-align:right">14,&ndash;</td>
+<td style="text-align:right">14,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>GEKOCHTES RINDFLEISCH</strong> <br> mit Schnittlauchsauce / Rösterdäpfel</td>
-<td style="text-align:right">15,&ndash;</td>
+<td style="text-align:right">15,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>KALBSBRATEN</strong> <br> mit Reis / Erdäpfel / Salat</td>
-<td style="text-align:right">16,&ndash;</td>
+<td style="text-align:right">16,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>SCHWEINSBRATEN</strong> <br> mit Semmelknödel / Krautsalat</td>
-<td style="text-align:right">13,&ndash;</td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
+<td style="text-align:right">13,00</td>
 </tr>
 </tbody>
 </table>
+  <br>
+  <br>
 <hr>
 <h1 id="center-stylecolor999977vegetarischescenter"><center style="color:#999977">Vegetarisches</center></h1>
 <hr>
@@ -248,30 +268,24 @@ Wir kochen mit Natursalz!</p>
 <tbody>
 <tr>
 <td style="text-align:left"><strong>ZUCCHINI ERDÄPFEL TASCHERL</strong> <br> mit brauner Butter/Parmesan/Rucola/Tomaten</td>
-<td style="text-align:right">11,&ndash;</td>
+<td style="text-align:right">11,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>BÄRLAUCHRISOTTO</strong> <br> mit gebackenen Kräuterseitlingen</td>
-<td style="text-align:right">12,&ndash;</td>
+<td style="text-align:right">12,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>GEBACKENER EMMENTALER</strong> <br> mit Sc. Tartar / Erdäpfel / Salat</td>
-<td style="text-align:right">10,&ndash;</td>
+<td style="text-align:right">10,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>GEMÜSELAIBCHEN</strong> <br> mit Kräuterdip / Erdäpfel</td>
-<td style="text-align:right">9,&ndash;</td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"><br></td>
-<td></td>
+<td style="text-align:right">9,00</td>
 </tr>
 </tbody>
 </table>
+  <br>
+  <br>
 <hr>
 <h1 id="center-stylecolor999977salatigescenter"><center style="color:#999977">Salatiges</center></h1>
 <hr>
@@ -285,11 +299,11 @@ Wir kochen mit Natursalz!</p>
 <tbody>
 <tr>
 <td style="text-align:left"><strong>STEIRISCHER HENDLSALAT</strong></td>
-<td style="text-align:right">9,&ndash;</td>
+<td style="text-align:right">9,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>RUTZINGER BAUERNSALAT</strong> <br> mit Grammelknöderl/Speck/Zwiebel/Erdäpfel</td>
-<td style="text-align:right">10,&ndash;</td>
+<td style="text-align:right">10,00</td>
 </tr>
 </tbody>
 </table>
@@ -307,7 +321,7 @@ Wir kochen mit Natursalz!</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><strong>Dessertvariation</strong> <br> Himbeermousse/Schokokuchen/Pistazienschaum</td>
+<td style="text-align:left"><strong>Dessertvariation</strong> <br> Himbeermousse/Schokokuchen/<br>Pistazienschaum</td>
 <td style="text-align:right">7,80</td>
 </tr>
 <tr>
@@ -370,12 +384,12 @@ Wir kochen mit Natursalz!</p>
 <td style="text-align:right">6,00</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Bananensplit</strong> <br> Vanilleeis/Bananen/Schokosauce/Schlagobers</td>
+<td style="text-align:left"><strong>Bananensplit</strong> <br> Vanilleeis/Bananen/Schokosauce/<br>Schlagobers</td>
 <td style="text-align:right">6,50</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Hausbecher</strong> <br> Fruchteis/Früchte/Beerensauce/Schlagobers</td>
-<td style="text-align:right">7,-</td>
+<td style="text-align:left"><strong>Hausbecher</strong> <br> Fruchteis/Früchte/Beerensauce/<br>Schlagobers</td>
+<td style="text-align:right">7,00</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Eiscafe</strong> <br> Vanilleeis/Kaffee/Schlagobers</td>
@@ -386,11 +400,11 @@ Wir kochen mit Natursalz!</p>
 <td style="text-align:right">6,50</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Haselnussbecher</strong> <br> Haselnusseis/Schokoeis/Walnüsse/Schokosauce/Schlagobers</td>
+<td style="text-align:left"><strong>Haselnussbecher</strong> <br> Haselnusseis/Schokoeis/Walnüsse/<br>Schokosauce/Schlagobers</td>
 <td style="text-align:right">6,40</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Gemischtes Eis</strong> <br> Vanilleeis/Schokoeis/Erdbeereis/Schlagobers</td>
+<td style="text-align:left"><strong>Gemischtes Eis</strong> <br> Vanilleeis/Schokoeis/Erdbeereis/<br>Schlagobers</td>
 <td style="text-align:right">5,20</td>
 </tr>
 </tbody>

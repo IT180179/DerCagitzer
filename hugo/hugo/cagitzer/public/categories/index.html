@@ -29,6 +29,15 @@
   
   <link href="http://example.org/categories/index.xml" rel="alternate" type="application/rss+xml" title="Gasthaus Cagitz" />
   
+  <script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 </head>
 
   <body class="theme-base-0b ">

@@ -12,20 +12,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="../index.html"> <img class="cagitzer-logo"
                         src="../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
                 <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
                         class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
                         href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a> 
                 </div>
             </div>
         </div>
@@ -57,7 +66,7 @@
                         <h3>So finden Sie zu uns</h3>
                         <hr style="background-color: #000;">
                         <div class="offerbox tcenter" style="padding:30px 0 20px 0;">
-                            <iframe width="90%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.at/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=Gasthaus+Cagitz,+M%C3%BChlbachstra%C3%9Fe,+H%C3%B6rsching&amp;aq=0&amp;oq=gasthaus+cagitz&amp;sll=48.295065,14.327405&amp;sspn=0.352208,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=Gasthaus+Cagitz,&amp;hnear=M%C3%BChlbachstra%C3%9Fe,+Ober%C3%B6sterreich&amp;cid=16016003665796514126&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br><small><a href="https://maps.google.at/maps?f=q&amp;source=embed&amp;hl=de&amp;geocode=&amp;q=Gasthaus+Cagitz,+M%C3%BChlbachstra%C3%9Fe,+H%C3%B6rsching&amp;aq=0&amp;oq=gasthaus+cagitz&amp;sll=48.295065,14.327405&amp;sspn=0.352208,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=Gasthaus+Cagitz,&amp;hnear=M%C3%BChlbachstra%C3%9Fe,+Ober%C3%B6sterreich&amp;cid=16016003665796514126&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Größere Kartenansicht</a></small>
+                            <iframe width="90%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.at/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=Gasthaus+Cagitz,+M%C3%BChlbachstra%C3%9Fe,+H%C3%B6rsching&amp;aq=0&amp;oq=gasthaus+cagitz&amp;sll=48.295065,14.327405&amp;sspn=0.352208,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=Gasthaus+Cagitz,&amp;hnear=M%C3%BChlbachstra%C3%9Fe,+Ober%C3%B6sterreich&amp;cid=16016003665796514126&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br><small><a href="https://maps.google.at/maps?f=q&amp;source=embed&amp;hl=de&amp;geocode=&amp;q=Gasthaus+Cagitz,+M%C3%BChlbachstra%C3%9Fe,+H%C3%B6rsching&amp;aq=0&amp;oq=gasthaus+cagitz&amp;sll=48.295065,14.327405&amp;sspn=0.352208,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=Gasthaus+Cagitz,&amp;hnear=M%C3%BChlbachstra%C3%9Fe,+Ober%C3%B6sterreich&amp;cid=16016003665796514126&amp;z=14&amp;iwloc=A" style="color:#000;text-align:left">Größere Kartenansicht</a></small>
                         </div>
                     </div>
                 </div>
@@ -85,6 +94,7 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>

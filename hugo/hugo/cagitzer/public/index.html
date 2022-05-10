@@ -7,68 +7,88 @@
 <meta name="author" content="Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung">
 <title>Gasthaus Cagitz - Startseite</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-<link type="text/css" rel="stylesheet"
-    href="./css/style.css">
+
+<link type="text/css" rel="stylesheet" href="./css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand"> <a href="./index.html"> <img class="cagitzer-logo"
-                        src="img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
-                        aria-hidden="true"></span> </a>
+            <div class="navbar-brand">
+                <a href="./index.html">
+                    <img class="cagitzer-logo" src="img/logo.png" alt="Logo">
+                </a>
+
+                <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()">
+                    
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
-                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
-                        class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
-                        href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                <div class="navbar-end">
+                    <a class="navbar-item" href="geschichte.html">Geschichte</a> 
+                    <a class="navbar-item" href="kulinarisches.html">Spezialitäten</a>
+                     <a class="navbar-item" href="location.html">Standort</a> 
+                     <a class="navbar-item" href="team.html">Über uns</a> 
+                     <a class="navbar-item" href="cagitzer.html">Reservieren</a>
+                     <a class="navbar-item" href="posts/speisekarte">Speisekarte</a>
+                     <a class="navbar-item" href="posts/lieferanten">Lieferanten</a>
                 </div>
             </div>
         </div>
     </nav>
     <section>
-        <div style="position: absolute; z-index: 1; color: #fff; border-radius: 16px; margin-left: 2%; margin-top: 18%;">
+        <div
+            style="position: absolute; z-index: 1; color: #fff; border-radius: 16px; margin-left: 2%; margin-top: 18%;">
             <h1>Österreichische Familientradition</h1>
-            <h3>zum Genießen.</h3>
         </div>
-        <img class="hero-main hero" style="width: 100%; width: 100%; filter: brightness(0.5); z-index: 0;" src="img/hero_new.jpg" alt="Gasthaus Cagitz">
+        <img class="hero-main hero" style="width: 100%; width: 100%; filter: brightness(0.5); z-index: 0;"
+            src="img/hero_new.jpg" alt="Gasthaus Cagitz">
     </section>
     <section class="section features">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-third has-text-centered">
                     <a href="posts/wochenkarte">
-                    <div class="box">
-                        <img style="border-radius: 16px;" src="img/DSC_0280_bearbeitet.jpg">
-                        <hr style="background-color: #000;">
-                        <h3>Wochenplan</h3>
-                        <p class="body2">Sehen Sie sich hier unseren Wochenplan an.</p>
-                    </div>
-                  </a>
+                        <div class="box">
+                            <img style="border-radius: 16px;" src="img/DSC_0280_bearbeitet.jpg">
+                            <hr style="background-color: #999977;">
+                            <h3>Wochenplan</h3>
+                            <p class="body2">Sehen Sie sich hier unseren Wochenplan an.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="column is-third has-text-centered">
-                    <a href="posts/getraenkekarte">
-                    <div class="box" >
-                        <img style="border-radius: 16px;" src="img/DSC_0288_bearbeitet.jpg">
-                        <hr style="background-color: #000;">
-                        <h3>Speisekarte</h3>
-                        <p class="body2">Sehen Sie sich hier unsere Speisekarte an.</p>
-                    </div>
-                </a>
+                    <a href="posts/speisekarte">
+                        <div class="box">
+                            <img style="border-radius: 16px;" src="img/DSC_0288_bearbeitet.jpg">
+                            <hr style="background-color: #999977;">
+                            <h3>Speisekarte</h3>
+                            <p class="body2">Sehen Sie sich hier unsere Speisekarte an.</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="column is-third has-text-centered">
                     <a href="cagitzer.html">
-                    <div class="box">
-                        <img style="border-radius: 16px;" src="img/DSC_0328_bearbeitet.jpg">
-                        <hr style="background-color: #000;">
-                        <h3>Reservieren</h3>
-                        <p class="body2">Reservieren Sie jetzt bei uns im Gasthaus Cagitz.</p>
-                    </div>
-                </a>
+                        <div class="box">
+                            <img style="border-radius: 16px;" src="img/DSC_0328_bearbeitet.jpg">
+                            <hr style="background-color: #999977;">
+                            <h3>Reservieren</h3>
+                            <p class="body2">Reservieren Sie jetzt bei uns im Gasthaus Cagitz.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -78,15 +98,25 @@
             <div class="columns">
                 <div class="column"> <strong>Familie Cagitz:</strong>
                     <ul>
-                        <li> <p>Mühlbachstraße 91 4063 Hörsching</p></li>
-                        <li> <p>Tel. <a href="tel:+43722172294">07221 72294</a></p></li>
-                        <li> <p>E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p></li>
+                        <li>
+                            <p>Mühlbachstraße 91 4063 Hörsching</p>
+                        </li>
+                        <li>
+                            <p>Tel. <a href="tel:+43722172294">07221 72294</a></p>
+                        </li>
+                        <li>
+                            <p>E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p>
+                        </li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Öffnungszeiten:</strong>
                     <ul>
-                        <li> <p>MO u. DI Ruhetag</p></li>
-                        <li> <p>MI-SO von 11.00-24.00</p></li>
+                        <li>
+                            <p>MO u. DI Ruhetag</p>
+                        </li>
+                        <li>
+                            <p>MI-SO von 11.00-24.00</p>
+                        </li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Gasthaus:</strong>
@@ -94,15 +124,21 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>
                     <ul>
                         <li> <a href="">Rindfleischwochen! 12.01.2022</a>
-                        <hr style="background-color: #000;">
-                        <li><p><a href="https://www.kulinarisches-erbe.at/" target="_blank"><img src="img/ama-gutesiegel.jpeg" style="width: 30%;">   </a> <a href="https://www.kultiwirte.at/" target="_blank"><img src="img/kultiwirt.png"  style="width: 30%;"></a>
-                        </p></li>
-                        
+                            <hr style="background-color: #000;">
+                        <li>
+                            <p><a href="https://www.kulinarisches-erbe.at/" target="_blank"><img
+                                        src="img/ama-gutesiegel.jpeg" style="width: 30%;"> </a> <a
+                                    href="https://www.kultiwirte.at/" target="_blank"><img src="img/kultiwirt.png"
+                                        style="width: 30%;"></a>
+                            </p>
+                        </li>
+
                     </ul>
                 </div>
             </div>

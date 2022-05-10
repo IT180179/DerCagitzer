@@ -12,20 +12,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+<script>
+    const toggleBurger = () => {
+        console.log("works")
+    let burgerIcon = document.getElementById('burger');
+    let dropMenu = document.getElementById('cagitzerNavbar');
+    burgerIcon.classList.toggle('is-active');
+    dropMenu.classList.toggle('is-active');
+  }
+</script>
 <body class="index has-navbar-fixed-top">
     <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="../index.html"> <img class="cagitzer-logo"
                         src="../img/logo.png" alt="Logo">
-                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="cagitzerNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a>
             </div>
             <div id="cagitzerNavbar" class="navbar-menu">
                 <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
                         class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
                         href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
-                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a> 
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a>
                 </div>
             </div>
         </div>
@@ -42,7 +51,7 @@
                 <div class="column is-half has-text-centered">
                     <div class="box">
                         <h3>Die Köche</h3>
-						<hr style="background-color: #000;">
+						<hr style="background-color: #999977;">
                         <p class="body2">
                             <img style="border-radius: 16px;" src="../img/team1.jpg">
                         </p>
@@ -51,7 +60,7 @@
                 <div class="column is-half has-text-centered">
                     <div class="box">
                         <h3>Die KellnerInnen</h3>
-						<hr style="background-color: #000;">
+						<hr style="background-color: #999977;">
                         <p class="body2">
                             <img style="border-radius: 16px;" src="../img/team2.jpg">
                         </p>
@@ -65,7 +74,7 @@
                 <div class="column is-half has-text-centered">
                     <div class="box">
                         <img style="border-radius: 16px;" src="../img/fam.jpg">
-                        <hr style="background-color: #000;">
+                        <hr style="background-color: #999977;">
                         <h3>Wir suchen dich</h3>
                         <p class="body2">Du bist auf der Suche nach einem abwechslungsreichen Job in der spannenden Welt der Gastronomie in einem der Traditionsbetriebe in Oberösterreich? Dann bist du bei uns genau richtig!</p>
                     </div>
@@ -110,6 +119,7 @@
                         <li> <a href="kontakt.html">Kontakt</a>
                         <li> <a href="impressum.html">Impressum</a>
                         <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                        <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
                     </ul>
                 </div>
                 <div class="column"> <strong>Terminvorschau:</strong>
