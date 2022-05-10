@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gasthaus Cagitz Homepage">
+    <meta name="author" content="Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung">
+    <title>Cagitzer - Reservierung</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet"
+        href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
+    <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      const toggleBurger = () => {
+      let burgerIcon = document.getElementById('burger');
+      let dropMenu = document.getElementById('cagitzerNavbar');
+      burgerIcon.classList.toggle('is-active');
+      dropMenu.classList.toggle('is-active');
+      }
+  </script>
+    <body class="index has-navbar-fixed-top">
+      <nav class="navbar cagitzer-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand"> <a href="../index.html"> <img class="cagitzer-logo"
+                        src="../img/logo.png" alt="Logo">
+                </a> <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false"
+                    data-target="cagitzerNavbar" onclick="toggleBurger()"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                        aria-hidden="true"></span> </a>
+            </div>
+            <div id="cagitzerNavbar" class="navbar-menu">
+                <div class="navbar-end"> <a class="navbar-item" href="geschichte.html">Geschichte</a> <a
+                        class="navbar-item" href="kulinarisches.html">Spezialitäten</a> <a class="navbar-item"
+                        href="location.html">Standort</a> <a class="navbar-item" href="team.html">Über uns</a> <a
+                        class="navbar-item" href="cagitzer.html">Reservieren</a><a class="navbar-item" href="posts/speisekarte">Speisekarte</a><a class="navbar-item" href="posts/lieferanten">Lieferanten</a> 
+                </div>
+            </div>
+        </div>
+      </nav>
+
+      <section class="section features is-centered">
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Reservierung von</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded has-icons-left">
+                <input class="input"  type="text" placeholder= "Name">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control is-expanded has-icons-left has-icons-right">
+                <input class="input is-success" type="email" placeholder="Email">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="field is-horizontal">
+          <div class="field-label"></div>
+          <div class="field-body">
+            <div class="field is-expanded">
+              <div class="field has-addons">
+                <p class="control">
+                  <a class="button is-static">
+                    +43
+                  </a>
+                </p>
+                <p class="control is-expanded">
+                  <input class="input" type="tel" placeholder="Ihre Telefonnummer">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Anmerkungen</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <textarea class="textarea" placeholder=" (Kinder, Haustiere, ...)"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        </div>
+          
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <a style="color:#999977;" href="./Clickdummy_Reservierung.html">
+                <button class="button is-link is-light" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
+              </a>  
+            </div>
+            <div class="control">
+              <a style="color:#999977;" href=""></a>
+                <button class="button is-link" style="background-color: #999977;">Weiter</button>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+          <div class="columns">
+              <div class="column"> <strong>Familie Cagitz:</strong>
+                  <ul>
+                      <li> <p>Mühlbachstraße 91 4063 Hörsching</p></li>
+                      <li> <p>Tel. <a href="tel:+43722172294">07221 72294</a></p></li>
+                      <li> <p>E-Mail: <a href="mailto:gasthaus@cagitz.at">gasthaus@cagitz.at</a></p></li>
+                  </ul>
+              </div>
+              <div class="column"> <strong>Öffnungszeiten:</strong>
+                  <ul>
+                      <li> <p>MO u. DI Ruhetag</p></li>
+                      <li> <p>MI-SO von 11.00-24.00</p></li>
+                  </ul>
+              </div>
+              <div class="column"> <strong>Gasthaus:</strong>
+                  <ul>
+                      <li> <a href="kontakt.html">Kontakt</a>
+                      <li> <a href="impressum.html">Impressum</a>
+                      <li> <a href="team.html">Stellenangebote beim Cagitz</a>
+                      <li> <a href="posts/speisekarte">Unsere Speisekarte</a></li>
+                  </ul>
+              </div>
+              <div class="column"> <strong>Terminvorschau:</strong>
+                  <ul>
+                      <li> <a href="">Rindfleischwochen! 12.01.2022</a>
+                      <hr style="background-color: #000;">
+                      <li><p><a href="https://www.kulinarisches-erbe.at/" target="_blank"><img src="../img/ama-gutesiegel.jpeg" style="width: 30%;">   </a> <a href="https://www.kultiwirte.at/" target="_blank"><img src="../img/kultiwirt.png"  style="width: 30%;"></a>
+                      </p></li>
+                      
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>
