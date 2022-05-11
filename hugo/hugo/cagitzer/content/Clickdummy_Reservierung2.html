@@ -46,6 +46,14 @@
 
   });
 
+  $("#backwardsForm").click(function(){
+	console.log("test3s")
+	$("#nameform").hide();
+  $("#timeform").show();
+    let name = document.getElementById("inputname").value;
+    document.getElementById("resume").innerHTML += " <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label> <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label>"
+  });
+
   
 
 
@@ -136,7 +144,7 @@
           
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
-              <a style="color:#999977;" href="./Clickdummy_Reservierung.html">
+              <a style="color:#999977;" href="./cagitzer.html">
                 <button class="button is-link is-light" id="back" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
               </a>  
             </div>
@@ -215,12 +223,9 @@
       
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
-   
-                <button class="button is-link is-light" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
-           
+                <button class="button is-link is-light" id="backwardsForm" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
             </div>
             <div class="control">
-              
                 <button class="button is-link"  id="forwardForm" style="background-color: #999977;">Weiter</button>
               </a>
             </div>
