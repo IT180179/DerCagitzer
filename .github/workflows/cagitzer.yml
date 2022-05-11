@@ -47,7 +47,7 @@ jobs:
       - name: deploy
         run: |           
           ssh server sudo rm -rfv /var/www/html/*
-          scp *.tgz server:/var/www/html
+          sudo scp *.tgz server:/var/www/html
           ssh server sudo tar -xvzf public.tgz
           ssh server pwd
           ssh server sudo ls /var/www/html/
