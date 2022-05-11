@@ -28,15 +28,28 @@
 
       $(document).ready(function(){
       
-    
+        $("#timeform").show();
+  $("#nameform").hide();
+  $("#resume").hide();
       $("#forward").click(function(){
 	console.log("test")
 	$("#timeform").hide();
   $("#nameform").show();
 });
+  $("#forwardForm").click(function(){
+	console.log("test2s")
+	$("#nameform").hide();
+  $("#resume").show();
+    let name = document.getElementById("inputname").value;
+    document.getElementById("resume").innerHTML += " <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label> <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label>"
+    
+
+  });
+
+  
 
 
-})
+});
  
   </script>
     <body class="index has-navbar-fixed-top">
@@ -58,11 +71,19 @@
         </div>
       </nav>
 
+
+
       <section class="section features is-centered">
+
+        <div id="resume">
+         
+
+        </div>
+
         <div id="timeform">
         <label class="label">Reservierung am</label>
                        
-            <Label>Suche dir dein gewünschtes Datum:
+            <label>Suche dir dein gewünschtes Datum:</label>
               <input type="date">
          
   
@@ -129,7 +150,8 @@
       </div>
 
 
-      <section class="section features is-centered">
+     
+        <div id="nameform">
         <div class="field is-horizontal">
           <div class="field-label is-normal">
             <label class="label">Reservierung von</label>
@@ -137,7 +159,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input"  type="text" placeholder= "Name">
+                <input class="input"  type="text" placeholder= "Name" id="inputname">
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
@@ -188,18 +210,18 @@
           </div>
         </div>
 
-        </div>
+    
           
-        <div id="nameform" style="visibility: none;">
+      
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
-              <a style="color:#999977;" href="./cagitzer.html">
+   
                 <button class="button is-link is-light" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
-              </a>  
+           
             </div>
             <div class="control">
-              <a style="color:#999977;" href=""></a>
-                <button class="button is-link" style="background-color: #999977;">Weiter</button>
+              
+                <button class="button is-link"  id="forwardForm" style="background-color: #999977;">Weiter</button>
               </a>
             </div>
           </div>
