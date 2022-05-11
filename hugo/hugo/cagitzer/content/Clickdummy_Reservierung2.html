@@ -46,12 +46,23 @@
 
   });
 
+<<<<<<< HEAD
   $("#backForm").click(function(){
 	$("#nameform").hide();
   $("#timeform").show();
     
 
   });
+=======
+  $("#backwardsForm").click(function(){
+	console.log("test3s")
+	$("#nameform").hide();
+  $("#timeform").show();
+    let name = document.getElementById("inputname").value;
+    document.getElementById("resume").innerHTML += " <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label> <label class='is-centered'>Danke für deine Bestellung "+ name +"!</label>"
+  });
+
+>>>>>>> bbcc2bd6708ec7228e211e66481d924ea449f16c
   
 
 
@@ -222,9 +233,13 @@
       
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
+<<<<<<< HEAD
    
                 <button class="button is-link is-light"  id="backForm" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
            
+=======
+                <button class="button is-link is-light" id="backwardsForm" style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
+>>>>>>> bbcc2bd6708ec7228e211e66481d924ea449f16c
             </div>
             <div class="control">
                 <button class="button is-link"  id="forwardForm" style="background-color: #999977;">Weiter</button>
