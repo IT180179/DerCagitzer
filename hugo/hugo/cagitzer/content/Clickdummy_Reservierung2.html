@@ -16,6 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
 <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+  crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script defer>
@@ -38,6 +42,16 @@
       $("#nameform").hide();
     });
 
+    $("#backZweiteSeite").click(function () {
+      $("#zweiteSeite").hide();
+      $("#ersteSeite").show();
+    });
+
+    $("#forwardZweiteSeite").click(function () {
+      $("#nameform").show();
+      $("#zweiteSeite").hide();
+    });
+
     $("#forwardForm").click(function () {
       console.log("test2s")
       $("#nameform").hide();
@@ -48,9 +62,21 @@
 
     $("#backForm").click(function () {
       $("#nameform").hide();
-      $("#ersteSeite").show();
+      $("#zweiteSeite").show();
     });
   });
+
+  $("#date").datepicker({
+    beforeShowDay: noDays
+  });
+
+  function noDays(date) {
+    if(date.getDay() == 1 || date.getDay() == 2) {
+      return [false, "geschlossen", "Montags und Dienstags geschlossen"];
+    }else{
+      return [true, "", ""];
+    }
+  }
 
   function getDate(){
     var today = new Date();
@@ -86,54 +112,67 @@
 
         </div>
         <div id="ersteSeite">
-          <div class="field is-grouped is-grouped-centered">
+          <label>Wählen Sie ihren gewünschten Tag:</label>
+          <div class="field is-grouped-centered">
             <div class="control">
               <label class="radio"
-                style="margin-bottom: 15%; margin-top: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
+                style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question" disabled>
+                <br>
                 Montag - geschlossen
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; margin-top: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question" disabled>
+                <br>
                 Dienstag - geschlossen
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; margin-top: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 <input type="radio" name="question">
-                Mittwoch - 18.05.2022
+                <br>
+                Mittwoch - 18.05.
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 <input type="radio" name="question">
-                Donnerstag - 19.05.2022
+                <br>
+                Donnerstag - 19.05.
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 <input type="radio" name="question">
-                Freitag - 20.05.2022
+                <br>
+                Freitag - 20.05.
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 <input type="radio" name="question">
-                Samstag - 21.05.2022
+                <br>
+                Samstag - 21.05.
               </label>
               <br>
               <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                style="text-align: center; width: 100%; margin-bottom: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 <input type="radio" name="question">
-                Sonntag - 22.05.2022
+                <br>
+                Sonntag - 22.05.
               </label>
             </div>
-            <div class="field is-centered"
-            style="margin-left: 28%; width: 44%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-            <label class="label is-centered" style="margin-left: 10%;">Personen</label>
-            <div class="control is-centered" style="margin-left: 15%;">
+          </div>
+          <div id="timeform" style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+            <label>Späteres Datum:</label>
+            <input id="date" type="date" onload="getDate()">
+          </div>
+          <div class="field is-centered"
+            style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+            <label class="label is-centered">Personen</label>
+            <div class="control is-centered">
               <div class="select is-centered">
                 <select>
                   <option>1</option>
@@ -148,42 +187,6 @@
               </div>
             </div>
           </div>
-          </div>
-          <div id="timeform">
-            <label>Suchen Sie sich ihr gewünschtes Datum aus:</label>
-            <input id="date" type="date" onload="getDate()">
-          </div>
-        </div>
-
-        <div id="zweiteSeite">
-          <label class="is-centered">Wählen Sie ihren gewünschten Zeitraum aus:</label>
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control">
-              <label class="radio"
-                style="margin-bottom: 15%; margin-top: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                11:30 - 13:00
-              </label>
-              <br>
-              <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                13:00 - 14:30
-              </label>
-              <br>
-              <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                17:30 - 19:00
-              </label>
-              <br>
-              <label class="radio"
-                style="margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                19:00 - 20:30
-              </label>
-            </div>
-          </div>
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
               <a style="color:#999977;" href="./cagitzer.html">
@@ -193,6 +196,50 @@
             </div>
             <div class="control">
               <button class="button is-link" id="forward" style="background-color: #999977;">Weiter</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="zweiteSeite">
+          <label class="is-centered">Wählen Sie ihre gewünschte Zeit:</label>
+          <div class="field is-grouped-centered">
+            <div class="control">
+              <label class="radio"
+                style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question">
+                <br>
+                11:30 - 13:00
+              </label>
+              <br>
+              <label class="radio"
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question">
+                <br>
+                13:00 - 14:30
+              </label>
+              <br>
+              <label class="radio"
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question">
+                <br>
+                17:30 - 19:00
+              </label>
+              <br>
+              <label class="radio"
+                style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
+                <input type="radio" name="question">
+                <br>
+                19:00 - 20:30
+              </label>
+            </div>
+          </div>
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button class="button is-link is-light" id="backZweiteSeite"
+                style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
+            </div>
+            <div class="control">
+              <button class="button is-link" id="forwardZweiteSeite" style="background-color: #999977;">Weiter</button>
             </div>
           </div>
         </div>
@@ -221,7 +268,7 @@
               </div>
               <div class="field">
                 <p class="control is-expanded has-icons-left has-icons-right">
-                  <input class="input is-success" type="email" placeholder="Email*">
+                  <input class="input is-success" type="email" placeholder="Email">
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
