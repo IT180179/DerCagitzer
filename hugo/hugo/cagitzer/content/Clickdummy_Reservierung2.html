@@ -16,12 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
 <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
-<script
-  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
-  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
-  crossorigin="anonymous"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script defer>
   const toggleBurger = () => {
     let burgerIcon = document.getElementById('burger');
@@ -65,10 +63,23 @@
       $("#zweiteSeite").show();
     });
   });
-
-  $("#date").datepicker({
-    beforeShowDay: noDays
+    
+  $( function(){
+  $("#datepicker").datepicker({
+    inline: true,
+    dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+    beforeShowDay: noDays,
+    currentText: 'heute',
+		monthNames: ['Januar','Februar','März','April','Mai','Juni',
+		'Juli','August','September','Oktober','November','Dezember'],
+		monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun',
+		'Jul','Aug','Sep','Okt','Nov','Dez'],
+		dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
+		dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
+		dayNamesMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
+		weekHeader: 'KW',
   });
+});
 
   function noDays(date) {
     if(date.getDay() == 1 || date.getDay() == 2) {
@@ -167,7 +178,7 @@
           </div>
           <div id="timeform" style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
             <label>Späteres Datum:</label>
-            <input id="date" type="date" onload="getDate()">
+            <div id="datepicker"></div>
           </div>
           <div class="field is-centered"
             style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
