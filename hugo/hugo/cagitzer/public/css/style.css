@@ -4,6 +4,14 @@ body {
 	overflow-x: hidden
 }
 
+.ui-datepicker {
+	width: 216px;
+  height: auto;
+  margin: 5px auto 0;
+  font: 9pt Arial, sans-serif;
+}
+
+
 a:hover {
 	color: #000;
 	text-decoration: underline
