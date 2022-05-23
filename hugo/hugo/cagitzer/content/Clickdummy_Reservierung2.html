@@ -29,25 +29,25 @@
   }
 
   $(document).ready(function () {
-    $("#ersteSeite").show();
-    $("#zweiteSeite").hide();
+    $("#datumAuswaehlen").show();
+    $("#personenAnzahlAuswaehlen").hide();
     $("#nameform").hide();
     $("#resume").hide();
-    $("#forward").click(function () {
+    $(".forward").click(function () {
       console.log("test")
-      $("#ersteSeite").hide();
-      $("#zweiteSeite").show();
+      $("#datumAuswaehlen").hide();
+      $("#personenAnzahlAuswaehlen").show();
       $("#nameform").hide();
     });
 
     $("#backZweiteSeite").click(function () {
-      $("#zweiteSeite").hide();
-      $("#ersteSeite").show();
+      $("#personenAnzahlAuswaehlen").hide();
+      $("#datumAuswaehlen").show();
     });
 
     $("#forwardZweiteSeite").click(function () {
       $("#nameform").show();
-      $("#zweiteSeite").hide();
+      $("#personenAnzahlAuswaehlen").hide();
     });
 
     $("#forwardForm").click(function () {
@@ -60,7 +60,7 @@
 
     $("#backForm").click(function () {
       $("#nameform").hide();
-      $("#zweiteSeite").show();
+      $("#personenAnzahlAuswaehlen").show();
     });
   });
     
@@ -122,56 +122,42 @@
         <div id="resume">
 
         </div>
-        <div id="ersteSeite">
+        <div id="datumAuswaehlen">
           <label>Wählen Sie ihren gewünschten Tag:</label>
           <div class="field is-grouped-centered">
             <div class="control">
               <label class="radio"
                 style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question" disabled>
-                <br>
                 Montag - geschlossen
               </label>
               <br>
               <label class="radio"
                 style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question" disabled>
-                <br>
                 Dienstag - geschlossen
               </label>
               <br>
-              <label class="radio"
+              <label class="radio forward"
                 style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                <br>
                 Mittwoch - 18.05.
               </label>
               <br>
-              <label class="radio"
+              <label class="radio forward"
                 style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                <br>
                 Donnerstag - 19.05.
               </label>
               <br>
-              <label class="radio"
+              <label class="radio forward"
                 style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                <br>
                 Freitag - 20.05.
               </label>
               <br>
-              <label class="radio"
+              <label class="radio forward"
                 style="text-align: center; width: 100%; margin-bottom: 15%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                <br>
                 Samstag - 21.05.
               </label>
               <br>
-              <label class="radio"
+              <label class="radio forward"
                 style="text-align: center; width: 100%; margin-bottom: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
-                <input type="radio" name="question">
-                <br>
                 Sonntag - 22.05.
               </label>
             </div>
@@ -180,6 +166,20 @@
             <label>Späteres Datum:</label>
             <div id="datepicker"></div>
           </div>
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <a style="color:#999977;" href="./cagitzer.html">
+                <button class="button is-link is-light" id="back"
+                  style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
+              </a>
+            </div>
+            <div class="control">
+              <button class="button is-link forward" style="background-color: #999977;">Weiter</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="personenAnzahlAuswaehlen">
           <div class="field is-centered"
             style="text-align: center; width: 100%; margin-bottom: 15%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
             <label class="label is-centered">Personen</label>
@@ -200,18 +200,16 @@
           </div>
           <div class="field is-grouped is-grouped-centered">
             <div class="control">
-              <a style="color:#999977;" href="./cagitzer.html">
-                <button class="button is-link is-light" id="back"
-                  style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
-              </a>
+              <button class="button is-link is-light" id="backZweiteSeite"
+                style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
             </div>
             <div class="control">
-              <button class="button is-link" id="forward" style="background-color: #999977;">Weiter</button>
+              <button class="button is-link" id="forwardZweiteSeite" style="background-color: #999977;">Weiter</button>
             </div>
           </div>
         </div>
 
-        <div id="zweiteSeite">
+        <div id="timeslotAuswaehlen">
           <label class="is-centered">Wählen Sie ihre gewünschte Zeit:</label>
           <div class="field is-grouped-centered">
             <div class="control">
