@@ -31,7 +31,7 @@
 
   $(document).ready(function () {
 
-    
+    $(".steps-content").hide();
 
     const today = new Date();
 
@@ -125,6 +125,7 @@
     $(".forward").click(function () {
       $("#datumAuswaehlen").hide();
       $("#personenAnzahlAuswaehlen").show();
+      $(".steps-content").show();
       $("#nameform").hide();
       $("#calenderWzrd").removeClass("is-active");
       $("#userWzrd").addClass("is-active");
@@ -158,7 +159,6 @@
       $("#nameform").show();
       $("#timeslotWzrd").removeClass("is-active");
       $("#formWzrd").addClass("is-active");
-      
     })
 
     $(".forwardForm").click(function () {
@@ -166,9 +166,11 @@
       $("#nameform").hide();
       $("#resume").show();
       let name = document.getElementById("inputvorname").value + " " + document.getElementById("inputnachname").value;
-      document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung Herr/Frau " + name + "!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
+      person = document.getElementById("personSelection").value;
+      document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am " + date + " für " + person + " Personen in der Zeit von " + date + " Herr/Frau " + name + "!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
       $("#readyWzrd").addClass("is-active");
+      $(".steps-content").hide();
     });
 
     $(".backForm").click(function () {
@@ -199,7 +201,7 @@
       $("#nameform").hide();
       $("#calenderWzrd").removeClass("is-active");
       $("#userWzrd").addClass("is-active");
-      date = $(this).val();
+      var date = $(this).val();
       document.getElementById("data").innerHTML += date;
     }
   });
@@ -213,13 +215,8 @@
     }
   }
 
-  function getDate() {
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    document.getElementById("date").value = date;
-  }
-
   function timeslot(time) {
+    var timeChosen = time;
     document.getElementById("data").innerHTML += time;
   }
 
