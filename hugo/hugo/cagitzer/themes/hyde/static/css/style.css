@@ -24,7 +24,7 @@ body {
 }
 
 .ui-datepicker-calendar tbody tr td a{
-	color: green;
+	color: #999977;
 }
 
 .ui-datepicker-prev, .ui-datepicker-next{

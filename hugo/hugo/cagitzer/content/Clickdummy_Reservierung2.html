@@ -7,7 +7,7 @@
 <meta name="author" content="Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung">
 <title>Cagitzer - Reservierung</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css">
+<link type="text/css" rel="stylesheet" href="../css/bulma-o-steps.css">
 <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -30,6 +30,8 @@
   }
 
   $(document).ready(function () {
+
+    
 
     const today = new Date();
 
@@ -109,6 +111,10 @@
       document.getElementById("saturday").innerHTML = "Samstag - " + today6.toLocaleDateString('de-DE');
       document.getElementById("sunday").innerHTML = "Sonntag - " + today.toLocaleDateString('de-DE') + "- heute";
     }
+
+    let date;
+    let persons;
+   
      
     $("#datumAuswaehlen").show();
     $("#personenAnzahlAuswaehlen").hide();
@@ -122,8 +128,6 @@
       $("#nameform").hide();
       $("#calenderWzrd").removeClass("is-active");
       $("#userWzrd").addClass("is-active");
-      $("#userWzrdColor").css({"background-color": "#999977"});
-      $("#calenderWzrd ::after").css({"background-color": "#999977"});
     });
 
     $(".backZweiteSeite").click(function () {
@@ -131,7 +135,6 @@
       $("#datumAuswaehlen").show();
       $("#calenderWzrd").addClass("is-active");
       $("#userWzrd").removeClass("is-active");
-      $("#userWzrdColor").css({"background-color": "#dbdbdb"});
     });
 
     $(".forwardZweiteSeite").click(function () {
@@ -139,7 +142,8 @@
       $("#personenAnzahlAuswaehlen").hide();
       $("#userWzrd").removeClass("is-active");
       $("#timeslotWzrd").addClass("is-active");
-      $("#timeWzrdColor").css({"background-color": "#999977"});
+      person = document.getElementById("personSelection").value;
+      document.getElementById("data").innerHTML += person;
     });
 
     $(".backDritteSeite").click(function() {
@@ -147,7 +151,6 @@
       $("#personenAnzahlAuswaehlen").show();
       $("#userWzrd").addClass("is-active");
       $("#timeslotWzrd").removeClass("is-active");
-      $("#timeWzrdColor").css({"background-color": "#dbdbdb"});
     })
 
     $(".forwardDritteSeite").click(function() {
@@ -155,7 +158,7 @@
       $("#nameform").show();
       $("#timeslotWzrd").removeClass("is-active");
       $("#formWzrd").addClass("is-active");
-      $("#formWzrdColor").css({"background-color": "#999977"});
+      
     })
 
     $(".forwardForm").click(function () {
@@ -166,7 +169,6 @@
       document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung Herr/Frau " + name + "!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
       $("#readyWzrd").addClass("is-active");
-      $("#finishWzrdColor").css({"background-color": "#999977"});
     });
 
     $(".backForm").click(function () {
@@ -174,7 +176,6 @@
       $("#timeslotAuswaehlen").show();
       $("#formWzrd").removeClass("is-active");
       $("#timeslotWzrd").addClass("is-active");
-      $("#formWzrdColor").css({"background-color": "#dbdbdb"});
     });
   });
     
@@ -198,7 +199,8 @@
       $("#nameform").hide();
       $("#calenderWzrd").removeClass("is-active");
       $("#userWzrd").addClass("is-active");
-      
+      date = $(this).val();
+      document.getElementById("data").innerHTML += date;
     }
   });
 });
@@ -211,13 +213,15 @@
     }
   }
 
-  function getDate(){
+  function getDate() {
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     document.getElementById("date").value = date;
   }
 
-
+  function timeslot(time) {
+    document.getElementById("data").innerHTML += time;
+  }
 
 </script>
 
@@ -291,6 +295,10 @@
             </div>
           </li>
         </ul>
+
+        <div id="data">
+          
+        </div>
       </div>
       <div class="box">
         <div id="resume">
@@ -340,9 +348,6 @@
                   style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
               </a>
             </div>
-            <div class="control">
-              <button class="button is-link forward" style="background-color: #999977;">Weiter</button>
-            </div>
           </div>
         </div>
 
@@ -353,15 +358,15 @@
             <label class="label is-centered">Personen</label>
             <div class="control is-centered">
               <div class="select is-centered">
-                <select>
-                  <option>1</option>
-                  <option selected="selected">2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
+                <select id="personSelection">
+                  <option value="1">1</option>
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
                 </select>
               </div>
             </div>
@@ -381,22 +386,22 @@
           <label class="is-centered">Wählen Sie ihre gewünschte Zeit:</label>
           <div class="field is-grouped-centered">
             <div class="control">
-              <label class="radio forwardDritteSeite"
+              <label class="radio forwardDritteSeite" onclick="timeslot('11:30 - 13:00')"
                 style="text-align: center; width: 100%; margin-bottom: 5%; margin-top: 10%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 11:30 - 13:00
               </label>
               <br>
-              <label class="radio forwardDritteSeite"
+              <label class="radio forwardDritteSeite" onclick="timeslot('13:00 - 14:30')"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 13:00 - 14:30
               </label>
               <br>
-              <label class="radio forwardDritteSeite"
+              <label class="radio forwardDritteSeite" onclick="timeslot('17:30 - 19:00')"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 17:30 - 19:00
               </label>
               <br>
-              <label class="radio forwardDritteSeite"
+              <label class="radio forwardDritteSeite" onclick="timeslot('19:00 - 20:30')"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
                 19:00 - 20:30
               </label>
@@ -406,9 +411,6 @@
             <div class="control">
               <button class="button is-link is-light backDritteSeite"
                 style="color:#999977; background-color: rgba(153, 153, 119, 0.1);">Zurück</button>
-            </div>
-            <div class="control">
-              <button class="button is-link forwardDritteSeite" style="background-color: #999977;">Weiter</button>
             </div>
           </div>
         </div>
