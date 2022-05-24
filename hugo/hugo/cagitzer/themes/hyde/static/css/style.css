@@ -4,14 +4,16 @@ body {
 	overflow-x: hidden
 }
 
-.ui-datepicker {
-	font-size: 1.2em;
+#datepicker {
+	width: 100%;
 }
 
-
+.ui-datepicker {
+	text-align: center;
+	font-size: 1em;
+}
 
 .ui-datepicker-calendar thead tr th{
-	
 	padding: 1.5vw;	
 	font-size: 1.2em;
 }
@@ -260,11 +262,11 @@ html.has-navbar-fixed-top {
 
 .cagitzer-navbar a.navbar-item:hover {
 	background-color: inherit;
-	text-decoration: none
+	text-decoration: none;
 }
 
 .cagitzer-navbar a.navbar-item:hover {
-	color: #999977
+	color: #999977;
 }
 
 .cagitzer-navbar .language-selector .icon {
