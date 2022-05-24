@@ -29,6 +29,10 @@
     dropMenu.classList.toggle('is-active');
   }
 
+    let date;
+    let persons;
+    let timeChosen;
+
   $(document).ready(function () {
 
     $(".steps-content").hide();
@@ -112,9 +116,7 @@
       document.getElementById("sunday").innerHTML = "Sonntag - " + today.toLocaleDateString('de-DE') + "- heute";
     }
 
-    let date;
-    let persons;
-   
+ 
      
     $("#datumAuswaehlen").show();
     $("#personenAnzahlAuswaehlen").hide();
@@ -144,7 +146,7 @@
       $("#userWzrd").removeClass("is-active");
       $("#timeslotWzrd").addClass("is-active");
       person = document.getElementById("personSelection").value;
-      document.getElementById("data").innerHTML += person;
+      document.getElementById("data").innerHTML += "<br>Reserviert für: <strong>" + person + " Personen</strong>";
     });
 
     $(".backDritteSeite").click(function() {
@@ -162,12 +164,12 @@
     })
 
     $(".forwardForm").click(function () {
-      console.log("test2s")
       $("#nameform").hide();
       $("#resume").show();
       let name = document.getElementById("inputvorname").value + " " + document.getElementById("inputnachname").value;
       person = document.getElementById("personSelection").value;
-      document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am " + date + " für " + person + " Personen in der Zeit von " + date + " Herr/Frau " + name + "!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
+      
+      document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am <strong>" + date + "</strong> für <strong>" + person + " Personen </strong> in der Zeit von <strong>" + timeChosen + "</strong> Herr/Frau <strong>" + name + "</strong>!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
       $("#readyWzrd").addClass("is-active");
       $(".steps-content").hide();
@@ -195,14 +197,16 @@
 		dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
 		dayNamesMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
 		weekHeader: 'KW',
+    dateFormat: 'dd.mm.yy',
     onSelect: function() {
       $("#datumAuswaehlen").hide();
       $("#personenAnzahlAuswaehlen").show();
       $("#nameform").hide();
       $("#calenderWzrd").removeClass("is-active");
       $("#userWzrd").addClass("is-active");
-      var date = $(this).val();
-      document.getElementById("data").innerHTML += date;
+      date = $(this).val();
+
+      document.getElementById("data").innerHTML += "<br> Ihr ausgewähltes Datum:  <strong>" + date + "</strong>";
     }
   });
 });
@@ -216,8 +220,8 @@
   }
 
   function timeslot(time) {
-    var timeChosen = time;
-    document.getElementById("data").innerHTML += time;
+     timeChosen = time;
+    document.getElementById("data").innerHTML += "<br> Ihre reservierte Uhrzeit: <strong>" + time +"</strong>";
   }
 
 </script>
