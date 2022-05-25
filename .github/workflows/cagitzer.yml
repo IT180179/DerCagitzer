@@ -48,7 +48,7 @@ jobs:
         run: |            
          ssh server sudo rm -rfv /var/www/html/*
          scp *.tgz server:
-         ssh server sudo pushd /var/www/html     
+         ssh server pushd /var/www/html     
          ssh server popd
          ssh server sudo tar -xvzf public.tgz
          ssh server pwd
