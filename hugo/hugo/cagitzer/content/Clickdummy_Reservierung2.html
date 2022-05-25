@@ -168,11 +168,11 @@
       $("#resume").show();
       let name = document.getElementById("inputvorname").value + " " + document.getElementById("inputnachname").value;
       person = document.getElementById("personSelection").value;
-      
       document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am <strong>" + date + "</strong> für <strong>" + person + " Personen </strong> in der Zeit von <strong>" + timeChosen + "</strong> Herr/Frau <strong>" + name + "</strong>!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
       $("#readyWzrd").addClass("is-active");
       $(".steps-content").hide();
+      $("#data").hide();
     });
 
     $(".backForm").click(function () {
