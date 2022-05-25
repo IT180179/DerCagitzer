@@ -48,11 +48,9 @@ jobs:
         run: |            
          ssh server sudo rm -rfv /var/www/html/*
          scp *.tgz server:
-         ssh server pushd /var/www/html     
+         ssh server pushd /var/www/html  
+         ssh server sudo tar -xvzf public.tgz   
          ssh server popd
-         ssh server sudo tar -xvzf public.tgz
-         ssh server pwd
-         ssh server sudo ls /var/www/html/
         working-directory: hugo/hugo/cagitzer 
 
       
