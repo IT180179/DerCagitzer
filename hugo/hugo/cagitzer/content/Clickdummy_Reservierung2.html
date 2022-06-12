@@ -39,6 +39,7 @@
 
     const today = new Date();
 
+    console.log(today.getDay())
     const today1 = new Date(today)
     today1.setDate(today.getDate()+1)
     const today2 = new Date(today)
@@ -106,7 +107,7 @@
       document.getElementById("saturday").innerHTML = "Samstag - " + today.toLocaleDateString('de-DE') + "- heute";
       document.getElementById("sunday").innerHTML = "Sonntag - " + today1.toLocaleDateString('de-DE') + "- morgen";
     }
-    if(today.getDay() == 7 ){
+    if(today.getDay() == 0 ){
       document.getElementById("monday").innerHTML = "Montag - geschlossen - morgen";
       document.getElementById("tuesday").innerHTML = "Dienstag - geschlossen - übermorgen";
       document.getElementById("wednesday").innerHTML = "Mittwoch - " + today3.toLocaleDateString('de-DE');
@@ -220,10 +221,15 @@
   }
 
   function timeslot(time) {
-     timeChosen = time;
+    timeChosen = time;
     document.getElementById("data").innerHTML += "<br> Ihre reservierte Uhrzeit: <strong>" + time +"</strong>";
   }
 
+  function chooseDay(id){
+    dayChosen = document.getElementById(id).innerHTML;
+    date = dayChosen.split('- ')[1];
+    document.getElementById("data").innerHTML += "<br> Ihr ausgewähltes Datum:  <strong>" + date+ "</strong>";
+  }
 </script>
 
 <body class="index has-navbar-fixed-top">
@@ -309,7 +315,7 @@
           <label>Wählen Sie ihren gewünschten Tag:</label>
           <div class="field is-grouped-centered">
             <div class="control">
-              <label class="radio" id="monday"
+              <label class="radio" id="monday" 
                 style="text-align: center; width: 100%; margin-bottom: 5%; margin-top: 10%; border-radius: 5px; color: red; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
@@ -317,23 +323,23 @@
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color: red; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
-              <label class="radio forward" id="wednesday"
+              <label class="radio forward" id="wednesday" onclick="chooseDay(this.id)"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
-              <label class="radio forward" id="thursday"
+              <label class="radio forward" id="thursday" onclick="chooseDay(this.id)"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
-              <label class="radio forward" id="friday"
+              <label class="radio forward" id="friday" onclick="chooseDay(this.id)"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
-              <label class="radio forward" id="saturday"
+              <label class="radio forward" id="saturday" onclick="chooseDay(this.id)"
                 style="text-align: center; width: 100%; margin-bottom: 5%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
               <br>
-              <label class="radio forward" id="sunday"
+              <label class="radio forward" id="sunday" onclick="chooseDay(this.id)"
                 style="text-align: center; width: 100%; margin-bottom: 1%; border-radius: 5px; color:#999977; background-color: rgba(153, 153, 119, 0.1); border: solid 2px #999977; padding: 5%;">
               </label>
             </div>
