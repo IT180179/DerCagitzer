@@ -47,8 +47,8 @@ jobs:
       - name: deploy
         run: |            
            ssh server sudo rm -rfv /var/www/html/*
-           scp *.tgz server: /var/www/html/
-           ssh server sudo tar -xvzf public.tgz
+           scp *.tgz server:
+           ssh server sudo tar -xvzf public.tgz -C /var/www/html 
            ssh server pwd
            ssh server sudo ls /var/www/html/
         working-directory: hugo/hugo/cagitzer 
