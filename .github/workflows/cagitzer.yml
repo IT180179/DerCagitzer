@@ -49,7 +49,7 @@ jobs:
            ssh server sudo rm -rfv /var/www/html/*
            scp *.tgz server:
            ssh server sudo tar -xvzf public.tgz 
-           ssh server sudo cp -r public /var/www/html 
+           ssh server sudo cp public/* /var/www/html 
            ssh server pwd
            ssh server sudo ls /var/www/html/
         working-directory: hugo/hugo/cagitzer 
