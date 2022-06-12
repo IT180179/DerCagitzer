@@ -50,7 +50,7 @@ jobs:
          ssh server pushd /var/www/html  
          scp *.tgz server:
          ssh server sudo tar -xvzf public.tgz   
-         ssh server popd ~ -n
+         ssh server popd -n ~ 
         working-directory: hugo/hugo/cagitzer 
 
       
