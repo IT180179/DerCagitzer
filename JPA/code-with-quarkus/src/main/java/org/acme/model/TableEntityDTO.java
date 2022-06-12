@@ -1,15 +1,18 @@
 package org.acme.model;
 
+import org.acme.workloads.Reservation.Reservation;
+import org.acme.workloads.Room.Room;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 public class TableEntityDTO implements Serializable {
     private final Long table_num;
     private final int seats;
-    private final RoomDTO room;
-    private final ReservationDTO reservation;
+    private final Room room;
+    private final Reservation reservation;
 
-    public TableEntityDTO(Long table_num, int seats, RoomDTO room, ReservationDTO reservation) {
+    public TableEntityDTO(Long table_num, int seats, Room room, Reservation reservation) {
         this.table_num = table_num;
         this.seats = seats;
         this.room = room;
@@ -24,11 +27,11 @@ public class TableEntityDTO implements Serializable {
         return seats;
     }
 
-    public RoomDTO getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public ReservationDTO getReservation() {
+    public Reservation getReservation() {
         return reservation;
     }
 
