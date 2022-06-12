@@ -1,7 +1,5 @@
 package org.acme.workloads.Job;
 
-import org.acme.workloads.Drinks.Drinks;
-
 import java.util.List;
 
 public interface JobRepo {

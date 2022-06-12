@@ -1,7 +1,6 @@
 package org.acme.workloads.Reservation;
 
 import org.acme.model.ReservationDTO;
-import org.acme.workloads.Restaurant.Restaurant;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
@@ -60,16 +59,6 @@ public class ReservationServiceImpl implements ReservationService{
         reservation.setPerson_amount(reservationDTO.getPerson_amount());
         this.reservationRepo.delete(reservation);
         return reservation;
-    }
-
-    @Override
-    public List<Restaurant> getReservationByRestaurantId(Long id) {
-        return reservationRepo.getReservationByRestaurantId(id);
-    }
-
-    @Override
-    public List<Restaurant> getReservationById(Long id) {
-        return reservationRepo.getReservationById(id);
     }
 
 }

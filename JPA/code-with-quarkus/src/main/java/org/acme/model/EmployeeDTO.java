@@ -1,5 +1,7 @@
 package org.acme.model;
 
+import org.acme.workloads.Job.Job;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -9,9 +11,9 @@ public class EmployeeDTO implements Serializable {
     private final String first_name;
     private final String last_name;
     private final String password;
-    private final JobDTO job;
+    private final Job job;
 
-    public EmployeeDTO(Long employee_id, String username, String first_name, String last_name, String password, JobDTO job) {
+    public EmployeeDTO(Long employee_id, String username, String first_name, String last_name, String password, Job job) {
         this.employee_id = employee_id;
         this.username = username;
         this.first_name = first_name;
@@ -40,7 +42,7 @@ public class EmployeeDTO implements Serializable {
         return password;
     }
 
-    public JobDTO getJob() {
+    public Job getJob() {
         return job;
     }
 

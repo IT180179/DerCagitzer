@@ -1,7 +1,5 @@
 package org.acme.workloads.Customer;
 
-import org.acme.workloads.Drinks.Drinks;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;

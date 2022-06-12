@@ -1,5 +1,8 @@
 package org.acme.model;
 
+import org.acme.workloads.Customer.Customer;
+import org.acme.workloads.Employee.Employee;
+
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -8,8 +11,8 @@ import java.util.Objects;
 
 public class ReservationDTO implements Serializable {
     private final Long reservation_id;
-    private final EmployeeDTO employee;
-    private final CustomerDTO customer;
+    private final Employee employee;
+    private final Customer customer;
     private final Timestamp start_time;
     private final Timestamp end_time;
     private final Date date;
@@ -17,7 +20,7 @@ public class ReservationDTO implements Serializable {
     private final Integer person_amount;
     private final List<TableEntityDTO> table_Entities;
 
-    public ReservationDTO(Long reservation_id, EmployeeDTO employee, CustomerDTO customer, Timestamp start_time, Timestamp end_time, Date date, Timestamp timestamp, Integer person_amount, List<TableEntityDTO> table_Entities) {
+    public ReservationDTO(Long reservation_id, Employee employee, Customer customer, Timestamp start_time, Timestamp end_time, Date date, Timestamp timestamp, Integer person_amount, List<TableEntityDTO> table_Entities) {
         this.reservation_id = reservation_id;
         this.employee = employee;
         this.customer = customer;
@@ -33,11 +36,11 @@ public class ReservationDTO implements Serializable {
         return reservation_id;
     }
 
-    public EmployeeDTO getEmployee() {
+    public Employee getEmployee() {
         return employee;
     }
 
-    public CustomerDTO getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 

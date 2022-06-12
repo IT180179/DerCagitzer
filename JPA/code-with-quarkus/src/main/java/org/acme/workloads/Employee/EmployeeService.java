@@ -1,8 +1,6 @@
 package org.acme.workloads.Employee;
 
-import org.acme.model.DrinksDTO;
 import org.acme.model.EmployeeDTO;
-import org.acme.workloads.Drinks.Drinks;
 
 import java.util.List;
 
