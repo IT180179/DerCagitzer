@@ -25,8 +25,7 @@ public class ReservationServiceImpl implements ReservationService{
         reservation.setCustomer(reservationDTO.getCustomer());
         reservation.setDate(reservationDTO.getDate());
         reservation.setEmployee(reservationDTO.getEmployee());
-        reservation.setStart_time(reservationDTO.getStart_time());
-        reservation.setEnd_time(reservationDTO.getEnd_time());
+        reservation.setTime(reservationDTO.getTime());
         reservation.setTimestamp(reservationDTO.getTimestamp());
         reservation.setPerson_amount(reservationDTO.getPerson_amount());
         this.reservationRepo.add(reservation);
@@ -39,8 +38,7 @@ public class ReservationServiceImpl implements ReservationService{
         reservation.setCustomer(reservationDTO.getCustomer());
         reservation.setDate(reservationDTO.getDate());
         reservation.setEmployee(reservationDTO.getEmployee());
-        reservation.setStart_time(reservationDTO.getStart_time());
-        reservation.setEnd_time(reservationDTO.getEnd_time());
+        reservation.setTime(reservationDTO.getTime());
         reservation.setTimestamp(reservationDTO.getTimestamp());
         reservation.setPerson_amount(reservationDTO.getPerson_amount());
         this.reservationRepo.update(reservation);
@@ -53,8 +51,7 @@ public class ReservationServiceImpl implements ReservationService{
         reservation.setCustomer(reservationDTO.getCustomer());
         reservation.setDate(reservationDTO.getDate());
         reservation.setEmployee(reservationDTO.getEmployee());
-        reservation.setStart_time(reservationDTO.getStart_time());
-        reservation.setEnd_time(reservationDTO.getEnd_time());
+        reservation.setTime(reservationDTO.getTime());
         reservation.setTimestamp(reservationDTO.getTimestamp());
         reservation.setPerson_amount(reservationDTO.getPerson_amount());
         this.reservationRepo.delete(reservation);

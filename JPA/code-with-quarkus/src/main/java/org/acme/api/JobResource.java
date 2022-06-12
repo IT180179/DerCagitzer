@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("customer")
+@Path("job")
 public class JobResource {
 
     private final JobService jobService;

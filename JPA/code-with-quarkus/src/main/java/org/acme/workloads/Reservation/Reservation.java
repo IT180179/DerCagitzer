@@ -24,8 +24,7 @@ public class Reservation {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    private Timestamp start_time;
-    private Timestamp end_time;
+    private Integer time;
     private Date date;
     private Timestamp timestamp;
     private Integer person_amount;
@@ -66,20 +65,12 @@ public class Reservation {
         this.customer = customer;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Integer getTime() {
+        return time;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
-    }
-
-    public Timestamp getEnd_time() {
-        return end_time;
-    }
-
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setTime(Integer time) {
+        this.time = time;
     }
 
     public Date getDate() {

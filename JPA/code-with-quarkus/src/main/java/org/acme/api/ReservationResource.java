@@ -43,18 +43,4 @@ public class ReservationResource {
         var allReservation = this.reservationService.getAllReservation();
         return Response.ok(allReservation).build();
     }
-
-    @GET
-    @Path("{reservationId}")
-    public Response getReservationById(@PathParam("reservationId") Long id) {
-        var reservation = this.reservationService.getReservationById(id);
-        return Response.ok(reservation).build();
-    }
-
-    @GET
-    @Path("{restaurantId}")
-    public Response getReservationsByRestaurantId(@PathParam("restaurantId") Long id) {
-        var reservation = this.reservationService.getReservationByRestaurantId(id);
-        return Response.ok(reservation).build();
-    }
 }
