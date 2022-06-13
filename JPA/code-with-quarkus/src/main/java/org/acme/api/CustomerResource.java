@@ -30,6 +30,7 @@ public class CustomerResource {
 
     @POST
     @Transactional
+    @Path("addCustomer")
     public Response addCostumer(CustomerDTO newCustomer){
         var customer = this.customerService.addCustomer(newCustomer);
         if (customer == null){
