@@ -172,7 +172,7 @@
       $("#resume").show();
       let firstname = document.getElementById("inputvorname").value
       let lastname = document.getElementById("inputnachname").value 
-      let telephone = document.getElementById("")
+      let telephone = document.getElementById("inputtel").value
       let name = firstname + " " + lastname;
       date2 = date.replace(".", "-")
       person = document.getElementById("personSelection").value;
@@ -190,7 +190,7 @@
           customer_id: customerid,
           last_name: lastname,
           first_name: firstname,
-          telNr: inputtel
+          telNr: telephone
       }
 
 
