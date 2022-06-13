@@ -187,12 +187,12 @@
       });
 
       const data = {
-          customerid: id,
+          customer_id: customerid,
           last_name: lastname,
           first_name: firstname,
           telNr: inputtel
       }
-      
+
 
       $.post(urlAdd,data, function(data,status){
       console.log('${data} and status is $(status)')
