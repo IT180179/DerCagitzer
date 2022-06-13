@@ -181,8 +181,12 @@
 
       const urlAdd = "http://localhost:8080/customer/addCustomer";
       const urlGetPersonId = "http://localhost:8080/customer/getMaxId" 
+
+      const Http = new XMLHttpRequest();
+      Http.open("GET", urlGetPersonId);
+      Http.open("POST", urlAdd);
       
-      $getJson(urlGetPersonId, function(result){
+      $.getJSON(urlGetPersonId, function(result){
          customerid = result
       });
 
@@ -197,6 +201,8 @@
       $.post(urlAdd,data, function(data,status){
       console.log('${data} and status is $(status)')
       });
+
+      Http.send();
 
       document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am <strong>" + date + "</strong> für <strong>" + person + " Personen </strong> in der Zeit von <strong>" + timeChosen + "</strong> Herr/Frau <strong>" + name + "</strong>!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
