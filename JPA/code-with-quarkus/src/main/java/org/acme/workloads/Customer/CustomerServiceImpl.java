@@ -20,6 +20,11 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+    public Long getMaxId() {
+        return this.customerRepo.getMaxId();
+    }
+
+    @Override
     public Customer addCustomer(CustomerDTO customerDTO) {
         Customer customer = new Customer();
         customer.setFirst_name(customerDTO.getFirst_name());
