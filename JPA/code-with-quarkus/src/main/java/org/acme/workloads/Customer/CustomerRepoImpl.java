@@ -22,6 +22,13 @@ public class CustomerRepoImpl implements CustomerRepo {
     }
 
     @Override
+    public Long getMaxId() {
+        TypedQuery<Long> query = entityManager.createQuery("select (max(c.customer_id) + 1) from Customer c",
+                Long.class);
+        return query.getSingleResult();
+    }
+
+    @Override
     public void add(Customer customer) {
         this.entityManager.persist(customer);
     }

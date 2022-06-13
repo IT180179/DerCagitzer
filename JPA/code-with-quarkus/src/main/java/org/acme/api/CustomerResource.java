@@ -28,8 +28,20 @@ public class CustomerResource {
         return Response.ok(allPeople).build();
     }
 
+    @GET
+    @Path("getMaxId")
+    public Response getMaxId() {
+        var maxId = this.customerService.getMaxId();
+        if(maxId == null) {
+            return Response.ok(1).build();
+        }else{
+            return Response.ok(maxId).build();
+        }
+    }
+
     @POST
     @Transactional
+    @Path("addCustomer")
     public Response addCostumer(CustomerDTO newCustomer){
         var customer = this.customerService.addCustomer(newCustomer);
         if (customer == null){

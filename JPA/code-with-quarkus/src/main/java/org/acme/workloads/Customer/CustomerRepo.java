@@ -7,6 +7,7 @@ import java.util.List;
 public interface CustomerRepo {
 
     List<Customer> getAllCustomers();
+    Long getMaxId();
     void add(Customer customer);
     void update(Customer customer);
     void delete(Customer customer);

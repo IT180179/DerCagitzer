@@ -27,6 +27,7 @@ public class ReservationResource {
 
     @GET
     @Blocking
+    @Path("sendEmail")
     public void sendEmail() {
         mailer.send(
                 Mail.withText("ursprungdavid@gmail.com",
@@ -38,6 +39,7 @@ public class ReservationResource {
 
     @POST
     @Transactional
+    @Path("addReservation")
     public Response addReservation(ReservationDTO newReservation){
         if (newReservation == null){
             return Response.status(404).build();
