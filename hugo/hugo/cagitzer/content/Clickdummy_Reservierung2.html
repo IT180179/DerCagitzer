@@ -17,11 +17,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap" rel="stylesheet">
 
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script defer>
+
+
+  
+
   const toggleBurger = () => {
     let burgerIcon = document.getElementById('burger');
     let dropMenu = document.getElementById('cagitzerNavbar');
@@ -167,8 +170,34 @@
     $(".forwardForm").click(function () {
       $("#nameform").hide();
       $("#resume").show();
-      let name = document.getElementById("inputvorname").value + " " + document.getElementById("inputnachname").value;
+      let firstname = document.getElementById("inputvorname").value
+      let lastname = document.getElementById("inputnachname").value 
+      let telephone = document.getElementById("")
+      let name = firstname + " " + lastname;
+      date2 = date.replace(".", "-")
       person = document.getElementById("personSelection").value;
+      let customerid;
+
+
+      const urlAdd = "http://localhost:8080/customer/addCustomer";
+      const urlGetPersonId = "http://localhost:8080/customer/getMaxId" 
+      
+      $getJson(urlGetPersonId, function(result){
+         customerid = result
+      });
+
+      const data = {
+          customerid: id,
+          last_name: lastname,
+          first_name: firstname,
+          telNr: inputtel
+      }
+      
+
+      $.post(urlAdd,data, function(data,status){
+      console.log('${data} and status is $(status)')
+      });
+
       document.getElementById("resume").innerHTML = " <label class='is-centered'>Danke für Ihre Bestellung am <strong>" + date + "</strong> für <strong>" + person + " Personen </strong> in der Zeit von <strong>" + timeChosen + "</strong> Herr/Frau <strong>" + name + "</strong>!</label>  <div class='control is centered'>  <a href='./cagitzer.html'> <button class='button is-link'  id='forwardForm' style='background-color: #999977; margin-top: 20px;'>Zurück zum Start</button> </div> </a>"
       $("#formWzrd").removeClass("is-active");
       $("#readyWzrd").addClass("is-active");
@@ -442,7 +471,7 @@
                   <div class="field is-expanded">
                     <div class="field has-addons">
                       <p class="control is-expanded has-icons-left">
-                        <input class="input" type="tel" placeholder="Telefonnummer*">
+                        <input class="input" type="tel" placeholder="Telefonnummer*" id="inputtel">
                         <span class="icon is-small is-left">
                           <i class="fas fa-phone"></i>
                         </span>
