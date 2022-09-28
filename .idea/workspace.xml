@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c65158d-265d-428b-aaa9-c0d6f23feabf" name="Default Changelist" comment="Hugo Site erstellt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JPA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JPA/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,19 +16,25 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="4" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1zRfNKDKHeZq8ekIlB0krWthYLu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../3.Jahr/SEW/Supermarkt" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Fabian/Documents/GitHub/3D-Portfolio-Gallery",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Schule\ITP\Projekt\DerCagitzer\Designvorschläge\Reservierungbuch" />
@@ -50,6 +57,8 @@
       <workItem from="1638270529930" duration="116000" />
       <workItem from="1638543113746" duration="22000" />
       <workItem from="1638543172019" duration="20000" />
+      <workItem from="1663583820112" duration="2481000" />
+      <workItem from="1663658228574" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="Ordner erstellt/geändert">
       <created>1638263207992</created>
@@ -95,7 +104,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ordner erstellt/geändert" />

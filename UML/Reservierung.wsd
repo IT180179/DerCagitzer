@@ -1,0 +1,19 @@
+@startuml
+
+title
+Projekt: Cagitzer
+UC Tischreservierung 
+Projektteam: Ana Bikic, Annika Cagitz, Fabian Maar, David Ursprung 
+Version: v.0.1
+Datum: 26.09.2022
+end title
+actor :Mitarbeiter:
+actor :Kunde:
+
+rectangle Tischreservierung{
+:Mitarbeiter: - (Tische reservieren)  
+(Tische reservieren) ..> (auf freie Tische überprüfen) : include 
+(auf freie Tische überprüfen) ..> (Reservierungsdaten eingeben) : include
+(Tische reservieren) - :Kunde:
+}
+@enduml
