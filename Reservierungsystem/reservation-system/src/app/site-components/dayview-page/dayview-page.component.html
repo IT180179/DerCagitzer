@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="timetablejs.css">
-<script src="timetable.min.js"></script>
-
-<div class="timetable"></div>
+<ng-wf-timetable
+  [scope]="scope"
+  [schedules]="schedules"
+  (eventClick)="eventClicked($event)">
+</ng-wf-timetable>
