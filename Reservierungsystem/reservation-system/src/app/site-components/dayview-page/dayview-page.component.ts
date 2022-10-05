@@ -23,8 +23,8 @@ export class DayviewPageComponent implements OnInit {
     2. Timetable end time: Date
     3. (Optional) Number of pixels that should represent 5 minutes (32px by default): number
     */
-    const timetableStartTime = new Date(new Date().setHours(8, 0, 0));
-    const timetableEndTime = new Date(new Date().setHours(16, 0, 0));
+    const timetableStartTime = new Date(new Date().setHours(11, 0, 0));
+    const timetableEndTime = new Date(new Date().setHours(22, 0, 0));
 
     this.scope = new TimetableScope(timetableStartTime, timetableEndTime);
 
@@ -49,8 +49,8 @@ export class DayviewPageComponent implements OnInit {
         /* Timetable location contains the following params in order: `id: string`, `name: string`*/
         [
           new TimetableEvent('01',
-            new Date(new Date().setHours(8, 0, 0)),
-            new Date(new Date().setHours(8, 30, 0)), 'Event 1', 'Staff meeting', '#ff0000')
+            new Date(new Date().setHours(11, 30, 0)),
+            new Date(new Date().setHours(14, 30, 0)), 'Event 1', 'Staff meeting', '#265F19')
         ]
       ),
 
