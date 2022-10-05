@@ -1,60 +1,62 @@
 package org.acme.api;
 
-import org.acme.model.CustomerDTO;
 import org.acme.workloads.Customer.Customer;
-import org.acme.workloads.Customer.CustomerService;
+import org.acme.workloads.Customer.CustomerRepo;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("customer")
+@Path("/customer")
 public class CustomerResource {
 
-    private final CustomerService customerService;
+    private final CustomerRepo customerRepo;
 
-    public CustomerResource(CustomerService customerService) {
-        this.customerService = customerService;
+    public CustomerResource(CustomerRepo customerRepo) {
+        this.customerRepo = customerRepo;
     }
 
     @GET
-    @Path("all")
-    public Response getAllCostumers() {
-        var allPeople = this.customerService.getAllCustomers();
-        return Response.ok(allPeople).build();
+    @Path("/all")
+    public Response getAll() {
+        var all = this.customerRepo.listAll();
+        return Response.ok(all).build();
     }
 
     @GET
-    @Path("getMaxId")
-    public Response getMaxId() {
-        var maxId = this.customerService.getMaxId();
-        if(maxId == null) {
-            return Response.ok(1).build();
-        }else{
-            return Response.ok(maxId).build();
-        }
+    @Path("/getByID")
+    public Response getByID(Long id) {
+        var found = this.customerRepo.findById(id);
+        return Response.ok(found).build();
     }
 
     @POST
     @Transactional
-    @Path("addCustomer")
-    public Response addCostumer(CustomerDTO newCustomer){
-        var customer = this.customerService.addCustomer(newCustomer);
+    @Path("/add")
+    public Response add(Customer customer){
         if (customer == null){
             return Response.status(404).build();
         }
+        this.customerRepo.persist(customer);
         return Response.ok(customer).build();
     }
 
     @PUT
     @Transactional
-    public Response update(CustomerDTO customer) {
-            customerService.updateCustomer(customer);
-            return Response.ok(customer).build();
+    @Path("/update")
+    public Response update(Customer customer) {
+        customerRepo.update(customer);
+        return Response.ok(customer).build();
     }
 
+    @DELETE
+    @Transactional
+    @Path("/delete")
+    public Response delete(Long id) {
+        customerRepo.deleteById(id);
+        return Response.ok(id).build();
+    }
 }

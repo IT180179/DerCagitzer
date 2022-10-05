@@ -1,13 +1,22 @@
 package org.acme.workloads.Employee;
 
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
-public interface EmployeeRepo {
+@ApplicationScoped
+public class EmployeeRepo implements PanacheRepository<Employee> {
 
-    List<Employee> getAllEmployee();
-    void add(Employee employee);
-    void update(Employee employee);
-    void delete(Employee employee);
-    List<Employee> getAllEmployeesByRestaurantId(Long id);
+    private final EntityManager entityManager;
 
+    public EmployeeRepo(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void update(Employee employee) {
+        this.entityManager.merge(employee);
+    }
 }

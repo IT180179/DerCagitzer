@@ -1,9 +1,8 @@
 package org.acme.api;
 
-import org.acme.model.CustomerDTO;
 import org.acme.model.EmployeeDTO;
-import org.acme.workloads.Customer.CustomerService;
-import org.acme.workloads.Employee.EmployeeService;
+import org.acme.workloads.Employee.Employee;
+import org.acme.workloads.Employee.EmployeeRepo;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -15,42 +14,50 @@ import javax.ws.rs.core.Response;
 @Path("employee")
 public class EmployeeResource {
 
-    private final EmployeeService employeeService;
+    private final EmployeeRepo employeeRepo;
 
-    public EmployeeResource(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public EmployeeResource(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
     }
 
     @GET
-    @Path("all")
-    public Response getAllEmployees() {
-        var allPeople = this.employeeService.getAllDrinks();
-        return Response.ok(allPeople).build();
+    @Path("/all")
+    public Response getAll() {
+        var all = this.employeeRepo.listAll();
+        return Response.ok(all).build();
     }
 
     @GET
-    @Path("{restaurantId}")
-    public Response getAllEmployeesByRestaurantId(@PathParam("restaurantId") Long id) {
-        employeeService.getAllEmployeesByRestaurantId(id);
-        return Response.ok(id).build();
+    @Path("/all")
+    public Response getById(Long id) {
+        var found = this.employeeRepo.findById(id);
+        return Response.ok(found).build();
     }
 
     @POST
     @Transactional
-    public Response addEmployee(EmployeeDTO newEmployee){
-        if (newEmployee == null){
+    @Path("/add")
+    public Response addEmployee(Employee employee){
+        if (employee == null){
             return Response.status(404).build();
         }
-        employeeService.addEmployee(newEmployee);
-        return Response.ok(newEmployee).build();
+        employeeRepo.persist(employee);
+        return Response.ok(employee).build();
     }
 
     @PUT
     @Transactional
-    public Response update(EmployeeDTO newEmployee) {
-        employeeService.updateEmployee(newEmployee);
-
-        return Response.ok(newEmployee).build();
+    @Path("/update")
+    public Response update(Employee employee) {
+        employeeRepo.update(employee);
+        return Response.ok(employee).build();
     }
 
+    @DELETE
+    @Transactional
+    @Path("/delete")
+    public Response delete(Long id) {
+        employeeRepo.deleteById(id);
+        return Response.ok(id).build();
+    }
 }

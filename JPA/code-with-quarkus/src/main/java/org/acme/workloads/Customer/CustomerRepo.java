@@ -1,16 +1,21 @@
 package org.acme.workloads.Customer;
 
-import org.acme.model.CustomerDTO;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
-import java.util.List;
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
-public interface CustomerRepo {
+@ApplicationScoped
+public class CustomerRepo implements PanacheRepository<Customer> {
 
-    List<Customer> getAllCustomers();
-    Long getMaxId();
-    void add(Customer customer);
-    void update(Customer customer);
-    void delete(Customer customer);
-    Customer getCustomerById(Long id);
+    private final EntityManager entityManager;
 
+    public CustomerRepo(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void update(Customer customer) {
+        this.entityManager.merge(customer);
+    }
 }

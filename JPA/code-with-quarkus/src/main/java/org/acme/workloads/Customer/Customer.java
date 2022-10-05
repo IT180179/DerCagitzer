@@ -1,9 +1,11 @@
 package org.acme.workloads.Customer;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.*;
 
 @Entity
-public class Customer {
+public class Customer extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
