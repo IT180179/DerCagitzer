@@ -1,6 +1,10 @@
 package org.acme.api;
-import org.acme.workloads.Table_Entity.TableEntityService;
 
+import org.acme.workloads.Job.Job;
+import org.acme.workloads.Table_Entity.TableEntity;
+import org.acme.workloads.Table_Entity.TableEntityRepo;
+
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -10,23 +14,50 @@ import javax.ws.rs.core.Response;
 @Path("tables")
 public class TableEntityResource {
 
-    private final TableEntityService tableEntityService;
+    private final TableEntityRepo tableEntityRepo;
 
-    public TableEntityResource(TableEntityService tableEntityService) {
-        this.tableEntityService = tableEntityService;
+    public TableEntityResource(TableEntityRepo tableEntityRepo) {
+        this.tableEntityRepo = tableEntityRepo;
     }
 
     @GET
-    @Path("{restaurantId}")
-    public Response getAllTablesByRestaurantId(@PathParam("restaurantId") Long id) {
-        var allTables = this.tableEntityService.getAllTablesByRestaurantId(id);
-        return Response.ok(allTables).build();
-    }
-
-    @GET
-    @Path("all")
+    @Path("/all")
     public Response getAll() {
-        var allTables = this.tableEntityService.getAllTables();
-        return Response.ok(allTables).build();
+        var all = this.tableEntityRepo.listAll();
+        return Response.ok(all).build();
+    }
+
+    @GET
+    @Path("/getByID")
+    public Response getByID(Long id) {
+        var found = this.tableEntityRepo.findById(id);
+        return Response.ok(found).build();
+    }
+
+    @POST
+    @Transactional
+    @Path("/add")
+    public Response add(TableEntity tableEntity){
+        if (tableEntity == null){
+            return Response.status(404).build();
+        }
+        this.tableEntityRepo.persist(tableEntity);
+        return Response.ok(tableEntity).build();
+    }
+
+    @PUT
+    @Transactional
+    @Path("/update")
+    public Response update(TableEntity tableEntity) {
+        tableEntityRepo.update(tableEntity);
+        return Response.ok(tableEntity).build();
+    }
+
+    @DELETE
+    @Transactional
+    @Path("/delete")
+    public Response delete(Long id) {
+        tableEntityRepo.deleteById(id);
+        return Response.ok(id).build();
     }
 }

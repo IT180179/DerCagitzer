@@ -1,5 +1,6 @@
 package org.acme.workloads.Reservation;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import org.acme.workloads.Customer.Customer;
 import org.acme.workloads.Employee.Employee;
 import org.acme.workloads.Table_Entity.TableEntity;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Reservation {
+public class Reservation extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,7 +1,10 @@
 package org.acme.api;
 
-import org.acme.workloads.Room.RoomService;
+import org.acme.workloads.Job.Job;
+import org.acme.workloads.Room.Room;
+import org.acme.workloads.Room.RoomRepo;
 
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -11,22 +14,50 @@ import javax.ws.rs.core.Response;
 @Path("room")
 public class RoomResource {
 
-    private final RoomService roomService;
+    private final RoomRepo roomRepo;
 
-    public RoomResource(RoomService roomService) {
-        this.roomService = roomService;
-    }
-    @GET
-    @Path("{roomId}")
-    public Response getRoomsById(@PathParam("roomId") Long id) {
-        var rooms = this.roomService.getRoomsById(id);
-        return Response.ok(rooms).build();
+    public RoomResource(RoomRepo roomRepo) {
+        this.roomRepo = roomRepo;
     }
 
     @GET
-    @Path("all")
+    @Path("/all")
     public Response getAll() {
-        var allTables = this.roomService.getAllRooms();
-        return Response.ok(allTables).build();
+        var all = this.roomRepo.listAll();
+        return Response.ok(all).build();
+    }
+
+    @GET
+    @Path("/getByID")
+    public Response getByID(Long id) {
+        var found = this.roomRepo.findById(id);
+        return Response.ok(found).build();
+    }
+
+    @POST
+    @Transactional
+    @Path("/add")
+    public Response add(Room room){
+        if (room == null){
+            return Response.status(404).build();
+        }
+        this.roomRepo.persist(room);
+        return Response.ok(room).build();
+    }
+
+    @PUT
+    @Transactional
+    @Path("/update")
+    public Response update(Room room) {
+        roomRepo.update(room);
+        return Response.ok(room).build();
+    }
+
+    @DELETE
+    @Transactional
+    @Path("/delete")
+    public Response delete(Long id) {
+        roomRepo.deleteById(id);
+        return Response.ok(id).build();
     }
 }

@@ -1,5 +1,6 @@
 package org.acme.workloads.Table_Entity;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Room.Room;
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class TableEntity {
+public class TableEntity extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

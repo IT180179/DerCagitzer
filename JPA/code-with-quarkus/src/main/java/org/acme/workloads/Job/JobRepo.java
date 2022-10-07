@@ -1,12 +1,22 @@
 package org.acme.workloads.Job;
 
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
-public interface JobRepo {
+@ApplicationScoped
+public class JobRepo implements PanacheRepository<Job> {
 
-    List<Job> getAllJobs();
-    void add(Job job);
-    void update(Job job);
-    void delete(Job job);
+    private final EntityManager entityManager;
 
+    public JobRepo(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void update(Job job) {
+        this.entityManager.merge(job);
+    }
 }

@@ -1,15 +1,20 @@
 package org.acme.workloads.Room;
 
-import org.acme.workloads.Job.Job;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
-import java.util.List;
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
 
-public interface RoomRepo {
+@ApplicationScoped
+public class RoomRepo implements PanacheRepository<Room> {
 
-    List<Room> getAllRooms();
-    List<Room> getRoomsById(Long id);
-    void add(Room room);
-    void update(Room room);
-    void delete(Room room);
+    private final EntityManager entityManager;
 
+    public RoomRepo(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void update(Room room) {
+        this.entityManager.merge(room);
+    }
 }

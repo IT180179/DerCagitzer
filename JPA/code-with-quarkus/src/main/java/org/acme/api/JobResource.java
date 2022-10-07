@@ -1,8 +1,9 @@
 package org.acme.api;
 
-import org.acme.model.CustomerDTO;
 import org.acme.model.JobDTO;
-import org.acme.workloads.Job.JobService;
+import org.acme.workloads.Customer.Customer;
+import org.acme.workloads.Job.Job;
+import org.acme.workloads.Job.JobRepo;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -11,36 +12,53 @@ import javax.ws.rs.core.Response;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("job")
+@Path("/job")
 public class JobResource {
 
-    private final JobService jobService;
+    private final JobRepo jobRepo;
 
-    public JobResource(JobService jobService) {
-        this.jobService = jobService;
+    public JobResource(JobRepo jobRepo) {
+        this.jobRepo = jobRepo;
     }
 
     @GET
-    @Path("all")
-    public Response getAllJobs() {
-        var allJobs = this.jobService.getAllJobs();
-        return Response.ok(allJobs).build();
+    @Path("/all")
+    public Response getAll() {
+        var all = this.jobRepo.listAll();
+        return Response.ok(all).build();
+    }
+
+    @GET
+    @Path("/getByID")
+    public Response getByID(Long id) {
+        var found = this.jobRepo.findById(id);
+        return Response.ok(found).build();
     }
 
     @POST
     @Transactional
-    public Response addJob(JobDTO newJob){
-        var job = this.jobService.addJob(newJob);
+    @Path("/add")
+    public Response add(Job job){
         if (job == null){
             return Response.status(404).build();
         }
+        this.jobRepo.persist(job);
         return Response.ok(job).build();
     }
 
     @PUT
     @Transactional
-    public Response update(JobDTO job) {
-        jobService.updateJob(job);
+    @Path("/update")
+    public Response update(Job job) {
+        jobRepo.update(job);
         return Response.ok(job).build();
+    }
+
+    @DELETE
+    @Transactional
+    @Path("/delete")
+    public Response delete(Long id) {
+        jobRepo.deleteById(id);
+        return Response.ok(id).build();
     }
 }
