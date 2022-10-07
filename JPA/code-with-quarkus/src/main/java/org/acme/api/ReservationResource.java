@@ -16,7 +16,7 @@ import org.acme.workloads.Reservation.ReservationRepo;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("reservation")
+@Path("/reservation")
 public class ReservationResource {
 
     @Inject Mailer mailer;
@@ -29,7 +29,7 @@ public class ReservationResource {
 
     @GET
     @Blocking
-    @Path("sendEmail")
+    @Path("/sendEmail")
     public void sendEmail() {
         mailer.send(
                 Mail.withText("ursprungdavid@gmail.com",

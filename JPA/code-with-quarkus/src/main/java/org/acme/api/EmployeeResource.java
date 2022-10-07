@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("employee")
+@Path("/employee")
 public class EmployeeResource {
 
     private final EmployeeRepo employeeRepo;
@@ -28,7 +28,7 @@ public class EmployeeResource {
     }
 
     @GET
-    @Path("/all")
+    @Path("/getById")
     public Response getById(Long id) {
         var found = this.employeeRepo.findById(id);
         return Response.ok(found).build();

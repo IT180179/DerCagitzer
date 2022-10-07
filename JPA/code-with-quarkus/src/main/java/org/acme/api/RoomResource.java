@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("room")
+@Path("/room")
 public class RoomResource {
 
     private final RoomRepo roomRepo;
