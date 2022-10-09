@@ -8,6 +8,7 @@ import org.acme.workloads.Table_Entity.TableEntity;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,14 +26,25 @@ public class Reservation extends PanacheEntityBase {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    private Integer time;
-    private Date date;
-    private Timestamp timestamp;
+    private String customer_name;
+
+    private Integer reservation_time;
+
+    private LocalDate reservation_date;
+    private Timestamp reservation_timestamp;
     private Integer person_amount;
 
     @ManyToOne
     @JoinColumn(name = "tableno")
     private TableEntity tableEntity;
+
+    public String getCustomer_name() {
+        return customer_name;
+    }
+
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+    }
 
     public TableEntity getTableEntity() {
         return tableEntity;
@@ -66,28 +78,28 @@ public class Reservation extends PanacheEntityBase {
         this.customer = customer;
     }
 
-    public Integer getTime() {
-        return time;
+    public Integer getReservation_time() {
+        return reservation_time;
     }
 
-    public void setTime(Integer time) {
-        this.time = time;
+    public void setReservation_time(Integer reservation_time) {
+        this.reservation_time = reservation_time;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getReservation_date() {
+        return reservation_date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setReservation_date(LocalDate reservation_date) {
+        this.reservation_date = reservation_date;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getReservation_timestamp() {
+        return reservation_timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setReservation_timestamp(Timestamp reservation_timestamp) {
+        this.reservation_timestamp = reservation_timestamp;
     }
 
     public Integer getPerson_amount() {
