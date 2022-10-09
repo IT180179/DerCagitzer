@@ -1,10 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Work Sans
+, "Helvetica Neue", sans-serif; }
 
 .timetable section .time-seconds-label {
   visibility: hidden;
 }
 
+.timetable
+{
+  marign-top:10%;
+  font-size: 120%;}
 
+img{
+  width:10%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+
+#nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+#nav li {
+  float: left;
+  padding-left: 11%;
+}
+
+#nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#nav{
+  font-size: 200%;
+}
