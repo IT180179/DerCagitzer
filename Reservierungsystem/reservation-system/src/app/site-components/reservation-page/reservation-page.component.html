@@ -1,1 +1,60 @@
-<p>reservation-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<form [formGroup] = "reactiveForm">
+  <label for="nachname">Nachname:</label><br>
+  <input type="text" id="nachname" formControlName="nachname">
+
+  <label for="telefonnummer">Telefonnummer:</label>
+  <input type="text" id="telefonnummer" formControlName="telefonnummer"><br>
+
+  <label for="tischnr">Tischnummer</label><br>
+  <select id="tischnr" formControlName="tischnummer"><br>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">11</option>
+    <option value="12">12</option>
+  </select><br>
+
+  <label for="start">Datum:</label><br>
+  <input type="date" id="start" formControlName="datum"><br>
+
+  <label for="personenanzahl">Personenanzahl</label><br>
+  <select id="personenanzahl" formControlName="personenanzahl"><br>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">11</option>
+    <option value="12">12</option>
+  </select><br>
+
+  <label>Gewünschte Zeit</label><br>
+  <input type="button" value="11:30 - 13:00" formControlName="zeit">
+  <input type="button" value="13:00 - 14:30" formControlName="zeit">
+  <input type="button" value="17:30 - 19:00" formControlName="zeit">
+  <input type="button" value="19:00 - 20:30" formControlName="zeit">
+
+  <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
