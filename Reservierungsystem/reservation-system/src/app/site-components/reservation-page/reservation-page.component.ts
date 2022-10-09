@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-reservation-page',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservation-page.component.scss']
 })
 export class ReservationPageComponent implements OnInit {
+
+  name = new FormControl('');
 
   constructor() { }
 
