@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} from "ng2-wf-timetable";
+import {ReservationService} from "../../shared/reservation.service";
+import {Reservation} from "../../shared/reservation";
 
 
 @Component({
@@ -8,15 +10,16 @@ import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} fr
   styleUrls: ['./dayview-page.component.scss']
 })
 export class DayviewPageComponent implements OnInit {
-
+  reservations: Reservation[] = [];
 
   scope!: TimetableScope;
   schedules!: Array<TimetableSchedule>;
 
-  constructor() {
+  constructor(private rs: ReservationService) {
   }
 
   ngOnInit(): void {
+    this.rs.getAll().subscribe(res=> this.reservations = res);
     /*
     The timetable scope which contain params in the following order:
     1. Timetable start time: Date

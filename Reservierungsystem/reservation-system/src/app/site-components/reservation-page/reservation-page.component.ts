@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Reservation} from "../../shared/reservation";
 
 
 @Component({
@@ -9,10 +10,12 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class ReservationPageComponent implements OnInit {
 
-  title = 'ReactiveForms';
+  @Input() reservation?: Reservation;
+  @Output() submitReservation = new EventEmitter<Reservation>();
   reactiveForm: FormGroup;
 
-  constructor() { }
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(){
 
@@ -29,4 +32,12 @@ export class ReservationPageComponent implements OnInit {
 
   }
 
+  submitForm() {
+    const formValue = this.reactiveForm.value;
+    const newReservation: Reservation = {
+      ...formValue,
+    }
+    this.submitReservation.emit(newReservation);
+    this.reactiveForm.reset();
+  }
 }
