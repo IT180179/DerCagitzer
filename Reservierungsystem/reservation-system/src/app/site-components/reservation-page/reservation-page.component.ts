@@ -22,7 +22,7 @@ export class ReservationPageComponent implements OnInit {
     this.reactiveForm = new FormGroup({
       nachname: new FormControl(null),
       telefonnummer: new FormControl(null),
-      tischnummer: new FormControl('9'),
+      tischnummer: new FormControl(),
       datum: new FormControl(null),
       personenanzahl: new FormControl('2'),
       zeit: new FormControl(null)
