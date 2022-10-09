@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { DayviewPageComponent } from './site-components/dayview-page/dayview-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgWfTimetableModule} from "ng2-wf-timetable";
+import { ReservationPageComponent } from './site-components/reservation-page/reservation-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DayviewPageComponent
+    DayviewPageComponent,
+    ReservationPageComponent
   ],
     imports: [
         BrowserModule,
