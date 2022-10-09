@@ -8,15 +8,15 @@
 </head>
 <body>
 
-<form>
+<form [formGroup] = "reactiveForm">
   <label for="nachname">Nachname:</label><br>
-  <input type="text" id="nachname" name="nachname">
+  <input type="text" id="nachname" formControlName="nachname">
 
   <label for="telefonnummer">Telefonnummer:</label>
-  <input type="text" id="telefonnummer" name="telefonnummer"><br>
+  <input type="text" id="telefonnummer" formControlName="telefonnummer"><br>
 
   <label for="tischnr">Tischnummer</label><br>
-  <select id="tischnr" name="tischnr"><br>
+  <select id="tischnr" formControlName="tischnummer"><br>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -30,10 +30,10 @@
   </select><br>
 
   <label for="start">Datum:</label><br>
-  <input type="date" id="start" name="trip-start"><br>
+  <input type="date" id="start" formControlName="datum"><br>
 
-  <label for="personenanz">Personenanzahl</label><br>
-  <select id="personenanz" name="personenanz"><br>
+  <label for="personenanzahl">Personenanzahl</label><br>
+  <select id="personenanzahl" formControlName="personenanzahl"><br>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -47,14 +47,12 @@
   </select><br>
 
   <label>Gewünschte Zeit</label><br>
-  <button>11:30 - 13:00</button>
-  <button>13:00 - 14:30</button>
-  <button>17:30 - 19:00</button>
-  <button>19:00 - 20:30</button><br>
+  <input type="button" value="11:30 - 13:00" formControlName="zeit">
+  <input type="button" value="13:00 - 14:30" formControlName="zeit">
+  <input type="button" value="17:30 - 19:00" formControlName="zeit">
+  <input type="button" value="19:00 - 20:30" formControlName="zeit">
 
   <input type="submit" value="Submit">
-
-
 
 </form>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -9,11 +9,24 @@ import { FormControl } from '@angular/forms';
 })
 export class ReservationPageComponent implements OnInit {
 
-  name = new FormControl('');
+  title = 'ReactiveForms';
+  reactiveForm: FormGroup;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
+    this.reactiveForm = new FormGroup({
+      nachname: new FormControl(null),
+      telefonnummer: new FormControl(null),
+      tischnummer: new FormControl('2'),
+      datum: new FormControl(null),
+      personenanzahl: new FormControl('2'),
+      zeit: new FormControl(null)
+
+
+    });
+
   }
 
 }
