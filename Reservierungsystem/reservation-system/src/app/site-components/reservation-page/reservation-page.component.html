@@ -9,10 +9,9 @@
 </head>
 <body>
 
-<form [formGroup] = "reactiveForm"
-      (ngSubmit)="submitForm()"
->
-  <label for="nachname">Nachname:</label><br>
+<form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">
+
+  <label for="nachname">Nachname:</label>
   <input type="text" id="nachname" formControlName="nachname">
 
   <label for="telefonnummer">Telefonnummer:</label>
@@ -50,10 +49,12 @@
   </select><br>
 
   <label>Gewünschte Zeit</label><br>
-  <input type="button" value="11:30 - 13:00" formControlName="zeit">
-  <input type="button" value="13:00 - 14:30" formControlName="zeit">
-  <input type="button" value="17:30 - 19:00" formControlName="zeit">
-  <input type="button" value="19:00 - 20:30" formControlName="zeit">
+  <input type="submit" value="11:30 - 13:00" class="zeit">
+  <input type="submit" value="13:00 - 14:30" class="zeit">
+  <input type="submit" value="17:30 - 19:00" class="zeit">
+  <input type="submit" value="19:00 - 20:30" class="zeit">
+
+  <br>
 
   <input type="submit" value="Submit" routerLink="">
 
