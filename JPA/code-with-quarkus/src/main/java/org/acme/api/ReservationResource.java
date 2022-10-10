@@ -49,15 +49,15 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("/getByID")
-    public Response getByID(Long id) {
+    @Path("/getByID/{id}")
+    public Response getByID(@PathParam("id") Long id) {
         var found = this.reservationRepo.findById(id);
         return Response.ok(found).build();
     }
 
     @GET
-    @Path("/getByDate")
-    public Response getByDate(LocalDate date) {
+    @Path("/getByDate/{date}")
+    public Response getByDate(@PathParam("date") LocalDate date) {
         var foundReservation = this.reservationRepo.getByDate(date);
         return Response.ok(foundReservation).build();
     }

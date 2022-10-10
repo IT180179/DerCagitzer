@@ -28,8 +28,8 @@ public class RoomResource {
     }
 
     @GET
-    @Path("/getByID")
-    public Response getByID(Long id) {
+    @Path("/getByID/{id}")
+    public Response getByID(@PathParam("id") Long id) {
         var found = this.roomRepo.findById(id);
         return Response.ok(found).build();
     }

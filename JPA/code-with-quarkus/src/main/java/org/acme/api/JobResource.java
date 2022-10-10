@@ -29,8 +29,8 @@ public class JobResource {
     }
 
     @GET
-    @Path("/getByID")
-    public Response getByID(Long id) {
+    @Path("/getByID/{id}")
+    public Response getByID(@PathParam("id") Long id) {
         var found = this.jobRepo.findById(id);
         return Response.ok(found).build();
     }

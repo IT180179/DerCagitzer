@@ -28,8 +28,8 @@ public class EmployeeResource {
     }
 
     @GET
-    @Path("/getById")
-    public Response getById(Long id) {
+    @Path("/getById/{id}")
+    public Response getById(@PathParam("id") Long id) {
         var found = this.employeeRepo.findById(id);
         return Response.ok(found).build();
     }
