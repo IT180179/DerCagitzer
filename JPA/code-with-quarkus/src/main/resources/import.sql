@@ -8,4 +8,4 @@ insert into Room(room_name, summer_winter) values('Raum 1', 'Winter');
 
 insert into TableEntity(seats, room_id) values(4, 1);
 
-insert into Reservation(employee_id, customer_id, customer_name, reservation_time, reservation_date, reservation_timestamp, person_amount, tableno) values(1, 1, 'Maar', 1, '2022-10-09', current_timestamp, 4, 1);
+insert into Reservation(employee_id, customer_id, customer_name, reservation_time, reservation_date, reservation_timestamp, person_amount, tableno) values(1, 1, 'Maar', 1, '10.10.2022', current_timestamp, 4, 1);
