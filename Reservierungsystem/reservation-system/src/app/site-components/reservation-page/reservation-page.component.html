@@ -8,9 +8,10 @@
 </head>
 
 <body>
+<div><p>R E S E R V I E R U NG</p></div>
+<hr id="headline">
 
 <div class="container">
-  <p>Reservierung</p>
   <form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">
     <div class="row">
       <div class="col-md-3">
@@ -41,10 +42,10 @@
     <label>Gewünschte Zeit:</label>
     <div class="row">
       <div class="col-md-3">
-        <input type="submit" class="form-control btn btn-success" formControlName="slot1">
+        <input type="button" class="form-control btn btn-success" formControlName="slot1">
       </div>
       <div class="col-md-3">
-        <input type="submit" class="form-control btn btn-success" formControlName="slot2">
+        <input type="button" class="form-control btn btn-success" formControlName="slot2">
       </div>
     </div>
 
@@ -52,10 +53,10 @@
 
     <div class="row">
       <div class="col-md-3">
-        <input type="submit" class="form-control btn btn-success" formControlName="slot3">
+        <input type="button" class="form-control btn btn-success" formControlName="slot3">
       </div>
       <div class="col-md-3">
-        <input type="submit" class="form-control btn btn-success" formControlName="slot4">
+        <input type="button" class="form-control btn btn-success" formControlName="slot4">
       </div>
     </div>
 
@@ -88,9 +89,9 @@
       </div>
     </div>
 
-    <hr>
+    <hr id="optional">
 
-    <div class="row" id="optional">
+    <div class="row">
       <div class="col-md-3">
         <div class="form-group">
           <label>Vorname:</label>
