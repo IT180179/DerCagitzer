@@ -5,10 +5,8 @@
   <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
   <p><a routerLink="/reservation"><mat-icon>add</mat-icon></a></p>
 </div>
-
 <ng-wf-timetable
   [scope]="scope"
   [schedules]="schedules"
   (eventClick)="eventClicked($event)">
-
 </ng-wf-timetable>
