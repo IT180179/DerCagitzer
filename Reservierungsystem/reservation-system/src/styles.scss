@@ -104,8 +104,33 @@ h1{
   color:rgb(38, 95, 25);
 }
 
+.container{
+  margin-top:6%;
+  position: absolute;
+}
+
 form{
-  margin: 0 auto;
+  position: absolute;
+  left: 52%;
+  width:100%
 
 }
 
+#datum{
+  width:31vw;
+}
+
+#anmerkung{
+  width:31vw;
+  height:5vw;
+}
+
+#reservieren{
+  width:31vw;
+}
+
+hr{
+  width:31vw;
+  margin-left:0;
+  height:40px;
+}
