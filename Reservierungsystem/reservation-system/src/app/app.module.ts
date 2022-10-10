@@ -10,6 +10,7 @@ import {NgWfTimetableModule} from "ng2-wf-timetable";
 import { ReservationPageComponent } from './site-components/reservation-page/reservation-page.component';
 import { CreateReservationComponent } from './site-components/create-reservation/create-reservation.component';
 import {HttpClientModule} from "@angular/common/http";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -19,14 +20,15 @@ import {HttpClientModule} from "@angular/common/http";
     ReservationPageComponent,
     CreateReservationComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgWfTimetableModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgWfTimetableModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatIconModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

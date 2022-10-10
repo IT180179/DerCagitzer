@@ -12,6 +12,9 @@ import {Reservation} from "../../shared/reservation";
 export class DayviewPageComponent implements OnInit {
   reservations: Reservation[] = [];
 
+  today = new Date().toLocaleDateString();
+  now = new Date()
+
   scope!: TimetableScope;
   schedules!: Array<TimetableSchedule>;
 
@@ -19,6 +22,9 @@ export class DayviewPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
+
     this.rs.getAll().subscribe(res=> this.reservations = res);
     /*
     The timetable scope which contain params in the following order:
@@ -236,4 +242,10 @@ export class DayviewPageComponent implements OnInit {
     window.alert(event.title);
   }
 
+  back() {
+
+  }
+  forward() {
+    
+  }
 }
