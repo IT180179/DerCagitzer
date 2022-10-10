@@ -14,6 +14,8 @@ import org.acme.workloads.Job.Job;
 import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Reservation.ReservationRepo;
 
+import java.time.LocalDate;
+
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/reservation")
@@ -51,6 +53,13 @@ public class ReservationResource {
     public Response getByID(Long id) {
         var found = this.reservationRepo.findById(id);
         return Response.ok(found).build();
+    }
+
+    @GET
+    @Path("/getByDate")
+    public Response getByDate(LocalDate date) {
+        var foundReservation = this.reservationRepo.getByDate(date);
+        return Response.ok(foundReservation).build();
     }
 
     @POST
