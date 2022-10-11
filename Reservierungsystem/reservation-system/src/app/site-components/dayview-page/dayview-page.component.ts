@@ -25,7 +25,9 @@ export class DayviewPageComponent implements OnInit {
 
 
 
-    this.rs.getAll().subscribe(res=> this.reservations = res);
+    this.rs.getAll().subscribe(res => this.reservations = res );
+
+
     /*
     The timetable scope which contain params in the following order:
     1. Timetable start time: Date
@@ -243,9 +245,9 @@ export class DayviewPageComponent implements OnInit {
   }
 
   back() {
-
+    
   }
   forward() {
-    
+
   }
 }

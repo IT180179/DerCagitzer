@@ -15,14 +15,20 @@ export class ReservationService {
   postReservation(reservation: Reservation){
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-cache'
+      'Cache-Control': 'no-cache',
+
+      'Access-Control-Allow-Origin': 'http://localhost:8080',
+      'Access-Control-Allow-Credentials': 'true',
     });
-    return this.httpClient.post("https://localhost:8080/reservation/add", reservation, { headers: httpHeaders })
+    return this.httpClient.post("http://localhost:8080/reservation/add", reservation, { headers: httpHeaders })
   }
 
   getAll(): Observable<Reservation[]> {
-
-    return this.httpClient.get<Reservation[]>("https://localhost:8080/reservation/all")
+    let httpHeaders = new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+    });
+    return this.httpClient.get<Reservation[]>("http://localhost:8080/reservation/all", { headers: httpHeaders })
       .pipe(
         catchError(this.errorHandler)
       );
