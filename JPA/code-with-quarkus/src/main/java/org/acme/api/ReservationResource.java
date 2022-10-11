@@ -13,6 +13,7 @@ import io.quarkus.mailer.Mailer;
 import org.acme.workloads.Job.Job;
 import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Reservation.ReservationRepo;
+import org.eclipse.microprofile.openapi.annotations.headers.Header;
 
 import java.time.LocalDate;
 
@@ -57,7 +58,7 @@ public class ReservationResource {
 
     @GET
     @Path("/getByDate/{date}")
-    public Response getByDate(@PathParam("date") LocalDate date) {
+    public Response getByDate(@PathParam("date") String date) {
         var foundReservation = this.reservationRepo.getByDate(date);
         return Response.ok(foundReservation).build();
     }

@@ -30,7 +30,7 @@ public class Reservation extends PanacheEntityBase {
 
     private Integer reservation_time;
 
-    private LocalDate reservation_date;
+    private String reservation_date;
     private Timestamp reservation_timestamp;
     private Integer person_amount;
 
@@ -86,11 +86,11 @@ public class Reservation extends PanacheEntityBase {
         this.reservation_time = reservation_time;
     }
 
-    public LocalDate getReservation_date() {
+    public String getReservation_date() {
         return reservation_date;
     }
 
-    public void setReservation_date(LocalDate reservation_date) {
+    public void setReservation_date(String reservation_date) {
         this.reservation_date = reservation_date;
     }
 

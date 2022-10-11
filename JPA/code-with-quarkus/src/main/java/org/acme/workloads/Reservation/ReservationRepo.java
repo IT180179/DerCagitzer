@@ -22,7 +22,7 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         this.entityManager.merge(reservation);
     }
 
-    public List<Reservation> getByDate(LocalDate date) {
+    public List<Reservation> getByDate(String date) {
         Query query = this.entityManager.createQuery("select r from Reservation r where r.reservation_date = :date", Reservation.class).setParameter("date", date);
         return query.getResultList();
     }

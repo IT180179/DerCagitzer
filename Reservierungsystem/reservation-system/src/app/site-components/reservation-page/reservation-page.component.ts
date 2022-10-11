@@ -18,16 +18,19 @@ export class ReservationPageComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(){
-
     this.reactiveForm = new FormGroup({
       nachname: new FormControl(null),
       telefonnummer: new FormControl(null),
-      tischnummer: new FormControl(),
       datum: new FormControl(null),
+      tischnummer: new FormControl(),
       personenanzahl: new FormControl('2'),
-      zeit: new FormControl(null)
-
-
+      slot1: new FormControl('11:30 - 13:00'),
+      slot2: new FormControl('17:30 - 19:00'),
+      slot3: new FormControl('13:00 - 14:30'),
+      slot4: new FormControl('19:00 - 20:30'),
+      vorname: new FormControl(null),
+      email: new FormControl(null),
+      anmerkung: new FormControl(null)
     });
 
   }

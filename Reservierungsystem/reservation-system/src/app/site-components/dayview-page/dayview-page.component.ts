@@ -14,6 +14,8 @@ export class DayviewPageComponent implements OnInit {
 
   today = new Date().toLocaleDateString();
   now = new Date()
+  current = new Date().toLocaleDateString();
+  i = 0;
 
   scope!: TimetableScope;
   schedules!: Array<TimetableSchedule>;
@@ -243,11 +245,26 @@ export class DayviewPageComponent implements OnInit {
   eventClicked(event: TimetableEvent): void {
     window.alert(event.title);
   }
-
   back() {
-    
+
+    this.today = (this.now.getDate()-1)+ "."+ (this.now.getMonth())+"."+ this.now.getFullYear();
+    if(this.now.getDate()-1 == 0){
+     // this.today = (this.now.getDate()-1)+ "."+ (this.now.getMonth())+"."+ this.now.getFullYear();
+    }
+    this.now.setDate(this.now.getDate()-1);
+    this.now.setMonth(this.now.getMonth());
+    this.now.setFullYear(this.now.getFullYear());
+
+
+  //   this.i = this.now.getDate()-1;
+   // console.log(this.i)
   }
   forward() {
+    this.today = (this.now.getDate()+1)+ "."+ (this.now.getMonth())+"."+ this.now.getFullYear();
 
+    this.now.setDate(this.now.getDate()+1);
+    this.now.setMonth(this.now.getMonth());
+    this.now.setFullYear(this.now.getFullYear());
   }
+  
 }
