@@ -75,14 +75,36 @@ ul{
   padding: 5%;
 }
 
-span{
+.time-entry{
   border-radius: 10px;
+  padding: 10px;
+
+}
+.room-timeline  li{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin: 15%;
 }
 
 span span{
   padding: 2%;
+
+}
+.timetable aside ul li {
+  padding: 0 15px;
+  background-color: white;
+  line-height: 46px;
+  margin: 8%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
+#nav p a{
+  font-size: 150%;
+  text-shadow: 0 0 10px lightgrey, 0 0 10px lightgrey;
+}
+
+.mat-icon {
+  text-shadow: 0 0 10px lightgrey, 0 0 10px lightgrey;
+}
 
 /*RESERVIERUNG*/
 
