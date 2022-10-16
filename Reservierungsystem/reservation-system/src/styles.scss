@@ -108,3 +108,32 @@ span span{
 
 /*RESERVIERUNG*/
 
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#headline{
+  color:rgb(38, 95, 25);
+}
+
+label{
+  font-size:18px;
+  font-weight:bold;
+  color:rgb(38, 95, 25)
+}
+
+input[type=submit]{
+  background-color: rgba(81, 154, 64, 0.2);
+  border:none;
+  color:rgb(38, 95, 25);
+  font-weight:bold;
+}
+
+input[type=button]{
+  background-color: rgba(81, 154, 64, 0.2);
+  border:none;
+  color:rgb(38, 95, 25);
+  font-weight:bold;
+}

@@ -8,10 +8,14 @@
 </head>
 
 <body>
-<div><p>R E S E R V I E R U NG</p></div>
-<hr id="headline">
 
-<div class="d-flex justify-content-center align-items-center container ">
+<div id="headline">
+  <h1>Reservierung</h1>
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-center align-items-center container" id="myDIV">
 
   <form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">
 
@@ -36,6 +40,8 @@
           <label>Datum:</label>
           <input id="datum" class="form-control" type="date" name="datum" formControlName="datum">
     </div>
+
+    <br>
 
     <div class="row">
       <label>Gewünschte Zeit:</label>
@@ -76,7 +82,6 @@
         </select>
       </div>
 
-
     </div>
 
     <hr id="optional">
@@ -99,7 +104,7 @@
 
         <div class="form-group">
           <label>Anmerkungen:</label>
-          <input id="anmerkung" class="form-control" type="text" name="test" formControlName="anmerkungen">
+          <input id="anmerkung" class="form-control" type="text" name="anmerkung" formControlName="anmerkungen">
         </div>
 
     </div>
@@ -112,79 +117,6 @@
   </form>
 </div>
 
+
 </body>
 </html>
-
-<!--<form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">-->
-  <!--
-  <h1>Reservierung</h1>
-
-
-    <div style="float:left">
-      <label for="nachname">Nachname</label>
-      <br>
-      <input type="text" name="nachname" id="nachname" maxlength="4"/>
-    </div>
-
-    <div style="float:left">
-      <label for="telefonnummer">Telefonnummer</label>
-      <br>
-      <input type="text" id="telefonnummer" name="telefonnummer" />
-    </div>
-    <br>
-    <div style="clear:left">
-      <label for="tischnr">Tischnummer</label>
-      <br>
-      <select id="tischnr" formControlName="tischnummer">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">11</option>
-        <option value="12">12</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="start">Datum </label>
-      <br>
-      <input type="date" id="start" formControlName="datum">
-    </div>
-
-    <div>
-      <label for="personenanzahl">Personenanzahl</label>
-      <br>
-      <select id="personenanzahl" formControlName="personenanzahl">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">11</option>
-        <option value="12">12</option>
-      </select>
-    </div>
-
-    <div style="float:left">
-      <label>Gewünschte Zeit</label>
-      <br>
-      <input type="submit" value="11:30 - 13:00" class="zeit">
-      <input type="submit" value="13:00 - 14:30" class="zeit">
-      <input type="submit" value="17:30 - 19:00" class="zeit">
-      <input type="submit" value="19:00 - 20:30" class="zeit">
-    </div>
-
-    <div style="clear:left">
-      <input type="submit" value="RESERVIEREN" routerLink="" class="submit">
-    </div>
-
-
-  </form>
--->
