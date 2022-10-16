@@ -1,5 +1,4 @@
 export interface Reservation {
-
   id: number;
   employee_id: number;
   customer_id: number;
@@ -9,4 +8,5 @@ export interface Reservation {
   reservation_timestamp: Date;
   person_amount: number;
   tableno: number;
+
 }
