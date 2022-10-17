@@ -9,22 +9,15 @@
 
 <body>
 
-<div id="headline">
-  <h1>Reservierung</h1>
-</div>
-
-<hr>
-
-<div class="d-flex justify-content-center align-items-center container" id="myDIV">
+<div class="d-flex justify-content-center align-items-center container">
 
   <form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">
-
 
     <div class="row">
 
       <div class="form-group">
           <label>Nachname: </label>
-          <input class="form-control" type="text" name="nachname" formControlName="nachname">
+          <input class="form-control .col-lg-*" type="text" name="nachname" formControlName="nachname" id="nachname">
       </div>
 
       <div class="form-group">
@@ -35,24 +28,22 @@
 
     </div>
 
-
     <div class="row">
           <label>Datum:</label>
-          <input id="datum" class="form-control" type="date" name="datum" formControlName="datum">
+          <input id="date" class="form-control" type="date" name="datum" formControlName="datum">
     </div>
-
     <br>
 
     <div class="row">
       <label>Gewünschte Zeit:</label>
-        <input type="button" class="form-control btn btn-success" formControlName="slot1">
+        <input type="button" class="form-control btn btn-success" formControlName="slot1" style="margin-bottom: 1%">
         <input type="button" class="form-control btn btn-success" formControlName="slot2">
     </div>
 
     <br>
 
     <div class="row">
-        <input type="button" class="form-control btn btn-success" formControlName="slot3">
+        <input type="button" class="form-control btn btn-success" formControlName="slot3" style="margin-bottom: 1%">
         <input type="button" class="form-control btn btn-success" formControlName="slot4">
     </div>
 
