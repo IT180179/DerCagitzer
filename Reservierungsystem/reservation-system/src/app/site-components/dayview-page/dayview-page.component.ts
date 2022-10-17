@@ -28,7 +28,7 @@ export class DayviewPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    this.now.setMonth(this.now.getMonth()+1);
     // this.reservations = JSON.stringify(res)= JSON.parse(JSON.stringify(res))
    // this.rs.getAll().subscribe(res => this.reservations = res);
 
@@ -266,8 +266,12 @@ export class DayviewPageComponent implements OnInit {
     // console.log(this.i)
   }
 
+
   forward() {
-    this.today = (this.now.getDate() + 1) + "." + (this.now.getMonth()) + "." + this.now.getFullYear();
+
+
+    this.today = (this.now.getDate() + 1) + "." + this.now.getMonth() + "." + this.now.getFullYear();
+
 
     this.now.setDate(this.now.getDate() + 1);
     this.now.setMonth(this.now.getMonth());
