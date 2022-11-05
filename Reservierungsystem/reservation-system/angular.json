@@ -117,5 +117,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "reservation-system"
 }

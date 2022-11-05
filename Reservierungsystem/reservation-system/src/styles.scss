@@ -19,12 +19,11 @@ body { margin: 0; font-family: Work Sans
 }
 
 .timetable {
-  margin-left:20%;
-  margin-right:20%;
+
   marign-top:1%;
   font-size: 120%;
-  height: 20%;
 }
+
 .mat-icon{
   font-size: 2rem;
   vertical-align: super;
@@ -151,4 +150,74 @@ input[type=button]{
 
 .d-flex{
   margin-top: 3%;
+}
+
+#overview{
+  margin-top: 1.5%;
+  width: 17%;
+  height:80%;
+  border: green 3px solid;
+  float: left;
+  margin-right: 2%;
+  margin-left: 2%;
+  border-radius: 10px;
+}
+
+.timetable{
+float: left;
+  margin-left: 20%;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+#time{
+  width:57%;
+  height:4%;
+  border: green 3px solid;
+  background-color: white;
+  float:left;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin-left:20.8%;
+  margin-right:25%;
+  margin-bottom: 20%;
+  margin-top: -50px;
+  border-radius: 5px;
+}
+
+.timetable ul.room-timeline li:after{
+  z-index: 1;
+}
+
+.slots{
+  padding-top: 2%;
+  font-size: 150%;
+}
+.box1{
+  padding-top: 3%;
+  margin-left:10%;
+  float:left
+}
+
+.box2{
+  padding-top: 3%;
+  margin-left:40%;
+  float:left
 }

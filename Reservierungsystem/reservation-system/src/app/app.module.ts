@@ -13,6 +13,10 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { SideOverviewComponent } from './site-components/side-overview/side-overview.component';
+import { TimetableComponent } from './site-components/timetable/timetable.component';
+import { FooterComponent } from './site-components/footer/footer.component';
+
 
 
 @NgModule({
@@ -21,7 +25,10 @@ import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModu
     DayviewPageComponent,
     ReservationPageComponent,
     CreateReservationComponent,
-    Dialog
+    Dialog,
+    SideOverviewComponent,
+    TimetableComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
