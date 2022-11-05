@@ -26,4 +26,23 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         Query query = this.entityManager.createQuery("select r from Reservation r where r.reservation_date = :date", Reservation.class).setParameter("date", date);
         return query.getResultList();
     }
+
+    public Long countReservationsPerTimeslot(int timeslot, String date) {
+        Query query = this.entityManager.createQuery("select count(r) from Reservation r where r.reservation_date = :date and r.reservation_time = :timeslot", Long.class)
+                .setParameter("date", date)
+                .setParameter("timeslot", timeslot);
+        return (Long) query.getSingleResult();
+    }
+
+    public Long countReservationsPerDay(String date) {
+        Query query = this.entityManager.createQuery("select count(r) from Reservation r where r.reservation_date = :date", Long.class)
+                .setParameter("date", date);
+        return (Long) query.getSingleResult();
+    }
+
+    public Long countPersonsPerDay(String date) {
+        Query query = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date", Long.class)
+                .setParameter("date", date);
+        return (Long) query.getSingleResult();
+    }
 }

@@ -43,6 +43,27 @@ public class ReservationResource {
     }
 
     @GET
+    @Path("/countReservationsPerTimeslot/{timeslot}/{date}")
+    public Response countReservationsPerTimeslot(@PathParam("timeslot") int timeslot, @PathParam("date") String date) {
+        var countedReservations = this.reservationRepo.countReservationsPerTimeslot(timeslot, date);
+        return Response.ok(countedReservations).build();
+    }
+
+    @GET
+    @Path("/countReservationsPerDay/{date}")
+    public Response countReservationsPerDay(@PathParam("date") String date) {
+        var countedReservations = this.reservationRepo.countReservationsPerDay(date);
+        return Response.ok(countedReservations).build();
+    }
+
+    @GET
+    @Path("/countPersonsPerDay/{date}")
+    public Response countPersonsPerDay(@PathParam("date") String date) {
+        var countedReservations = this.reservationRepo.countPersonsPerDay(date);
+        return Response.ok(countedReservations).build();
+    }
+
+    @GET
     @Path("/all")
     public Response getAll() {
         var all = this.reservationRepo.listAll();
