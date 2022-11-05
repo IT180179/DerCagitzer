@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "fb6794e0-4ff0-4742-9bf5-1705db1fa55d"
+    "analytics": "fb6794e0-4ff0-4742-9bf5-1705db1fa55d",
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -35,7 +38,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
             "scripts": []
           },
@@ -105,13 +109,13 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              "node_modules/bulma/css/bulma.css"
+              "node_modules/bulma/css/bulma.css",
+              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "defaultProject": "reservation-system"
+  }
 }

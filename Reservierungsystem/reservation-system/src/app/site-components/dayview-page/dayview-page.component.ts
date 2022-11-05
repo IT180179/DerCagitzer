@@ -30,9 +30,9 @@ export class DayviewPageComponent implements OnInit {
 
     this.now.setMonth(this.now.getMonth()+1);
     // this.reservations = JSON.stringify(res)= JSON.parse(JSON.stringify(res))
-   // this.rs.getAll().subscribe(res => this.reservations = res);
+    // this.rs.getAll().subscribe(res => this.reservations = res);
 
-   // console.log(JSON.stringify(this.reservations));
+    // console.log(JSON.stringify(this.reservations));
 
 
     /*
@@ -44,7 +44,7 @@ export class DayviewPageComponent implements OnInit {
     const timetableStartTime = new Date(new Date().setHours(11, 0, 0));
     const timetableEndTime = new Date(new Date().setHours(22, 0, 0));
 
-    this.scope = new TimetableScope(timetableStartTime, timetableEndTime);
+    this.scope = new TimetableScope(timetableStartTime, timetableEndTime, 5.5);
 
     /*
     Each timetable schedule contains:

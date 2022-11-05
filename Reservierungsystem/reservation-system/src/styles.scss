@@ -1,3 +1,13 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%;}
@@ -9,11 +19,12 @@ body { margin: 0; font-family: Work Sans
 }
 
 .timetable {
-  margin:1%;
-  marign-top:10%;
+  margin-left:20%;
+  margin-right:20%;
+  marign-top:1%;
   font-size: 120%;
+  height: 20%;
 }
-
 .mat-icon{
   font-size: 2rem;
   vertical-align: super;
@@ -138,4 +149,6 @@ input[type=button]{
   font-weight:bold;
 }
 
-
+.d-flex{
+  margin-top: 3%;
+}
