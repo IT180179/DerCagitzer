@@ -16,7 +16,12 @@ import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModu
 import { SideOverviewComponent } from './site-components/side-overview/side-overview.component';
 import { TimetableComponent } from './site-components/timetable/timetable.component';
 import { FooterComponent } from './site-components/footer/footer.component';
-
+import { CalendarComponent } from './site-components/calendar/calendar.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -28,7 +33,8 @@ import { FooterComponent } from './site-components/footer/footer.component';
     Dialog,
     SideOverviewComponent,
     TimetableComponent,
-    FooterComponent
+    FooterComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,10 @@ import { FooterComponent } from './site-components/footer/footer.component';
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule
+    CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, MatFormFieldModule, MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule, MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
