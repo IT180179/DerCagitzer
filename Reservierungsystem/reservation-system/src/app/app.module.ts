@@ -19,9 +19,9 @@ import {MbscModule} from "@mobiscroll/angular-lite";
 
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -45,10 +45,16 @@ import {MatCardModule} from "@angular/material/card";
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
     MbscModule, FormsModule, MatDatepickerModule
+
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
