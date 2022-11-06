@@ -46,7 +46,7 @@ import {MatCardModule} from "@angular/material/card";
     MatDialogModule,
     MatButtonModule,
     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
-    MbscModule, FormsModule
+    MbscModule, FormsModule, MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
