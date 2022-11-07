@@ -27,10 +27,11 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         return query.getResultList();
     }
 
-    public Long countReservationsPerTimeslot(int timeslot, String date) {
-        Query query = this.entityManager.createQuery("select count(r) from Reservation r where r.reservation_date = :date and r.reservation_time = :timeslot", Long.class)
+    public Long countReservationsPerTimeslot(String start_time, String end_time, String date) {
+        Query query = this.entityManager.createQuery("select count(r) from Reservation r where r.reservation_date = :date and r.start_time = :start_time and r.end_time = :end_time", Long.class)
                 .setParameter("date", date)
-                .setParameter("timeslot", timeslot);
+                .setParameter("start_time", start_time)
+                .setParameter("end_time", end_time);
         return (Long) query.getSingleResult();
     }
 

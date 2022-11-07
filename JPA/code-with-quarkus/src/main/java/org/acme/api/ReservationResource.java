@@ -43,9 +43,9 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("/countReservationsPerTimeslot/{timeslot}/{date}")
-    public Response countReservationsPerTimeslot(@PathParam("timeslot") int timeslot, @PathParam("date") String date) {
-        var countedReservations = this.reservationRepo.countReservationsPerTimeslot(timeslot, date);
+    @Path("/countReservationsPerTimeslot/{start_time}/{end_time}/{date}")
+    public Response countReservationsPerTimeslot(@PathParam("start_time") String start_time, @PathParam("end_time") String end_time, @PathParam("date") String date) {
+        var countedReservations = this.reservationRepo.countReservationsPerTimeslot(start_time, end_time, date);
         return Response.ok(countedReservations).build();
     }
 

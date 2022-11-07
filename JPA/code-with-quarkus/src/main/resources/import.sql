@@ -43,9 +43,9 @@ values(6, 1),
       (4, 3),
       (5, 3);
 
-insert into Reservation(employee_id, customer_id, customer_name, reservation_time, reservation_date, reservation_timestamp, person_amount, tableno)
-values(1, 1, 'Maar', 1, '06.11.2022', current_timestamp, 6, 1),
-      (1, 2, 'Ursprung', 1, '06.11.2022', current_timestamp, 3, 2),
-      (2, 3, 'Bikic', 1, '06.11.2022', current_timestamp, 6, 8),
-      (1, 4, 'Hammer', 1, '06.11.2022', current_timestamp, 5, 10),
-      (2, 5, 'Aberger', 1, '06.11.2022', current_timestamp, 4, 5);
+insert into Reservation(employee_id, customer_id, customer_name, start_time, end_time, reservation_date, reservation_timestamp, person_amount, tableno)
+values(1, 1, 'Maar', '11:00', '13:00', '06.11.2022', current_timestamp, 6, 1),
+      (1, 2, 'Ursprung', '11:00', '13:00', '06.11.2022', current_timestamp, 3, 2),
+      (2, 3, 'Bikic', '13:00', '15:00', '06.11.2022', current_timestamp, 6, 8),
+      (1, 4, 'Hammer', '18:00', '20:00', '06.11.2022', current_timestamp, 5, 10),
+      (2, 5, 'Aberger', '20:00', '22:00', '06.11.2022', current_timestamp, 4, 5);

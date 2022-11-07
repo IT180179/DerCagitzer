@@ -28,7 +28,9 @@ public class Reservation extends PanacheEntityBase {
 
     private String customer_name;
 
-    private Integer reservation_time;
+    private String start_time;
+
+    private String end_time;
 
     private String reservation_date;
     private Timestamp reservation_timestamp;
@@ -78,12 +80,20 @@ public class Reservation extends PanacheEntityBase {
         this.customer = customer;
     }
 
-    public Integer getReservation_time() {
-        return reservation_time;
+    public String getStart_time() {
+        return start_time;
     }
 
-    public void setReservation_time(Integer reservation_time) {
-        this.reservation_time = reservation_time;
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 
     public String getReservation_date() {
