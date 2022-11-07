@@ -1,64 +1,67 @@
-
 <div id="nav" style="padding-top: 2%">
- <!-- <p><a><mat-icon></mat-icon></a></p>
-  <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
-  <p class="long-box today"><a>{{today}}</a></p>
-  <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
-  <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
+  <!-- <p><a><mat-icon></mat-icon></a></p>
+   <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
+   <p class="long-box today"><a>{{today}}</a></p>
+   <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
+   <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
 </div>
 
 
-<app-calendar (dateSelected)="dateSelected($event)" ></app-calendar>
+<app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
 
 <div class="timetable">
 
-  <div class="tisch1"> <mat-icon>schedule</mat-icon></div>
-
-  <div class="time"*ngFor="let element of data">{{element.time}}</div>
-  <br>
-  <br>
-  <br>
-  <div>
-  <div class="" *ngFor="let element of tablenr">
-
-    <br>
-    <div class="tisch" >{{element.nr}}</div>
-    <br>
-    <br>
-    <br>
+  <div class="tisch1" style="margin-right: 1.5%">
+    <mat-icon>schedule</mat-icon>
   </div>
-  <ng-container *ngFor="let data of data">
-    <ng-container *ngFor="let tablenr of tablenr">
-      <ng-container *ngIf="reservations.length > 0; else noRes">
-      <ng-container *ngFor="let res of reservations; index as i">
-      <div class="box" style="background-color: green" *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr; else noRes" (click)="openReservation()"><a></a></div>
-    </ng-container>
-      </ng-container>
-      <ng-template #noRes>
-        <div class="box" (click)="openReservation()"><a></a></div>
-
-      </ng-template>
-
-    </ng-container>
+  <ng-container *ngFor="let element of data; index as i">
+    <div class="time" *ngIf="i == 0 || i == 1 || i == 2 || i == 3 || i == 6 || i == 7 || i == 8 || i == 9; else noSlot"
+         style="background-color: green; -webkit-box-shadow: 0px 0px 2.5px 0px green; box-shadow: 0px 0px 2.5px 0px green;">{{element.time}}</div>
+    <ng-template #noSlot>
+      <div class="time">{{element.time}}</div>
+    </ng-template>
   </ng-container>
-
-
-</div>
+  <br>
+  <br>
+  <br>
+  <div class="wrapper">
+    <div style="display: grid; grid-template-columns: repeat(1, 1fr); width: 100%; margin: 0">
+      <div style="margin-bottom: 7%;" *ngFor="let element of tablenr">
+        <div style="width: 11%; height: 110%;" class="tisch">{{element.nr}}</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 150%;">
+      <ng-container *ngFor="let data of data">
+        <ng-container *ngFor="let tablenr of tablenr">
+          <ng-container *ngIf="reservations.length > 0; else noRes">
+            <ng-container *ngFor="let res of reservations; index as i">
+              <div class="box" style="background-color: green"
+                   *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr; else noRes"
+                   (click)="openReservation()"><a></a></div>
+            </ng-container>
+          </ng-container>
+          <ng-template #noRes>
+            <div class="box" (click)="openReservation()"><a></a></div>
+          </ng-template>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
 </div>
 
 <app-side-overview></app-side-overview>
 
 <div id="time">
-  <div class="solts" class="box1" >
-   <p class="slots">3/11</p>
+  <div class="slots" class="box1">
+    <p class="slots">3/11</p>
   </div>
   <div class="slots" class="box1">
     <p class="slots">3/11</p>
   </div>
-  <div class="solts" class="box2">
+  <div class="slots" class="box2">
     <p class="slots">3/11</p>
   </div>
-  <div class="solts" class="box1">
+  <div class="slots" class="box1">
     <p class="slots">3/11</p>
   </div>
 </div>
