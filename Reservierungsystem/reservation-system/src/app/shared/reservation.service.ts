@@ -35,6 +35,17 @@ export class ReservationService {
 
   }
 
+  getByID(id: number): Observable<Reservation[]> {
+    let httpHeaders = new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+    });
+    return this.httpClient.get<Reservation[]>("http://localhost:8080/reservation/getByID/" + id, { headers: httpHeaders })
+      .pipe(
+        catchError(this.errorHandler)
+      );
+  }
+
   private errorHandler(error: HttpErrorResponse): Observable<any> {
     console.error("Fehler aufgetreten!");
     return throwError(error.message);
