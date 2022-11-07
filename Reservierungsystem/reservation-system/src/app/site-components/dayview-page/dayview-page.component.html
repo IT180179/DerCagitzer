@@ -25,26 +25,29 @@
   <br>
   <br>
   <div class="wrapper">
-    <div style="display: grid; grid-template-columns: repeat(1, 1fr); width: 100%; margin: 0">
-      <div style="margin-bottom: 7%;" *ngFor="let element of tablenr">
-        <div style="width: 11%; height: 110%;" class="tisch">{{element.nr}}</div>
+    <div style="display: grid; grid-template-columns: repeat(1, 1fr); width: 7%; margin: 0">
+      <div style="margin-bottom: 70%;" *ngFor="let element of tablenr">
+        <div style="width: 80%; height: 200%;" class="tisch">{{element.nr}}</div>
       </div>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 150%;">
-      <ng-container *ngFor="let data of data">
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 83%;">
+
+        <ng-container *ngFor="let data of data">
         <ng-container *ngFor="let tablenr of tablenr">
           <ng-container *ngIf="reservations.length > 0; else noRes">
+              <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
             <ng-container *ngFor="let res of reservations; index as i">
-              <div class="box" style="background-color: green"
-                   *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr; else noRes"
-                   (click)="openReservation()"><a></a></div>
+              <div class="box" style="background-color: green;"
+                   *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr"
+                   (click)="resInfo(res)"><a></a></div>
             </ng-container>
           </ng-container>
-          <ng-template #noRes>
-            <div class="box" (click)="openReservation()"><a></a></div>
-          </ng-template>
         </ng-container>
       </ng-container>
+
+      <ng-template #noRes>
+        <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
+      </ng-template>
     </div>
   </div>
 </div>

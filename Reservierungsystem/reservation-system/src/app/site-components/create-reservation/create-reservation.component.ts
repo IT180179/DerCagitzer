@@ -22,6 +22,7 @@ export class CreateReservationComponent implements OnInit {
   }
 
   createReservation(reservation: Reservation){
+    console.log("haut hi")
     this.reservationService.postReservation(reservation).subscribe(() => {
       this.router.navigate(['..'], {relativeTo: this.route})
     })

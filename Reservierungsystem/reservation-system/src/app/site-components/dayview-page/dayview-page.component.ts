@@ -1,8 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} from "ng2-wf-timetable";
 import {ReservationService} from "../../shared/reservation.service";
 import {Reservation} from "../../shared/reservation";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
 
 
@@ -224,11 +224,12 @@ export class DayviewPageComponent implements OnInit {
   }
 
 
-  openReservation(): void {
+  openReservation(tablenr: number, data: string, date: Date): void {
+    console.log(date)
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '70%',
-      data: {},
+      data: {tablenr: tablenr, data: data, date: date},
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -248,7 +249,6 @@ export class DayviewPageComponent implements OnInit {
               checkdate = this.date.toLocaleDateString()
           }
 
-
           if (r[i].reservation_date.toLocaleString() == checkdate) {
             this.reservations.push(r[i]);
             console.log("tes")
@@ -260,7 +260,6 @@ export class DayviewPageComponent implements OnInit {
     )
   }
 
-
   dateSelected(value: Date) {
       this.date = value
       console.log(value)
@@ -268,10 +267,21 @@ export class DayviewPageComponent implements OnInit {
       this.reservations = [];
   }
 
-
+  resInfo(reservation: Reservation) {
+    console.log(reservation)
+    this.dialog.open(Dialog, {
+      data: {
+        name: reservation.customer_name,
+        persons: reservation.person_amount
+      },
+    });
+  }
 }
+
+
 @Component({
   templateUrl: 'dialog.html',
 })
 export class Dialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }

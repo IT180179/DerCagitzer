@@ -15,6 +15,7 @@ export class CalendarComponent implements OnInit {
   @Output()
   dateSelected: EventEmitter<Date> = new EventEmitter();
 
+
   today = new Date();
   month2 = this.today.getMonth()+1;
   secondDate = new Date(2022, 12,0);
@@ -29,9 +30,6 @@ export class CalendarComponent implements OnInit {
     /* Prevent Monday and Tueasday for select. */
     return day !== 1 && day !== 2 ;
   }
-
-
-
 
   constructor() { }
 
