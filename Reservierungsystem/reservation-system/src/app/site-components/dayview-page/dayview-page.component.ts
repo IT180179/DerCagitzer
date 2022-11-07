@@ -13,7 +13,8 @@ import {ReservationPageComponent} from "../reservation-page/reservation-page.com
 })
 
 export class DayviewPageComponent implements OnInit {
-  reservations?: Reservation[];
+
+  reservations: Reservation[] = [];
 
   today = new Date().toLocaleDateString();
   now = new Date()
@@ -24,71 +25,88 @@ export class DayviewPageComponent implements OnInit {
   schedules!: Array<TimetableSchedule>;
 
   constructor(private rs: ReservationService, public dialog: MatDialog) {
-
   }
+
 
   data: any;
   tablenr: any;
+  date = new Date();
+
+
   ngOnInit(): void {
+    this.loadReservations(this.date)
+
 
     this.data = [
       {
         time: 11,
+        fulltime: '11:00',
         name: 'Powers Schneider',
         reservation: false
       },
       {
         time: 12,
+        fulltime: '12:00',
         name: 'Adrian Lawrence',
         reservation: false
       },
       {
         time: 13,
+        fulltime: '13:00',
         name: 'Boyer Stanley',
         reservation: false
       },
       {
         time: 14,
+        fulltime: '14:00',
         name: 'Powers Schneider',
         reservation: false
       },
       {
         time: 15,
+        fulltime: '15:00',
         name: 'Adrian Lawrence',
         reservation: false
       },
       {
         time: 16,
+        fulltime: '16:00',
         name: 'Boyer Stanley',
         reservation: false
       },
       {
         time: 17,
+        fulltime: '17:00',
         name: 'Powers Schneider',
         reservation: false
       },
       {
         time: 18,
+        fulltime: '18:00',
         name: 'Adrian Lawrence',
         reservation: false
       },
       {
         time: 19,
+        fulltime: '19:00',
         name: 'Boyer Stanley',
         reservation: false
       },
       {
         time: 20,
+        fulltime: '20:00',
         name: 'Adrian Lawrence',
         reservation: false
       },
       {
         time: 21,
+        fulltime: '21:00',
         name: 'Boyer Stanley',
         reservation: false
       },
       {
         time: 22,
+        fulltime: '22:00',
         name: 'Boyer Stanley',
         reservation: false
       },
@@ -132,40 +150,40 @@ export class DayviewPageComponent implements OnInit {
         nr: 12
       },
       {
-        nr: 1
+        nr: 13
       },
       {
-        nr: 2
+        nr: 14
       },
       {
-        nr: 3
+        nr: 15
       },
       {
-        nr: 4
+        nr: 16
       },
       {
-        nr: 5
+        nr: 17
       },
       {
-        nr: 6
+        nr: 18
       },
       {
-        nr: 7
+        nr: 19
       },
       {
-        nr: 8
+        nr: 20
       },
       {
-        nr: 9
+        nr: 21
       },
       {
-        nr: 10
+        nr: 22
       },
       {
-        nr: 11
+        nr: 23
       },
       {
-        nr: 12
+        nr: 24
       },
     ]
   }
@@ -216,6 +234,38 @@ export class DayviewPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  loadReservations(date: Date){
+    this.rs.getAll().subscribe(
+      (r: Reservation[]) => {
+
+        for (let i = 0; i < r.length; i++) {
+
+          if (Array.from(r[i].reservation_date.toLocaleString())[0] == "0"){
+             var checkdate = "0" + this.date.toLocaleDateString()
+          }else{
+              checkdate = this.date.toLocaleDateString()
+          }
+
+
+          if (r[i].reservation_date.toLocaleString() == checkdate) {
+            this.reservations.push(r[i]);
+            console.log("tes")
+            console.log(this.reservations)
+          }
+
+        }
+      }
+    )
+  }
+
+
+  dateSelected(value: Date) {
+      this.date = value
+      console.log(value)
+      this.loadReservations(this.date)
+      this.reservations = [];
   }
 
 

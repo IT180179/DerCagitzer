@@ -1,12 +1,17 @@
 export interface Reservation {
-  id: number;
+  reservation_id: number;
   employee_id: number;
   customer_id: number;
   customer_name: string;
-  reservation_time: number;
+  start_time: number;
+  end_time: number;
   reservation_date: Date;
   reservation_timestamp: Date;
   person_amount: number;
-  tableno: number;
+  tableEntity: TableEntity;
 
+}
+export interface TableEntity{
+  seats: number;
+  tableno: number;
 }

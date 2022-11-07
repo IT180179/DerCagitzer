@@ -1,14 +1,14 @@
 
-<div id="nav">
-  <p><a><mat-icon></mat-icon></a></p>
+<div id="nav" style="padding-top: 2%">
+ <!-- <p><a><mat-icon></mat-icon></a></p>
   <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
   <p class="long-box today"><a>{{today}}</a></p>
   <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
-  <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>
+  <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
 </div>
 
 
-<app-calendar></app-calendar>
+<app-calendar (dateSelected)="dateSelected($event)" ></app-calendar>
 
 <div class="timetable">
 
@@ -18,16 +18,30 @@
   <br>
   <br>
   <br>
-
+  <div>
   <div class="" *ngFor="let element of tablenr">
+
     <br>
     <div class="tisch" >{{element.nr}}</div>
-
-    <div class="box" *ngFor="let element of data" (click)="openReservation()"><a></a></div>
     <br>
     <br>
     <br>
   </div>
+  <ng-container *ngFor="let data of data">
+    <ng-container *ngFor="let tablenr of tablenr">
+      <ng-container *ngIf="reservations.length > 0; else noRes">
+      <ng-container *ngFor="let res of reservations; index as i">
+      <div class="box" style="background-color: green" *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr; else noRes" (click)="openReservation()"><a></a></div>
+    </ng-container>
+      </ng-container>
+      <ng-template #noRes>
+        <div class="box" (click)="openReservation()"><a></a></div>
+
+      </ng-template>
+
+    </ng-container>
+  </ng-container>
+
 
 </div>
 
