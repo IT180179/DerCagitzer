@@ -230,6 +230,7 @@ export class DayviewPageComponent implements OnInit {
       width: '70%',
       height: '70%',
       data: {tablenr: tablenr, data: data, date: date},
+      backdropClass: 'backdropBackground'
     });
 
     dialogRef.afterClosed().subscribe(result => {

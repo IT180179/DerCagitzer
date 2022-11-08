@@ -265,17 +265,20 @@ body {
 }
 
 .tisch{
-  background-color: green;
+  background-color: darkseagreen;
   border: rgba(0,0,0,0) solid 2px;
-  background-color: green;
+  background-color: darkseagreen;
   float:left;
   padding: 2%;
   width: 2%;
   text-align: center;
   border-radius: 5px;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 5px 0px #000000;
-  box-shadow: 0px 0px 5px 0px #000000;
+  -webkit-box-shadow: 0px 0px 2.5px 0px darkseagreen;
+  box-shadow: 0px 0px 2.5px 0px darkseagreen;
+}
+.backdropBackground{
+  backdrop-filter: blur(1rem);
 }
 .box {
   padding-bottom: 10%; padding-top: 10%; margin-left: 5%;
@@ -295,7 +298,7 @@ body {
   float:left;
   background-color: darkseagreen;
   border: rgba(0,0,0,0) solid 2px;
-  margin-left: 0.5%;
+  margin-left: 0.575%;
   padding: 2%;
   text-align: center;
   border-radius: 5px;
