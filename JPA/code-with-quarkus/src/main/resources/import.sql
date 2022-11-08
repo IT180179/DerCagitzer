@@ -17,12 +17,11 @@ values('Fabian', 'Maar', 'fabian@maar.com', '123', '123456789'),
       ('Christian', 'Aberger', 'christian@aberger.com', '123', '123456789');
 
 insert into Room(room_name, summer_winter)
-values('Raum 1', 'Winter'),
-      ('Raum 2', 'Winter'),
-      ('Raum 3', 'Winter'),
-      ('Raum 4', 'Winter'),
-      ('Saal 1', 'Winter'),
-      ('Saal 2', 'Winter'),
+values('Gaststüberl', 'Winter'),
+      ('Nebenzimmer Neu', 'Winter'),
+      ('Nebenzimmer', 'Winter'),
+      ('Bachstüberl', 'Winter'),
+      ('Saal', 'Winter'),
       ('Terrasse', 'Sommer'),
       ('Gastgarten', 'Sommer');
 
