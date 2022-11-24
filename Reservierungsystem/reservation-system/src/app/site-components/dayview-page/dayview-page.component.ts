@@ -14,6 +14,8 @@ import {ReservationPageComponent} from "../reservation-page/reservation-page.com
 
 export class DayviewPageComponent implements OnInit {
 
+
+
   reservations: Reservation[] = [];
 
   today = new Date().toLocaleDateString();
@@ -39,75 +41,118 @@ export class DayviewPageComponent implements OnInit {
 
     this.data = [
       {
-        time: 11,
+        time: 1,
         fulltime: '11:00',
-        name: 'Powers Schneider',
+        reservation: false
+      },
+      {
+        time: 2,
+        fulltime: '11:30',
+        reservation: false
+      },
+      {
+        time: 3,
+        fulltime: '12:00',
+        reservation: false
+      },
+      {
+        time: 4,
+        fulltime: '12:30',
+        reservation: false
+      },
+      {
+        time: 5,
+        fulltime: '13:00',
+        reservation: false
+      },
+      {
+        time: 6,
+        fulltime: '13:30',
+        reservation: false
+      },
+      {
+        time: 7,
+        fulltime: '14:00',
+        reservation: false
+      },
+      {
+        time: 8,
+        fulltime: '14:30',
+        reservation: false
+      },
+      {
+        time: 9,
+        fulltime: '15:00',
+        reservation: false
+      },
+      {
+        time: 10,
+        fulltime: '15:30',
+        reservation: false
+      },
+      {
+        time: 11,
+        fulltime: '16:00',
         reservation: false
       },
       {
         time: 12,
-        fulltime: '12:00',
-        name: 'Adrian Lawrence',
+        fulltime: '16:30',
         reservation: false
       },
       {
         time: 13,
-        fulltime: '13:00',
-        name: 'Boyer Stanley',
+        fulltime: '17:00',
         reservation: false
       },
       {
         time: 14,
-        fulltime: '14:00',
-        name: 'Powers Schneider',
+        fulltime: '17:30',
         reservation: false
       },
       {
         time: 15,
-        fulltime: '15:00',
-        name: 'Adrian Lawrence',
+        fulltime: '18:00',
         reservation: false
       },
       {
         time: 16,
-        fulltime: '16:00',
-        name: 'Boyer Stanley',
+        fulltime: '18:30',
         reservation: false
       },
       {
         time: 17,
-        fulltime: '17:00',
-        name: 'Powers Schneider',
+        fulltime: '19:00',
         reservation: false
       },
       {
         time: 18,
-        fulltime: '18:00',
-        name: 'Adrian Lawrence',
+        fulltime: '19:30',
         reservation: false
       },
       {
         time: 19,
-        fulltime: '19:00',
-        name: 'Boyer Stanley',
+        fulltime: '20:00',
         reservation: false
       },
       {
         time: 20,
-        fulltime: '20:00',
-        name: 'Adrian Lawrence',
+        fulltime: '20:30',
         reservation: false
       },
       {
         time: 21,
         fulltime: '21:00',
-        name: 'Boyer Stanley',
         reservation: false
       },
       {
         time: 22,
+        fulltime: '21:30',
+        reservation: false
+      },
+      {
+        time: 23,
         fulltime: '22:00',
-        name: 'Boyer Stanley',
         reservation: false
       },
     ]

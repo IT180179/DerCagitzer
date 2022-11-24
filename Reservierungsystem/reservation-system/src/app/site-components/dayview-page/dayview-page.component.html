@@ -11,6 +11,30 @@
 
 <div class="timetable">
 
+  <div style="background-color: red; width: 20%"> I'm resizable </div>
+
+  <div class="grid-container" #myBounds>
+    <!-- Draggable block -->
+    <div mwlResizable
+         [enableGhostResize]="true"
+         ngDraggable
+         [bounds]="myBounds"
+         [inBounds]=true
+         [gridSize]=50
+         [preventDefaultEvent]=true
+         class="drag-grid box">
+      <p>Drag</p>
+    </div>
+    <!-- Draw grids -->
+    <div *ngFor="let elements of data">
+      <div *ngFor="let table of tablenr">
+        <div [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
+          <small>grid</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
   <div class="tisch1" style="margin-right: 1.75%">
     <mat-icon>schedule</mat-icon>
   </div>
@@ -32,6 +56,8 @@
     </div>
     <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 83%;">
 
+
+
         <ng-container *ngFor="let data of data">
         <ng-container *ngFor="let tablenr of tablenr">
           <ng-container *ngIf="reservations.length > 0; else noRes">
@@ -45,26 +71,17 @@
         </ng-container>
       </ng-container>
 
+
+
       <ng-template #noRes>
         <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
       </ng-template>
     </div>
-  </div>
+  </div>-->
 </div>
+
+
 
 <app-side-overview></app-side-overview>
 
-<div id="time">
-  <div class="slots" class="box1">
-    <p class="slots">3/11</p>
-  </div>
-  <div class="slots" class="box1">
-    <p class="slots">3/11</p>
-  </div>
-  <div class="slots" class="box2">
-    <p class="slots">3/11</p>
-  </div>
-  <div class="slots" class="box1">
-    <p class="slots">3/11</p>
-  </div>
-</div>
+

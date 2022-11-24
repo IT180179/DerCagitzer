@@ -280,20 +280,7 @@ body {
 .backdropBackground{
   backdrop-filter: blur(1rem);
 }
-.box {
-  padding-bottom: 10%; padding-top: 10%; margin-left: 5%;
-  height: 70%;
-  margin-bottom: 70%;
-}
-.box:hover{
-  background-color: green;
-  color:white;
-}
-.box a{
-  margin: 2%;
-  padding: 2%;
-  border-radius: 5px;
-}
+
 .time{
   float:left;
   background-color: darkseagreen;
