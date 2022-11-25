@@ -9,21 +9,21 @@
 
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
 
+
 <div class="timetable">
 
-  <div style="background-color: red; width: 20%"> I'm resizable </div>
-
   <div class="grid-container" #myBounds>
-    <!-- Draggable block -->
-    <div mwlResizable
-         [enableGhostResize]="true"
-         ngDraggable
+
+    <div ngDraggable
          [bounds]="myBounds"
          [inBounds]=true
          [gridSize]=50
          [preventDefaultEvent]=true
-         class="drag-grid box">
-      <p>Drag</p>
+         [handle]="myHandle"
+         class="drag-grid" >
+      <div #myHandle class="drag-block-handle"> #myHandle </div>
+
+
     </div>
     <!-- Draw grids -->
     <div *ngFor="let elements of data">

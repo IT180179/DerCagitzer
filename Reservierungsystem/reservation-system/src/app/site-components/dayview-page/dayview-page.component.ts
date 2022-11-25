@@ -1,9 +1,10 @@
-import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} from "ng2-wf-timetable";
 import {ReservationService} from "../../shared/reservation.service";
 import {Reservation} from "../../shared/reservation";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
+import {ResizeEvent} from "angular-resizable-element";
 
 
 @Component({
@@ -14,6 +15,7 @@ import {ReservationPageComponent} from "../reservation-page/reservation-page.com
 
 export class DayviewPageComponent implements OnInit {
 
+  @ViewChild('resize') resize;
 
 
   reservations: Reservation[] = [];
@@ -29,6 +31,9 @@ export class DayviewPageComponent implements OnInit {
   constructor(private rs: ReservationService, public dialog: MatDialog) {
   }
 
+  onResizeEnd(event: ResizeEvent): void {
+    console.log('Element was resized', event);
+  }
 
   data: any;
   tablenr: any;

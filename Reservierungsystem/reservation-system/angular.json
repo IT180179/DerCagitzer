@@ -114,11 +114,11 @@
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
 
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }
     }
-  },
-  "defaultProject": "reservation-system"
+  }
 }

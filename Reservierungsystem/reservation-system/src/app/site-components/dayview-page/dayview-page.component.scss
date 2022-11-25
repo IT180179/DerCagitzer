@@ -2,12 +2,27 @@
   display: grid;
   grid-template-columns: repeat(24, 1fr)
 }
+.drag-wrapper{
+
+}
+.drag-block-handle{
+  width: 100px;
+  height: 43px;
+  margin-top: -20px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  background-color: blue;
+}
 .drag-grid{
+  resize: horizontal;
+  overflow: auto;
+  position: absolute;
   background-color: green;
-  width: 100%;
-  height: 3%;
+  width: 100px;
+  height: 50px;
 }
 .grid{
+
 }
 .box {
   padding-bottom: 15%; padding-top: 10%;
@@ -22,3 +37,7 @@
   padding: 2%;
   border-radius: 5px;
 }
+
+
+
+

@@ -36,7 +36,8 @@ import { ResizableModule } from 'angular-resizable-element';
     Dialog,
     SideOverviewComponent,
     CalendarComponent,
-    CalendarComponent
+    CalendarComponent,
+
   ],
   imports: [
     BrowserModule,
