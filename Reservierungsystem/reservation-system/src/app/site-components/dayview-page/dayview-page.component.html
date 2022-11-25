@@ -14,17 +14,30 @@
 
   <div class="grid-container" #myBounds>
 
-    <div ngDraggable
-         [bounds]="myBounds"
-         [inBounds]=true
-         [gridSize]=50
-         [preventDefaultEvent]=true
-         [handle]="myHandle"
-         class="drag-grid" >
-      <div #myHandle class="drag-block-handle"> #myHandle </div>
+    <ng-container *ngIf="reservations.length > 0;">
+      <ng-container *ngFor="let res of reservations; index as i">
+        <ng-container *ngFor="let time of data">
+          <ng-container *ngIf="time.fulltime == res.start_time">
+            <div #resize ngDraggable
+                 [bounds]="myBounds"
+                 [inBounds]=true
+                 [gridSize]=50
+                 [preventDefaultEvent]=true
+                 [handle]="myHandle"
+                 class="drag-grid"
+                 (click)="openReservation($event, date)"
+                 [ngStyle]="{'translate.px': (res.tableEntity.tableno * 50) }"
+            >
+                <!-- [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
 
+              <div #myHandle class="drag-block-handle"> #myHandle </div>
 
-    </div>
+      </div>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
     <!-- Draw grids -->
     <div *ngFor="let elements of data">
       <div *ngFor="let table of tablenr">

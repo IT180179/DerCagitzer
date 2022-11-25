@@ -1,10 +1,11 @@
-import {Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} from "ng2-wf-timetable";
 import {ReservationService} from "../../shared/reservation.service";
 import {Reservation} from "../../shared/reservation";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
 import {ResizeEvent} from "angular-resizable-element";
+import {DomSanitizer, SafeStyle} from "@angular/platform-browser";
 
 
 @Component({
@@ -13,10 +14,12 @@ import {ResizeEvent} from "angular-resizable-element";
   styleUrls: ['./dayview-page.component.scss']
 })
 
-export class DayviewPageComponent implements OnInit {
+export class DayviewPageComponent implements AfterViewInit{
 
-  @ViewChild('resize') resize;
+  @ViewChild('resize') resize: ElementRef;
 
+
+  style: SafeStyle;
 
   reservations: Reservation[] = [];
 
@@ -28,20 +31,32 @@ export class DayviewPageComponent implements OnInit {
   scope!: TimetableScope;
   schedules!: Array<TimetableSchedule>;
 
+  resizeObserver = new ResizeObserver(() =>{
+    /*
+    if (this.resize.nativeElement.offsetWidth % 50 != 0){
+      this.resize.nativeElement.offsetWidth = this.resize.nativeElement.offsetWidth - (this.resize.nativeElement.offsetWidth % 50);
+
+    }*/
+    console.log(this.resize.nativeElement.offsetWidth )
+  })
+
   constructor(private rs: ReservationService, public dialog: MatDialog) {
   }
 
-  onResizeEnd(event: ResizeEvent): void {
-    console.log('Element was resized', event);
-  }
+
 
   data: any;
   tablenr: any;
   date = new Date();
 
+  ngAfterViewInit() {
+    console.log(this.resize)
+    this.resizeObserver.observe(this.resize.nativeElement)
+
+  }
 
   ngOnInit(): void {
-    this.loadReservations(this.date)
+    this.loadReservations()
 
 
     this.data = [
@@ -238,6 +253,10 @@ export class DayviewPageComponent implements OnInit {
     ]
   }
 
+
+
+
+
   eventClicked(event: TimetableEvent): void {
     this.openDialog();
   }
@@ -274,21 +293,41 @@ export class DayviewPageComponent implements OnInit {
   }
 
 
-  openReservation(tablenr: number, data: string, date: Date): void {
+  openReservation(element, date: Date): void {
     console.log(date)
+
+    var style = window.getComputedStyle(element.target);
+    var matrix = new WebKitCSSMatrix(style.webkitTransform);
+
+    var table = (matrix.m42 / 50) + 1
+    var time = (matrix.m41 / 50) + 1
+
+    for (let i = 0; i < this.data.length; i++){
+      if (this.data[i].time == time){
+        var t = this.data[i].fulltime;
+
+      }
+    }
+    console.log('translateX: ', table);
+    console.log('translateY: ', t);
+
+
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '70%',
-      data: {tablenr: tablenr, data: data, date: date},
+      data: {tablenr: table, starttime: t, endtime: t, date: date},
       backdropClass: 'backdropBackground'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+
+
   }
 
-  loadReservations(date: Date){
+
+  loadReservations(){
     this.rs.getAll().subscribe(
       (r: Reservation[]) => {
 
@@ -305,7 +344,6 @@ export class DayviewPageComponent implements OnInit {
             console.log("tes")
             console.log(this.reservations)
           }
-
         }
       }
     )
@@ -314,7 +352,7 @@ export class DayviewPageComponent implements OnInit {
   dateSelected(value: Date) {
       this.date = value
       console.log(value)
-      this.loadReservations(this.date)
+      this.loadReservations()
       this.reservations = [];
   }
 

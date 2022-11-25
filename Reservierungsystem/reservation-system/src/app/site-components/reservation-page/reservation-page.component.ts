@@ -15,7 +15,7 @@ export class ReservationPageComponent implements OnInit {
 
   @Input() reservation?: Reservation;
   @Output() submitReservation = new EventEmitter<Reservation>();
-  reactiveForm: UntypedFormGroup;
+    reactiveForm: UntypedFormGroup;
 
   today = new Date();
   test: Date;
@@ -24,14 +24,16 @@ export class ReservationPageComponent implements OnInit {
 
 
   ngOnInit(){
-console.log(this.data.data.fulltime)
     this.test = this.data.date.toLocaleDateString()
+
+    console.log(this.data)
 
     this.reactiveForm = new UntypedFormGroup({
       nachname: new UntypedFormControl(null),
       telefonnummer: new UntypedFormControl(null),
-      tischnummer: new UntypedFormControl(this.data.tablenr.nr),
-      uhrzeit: new UntypedFormControl(this.data.data.fulltime),
+      tischnummer: new UntypedFormControl(this.data.tablenr),
+      startzeit: new UntypedFormControl(this.data.starttime),
+      endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.test),
       personenanzahl: new UntypedFormControl('2'),
       //slot1: new FormControl('11:00 - 13:00'),
