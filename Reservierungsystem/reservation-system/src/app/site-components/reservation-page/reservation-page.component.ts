@@ -11,8 +11,6 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 })
 export class ReservationPageComponent implements OnInit {
 
-
-
   @Input() reservation?: Reservation;
   @Output() submitReservation = new EventEmitter<Reservation>();
     reactiveForm: UntypedFormGroup;
@@ -36,10 +34,6 @@ export class ReservationPageComponent implements OnInit {
       endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.test),
       personenanzahl: new UntypedFormControl('2'),
-      //slot1: new FormControl('11:00 - 13:00'),
-      //slot2: new FormControl('13:00 - 15:00'),
-      //slot3: new FormControl('17:00 - 19:00'),
-     // slot4: new FormControl('19:00 - 21:00'),
       vorname: new UntypedFormControl(null),
       email: new UntypedFormControl(null),
       anmerkungen: new UntypedFormControl(null)
