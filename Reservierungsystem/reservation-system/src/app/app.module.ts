@@ -25,6 +25,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {AngularDraggableModule} from "angular2-draggable";
 import { ResizableModule } from 'angular-resizable-element';
+import { RoomCardsComponent } from './site-components/room-cards/room-cards.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ResizableModule } from 'angular-resizable-element';
     SideOverviewComponent,
     CalendarComponent,
     CalendarComponent,
+    RoomCardsComponent,
 
   ],
   imports: [
@@ -54,7 +56,7 @@ import { ResizableModule } from 'angular-resizable-element';
     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
     MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
     AngularDraggableModule,
-    ResizableModule
+    ResizableModule, MatCardModule
 
   ],
   providers: [
