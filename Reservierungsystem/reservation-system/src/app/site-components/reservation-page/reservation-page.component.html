@@ -1,15 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <title>Reservierung</title>
-</head>
-
-<body>
-
-  <form [formGroup] = "reactiveForm" (ngSubmit)="submitForm()">
+  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)"[formGroup]="addressForm"  >
 
     <label style="margin-left: 2.5%">Nachname: </label>
     <input class="form-control .col-lg-*" type="text" name="nachname" formControlName="nachname" id="nachname" style="margin-left: 2.5%; width:45%">
@@ -99,6 +89,3 @@
     <input type="submit" class="form-control btn btn-success" id="reservieren" value="RESERVIEREN" routerLink="" style="margin-top: 1%;">
 
   </form>
-
-</body>
-</html>
