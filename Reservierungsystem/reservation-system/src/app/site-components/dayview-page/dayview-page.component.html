@@ -12,6 +12,20 @@
 
 <div class="timetable">
 
+  <div id="timesReservation">
+    <h3 style="color: green">11:00</h3>
+    <h3>12:00</h3>
+    <h3 style="color: green">13:00</h3>
+    <h3>14:00</h3>
+    <h3>15:00</h3>
+    <h3>16:00</h3>
+    <h3 style="color: green">17:00</h3>
+    <h3>18:00</h3>
+    <h3 style="color: green">19:00</h3>
+    <h3>20:00</h3>
+    <h3>21:00</h3>
+    <h3>22:00</h3>
+  </div>
   <div class="grid-container" #myBounds>
 
     <ng-container *ngIf="reservations.length > 0;">
@@ -26,12 +40,12 @@
                  [handle]="myHandle"
                  class="drag-grid"
                  (click)="openReservation($event, date)"
-                 [ngStyle]="{'translate.px': (res.tableEntity.tableno * 50) }"
-            >
+                 [ngStyle]="{'translate.px': (res.tableEntity.tableno * 50) }">
                 <!-- [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
 
-              <div #myHandle class="drag-block-handle"> #myHandle </div>
-
+              <div #myHandle class="drag-block-handle">
+                <p class="reservationNachname">#myHandle</p>
+              </div>
       </div>
           </ng-container>
         </ng-container>
@@ -39,10 +53,12 @@
     </ng-container>
 
     <!-- Draw grids -->
-    <div *ngFor="let elements of data">
-      <div *ngFor="let table of tablenr">
-        <div [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
-          <small>grid</small>
+    <div *ngFor="let elements of data; index as i">
+      <div *ngFor="let table of tablenr; index as j">
+        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '5px' : '0px', 'border-top-left-radius': (elements.time == 1)? '5px' : '0px', 'border-bottom-right-radius': (elements.time == 23)? '5px' : '0px', 'border-top-right-radius': (elements.time == 23)? '5px' : '0px'}"
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
+          <small style="visibility: hidden">grid</small>
+          <small>{{elements.time}}</small>
         </div>
       </div>
     </div>
@@ -93,8 +109,4 @@
   </div>-->
 </div>
 
-
-
 <app-side-overview></app-side-overview>
-
-
