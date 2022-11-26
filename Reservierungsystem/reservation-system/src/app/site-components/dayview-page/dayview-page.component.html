@@ -6,10 +6,95 @@
    <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
 </div>
 
+
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
+
+
+<div class="timetable">
+
+  <div class="grid-container" #myBounds>
+
+    <ng-container *ngIf="reservations.length > 0;">
+      <ng-container *ngFor="let res of reservations; index as i">
+        <ng-container *ngFor="let time of data">
+          <ng-container *ngIf="time.fulltime == res.start_time">
+            <div #resize ngDraggable
+                 [bounds]="myBounds"
+                 [inBounds]=true
+                 [gridSize]=50
+                 [preventDefaultEvent]=true
+                 [handle]="myHandle"
+                 class="drag-grid"
+                 (click)="openReservation($event, date)"
+                 [ngStyle]="{'translate.px': (res.tableEntity.tableno * 50) }"
+            >
+                <!-- [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
+
+              <div #myHandle class="drag-block-handle"> #myHandle </div>
+
+      </div>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <!-- Draw grids -->
+    <div *ngFor="let elements of data">
+      <div *ngFor="let table of tablenr">
+        <div [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
+          <small>grid</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="tisch1" style="margin-right: 1.75%">
+    <mat-icon>schedule</mat-icon>
+  </div>
+  <ng-container *ngFor="let element of data; index as i">
+    <div class="time" *ngIf="i == 0 || i == 1 || i == 2 || i == 3 || i == 6 || i == 7 || i == 8 || i == 9; else noSlot"
+         style="background-color: green; -webkit-box-shadow: 0px 0px 2.5px 0px green; box-shadow: 0px 0px 2.5px 0px green;">{{element.time}}</div>
+    <ng-template #noSlot>
+      <div class="time">{{element.time}}</div>
+    </ng-template>
+  </ng-container>
+  <br>
+  <br>
+  <br>
+  <div class="wrapper">
+    <div style="display: grid; grid-template-columns: repeat(1, 1fr); width: 7%; margin: 0">
+      <div style="margin-bottom: 70%;" *ngFor="let element of tablenr">
+        <div style="width: 80%; height: 200%;" class="tisch">{{element.nr}}</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 83%;">
+
+
+
+        <ng-container *ngFor="let data of data">
+        <ng-container *ngFor="let tablenr of tablenr">
+          <ng-container *ngIf="reservations.length > 0; else noRes">
+              <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
+            <ng-container *ngFor="let res of reservations; index as i">
+              <div class="box" style="background-color: green;"
+                   *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr"
+                   (click)="resInfo(res)"><a></a></div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+
+
+
+      <ng-template #noRes>
+        <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
+      </ng-template>
+    </div>
+  </div>-->
+</div>
+
 
 
 <app-side-overview></app-side-overview>
 
-<app-room-cards></app-room-cards>
 
