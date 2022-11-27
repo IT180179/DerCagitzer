@@ -51,6 +51,7 @@ newdata: any
     this.submitReservation.emit(newReservation);
 
     this.newdata = {
+      customer: null,
       customer_name: data.nachname,
       start_time: data.startzeit,
       end_time: data.endzeit,
