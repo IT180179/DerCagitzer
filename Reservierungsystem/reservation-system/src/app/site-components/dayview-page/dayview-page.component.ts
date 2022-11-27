@@ -6,6 +6,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
 import {ResizeEvent} from "angular-resizable-element";
 import {DomSanitizer, SafeStyle} from "@angular/platform-browser";
+import {Element} from "@angular/compiler";
 
 
 @Component({
@@ -327,7 +328,7 @@ export class DayviewPageComponent implements AfterViewInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.loadReservations()
     });
 
 
@@ -384,8 +385,48 @@ export class DayviewPageComponent implements AfterViewInit{
 
       }
     }
-    console.log(et-st)
     return (et-st);
+  }
+  updateReservation(element, reservation: Reservation){
+    console.log(element)
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i].fulltime == reservation.start_time) {
+        var st = this.data[i].time;
+
+      }
+      if (this.data[i].fulltime == reservation.end_time) {
+        var et = this.data[i].time;
+
+      }
+    }
+
+    var starttime = st * 50 + element.x
+    var endtime = et * 50 + element.x
+
+    console.log(starttime)
+
+    for (let i = 0; i < this.data.length; i++){
+      if (this.data[i].time == (starttime / 50)){
+        var st_full = this.data[i].fulltime;
+
+      }
+      if (this.data[i].time == (endtime/ 50)){
+        var et_full = this.data[i].fulltime;
+
+      }
+    }
+
+    reservation.tableEntity.tableno = reservation.tableEntity.tableno + element.y / 50;
+    reservation.start_time = st_full;
+    reservation.end_time = et_full;
+
+    this.rs.update(reservation).subscribe(() =>{
+      console.log(reservation)
+      this.loadReservations();
+    })
+
+
   }
 
 }

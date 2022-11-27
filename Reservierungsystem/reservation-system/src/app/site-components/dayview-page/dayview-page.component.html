@@ -37,6 +37,8 @@
               [gridSize]=50
               [preventDefaultEvent]=true
               [handle]="myHandle"
+              (endOffset)="updateReservation($event, res)"
+
                  class="drag-grid"
               [ngStyle] ="{'width.px': (convertToNumber((res.end_time).toString(), (res.start_time).toString()) * 50)}"
                 >

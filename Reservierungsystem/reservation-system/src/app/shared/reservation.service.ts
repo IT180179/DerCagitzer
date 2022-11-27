@@ -35,6 +35,17 @@ export class ReservationService {
 
   }
 
+  update(reservation: Reservation){
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+
+      'Access-Control-Allow-Origin': 'http://localhost:8080',
+      'Access-Control-Allow-Credentials': 'true',
+    });
+    return this.httpClient.put("http://localhost:8080/reservation/update", reservation, { headers: httpHeaders })
+  }
+
   getByID(id: number): Observable<Reservation[]> {
     let httpHeaders = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
