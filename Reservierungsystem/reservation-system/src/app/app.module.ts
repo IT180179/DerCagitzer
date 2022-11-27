@@ -16,7 +16,6 @@ import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModu
 import { SideOverviewComponent } from './site-components/side-overview/side-overview.component';
 import { CalendarComponent } from './site-components/calendar/calendar.component';
 import {MbscModule} from "@mobiscroll/angular-lite";
-
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatInputModule} from "@angular/material/input";
@@ -25,6 +24,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {AngularDraggableModule} from "angular2-draggable";
 import { ResizableModule } from 'angular-resizable-element';
+import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import { ResizableModule } from 'angular-resizable-element';
     SideOverviewComponent,
     CalendarComponent,
     CalendarComponent,
-
+    RoomCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +54,8 @@ import { ResizableModule } from 'angular-resizable-element';
     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
     MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
     AngularDraggableModule,
-    ResizableModule
+    ResizableModule,
+    MatCardModule
 
   ],
   providers: [
