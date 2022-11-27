@@ -24,7 +24,7 @@ values('Nebenzimmer', 'Winter'),
       ('Gastgarten', 'Sommer'),
       ('Saal', 'Winter');
 
-insert into TableEntity(nr, seats, room_id)
+insert into TableEntity(seats, room_id)
 values(4, 1),
       (4, 1),
       (4, 1),
