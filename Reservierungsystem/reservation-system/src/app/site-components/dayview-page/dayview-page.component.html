@@ -24,7 +24,6 @@
     <h3 style="color: green">19:00</h3>
     <h3>20:00</h3>
     <h3>21:00</h3>
-    <h3>22:00</h3>
   </div>
   <div class="grid-container" #myBounds>
 
@@ -52,13 +51,21 @@
       </ng-container>
     </ng-container>
 
+    <div>
+      <div *ngFor="let elements of tablenr; index as i">
+        <div class="tableNrBox">
+          <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{i}}</p>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Draw grids -->
     <div *ngFor="let elements of data; index as i">
       <div *ngFor="let table of tablenr; index as j">
-        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '5px' : '0px', 'border-top-left-radius': (elements.time == 1)? '5px' : '0px', 'border-bottom-right-radius': (elements.time == 23)? '5px' : '0px', 'border-top-right-radius': (elements.time == 23)? '5px' : '0px'}"
+        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '10px' : '0px', 'border-top-left-radius': (elements.time == 1)? '10px' : '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' : '0px', 'border-top-right-radius': (elements.time == 22)? '10px' : '0px'}"
              [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
           <small style="visibility: hidden">grid</small>
-          <small>{{elements.time}}</small>
         </div>
       </div>
     </div>
