@@ -44,7 +44,11 @@ export class DayviewPageComponent implements AfterViewInit{
   constructor(private rs: ReservationService, public dialog: MatDialog) {
   }
 
+  infoReservation: Reservation;
 
+  getInformation(reservation: Reservation) {
+    this.infoReservation = reservation;
+  }
 
   data: any;
   tablenr: any;
@@ -428,10 +432,7 @@ export class DayviewPageComponent implements AfterViewInit{
 
 
   }
-
 }
-
-
 
 @Component({
   templateUrl: 'dialog.html',

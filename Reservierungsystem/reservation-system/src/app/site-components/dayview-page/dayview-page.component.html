@@ -46,7 +46,7 @@
               <!--
               [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
 
-              <div #myHandle class="drag-block-handle" >
+              <div (mouseover)="getInformation(res)" #myHandle class="drag-block-handle" >
                 <p class="reservationNachname">&nbsp;&nbsp;{{res.customer_name}},&nbsp;&nbsp;&nbsp;{{res.person_amount}}&nbsp;Personen</p>
               </div>
             </div>
@@ -121,5 +121,4 @@
   </div>-->
 </div>
 
-<app-side-overview></app-side-overview>
-
+<app-side-overview [infoReservation] = "infoReservation"></app-side-overview>

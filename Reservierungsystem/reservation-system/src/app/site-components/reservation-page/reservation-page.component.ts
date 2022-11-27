@@ -1,8 +1,10 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {Form, FormGroup, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Reservation} from "../../shared/reservation";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Dialog} from "../dayview-page/dayview-page.component";
 
 @Component({
   selector: 'app-reservation-page',
@@ -18,7 +20,7 @@ export class ReservationPageComponent implements OnInit {
   today = new Date();
   test: Date;
    addressForm: UntypedFormGroup;
-  constructor(public http: HttpClient, private fb: UntypedFormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public dialogRef: MatDialogRef<Dialog>, public http: HttpClient, private fb: UntypedFormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,private route: ActivatedRoute, private router: Router) { }
 
 
   ngOnInit(){
@@ -68,6 +70,7 @@ newdata: any
     console.log(this.newdata)
     this.http.post('http://localhost:8080/reservation/add', this.newdata)
       .subscribe((result)=>{
+        this.router.navigate(['..'], {relativeTo: this.route})
         console.log(result)
       });
 
@@ -80,5 +83,9 @@ newdata: any
 
     /* Prevent Monday and Tueasday for select. */
     return day !== 1 && day !== 2 ;
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
