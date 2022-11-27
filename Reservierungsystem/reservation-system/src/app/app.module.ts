@@ -11,7 +11,6 @@ import { CreateReservationComponent } from './site-components/create-reservation
 import {HttpClientModule} from "@angular/common/http";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
 import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { SideOverviewComponent } from './site-components/side-overview/side-overview.component';
 import { CalendarComponent } from './site-components/calendar/calendar.component';
@@ -25,6 +24,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {AngularDraggableModule} from "angular2-draggable";
 import { ResizableModule } from 'angular-resizable-element';
 import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -55,7 +55,9 @@ import {RoomCardsComponent} from "./site-components/room-cards/room-cards.compon
     MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
     AngularDraggableModule,
     ResizableModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
 
   ],
   providers: [

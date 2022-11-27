@@ -6,10 +6,10 @@ import {ReservationPageComponent} from "./site-components/reservation-page/reser
 import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
 
 const routes: Routes = [
-  { path: '', component: DayviewPageComponent },
+  { path: 'dashboard', component: DayviewPageComponent },
   { path: 'reservation', component: ReservationPageComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: 'rooms', component: RoomCardsComponent}
+  { path: 'cards', component: RoomCardsComponent },
+  { path: '', redirectTo: '/cards', pathMatch: 'full'}
 ];
 
 @NgModule({

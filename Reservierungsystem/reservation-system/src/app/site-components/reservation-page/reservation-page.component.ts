@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup} from '@angular/forms';
+import {Form, FormGroup, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {Reservation} from "../../shared/reservation";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
@@ -17,7 +17,7 @@ export class ReservationPageComponent implements OnInit {
 
   today = new Date();
   test: Date;
-
+   addressForm: UntypedFormGroup;
   constructor(public http: HttpClient, private fb: UntypedFormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
@@ -39,9 +39,10 @@ export class ReservationPageComponent implements OnInit {
       anmerkungen: new UntypedFormControl(null)
     });
 
+
+
   }
 newdata: any
-  addressForm: any;
   onSubmit(data: any) {
     const formValue = this.addressForm.value;
     const newReservation: Reservation = {
@@ -50,29 +51,33 @@ newdata: any
     this.submitReservation.emit(newReservation);
 
     this.newdata = {
-      customer:{
-        last_name: this.addressForm.nachname,
-        telNr: this.addressForm.telefonnummer,
-        email: this.addressForm.email,
-        first_name: this.addressForm.vorname,
-      },
-      customer_name: this.addressForm.nachname,
-      start_time: this.addressForm.startzeit,
-      end_time: this.addressForm.endzeit,
-      reservation_date: this.addressForm.datum,
-      person_amount: this.addressForm.personenanzahl,
+      customer_name: data.nachname,
+      start_time: data.startzeit,
+      end_time: data.endzeit,
+      reservation_date: data.datum,
+      person_amount: Number(data.personenanzahl),
       tableEntity: {
-        tableno: this.addressForm.tischnummer
+        tableno: Number(data.tischnummer)
+      },
+      employee: {
+        employee_id: 1
       }
     };
 
-    console.warn(this.newdata)
-
+    console.log(this.newdata)
     this.http.post('http://localhost:8080/reservation/add', this.newdata)
       .subscribe((result)=>{
         console.log(result)
       });
 
     this.reactiveForm.reset();
+  }
+
+
+  weekendsDatesFilter = (d: Date): boolean => {
+    const day = d.getDay();
+
+    /* Prevent Monday and Tueasday for select. */
+    return day !== 1 && day !== 2 ;
   }
 }

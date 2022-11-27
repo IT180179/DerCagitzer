@@ -1,8 +1,41 @@
 mat-card{
-  margin-left:2%;
-  width:28%;
+  width:30%;
+  float:left;
+  margin-right:1%;
+  padding-top:1%;
+  margin-bottom:1%;
 }
 
 #cards{
-  margin-top: 1.5%;
+  margin-top:10%;
+  margin-left:1.5%;
+}
+
+.mat-card-image{
+  margin-left:0%;
+  width:100%;
+  height:100%;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:180%;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.7);
+  padding-top:2%;
+  padding-left:2%;
+  padding-right:2%;
+  border-radius: 2px;
+}
+
+p{
+  color:white;
+}
+
+img:hover{
+  filter: blur(2.5px);
+  -webkit-filter: blur(2.5px);
 }

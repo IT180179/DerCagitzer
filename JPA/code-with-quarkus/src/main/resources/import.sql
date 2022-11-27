@@ -17,30 +17,29 @@ values('Fabian', 'Maar', 'fabian@maar.com', '123', '123456789'),
       ('Christian', 'Aberger', 'christian@aberger.com', '123', '123456789');
 
 insert into Room(room_name, summer_winter)
-values('Gaststüberl', 'Winter'),
-      ('Nebenzimmer Neu', 'Winter'),
-      ('Nebenzimmer', 'Winter'),
+values('Nebenzimmer', 'Winter'),
+      ('Gastzimmer', 'Winter'),
       ('Bachstüberl', 'Winter'),
-      ('Saal', 'Winter'),
       ('Terrasse', 'Sommer'),
-      ('Gastgarten', 'Sommer');
+      ('Gastgarten', 'Sommer'),
+      ('Saal', 'Winter');
 
 insert into TableEntity(seats, room_id)
-values(6, 1),
+values(4, 1),
       (4, 1),
       (4, 1),
       (4, 1),
       (4, 2),
-      (2, 2),
       (4, 2),
-      (6, 3),
-      (6, 3),
-      (6, 3),
+      (4, 2),
       (4, 3),
       (4, 3),
       (4, 3),
       (4, 3),
-      (5, 3);
+      (4, 3),
+      (4, 3),
+      (4, 3),
+      (4, 3);
 
 insert into Reservation(employee_id, customer_id, customer_name, start_time, end_time, reservation_date, reservation_timestamp, person_amount, tableno)
 values(1, 1, 'Maar', '11:00', '13:00', '06.11.2022', current_timestamp, 6, 1),
