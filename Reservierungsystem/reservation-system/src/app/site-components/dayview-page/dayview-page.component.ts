@@ -293,17 +293,18 @@ export class DayviewPageComponent implements AfterViewInit{
   }
 
 
-  openReservation(element, date: Date): void {
+  openReservation(time: number, table: number, date: Date): void {
     console.log(date)
-
+  /*
     var style = window.getComputedStyle(element.target);
     var matrix = new WebKitCSSMatrix(style.webkitTransform);
     var width = element.target.offsetWidth / 50 + 1;
 
     var table = (matrix.m42 / 50) + 1
     var time = (matrix.m41 / 50) + 1
-    var endtime = width + time;
 
+   */
+    var endtime = time + 4 ;
     for (let i = 0; i < this.data.length; i++){
       if (this.data[i].time == time){
         var t = this.data[i].fulltime;
@@ -371,7 +372,24 @@ export class DayviewPageComponent implements AfterViewInit{
       },
     });
   }
+
+  convertToNumber(endtime: String, starttime: String): number{
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i].fulltime == starttime) {
+        var st = this.data[i].time;
+
+      }
+      if (this.data[i].fulltime == endtime) {
+        var et = this.data[i].time;
+
+      }
+    }
+    console.log(et-st)
+    return (et-st);
+  }
+
 }
+
 
 
 @Component({

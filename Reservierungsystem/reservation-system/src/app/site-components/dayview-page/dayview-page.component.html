@@ -1,4 +1,4 @@
-      <div id="nav" style="padding-top: 2%">
+  <div id="nav" style="padding-top: 2%">
   <!-- <p><a><mat-icon></mat-icon></a></p>
    <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
    <p class="long-box today"><a>{{today}}</a></p>
@@ -40,14 +40,14 @@
               [preventDefaultEvent]=true
               [handle]="myHandle"
                  class="drag-grid"
-
+              [ngStyle] ="{'width.px': (convertToNumber((res.end_time).toString(), (res.start_time).toString()) * 50)}"
                 >
 
               <!--
               [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
 
               <div #myHandle class="drag-block-handle" >
-                <p class="reservationNachname">#myHandle</p>
+                <p class="reservationNachname">&nbsp;&nbsp;{{res.customer_name}},&nbsp;&nbsp;&nbsp;{{res.person_amount}}&nbsp;Personen</p>
               </div>
             </div>
             </div>
@@ -69,7 +69,7 @@
     <div *ngFor="let elements of data; index as i">
       <div *ngFor="let table of tablenr; index as j">
         <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '10px' : '0px', 'border-top-left-radius': (elements.time == 1)? '10px' : '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' : '0px', 'border-top-right-radius': (elements.time == 22)? '10px' : '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
-             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, table.nr, date)">
           <small style="visibility: hidden">grid</small>
         </div>
       </div>
