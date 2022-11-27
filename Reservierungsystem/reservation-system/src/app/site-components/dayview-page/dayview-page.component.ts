@@ -298,13 +298,19 @@ export class DayviewPageComponent implements AfterViewInit{
 
     var style = window.getComputedStyle(element.target);
     var matrix = new WebKitCSSMatrix(style.webkitTransform);
+    var width = element.target.offsetWidth / 50 + 1;
 
     var table = (matrix.m42 / 50) + 1
     var time = (matrix.m41 / 50) + 1
+    var endtime = width + time;
 
     for (let i = 0; i < this.data.length; i++){
       if (this.data[i].time == time){
         var t = this.data[i].fulltime;
+
+      }
+      if (this.data[i].time == endtime){
+        var et = this.data[i].fulltime;
 
       }
     }
@@ -315,7 +321,7 @@ export class DayviewPageComponent implements AfterViewInit{
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '70%',
-      data: {tablenr: table, starttime: t, endtime: t, date: date},
+      data: {tablenr: table, starttime: t, endtime: et, date: date},
       backdropClass: 'backdropBackground'
     });
 

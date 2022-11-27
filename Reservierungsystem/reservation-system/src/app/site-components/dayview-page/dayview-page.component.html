@@ -31,21 +31,26 @@
       <ng-container *ngFor="let res of reservations; index as i">
         <ng-container *ngFor="let time of data">
           <ng-container *ngIf="time.fulltime == res.start_time">
-            <div #resize ngDraggable
-                 [bounds]="myBounds"
-                 [inBounds]=true
-                 [gridSize]=50
-                 [preventDefaultEvent]=true
-                 [handle]="myHandle"
+            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ (res.tableEntity.tableno * 50) + 'px)'}">
+            <div
+              #resize ngDraggable
+              [bounds]="myBounds"
+              [inBounds]=true
+              [gridSize]=50
+              [preventDefaultEvent]=true
+              [handle]="myHandle"
                  class="drag-grid"
-                 (click)="openReservation($event, date)"
-                 [ngStyle]="{'translate.px': (res.tableEntity.tableno * 50) }">
-                <!-- [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
+              (click)="openReservation($event, date)"
+                >
 
-              <div #myHandle class="drag-block-handle">
+              <!--
+              [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
+
+              <div #myHandle class="drag-block-handle" >
                 <p class="reservationNachname">#myHandle</p>
               </div>
-      </div>
+            </div>
+            </div>
           </ng-container>
         </ng-container>
       </ng-container>
