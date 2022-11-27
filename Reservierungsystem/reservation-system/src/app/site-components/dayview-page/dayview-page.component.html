@@ -1,4 +1,4 @@
-<div id="nav" style="padding-top: 2%">
+      <div id="nav" style="padding-top: 2%">
   <!-- <p><a><mat-icon></mat-icon></a></p>
    <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
    <p class="long-box today"><a>{{today}}</a></p>
@@ -24,7 +24,6 @@
     <h3 style="color: green">19:00</h3>
     <h3>20:00</h3>
     <h3>21:00</h3>
-    <h3>22:00</h3>
   </div>
   <div class="grid-container" #myBounds>
 
@@ -32,7 +31,7 @@
       <ng-container *ngFor="let res of reservations; index as i">
         <ng-container *ngFor="let time of data">
           <ng-container *ngIf="time.fulltime == res.start_time">
-            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ (res.tableEntity.tableno * 50) + 'px)'}">
+            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ ((res.tableEntity.tableno - 1) * 50) + 'px)'}">
             <div
               #resize ngDraggable
               [bounds]="myBounds"
@@ -57,11 +56,20 @@
       </ng-container>
     </ng-container>
 
+    <div>
+      <div *ngFor="let i of tablenr; index as j">
+        <div class="tableNrBox">
+          <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{j + 1}}</p>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Draw grids -->
     <div *ngFor="let elements of data; index as i">
       <div *ngFor="let table of tablenr; index as j">
-        <div  (click)="openReservation($event, date)" [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '5px' : '0px', 'border-top-left-radius': (elements.time == 1)? '5px' : '0px', 'border-bottom-right-radius': (elements.time == 23)? '5px' : '0px', 'border-top-right-radius': (elements.time == 23)? '5px' : '0px'}"
-             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" >
+        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '10px' : '0px', 'border-top-left-radius': (elements.time == 1)? '10px' : '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' : '0px', 'border-top-right-radius': (elements.time == 22)? '10px' : '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box">
           <small style="visibility: hidden">grid</small>
         </div>
       </div>
