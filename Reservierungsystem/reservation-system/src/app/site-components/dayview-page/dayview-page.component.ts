@@ -320,8 +320,8 @@ export class DayviewPageComponent implements AfterViewInit{
 
 
     const dialogRef = this.dialog.open(ReservationPageComponent, {
-      width: '70%',
-      height: '70%',
+      width: '75%',
+      height: '95%',
       data: {tablenr: table, starttime: t, endtime: et, date: date},
       backdropClass: 'backdropBackground'
     });
