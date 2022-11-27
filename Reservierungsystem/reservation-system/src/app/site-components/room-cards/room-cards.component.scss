@@ -26,9 +26,14 @@ mat-card{
   font-weight: bold;
   background-color: rgba(0,0,0,0.6);
   padding:2%;
+  border-radius: 2px;
 }
 
 p{
   color:white;
+}
 
+img:hover{
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 }
