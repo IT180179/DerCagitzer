@@ -7,7 +7,7 @@ mat-card{
 }
 
 #cards{
-  margin-top:10%;
+  margin-top:5%;
   margin-left:1.5%;
 }
 
@@ -38,4 +38,12 @@ p{
 img:hover{
   filter: blur(2.5px);
   -webkit-filter: blur(2.5px);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 2vw;
+  margin-bottom: 0;
 }

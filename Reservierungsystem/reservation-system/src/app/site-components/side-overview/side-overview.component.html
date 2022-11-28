@@ -1,6 +1,12 @@
 <div id="overview">
-  <p>{{infoReservation.customer_name}}</p>
-  <p>{{infoReservation.person_amount}}</p>
-  <p>{{infoReservation.start_time}} - {{infoReservation.end_time}}</p>
-  <p>{{infoReservation.tableEntity.tableno}}</p>
+  <h3 style="text-align: center">Infos</h3>
+  <hr>
+  <div id="reservationInfo">
+    <h3>Reservierung</h3>
+    <p class="info">Nachname: <span style="font-weight: normal">{{infoReservation.customer_name}}</span></p>
+    <p class="info">Personenanzahl: <span style="font-weight: normal">{{infoReservation.person_amount}} Personen</span></p>
+    <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
+    <p class="info">Tischnummer: <span style="font-weight: normal">{{infoReservation.tableEntity.tableno}}</span></p>
+  </div>
+  <hr style="margin-left: 5%; margin-right: 5%;">
 </div>
