@@ -16,11 +16,22 @@ public class TableEntity extends PanacheEntityBase {
     private Long tableno;
 
     @Column(nullable = false)
+    private int number;
+
+    @Column(nullable = false)
     private int seats;
 
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 
     public Room getRoom() {
         return room;
