@@ -84,6 +84,20 @@ public class ReservationResource {
         return Response.ok(foundReservation).build();
     }
 
+    @GET
+    @Path("/countReservationsPerRoomNoon/{date}/{room_id}")
+    public Response countReservationsPerRoomNoon(@PathParam("date") String date, @PathParam("room_id") Long room_id) {
+        var usageNoon = this.reservationRepo.countReservationsPerRoomNoon(date, room_id);
+        return Response.ok(usageNoon).build();
+    }
+
+    @GET
+    @Path("/countReservationsPerRoomEvening/{date}/{room_id}")
+    public Response countReservationsPerRoomEvening(@PathParam("date") String date, @PathParam("room_id") Long room_id) {
+        var usageEvening = this.reservationRepo.countReservationsPerRoomEvening(date, room_id);
+        return Response.ok(usageEvening).build();
+    }
+
     @POST
     @Transactional
     @Path("/add")
