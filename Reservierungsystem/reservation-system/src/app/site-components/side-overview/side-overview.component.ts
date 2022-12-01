@@ -4,7 +4,7 @@ import {Reservation} from "../../shared/reservation";
 @Component({
   selector: 'app-side-overview',
   templateUrl: './side-overview.component.html',
-  styleUrls: ['./side-overview.component.scss']
+  styleUrls: ['./side-overview.component.scss'],
 })
 export class SideOverviewComponent implements OnInit {
 

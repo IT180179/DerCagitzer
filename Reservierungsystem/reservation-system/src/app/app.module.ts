@@ -25,6 +25,7 @@ import {AngularDraggableModule} from "angular2-draggable";
 import { ResizableModule } from 'angular-resizable-element';
 import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
 @NgModule({
@@ -39,27 +40,27 @@ import {MatButtonModule} from '@angular/material/button';
     CalendarComponent,
     RoomCardsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgWfTimetableModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatIconModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
-    MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
-    AngularDraggableModule,
-    ResizableModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgWfTimetableModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatIconModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
+        MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
+        AngularDraggableModule,
+        ResizableModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule, MatProgressBarModule
 
-  ],
+    ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule

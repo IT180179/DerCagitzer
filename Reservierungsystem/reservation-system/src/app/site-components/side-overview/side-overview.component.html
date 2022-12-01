@@ -1,6 +1,16 @@
 <div id="overview">
   <h3 style="text-align: center">Infos</h3>
   <hr>
+  <div id="tagesauslastungInfo">
+    <h3>Tagesauslastung</h3>
+    <mat-progress-bar class="progressBar" mode="determinate" style="width: 50%"></mat-progress-bar>
+  </div>
+  <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+  <div id="raumauslastungInfo">
+    <h3>Raumauslastung</h3>
+    <mat-progress-bar class="progressBar" mode="determinate" style="width: 50%"></mat-progress-bar>
+  </div>
+  <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
   <div id="reservationInfo">
     <h3>Reservierung</h3>
     <p class="info">Nachname: <span style="font-weight: normal">{{infoReservation.customer_name}}</span></p>
@@ -8,5 +18,5 @@
     <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
     <p class="info">Tischnummer: <span style="font-weight: normal">{{infoReservation.tableEntity.tableno}}</span></p>
   </div>
-  <hr style="margin-left: 5%; margin-right: 5%;">
+  <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
 </div>
