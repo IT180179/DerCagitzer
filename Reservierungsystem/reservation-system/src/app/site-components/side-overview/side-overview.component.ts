@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Reservation} from "../../shared/reservation";
+import {ReservationService} from "../../shared/reservation.service";
 
 @Component({
   selector: 'app-side-overview',
@@ -9,8 +10,9 @@ import {Reservation} from "../../shared/reservation";
 export class SideOverviewComponent implements OnInit {
 
   @Input() infoReservation: Reservation;
+  @Input() reservationsPerDay: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
