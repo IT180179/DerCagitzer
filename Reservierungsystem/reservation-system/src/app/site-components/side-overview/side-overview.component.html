@@ -11,7 +11,7 @@
     <mat-progress-bar class="progressBar" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
-  <div id="reservationInfo">
+  <div *ngIf="infoReservation" id="reservationInfo">
     <h3>Reservierung</h3>
     <p class="info">Nachname: <span style="font-weight: normal">{{infoReservation.customer_name}}</span></p>
     <p class="info">Personenanzahl: <span style="font-weight: normal">{{infoReservation.person_amount}} Personen</span></p>
