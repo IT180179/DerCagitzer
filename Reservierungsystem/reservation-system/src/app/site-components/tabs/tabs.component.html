@@ -1,0 +1,7 @@
+<div class="container">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" mat-align-tabs="start">
+    <mat-tab *ngFor="let room of rooms" label="{{room.room_name}}" >
+      {{room.summer_winter}}
+    </mat-tab>
+  </mat-tab-group>
+</div>

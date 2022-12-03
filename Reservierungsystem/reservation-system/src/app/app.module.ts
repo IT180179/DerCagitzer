@@ -26,6 +26,8 @@ import { ResizableModule } from 'angular-resizable-element';
 import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { TabsComponent } from './site-components/tabs/tabs.component';
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -38,29 +40,30 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     SideOverviewComponent,
     CalendarComponent,
     CalendarComponent,
-    RoomCardsComponent
+    RoomCardsComponent,
+    TabsComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgWfTimetableModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatIconModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
-        MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
-        AngularDraggableModule,
-        ResizableModule,
-        MatCardModule,
-        MatInputModule,
-        MatButtonModule, MatProgressBarModule
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgWfTimetableModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
+    MbscModule, FormsModule, MatDatepickerModule, MatFormFieldModule, MatSelectModule,
+    AngularDraggableModule,
+    ResizableModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule, MatProgressBarModule, MatTabsModule
 
-    ],
+  ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule

@@ -25,4 +25,11 @@ export class DataService {
 
   }
 
+  getRooms(): Observable<any> {
+
+    const url = "http://localhost:8080/room/all";
+    return this.httpClient.get<any>(url);
+
+  }
+
 }

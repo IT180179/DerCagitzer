@@ -61,6 +61,10 @@ export class DayviewPageComponent implements AfterViewInit{
   }
 
   ngOnInit(): void {
+
+    this.getTablesperRoom();
+    this.getReservationperRoom();
+
     this.loadReservations()
 
 
@@ -256,6 +260,8 @@ export class DayviewPageComponent implements AfterViewInit{
         nr: 24
       },
     ]
+
+
   }
 
 
@@ -430,6 +436,14 @@ export class DayviewPageComponent implements AfterViewInit{
       this.loadReservations();
     })
 
+
+  }
+
+  public getReservationperRoom() {
+
+  }
+
+  public getTablesperRoom() {
 
   }
 }
