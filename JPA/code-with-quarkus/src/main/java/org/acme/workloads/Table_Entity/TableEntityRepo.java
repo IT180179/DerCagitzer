@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -14,6 +15,12 @@ public class TableEntityRepo implements PanacheRepository<TableEntity> {
 
     public TableEntityRepo(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    public List<TableEntity> getTablesPerRoom(Long room_id) {
+        Query query = this.entityManager.createQuery("select t from TableEntity t where t.room.room_id = :room_id", TableEntity.class)
+                .setParameter("room_id", room_id);
+        return query.getResultList();
     }
 
     public void update(TableEntity tableEntity) {

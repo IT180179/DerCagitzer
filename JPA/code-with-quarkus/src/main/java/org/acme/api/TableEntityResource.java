@@ -34,6 +34,13 @@ public class TableEntityResource {
         return Response.ok(found).build();
     }
 
+    @GET
+    @Path("/getTablesPerRoom/{id}")
+    public Response getTablesPerRoom(@PathParam("id") Long id) {
+        var tables = this.tableEntityRepo.getTablesPerRoom(id);
+        return Response.ok(tables).build();
+    }
+
     @POST
     @Transactional
     @Path("/add")
