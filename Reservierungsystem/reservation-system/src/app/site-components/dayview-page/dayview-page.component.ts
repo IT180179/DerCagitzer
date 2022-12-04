@@ -448,10 +448,13 @@ export class DayviewPageComponent implements AfterViewInit{
     reservation.start_time = st_full;
     reservation.end_time = et_full;
 
-    this.rs.update(reservation).subscribe(() =>{
-      console.log(reservation)
-      this.loadReservations();
-    })
+    if (element.x != 0 && element.y != 0  ){
+      this.rs.update(reservation).subscribe(() =>{
+        console.log(reservation)
+        this.loadReservations();
+      })
+    }
+    
 
 
   }
