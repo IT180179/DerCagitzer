@@ -16,12 +16,16 @@ export class CalendarComponent implements OnInit {
   dateSelected: EventEmitter<Date> = new EventEmitter();
 
 
-  today = new Date();
-  month2 = this.today.getMonth()+1;
-  secondDate = new Date(2022, 12,0);
-  month3 = this.today.getMonth()+2;
-  thirdDate = new Date(2023,1,0);
+  firstDate = new Date();
 
+  secondDate = new Date();
+  month2 = this.firstDate.getMonth()+1;
+
+  setSecondMonthRight = this.secondDate.setMonth(this.month2);
+
+  thirdDate = new Date();
+  month3 = this.secondDate.getMonth()+1;
+  setThirdMonthRight = this.thirdDate.setMonth(this.month3);
 
 
   weekendsDatesFilter = (d: Date): boolean => {
@@ -40,10 +44,10 @@ export class CalendarComponent implements OnInit {
 
   dateChanged() {
 
-      this.calendar.activeDate = this.today;
-      this.dateSelected.emit(this.today);
+      this.calendar.activeDate = this.firstDate;
+      this.dateSelected.emit(this.firstDate);
 
-      console.log(this.today)
+      console.log(this.firstDate)
 
 
   }
