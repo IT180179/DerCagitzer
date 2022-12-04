@@ -78,8 +78,10 @@ newdata: any
         this.router.navigate(['..'], {relativeTo: this.route})
         console.log(result)
       });
+    this.dialogRef.close();
 
-    this.reactiveForm.reset();
+    this.addressForm.reset();
+
   }
 
 
@@ -91,6 +93,7 @@ newdata: any
   }
 
   onNoClick(): void {
+
     this.dialogRef.close();
   }
 }
