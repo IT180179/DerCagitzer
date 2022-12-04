@@ -30,12 +30,13 @@ export class SideOverviewService {
     return 0;
   }
 
-  reservationsPerRoomEveningCalc(date: String): any {
+  reservationsPerRoomEveningCalc(date: String): number {
     this.rs.countReservationsPerRoomEvening(date, this.room).subscribe(
       (r: number) => {
         this.reservationsPerRoomEvening = r;
         return (this.reservationsPerRoomEvening / 31) * 100;
       }
     )
+    return 0;
   }
 }
