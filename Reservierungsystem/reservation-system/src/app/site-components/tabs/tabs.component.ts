@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
+import {SideOverviewService} from "../../shared/side-overview.service";
 
 @Component({
   selector: 'app-tabs',
@@ -14,13 +15,11 @@ export class TabsComponent implements OnInit {
   tabels: any;
 
   ngOnInit(): void {
-
     this.rooms = this.dataservice.getRooms()
       .subscribe((result)=>{
         this.rooms = result
         console.log(this.rooms)
       });
-
   }
 
   getTabels(room_id: any) {
