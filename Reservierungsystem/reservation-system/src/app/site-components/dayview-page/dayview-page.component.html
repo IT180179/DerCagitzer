@@ -56,9 +56,9 @@
     </ng-container>
 
     <div>
-      <div *ngFor="let i of tablenr; index as j">
+      <div *ngFor="let i of tabels;">
         <div class="tableNrBox">
-          <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{j + 1}}</p>
+          <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{i.tableno}}</p>
         </div>
       </div>
     </div>
@@ -66,9 +66,13 @@
 
     <!-- Draw grids -->
     <div *ngFor="let elements of data; index as i">
-      <div *ngFor="let table of tablenr; index as j">
-        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)? '10px' : '0px', 'border-top-left-radius': (elements.time == 1)? '10px' : '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' : '0px', 'border-top-right-radius': (elements.time == 22)? '10px' : '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
-             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, table.nr, date)">
+      <div *ngFor="let table of tabels; index as j">
+        <div [ngStyle]="{'border-bottom-left-radius': (elements.time == 1)?
+        '10px' : '0px', 'border-top-left-radius': (elements.time == 1)? '10px' :
+        '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' :
+        '0px', 'border-top-right-radius': (elements.time == 22)? '10px' :
+        '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, tabels.tableno, date)">
           <small style="visibility: hidden">grid</small>
         </div>
       </div>

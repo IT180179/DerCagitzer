@@ -11,6 +11,7 @@ export class TabsComponent implements OnInit {
   constructor(public dataservice: DataService) { }
 
   rooms: any;
+  tabels: any;
 
   ngOnInit(): void {
     this.rooms = this.dataservice.getRooms()
@@ -18,6 +19,16 @@ export class TabsComponent implements OnInit {
         this.rooms = result
         console.log(this.rooms)
       });
+
   }
+
+  getTabels(room_id: any) {
+    console.log("in")
+      this.tabels = this.dataservice.getTabels(room_id)
+        .subscribe((result) => {
+          this.tabels = result
+          console.log(this.tabels)
+        });
+    }
 
 }

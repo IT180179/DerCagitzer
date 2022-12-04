@@ -7,6 +7,7 @@ import {ReservationPageComponent} from "../reservation-page/reservation-page.com
 import {ResizeEvent} from "angular-resizable-element";
 import {DomSanitizer, SafeStyle} from "@angular/platform-browser";
 import {Element} from "@angular/compiler";
+import {DataService} from "../../services/data.service";
 
 
 @Component({
@@ -18,6 +19,8 @@ import {Element} from "@angular/compiler";
 export class DayviewPageComponent implements AfterViewInit{
 
   @ViewChild('resize') resize: ElementRef;
+
+  @Input() Room: any;
 
 
   style: SafeStyle;
@@ -41,7 +44,7 @@ export class DayviewPageComponent implements AfterViewInit{
     console.log(this.resize.nativeElement.offsetWidth )
   })
 
-  constructor(private rs: ReservationService, public dialog: MatDialog) {
+  constructor(private rs: ReservationService, public dialog: MatDialog, public dataService: DataService) {
   }
 
   infoReservation: Reservation;
@@ -60,7 +63,15 @@ export class DayviewPageComponent implements AfterViewInit{
 
   }
 
+  tabels: any;
+
   ngOnInit(): void {
+
+    this.tabels = this.dataService.getTabels(this.Room)
+      .subscribe((result)=>{
+        this.tabels = result
+        console.log(this.tabels)
+      });
 
     this.getTablesperRoom();
     this.getReservationperRoom();
@@ -260,13 +271,7 @@ export class DayviewPageComponent implements AfterViewInit{
         nr: 24
       },
     ]
-
-
   }
-
-
-
-
 
   eventClicked(event: TimetableEvent): void {
     this.openDialog();

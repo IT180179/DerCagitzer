@@ -32,4 +32,11 @@ export class DataService {
 
   }
 
+  getTabels(id:any): Observable<any> {
+
+    const url = "http://localhost:8080/tables/getTablesPerRoom/"+id;
+    return this.httpClient.get<any>(url);
+
+  }
+
 }
