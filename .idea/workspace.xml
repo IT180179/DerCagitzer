@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7c65158d-265d-428b-aaa9-c0d6f23feabf" name="Default Changelist" comment="Hugo Site erstellt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JPA/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JPA/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,16 +24,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Fabian/Documents/GitHub/3D-Portfolio-Gallery",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Schule\ITP\Projekt\DerCagitzer\Designvorschläge\Reservierungbuch" />
@@ -59,6 +52,8 @@
       <workItem from="1638543172019" duration="20000" />
       <workItem from="1663583820112" duration="2481000" />
       <workItem from="1663658228574" duration="29000" />
+      <workItem from="1670071554786" duration="4000" />
+      <workItem from="1670156580562" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Ordner erstellt/geändert">
       <created>1638263207992</created>

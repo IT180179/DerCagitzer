@@ -1,9 +1,9 @@
 <div class="calendar">
   <mat-calendar #calendar [startAt]="today" [(selected)]="today" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter" ></mat-calendar>
   <hr>
-  <mat-calendar #calendar [startAt]="secondDate" [(selected)]="today" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <mat-calendar #calendar [startAt]="secondDate"  (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
   <hr>
-  <mat-calendar #calendar [startAt]="thirdDate" [(selected)]="today" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <mat-calendar #calendar [startAt]="thirdDate"  (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
 </div>
 
 
