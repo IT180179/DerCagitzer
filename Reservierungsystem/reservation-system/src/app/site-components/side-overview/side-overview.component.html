@@ -1,17 +1,22 @@
 <div id="overview">
   <h3 style="text-align: center">Infos</h3>
   <hr>
-  <div id="tagesauslastungInfo">
+  <div *ngIf="resultPerDay" id="tagesauslastungInfo">
     <h3>Tagesauslastung</h3>
-    <mat-progress-bar class="progressBar" mode="determinate" style="width: 90%"></mat-progress-bar>
+    <mat-progress-bar class="progressBar" value="{{resultPerDay}}" mode="determinate" style="width: 90%;"></mat-progress-bar>
   </div>
-  <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
-  <div id="raumauslastungInfo">
-    <h3>Raumauslastung</h3>
-    <mat-progress-bar class="progressBar" mode="determinate" style="width: 90%"></mat-progress-bar>
+  <div *ngIf="resultPerRoomNoon" class="raumauslastungInfo">
+    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+    <h3>Raumauslastung Mittag</h3>
+    <mat-progress-bar class="progressBar" value="{{resultPerRoomNoon}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
-  <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+  <div *ngIf="resultPerRoomEvening" class="raumauslastungInfo">
+    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+    <h3>Raumauslastung Abend</h3>
+    <mat-progress-bar class="progressBar" value="{{resultPerRoomEvening}}" mode="determinate" style="width: 90%"></mat-progress-bar>
+  </div>
   <div *ngIf="infoReservation" id="reservationInfo">
+    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
     <h3>Reservierung</h3>
     <p class="info">Nachname: <span style="font-weight: normal">{{infoReservation.customer_name}}</span></p>
     <p class="info">Personenanzahl: <span style="font-weight: normal">{{infoReservation.person_amount}} Personen</span></p>
