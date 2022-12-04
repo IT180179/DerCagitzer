@@ -56,9 +56,15 @@
 
     </div>
 
-
     <mat-form-field style="width: 45%; padding:0 2% 0 2%;"  >
       <mat-label>Tischnummer</mat-label>
+      <input matInput type="number" name="tischnummer" formControlName="tischnummer">
+      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('max')">
+        Maximal 3 Ziffern
+      </mat-error>
+    </mat-form-field>
+
+   <!--
       <mat-select [(value)]="data.tablenr" formControlName="tischnummer">
         <mat-option value="1">1</mat-option>
         <mat-option value="2">2</mat-option>
@@ -85,7 +91,8 @@
         <mat-option value="23">23</mat-option>
         <mat-option value="24">24</mat-option>
       </mat-select>
-    </mat-form-field>
+      -->
+
 
     <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Personenanzahl</mat-label>

@@ -32,7 +32,7 @@ export class ReservationPageComponent implements OnInit {
       nachname: new UntypedFormControl(null,
          Validators.required),
       telefonnummer: new UntypedFormControl(null, Validators.required),
-      tischnummer: new UntypedFormControl((this.data.tablenr).toString()),
+      tischnummer: new UntypedFormControl(this.data.tablenr, Validators.max(3)),
       startzeit: new UntypedFormControl(this.data.starttime),
       endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.test),
@@ -43,7 +43,6 @@ export class ReservationPageComponent implements OnInit {
     });
 
   console.log(this.addressForm.get('datum').value)
-    console.log(this.addressForm.get('tischnummer').value)
 
 
     this.addressForm.patchValue({datum: this.test})
