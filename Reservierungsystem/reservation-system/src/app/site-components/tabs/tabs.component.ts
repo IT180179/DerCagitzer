@@ -14,6 +14,7 @@ export class TabsComponent implements OnInit {
   tabels: any;
 
   ngOnInit(): void {
+
     this.rooms = this.dataservice.getRooms()
       .subscribe((result)=>{
         this.rooms = result
@@ -31,4 +32,11 @@ export class TabsComponent implements OnInit {
         });
     }
 
+  isWinter(summer_winter: any) {
+    if(summer_winter == "Sommer"){
+      return true
+    }else {
+      return false
+    }
+  }
 }

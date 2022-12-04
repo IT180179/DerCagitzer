@@ -39,4 +39,11 @@ export class DataService {
 
   }
 
+  getAllTabels(): Observable<any> {
+
+    const url = "http://localhost:8080/tables/all";
+    return this.httpClient.get<any>(url);
+
+  }
+
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'reservation', component: ReservationPageComponent },
   { path: 'cards', component: RoomCardsComponent },
   { path: 'tabs', component: TabsComponent },
-  { path: '', redirectTo: '/cards', pathMatch: 'full'}
+  { path: '', redirectTo: '/tabs', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 <div class="container">
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" mat-align-tabs="start">
-    <mat-tab *ngFor="let room of rooms" label="{{room.room_name}}">
+    <mat-tab label="Alle">
+      <app-dayview-page [Room]="0"></app-dayview-page>
+    </mat-tab>
+    <mat-tab [disabled]="isWinter(room.summer_winter)" *ngFor="let room of rooms" label="{{room.room_name}}">
       <app-dayview-page [Room]="room.room_id"></app-dayview-page>
     </mat-tab>
   </mat-tab-group>

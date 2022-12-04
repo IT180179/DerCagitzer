@@ -56,6 +56,7 @@ export class DayviewPageComponent implements AfterViewInit{
   data: any;
   tablenr: any;
   date = new Date();
+  alltabels: any;
 
   ngAfterViewInit() {
     console.log(this.resize)
@@ -67,10 +68,19 @@ export class DayviewPageComponent implements AfterViewInit{
 
   ngOnInit(): void {
 
+    console.log(this.Room)
+
     this.tabels = this.dataService.getTabels(this.Room)
       .subscribe((result)=>{
         this.tabels = result
         console.log(this.tabels)
+      });
+
+    console.log("All Tabels")
+    this.alltabels = this.dataService.getAllTabels()
+      .subscribe((result)=>{
+        this.alltabels = result
+        console.log(this.alltabels)
       });
 
     this.getTablesperRoom();
