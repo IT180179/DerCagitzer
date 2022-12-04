@@ -26,12 +26,13 @@ export class ReservationPageComponent implements OnInit {
   ngOnInit(){
     this.test = this.data.date.toLocaleDateString()
 
-    console.log(this.data)
+    console.log(this.test)
 
     this.addressForm = new UntypedFormGroup({
-      nachname: new UntypedFormControl(null),
-      telefonnummer: new UntypedFormControl(null),
-      tischnummer: new UntypedFormControl(this.data.tablenr),
+      nachname: new UntypedFormControl(null,
+         Validators.required),
+      telefonnummer: new UntypedFormControl(null, Validators.required),
+      tischnummer: new UntypedFormControl((this.data.tablenr).toString()),
       startzeit: new UntypedFormControl(this.data.starttime),
       endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.test),
@@ -41,8 +42,12 @@ export class ReservationPageComponent implements OnInit {
       anmerkungen: new UntypedFormControl(null)
     });
 
+  console.log(this.addressForm.get('datum').value)
+    console.log(this.addressForm.get('tischnummer').value)
 
 
+    this.addressForm.patchValue({datum: this.test})
+    this.addressForm.patchValue({tischnummer: this.data.tablenr})
   }
 newdata: any
   onSubmit(data: any) {

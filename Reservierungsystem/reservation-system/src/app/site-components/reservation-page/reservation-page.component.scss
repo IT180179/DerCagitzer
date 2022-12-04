@@ -1,16 +1,66 @@
 .datepicker{
-  border-radius: 6px;
-  border: 1px solid #cccfd0;
+  padding: 1%;
+  width: 100%;
   margin: 1%;
+}
+.datepicker-input{
+  border-radius: 6px;
   color: grey;
   padding: 1%;
-  width: 60%;
+  width: 100%;
+  border: none;
+
+}
+.pickers{
+  margin: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-content:flex-start;
 }
 form{
   padding: 1%;
   border-radius: 10px;
+  overflow: hidden;
 }
-button{
+.button{
   background-color: green;
   color: white;
+  width: 27%;
+  margin-left: 5%;
+}
+#title {
+  text-align: center;
+  padding: 3%;
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+
+
+input{
+  font-size: 18px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+
+}
+
+mat-form-field{
+  border: none;
+}
+
+input:focus{
+
+}
+mat-label{
+  color: #20b720;
+}
+
+.pickerlabel{
+  color: #20b720;
+}
+.button:disabled{
+  color: green;
 }

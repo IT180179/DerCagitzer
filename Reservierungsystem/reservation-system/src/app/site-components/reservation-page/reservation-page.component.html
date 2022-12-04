@@ -8,45 +8,58 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
   <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
+      <h2 id="title">Neue Reservierung</h2>
 
-    <mat-form-field required style="width: 45%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field required style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Nachname</mat-label>
       <input matInput type="text" name="nachname" formControlName="nachname" id="nachname" >
+      <mat-error *ngIf="addressForm.controls['nachname'].hasError('required')">
+        Nachname <strong>wird benötigt</strong>
+      </mat-error>
+
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Vorname</mat-label>
       <input matInput   type="text" name="vorname" formControlName="vorname" id="vorname">
+
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Telefonnummer</mat-label>
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
+      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
+        Telefonnummer <strong>wird benötigt</strong>
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>E-Mail</mat-label>
       <input matInput type="text" name="email" formControlName="email">
-    </mat-form-field>
+    </mat-form-field >
 
-    <div style="margin: 1%;">
-    <mat-label  style=" color:grey;   margin: 20%;"for="startzeit">Startzeit</mat-label><br>
-    <input  style=" color:grey;   margin-left: 20%;" class=" datepicker"  type="time" name="startzeit" formControlName="startzeit">
+    <div class="pickers" >
+      <div class="datepicker">
+    <mat-label class="pickerlabel"  for="startzeit">Startzeit</mat-label><br>
+    <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit">
+      </div>
 
-    <br>
-    <mat-label style=" color:grey;   margin: 20%;" for="endzeit">Endzeit</mat-label><br>
-    <input  style=" color:grey;   margin-left: 20%;" class=" datepicker " type="time" name="endzeit" formControlName="endzeit">
+      <div class="datepicker">
+    <mat-label class="pickerlabel" for="endzeit">Endzeit</mat-label><br>
+    <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
+    </div>
 
-    <br>
-    <mat-label  style=" color:grey;   margin: 20%;" for="datum">Datum</mat-label><br>
-    <input   style=" color:grey;   margin-left: 20%;" class="full-width-field datepicker" id="date" type="date" name="datum" formControlName="datum" >
+      <div class="datepicker">
+    <mat-label class="pickerlabel" for="datum">Datum</mat-label><br>
+    <input  [valueAsDate]="data.date" class="datepicker-input" id="date" type="date" name="datum" formControlName="datum" >
+      </div>
 
     </div>
 
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;"  appearance="outline">
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;"  >
       <mat-label>Tischnummer</mat-label>
-      <mat-select formControlName="tischnummer">
+      <mat-select [(value)]="data.tablenr" formControlName="tischnummer">
         <mat-option value="1">1</mat-option>
         <mat-option value="2">2</mat-option>
         <mat-option value="3">3</mat-option>
@@ -74,7 +87,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Personenanzahl</mat-label>
       <mat-select formControlName="personenanzahl">
         <mat-option value="1">1</mat-option>
@@ -90,14 +103,14 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field style="width: 90%; padding:0 2% 0 2%;" appearance="outline">
+    <mat-form-field style="width: 90%; padding:0 2% 0 2%;" >
       <mat-label>Anmerkungen</mat-label>
       <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
     </mat-form-field>
 
     <br>
 
-    <button type="submit" class="form-control full-width-field button" id="reservieren" routerLink="">Reservieren</button>
-    <button (click)="onNoClick()" class="form-control full-width-field button" id="abbruch" routerLink="">Abbruch</button>
+    <button type="submit" class="form-control button" id="reservieren" style="margin-left: 20%;" [disabled]="!addressForm.valid" routerLink="">Reservieren</button>
+    <button (click)="onNoClick()" class="form-control button" id="abbruch" routerLink="">Abbruch</button>
 
   </form>

@@ -330,10 +330,23 @@ hr{
   width: 100%;
 }
 
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  visibility: hidden;
+}
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
   background-color: green;
   color: green;
 }
+
+.mat-dialog-container{
+  padding: 5px;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
