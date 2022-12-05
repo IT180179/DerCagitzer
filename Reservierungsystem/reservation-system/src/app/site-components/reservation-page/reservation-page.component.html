@@ -10,7 +10,7 @@
   <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 id="title">Neue Reservierung</h2>
 
-    <mat-form-field required style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" required style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Nachname</mat-label>
       <input matInput type="text" name="nachname" formControlName="nachname" id="nachname" >
       <mat-error *ngIf="addressForm.controls['nachname'].hasError('required')">
@@ -19,13 +19,13 @@
 
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Vorname</mat-label>
       <input matInput   type="text" name="vorname" formControlName="vorname" id="vorname">
 
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Telefonnummer</mat-label>
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
@@ -33,7 +33,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>E-Mail</mat-label>
       <input matInput type="text" name="email" formControlName="email">
     </mat-form-field >
@@ -56,7 +56,7 @@
 
     </div>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;"  >
+    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;"  >
       <mat-label>Tischnummer</mat-label>
       <input matInput type="number" name="tischnummer" formControlName="tischnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('max')">
@@ -94,7 +94,7 @@
       -->
 
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Personenanzahl</mat-label>
       <mat-select formControlName="personenanzahl">
         <mat-option value="1">1</mat-option>
@@ -110,7 +110,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field style="width: 90%; padding:0 2% 0 2%;" >
+    <mat-form-field appearance="outline" style="width: 90%; padding:0 2% 0 2%;" >
       <mat-label>Anmerkungen</mat-label>
       <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
     </mat-form-field>
