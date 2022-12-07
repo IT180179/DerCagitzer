@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Reservation} from "../../shared/reservation";
 import {ReservationService} from "../../shared/reservation.service";
-import {SideOverviewService} from "../../shared/side-overview.service";
+import {MatCalendar} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-side-overview',
@@ -25,7 +25,7 @@ export class SideOverviewComponent implements OnInit {
   reservationsPerDayNoon(date: String) {
     this.rs.countReservationsPerDayNoon(date).subscribe(
       (r: number) => {
-        this.resultPerDayNoon = r;
+        this.resultPerDayNoon = Math.round(r * 100);
       }
     )
   }
@@ -33,7 +33,7 @@ export class SideOverviewComponent implements OnInit {
   reservationsPerDayEvening(date: String) {
     this.rs.countReservationsPerDayEvening(date).subscribe(
       (r: number) => {
-        this.resultPerDayEvening = r;
+        this.resultPerDayEvening = Math.round(r * 100);
       }
     )
   }
@@ -41,7 +41,7 @@ export class SideOverviewComponent implements OnInit {
   reservationsPerWeek(week: String) {
     this.rs.countReservationsPerWeek(week).subscribe(
       (r: number) => {
-        this.resultPerDayEvening = r;
+        this.resultPerDayEvening = Math.round(r * 100);
       }
     )
   }

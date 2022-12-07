@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
-import {SideOverviewService} from "../../shared/side-overview.service";
 
 @Component({
   selector: 'app-tabs',

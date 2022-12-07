@@ -2,17 +2,17 @@
   <h3 style="text-align: center">Infos</h3>
   <hr>
   <div *ngIf="resultPerDayNoon" class="raumauslastungInfo">
-    <h3>Raumauslastung Mittag</h3>
+    <h3>Tagesauslastung Mittag: {{resultPerDayNoon}}%</h3>
     <mat-progress-bar class="progressBar" value="{{resultPerDayNoon}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <div *ngIf="resultPerDayEvening" class="raumauslastungInfo">
     <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
-    <h3>Raumauslastung Abend</h3>
+    <h3>Tagesauslastung Abend: {{resultPerDayEvening}}%</h3>
     <mat-progress-bar class="progressBar" value="{{resultPerDayEvening}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <div *ngIf="resultPerWeek" class="raumauslastungInfo">
     <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
-    <h3>Raumauslastung Abend</h3>
+    <h3>Wochenauslastung: {{resultPerWeek}}%</h3>
     <mat-progress-bar class="progressBar" value="{{resultPerWeek}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <div *ngIf="infoReservation" id="reservationInfo">
