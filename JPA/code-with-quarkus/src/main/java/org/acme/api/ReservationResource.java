@@ -83,8 +83,8 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("/calculateReservationsPerRoomNoon/{date}")
-    public Response calculateReservationsPerRoomNoon(@PathParam("date") String date) {
+    @Path("/calculateReservationsPerDayNoon/{date}")
+    public Response calculateReservationsPerDayNoon(@PathParam("date") String date) {
         var usageNoon = this.reservationRepo.countReservationsPerDayNoon(date);
         var seats = this.tableEntityRepo.countSeats();
         Double resultNoon = Double.valueOf(usageNoon) / seats;
@@ -92,8 +92,8 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("/calculateReservationsPerRoomEvening/{date}")
-    public Response calculateReservationsPerRoomEvening(@PathParam("date") String date) {
+    @Path("/calculateReservationsPerDayEvening/{date}")
+    public Response calculateReservationsPerDayEvening(@PathParam("date") String date) {
         var usageEvening = this.reservationRepo.countReservationsPerDayEvening(date);
         var seats = this.tableEntityRepo.countSeats();
         Double resultEvening = Double.valueOf(usageEvening) / seats;

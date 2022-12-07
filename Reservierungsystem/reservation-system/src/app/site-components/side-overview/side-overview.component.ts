@@ -11,26 +11,37 @@ import {SideOverviewService} from "../../shared/side-overview.service";
 export class SideOverviewComponent implements OnInit {
 
   @Input() infoReservation: Reservation;
-  @Input() resultPerDay: number;
-  @Input() resultPerRoomNoon: number;
-  @Input() resultPerRoomEvening: number;
-  reservationsPerDay: number;
-  reservationsPerRoomNoon: number;
-  reservationsPerRoomEvening: number;
+  @Input() resultPerDayNoon: number;
+  @Input() resultPerDayEvening: number;
+  @Input() resultPerWeek: number;
 
-  constructor(private rs: ReservationService, public sos: SideOverviewService) {}
+  constructor(private rs: ReservationService) {}
 
   ngOnInit(): void {
-    this.reservationsPerDayCalc("01.12.2022");
-    this.resultPerRoomNoon = this.sos.reservationsPerRoomNoonCalc("01.12.2022");
-    this.resultPerRoomEvening = this.sos.reservationsPerRoomEveningCalc("01.12.2022");
+    this.reservationsPerDayNoon("01.12.2022");
+    this.reservationsPerDayEvening("01.12.2022");
   }
 
-  reservationsPerDayCalc(date: String) {
-    this.rs.countReservationsPerDay(date).subscribe(
+  reservationsPerDayNoon(date: String) {
+    this.rs.countReservationsPerDayNoon(date).subscribe(
       (r: number) => {
-        this.reservationsPerDay = r;
-        this.resultPerDay = (this.reservationsPerDay / 124) * 100;
+        this.resultPerDayNoon = r;
+      }
+    )
+  }
+
+  reservationsPerDayEvening(date: String) {
+    this.rs.countReservationsPerDayEvening(date).subscribe(
+      (r: number) => {
+        this.resultPerDayEvening = r;
+      }
+    )
+  }
+
+  reservationsPerWeek(week: String) {
+    this.rs.countReservationsPerWeek(week).subscribe(
+      (r: number) => {
+        this.resultPerDayEvening = r;
       }
     )
   }

@@ -1,19 +1,19 @@
 <div id="overview">
   <h3 style="text-align: center">Infos</h3>
   <hr>
-  <div *ngIf="resultPerDay" id="tagesauslastungInfo">
-    <h3>Tagesauslastung</h3>
-    <mat-progress-bar class="progressBar" value="{{resultPerDay}}" mode="determinate" style="width: 90%;"></mat-progress-bar>
-  </div>
-  <div *ngIf="resultPerRoomNoon" class="raumauslastungInfo">
-    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+  <div *ngIf="resultPerDayNoon" class="raumauslastungInfo">
     <h3>Raumauslastung Mittag</h3>
-    <mat-progress-bar class="progressBar" value="{{resultPerRoomNoon}}" mode="determinate" style="width: 90%"></mat-progress-bar>
+    <mat-progress-bar class="progressBar" value="{{resultPerDayNoon}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
-  <div *ngIf="resultPerRoomEvening" class="raumauslastungInfo">
+  <div *ngIf="resultPerDayEvening" class="raumauslastungInfo">
     <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
     <h3>Raumauslastung Abend</h3>
-    <mat-progress-bar class="progressBar" value="{{resultPerRoomEvening}}" mode="determinate" style="width: 90%"></mat-progress-bar>
+    <mat-progress-bar class="progressBar" value="{{resultPerDayEvening}}" mode="determinate" style="width: 90%"></mat-progress-bar>
+  </div>
+  <div *ngIf="resultPerWeek" class="raumauslastungInfo">
+    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
+    <h3>Raumauslastung Abend</h3>
+    <mat-progress-bar class="progressBar" value="{{resultPerWeek}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <div *ngIf="infoReservation" id="reservationInfo">
     <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">

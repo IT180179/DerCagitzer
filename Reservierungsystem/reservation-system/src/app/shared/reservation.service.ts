@@ -35,34 +35,34 @@ export class ReservationService {
 
   }
 
-  countReservationsPerDay(date: String): Observable<number> {
+  countReservationsPerDayNoon(date: String): Observable<number> {
     let httpHeaders = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
     });
-    return this.httpClient.get("http://localhost:8080/reservation/countReservationsPerDay/" + date, {headers:httpHeaders})
+    return this.httpClient.get("http://localhost:8080/reservation/calculateReservationsPerDayNoon/" + date, {headers:httpHeaders})
       .pipe(
         catchError(this.errorHandler)
       );
   }
 
-  countReservationsPerRoomNoon(date: String, room_id: number): Observable<number> {
+  countReservationsPerDayEvening(date: String): Observable<number> {
     let httpHeaders = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
     });
-    return this.httpClient.get("http://localhost:8080/reservation/countReservationsPerRoomNoon/" + date + "/" + room_id, {headers:httpHeaders})
+    return this.httpClient.get("http://localhost:8080/reservation/calculateReservationsPerDayEvening/" + date, {headers:httpHeaders})
       .pipe(
         catchError(this.errorHandler)
       );
   }
 
-  countReservationsPerRoomEvening(date: String, room_id: number): Observable<number> {
+  countReservationsPerWeek(week: String): Observable<number> {
     let httpHeaders = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
     });
-    return this.httpClient.get("http://localhost:8080/reservation/countReservationsPerRoomEvening/" + date + "/" + room_id, {headers:httpHeaders})
+    return this.httpClient.get("http://localhost:8080/reservation/calculateReservationsPerWeek/" + week, {headers:httpHeaders})
       .pipe(
         catchError(this.errorHandler)
       );
