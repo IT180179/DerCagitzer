@@ -1,7 +1,6 @@
 package org.acme.api;
 
 import io.smallrye.common.annotation.Blocking;
-import org.acme.model.ReservationDTO;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -10,12 +9,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.Mailer;
-import org.acme.workloads.Job.Job;
 import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Reservation.ReservationRepo;
-import org.eclipse.microprofile.openapi.annotations.headers.Header;
-
-import java.time.LocalDate;
+import org.acme.workloads.Table_Entity.TableEntityRepo;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -25,9 +21,11 @@ public class ReservationResource {
     @Inject Mailer mailer;
 
     private final ReservationRepo reservationRepo;
+    private final TableEntityRepo tableEntityRepo;
 
-    public ReservationResource(ReservationRepo reservationRepo) {
+    public ReservationResource(ReservationRepo reservationRepo, TableEntityRepo tableEntityRepo) {
         this.reservationRepo = reservationRepo;
+        this.tableEntityRepo = tableEntityRepo;
     }
 
     @GET
@@ -85,17 +83,21 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("/countReservationsPerRoomNoon/{date}/{room_id}")
-    public Response countReservationsPerRoomNoon(@PathParam("date") String date, @PathParam("room_id") Long room_id) {
-        var usageNoon = this.reservationRepo.countReservationsPerRoomNoon(date, room_id);
-        return Response.ok(usageNoon).build();
+    @Path("/calculateReservationsPerRoomNoon/{date}")
+    public Response calculateReservationsPerRoomNoon(@PathParam("date") String date) {
+        var usageNoon = this.reservationRepo.countReservationsPerDayNoon(date);
+        var seats = this.tableEntityRepo.countSeats();
+        Double resultNoon = Double.valueOf(usageNoon) / seats;
+        return Response.ok(resultNoon).build();
     }
 
     @GET
-    @Path("/countReservationsPerRoomEvening/{date}/{room_id}")
-    public Response countReservationsPerRoomEvening(@PathParam("date") String date, @PathParam("room_id") Long room_id) {
-        var usageEvening = this.reservationRepo.countReservationsPerRoomEvening(date, room_id);
-        return Response.ok(usageEvening).build();
+    @Path("/calculateReservationsPerRoomEvening/{date}")
+    public Response calculateReservationsPerRoomEvening(@PathParam("date") String date) {
+        var usageEvening = this.reservationRepo.countReservationsPerDayEvening(date);
+        var seats = this.tableEntityRepo.countSeats();
+        Double resultEvening = Double.valueOf(usageEvening) / seats;
+        return Response.ok(resultEvening).build();
     }
 
     @POST

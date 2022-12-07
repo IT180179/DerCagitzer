@@ -41,6 +41,13 @@ public class TableEntityResource {
         return Response.ok(tables).build();
     }
 
+    @GET
+    @Path("/countSeats")
+    public Response countSeats() {
+        var seats = this.tableEntityRepo.countSeats();
+        return Response.ok(seats).build();
+    }
+
     @POST
     @Transactional
     @Path("/add")

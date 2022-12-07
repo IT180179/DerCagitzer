@@ -23,6 +23,11 @@ public class TableEntityRepo implements PanacheRepository<TableEntity> {
         return query.getResultList();
     }
 
+    public Long countSeats() {
+        Query query = this.entityManager.createQuery("select sum(t.seats) from TableEntity t", Long.class);
+        return (Long) query.getSingleResult();
+    }
+
     public void update(TableEntity tableEntity) {
         this.entityManager.merge(tableEntity);
     }
