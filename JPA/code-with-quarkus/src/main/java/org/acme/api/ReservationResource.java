@@ -87,7 +87,7 @@ public class ReservationResource {
     public Response calculateReservationsPerDayNoon(@PathParam("date") String date) {
         var usageNoon = this.reservationRepo.countReservationsPerDayNoon(date);
         var seats = this.tableEntityRepo.countSeats();
-        Double resultNoon = Double.valueOf(usageNoon) / seats;
+        Double resultNoon = Double.valueOf(usageNoon) / (seats * 2);
         return Response.ok(resultNoon).build();
     }
 
@@ -96,7 +96,16 @@ public class ReservationResource {
     public Response calculateReservationsPerDayEvening(@PathParam("date") String date) {
         var usageEvening = this.reservationRepo.countReservationsPerDayEvening(date);
         var seats = this.tableEntityRepo.countSeats();
-        Double resultEvening = Double.valueOf(usageEvening) / seats;
+        Double resultEvening = Double.valueOf(usageEvening) / (seats * 2);
+        return Response.ok(resultEvening).build();
+    }
+
+    @GET
+    @Path("/calculateReservationsPerWeek/{start_date}/{end_date}")
+    public Response calculateReservationsPerWeek(@PathParam("start_date") String start_date, @PathParam("end_date") String end_date) {
+        var usageWeek = this.reservationRepo.countReservationsPerWeek(start_date, end_date);
+        var seats = this.tableEntityRepo.countSeats();
+        Double resultEvening = Double.valueOf(usageWeek) / ((seats * 4) * 7);
         return Response.ok(resultEvening).build();
     }
 
