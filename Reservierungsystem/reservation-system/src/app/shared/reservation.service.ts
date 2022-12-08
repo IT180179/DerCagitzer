@@ -57,12 +57,12 @@ export class ReservationService {
       );
   }
 
-  countReservationsPerWeek(week: String): Observable<number> {
+  countReservationsPerWeek(start_date: String, end_date: String): Observable<number> {
     let httpHeaders = new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
     });
-    return this.httpClient.get("http://localhost:8080/reservation/calculateReservationsPerWeek/" + week, {headers:httpHeaders})
+    return this.httpClient.get("http://localhost:8080/reservation/calculateReservationsPerWeek/" + start_date + "/" + end_date, {headers:httpHeaders})
       .pipe(
         catchError(this.errorHandler)
       );
