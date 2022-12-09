@@ -13,7 +13,7 @@
     <p>Name:</p>
     <mat-form-field required style="width: 100%;" >
       <input matInput type="text" name="name" formControlName="name" id="name" >
-      <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+      <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
         Name <strong>wird benötigt</strong>
       </mat-error>
     </mat-form-field>

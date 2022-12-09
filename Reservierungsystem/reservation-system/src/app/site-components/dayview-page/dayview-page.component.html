@@ -27,8 +27,9 @@
     <ng-container *ngIf="reservations.length > 0;">
       <ng-container *ngFor="let res of reservations; index as i">
         <ng-container *ngFor="let time of data">
-          <ng-container *ngIf="time.fulltime == res.start_time">
-            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ ((res.tableEntity.tableno - 1) * 50) + 'px)'}">
+
+          <ng-container *ngIf="time.fulltime == res.start_time && (res.tableEntity.room.room_id == Room || Room == 0)">
+            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ (((res.tableEntity.tableno - 1)- (Room == 0 ? Room : Room-1)*10) * 50) + 'px)'}">
             <div
               #resize ngDraggable
               [bounds]="myBounds"
@@ -51,9 +52,9 @@
             </div>
             </div>
           </ng-container>
+          </ng-container>
         </ng-container>
       </ng-container>
-    </ng-container>
 
     <div *ngIf="Room!=0">
       <div *ngFor="let i of tabels;">

@@ -86,4 +86,5 @@ values(1, 1, 'Maar', '11:00', '13:00', '01.12.2022', current_timestamp, 6, 1),
       (1, 2, 'Ursprung', '11:00', '13:00', '01.12.2022', current_timestamp, 3, 2),
       (2, 3, 'Bikic', '13:00', '15:00', '01.12.2022', current_timestamp, 6, 8),
       (1, 4, 'Hammer', '17:00', '19:00', '01.12.2022', current_timestamp, 5, 10),
-      (2, 5, 'Aberger', '19:00', '21:00', '01.12.2022', current_timestamp, 4, 5);
+      (2, 5, 'Aberger', '19:00', '21:00', '01.12.2022', current_timestamp, 4, 5),
+      (2, 5, 'Precup', '19:00', '21:00', '01.12.2022', current_timestamp, 4, 12);

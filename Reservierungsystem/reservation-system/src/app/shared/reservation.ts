@@ -15,4 +15,10 @@ export interface Reservation {
 export interface TableEntity{
   seats: number;
   tableno: number;
+  room: Room;
+}
+
+export interface Room{
+  room_id: number;
+  room_name: string;
 }

@@ -59,8 +59,7 @@ export class DayviewPageComponent implements AfterViewInit{
   alltabels: any;
 
   ngAfterViewInit() {
-    console.log(this.resize)
-    this.resizeObserver.observe(this.resize.nativeElement)
+   // this.resizeObserver.observe(this.resize.nativeElement)
 
   }
 
