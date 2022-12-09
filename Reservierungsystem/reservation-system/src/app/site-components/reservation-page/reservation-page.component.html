@@ -10,22 +10,35 @@
   <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 id="title">Neue Reservierung</h2>
 
-    <mat-form-field appearance="outline" required style="width: 45%; padding:0 2% 0 2%;" >
-      <mat-label>Nachname</mat-label>
-      <input matInput type="text" name="nachname" formControlName="nachname" id="nachname" >
-      <mat-error *ngIf="addressForm.controls['nachname'].hasError('required')">
-        Nachname <strong>wird benötigt</strong>
+    <p>Name:</p>
+    <mat-form-field required style="width: 100%;" >
+      <input matInput type="text" name="name" formControlName="name" id="name" >
+      <mat-error *ngIf="addressForm.controls['name'].hasError('required')">
+        Name <strong>wird benötigt</strong>
       </mat-error>
-
     </mat-form-field>
 
-    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
-      <mat-label>Vorname</mat-label>
-      <input matInput   type="text" name="vorname" formControlName="vorname" id="vorname">
+    <div class="pickers">
+      <p for="datum">Datum:</p>
+      <div class="datepicker"  style="width: 50%; float:left;">
+        <input  [valueAsDate]="data.date" class="datepicker-input" id="date" type="date" name="datum" formControlName="datum" >
+      </div>
 
-    </mat-form-field>
+      <p  for="startzeit">Startzeit:</p><br><br>
+      <div class="datepicker" style="width: 25%;">
+        <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit">
+      </div>
 
-    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
+      <p for="endzeit">Endzeit:</p><br><br>
+      <div class="datepicker" style="width: 25%;">
+        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
+      </div>
+
+    </div>
+
+
+    <p>Personenanzahl:</p>
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Telefonnummer</mat-label>
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
@@ -33,66 +46,18 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
+    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>E-Mail</mat-label>
       <input matInput type="text" name="email" formControlName="email">
     </mat-form-field >
 
-    <div class="pickers" >
-      <div class="datepicker">
-    <mat-label class="pickerlabel"  for="startzeit">Startzeit</mat-label><br>
-    <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit">
-      </div>
-
-      <div class="datepicker">
-    <mat-label class="pickerlabel" for="endzeit">Endzeit</mat-label><br>
-    <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
-    </div>
-
-      <div class="datepicker">
-    <mat-label class="pickerlabel" for="datum">Datum</mat-label><br>
-    <input  [valueAsDate]="data.date" class="datepicker-input" id="date" type="date" name="datum" formControlName="datum" >
-      </div>
-
-    </div>
-
-    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;"  >
+    <mat-form-field  style="width: 45%; padding:0 2% 0 2%;"  >
       <mat-label>Tischnummer</mat-label>
       <input matInput type="number" name="tischnummer" formControlName="tischnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('max')">
         Maximal 3 Ziffern
       </mat-error>
     </mat-form-field>
-
-   <!--
-      <mat-select [(value)]="data.tablenr" formControlName="tischnummer">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-        <mat-option value="6">6</mat-option>
-        <mat-option value="7">7</mat-option>
-        <mat-option value="8">8</mat-option>
-        <mat-option value="9">9</mat-option>
-        <mat-option value="10">10</mat-option>
-        <mat-option value="11">11</mat-option>
-        <mat-option value="12">12</mat-option>
-        <mat-option value="13">13</mat-option>
-        <mat-option value="14">14</mat-option>
-        <mat-option value="15">15</mat-option>
-        <mat-option value="16">16</mat-option>
-        <mat-option value="17">17</mat-option>
-        <mat-option value="18">18</mat-option>
-        <mat-option value="19">19</mat-option>
-        <mat-option value="20">20</mat-option>
-        <mat-option value="21">21</mat-option>
-        <mat-option value="22">22</mat-option>
-        <mat-option value="23">23</mat-option>
-        <mat-option value="24">24</mat-option>
-      </mat-select>
-      -->
-
 
     <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
       <mat-label>Personenanzahl</mat-label>

@@ -1,7 +1,6 @@
 .datepicker{
   padding: 1%;
   width: 100%;
-  margin: 1%;
   border: solid 1px #d0d0d0;
   border-radius: 5px;
 }
@@ -14,7 +13,6 @@
 
 }
 .pickers{
-  margin: 1%;
   display: flex;
   flex-direction: row;
   justify-content:space-around;
@@ -32,34 +30,73 @@ form{
   margin-left: 5%;
 }
 #title {
+  font-family: 'Noto Sans Bengali';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 86px;
   text-align: center;
-  padding: 3%;
-  font-weight: bold;
-  font-size: 2vw;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #32482D;
 }
 
 
-
-input{
-  font-size: 18px;
-  margin-bottom: 30px;
-  background: transparent;
+div{
+  font-family: Roboto, 'Noto Sans', sans-serif;
+  color: #32482D;
 }
 
-mat-form-field{
-
+h1{
+  font-size: 400%;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #32482D;
+}
+hr{
+  width: 100%;
+  border: 2px solid #32482D;
 }
 
-input:focus{
+p{
+  font-style: normal;
+  font-weight: 400;
+  color: #32482D;
+  font-size: 150%;
+}
 
-}
-mat-label{
-  color: #20b720;
+form{
+  margin: 5%;
 }
 
-.pickerlabel{
-  color: #20b720;
+.mat-form-field{
+  background: rgba(81, 154, 64, 0.2);
+  border-radius: 20px;
+  padding-right:1%;
+  padding-left:1%;
+  margin-bottom: 0.5%;
+  font-size: 110%;
+  width: 50%;
+  color: #32482D;
+  height: 5%;
 }
-.button:disabled{
-  color: green;
+
+.datepicker{
+  border:none;
+  border-radius: 20px;
+  padding-right:1%;
+  padding-left:1%;
+  margin-bottom: 0.5%;
+  font-size: 110%;
+  width: 50%;
+  color: #32482D;
+}
+
+.datepicker-input{
+  border:none;
+  background: rgba(81, 154, 64, 0.2);
+  padding: 5%;
+  border-radius: 20px;
 }
