@@ -38,11 +38,11 @@ export class SideOverviewComponent implements OnInit {
     )
   }
 
-  reservationsPerWeek(week: String) {
-    this.rs.countReservationsPerWeek(week).subscribe(
-      (r: number) => {
-        this.resultPerDayEvening = Math.round(r * 100);
-      }
-    )
-  }
+  //reservationsPerWeek(date: Date) {
+  //  this.rs.countReservationsPerWeek().subscribe(
+  //    (r: number) => {
+  //      this.resultPerDayEvening = Math.round(r * 100);
+  //    }
+  //  )
+  //}
 }

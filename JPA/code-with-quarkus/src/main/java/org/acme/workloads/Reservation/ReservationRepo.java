@@ -1,6 +1,7 @@
 package org.acme.workloads.Reservation;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import net.bytebuddy.asm.Advice;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
@@ -35,8 +36,16 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
     }
 
     public Long countReservationsPerDayEvening(String date) {
-        Query query1 = this.entityManager.createQuery("select count(r.person_amount) from Reservation r where r.reservation_date = :date and r.end_time = '19:00' or r.end_time = '21:00'", Long.class)
+        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date and r.end_time = '19:00' or r.end_time = '21:00'", Long.class)
                 .setParameter("date", date);
+        Long reservations = (Long) query1.getSingleResult();
+        return reservations;
+    }
+
+    public Long countReservationsPerWeek(String start_date, String end_date) {
+        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date between :start_date and :end_date", Long.class)
+                .setParameter("start_date", start_date)
+                .setParameter("end_date", end_date);
         Long reservations = (Long) query1.getSingleResult();
         return reservations;
     }
