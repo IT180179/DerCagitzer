@@ -47,6 +47,9 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
                 .setParameter("start_date", start_date)
                 .setParameter("end_date", end_date);
         Long reservations = (Long) query1.getSingleResult();
+        if(reservations == null) {
+            return 1L;
+        }
         return reservations;
     }
 

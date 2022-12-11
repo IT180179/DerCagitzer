@@ -105,7 +105,7 @@ public class ReservationResource {
     public Response calculateReservationsPerWeek(@PathParam("start_date") String start_date, @PathParam("end_date") String end_date) {
         var usageWeek = this.reservationRepo.countReservationsPerWeek(start_date, end_date);
         var seats = this.tableEntityRepo.countSeats();
-        Double resultEvening = Double.valueOf(usageWeek) / ((seats * 4) * 7);
+        Double resultEvening = Double.valueOf(usageWeek) / ((seats * 4) * 5);
         return Response.ok(resultEvening).build();
     }
 
