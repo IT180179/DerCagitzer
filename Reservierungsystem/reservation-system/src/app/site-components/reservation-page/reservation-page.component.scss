@@ -1,4 +1,8 @@
 
+body{
+  font-family: "Trebuchet MS";
+}
+
 .datepicker{
   width: 100%;
   border: solid 1px #d0d0d0;
@@ -30,6 +34,7 @@ form{
 }
 #title {
   font-style: normal;
+  font-family: "Trebuchet MS";
   font-weight: 700;
   font-size: 300%;
   line-height: 86px;
@@ -67,7 +72,7 @@ hr{
 
 p{
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   color: #32482D;
   font-size: 150%;
 }

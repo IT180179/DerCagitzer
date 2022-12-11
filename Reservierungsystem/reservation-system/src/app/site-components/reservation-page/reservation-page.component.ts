@@ -57,7 +57,7 @@ export class ReservationPageComponent implements OnInit {
       datum: new UntypedFormControl(this.test),
       personenanzahl: new UntypedFormControl('2'),
       vorname: new UntypedFormControl(null),
-      email: new UntypedFormControl(null, [Validators.required, Validators.email]),
+      email: new UntypedFormControl(null, Validators.email),
       anmerkungen: new UntypedFormControl(null)
     });
 

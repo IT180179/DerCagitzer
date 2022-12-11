@@ -10,6 +10,7 @@
   <form style="margin: 5%;" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 id="title">Neue Reservierung</h2>
 
+    <div>
     <p>Name:</p>
     <mat-form-field required style="width: 100%;">
       <input matInput type="text" name="name" formControlName="name" id="name" >
@@ -20,8 +21,7 @@
         Name <strong>ist nicht gültig</strong>
       </mat-error>
     </mat-form-field>
-
-    <br>
+    </div>
     <br>
 
     <div class="pickers">
@@ -79,9 +79,6 @@
       <p>E-Mail:</p>
       <mat-form-field style="width: 48%;">
         <input matInput type="text" name="email" formControlName="email">
-        <mat-error *ngIf="addressForm.controls['email'].hasError('required') ">
-          E-Mail <strong>wird benötigt</strong>
-        </mat-error>
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
           E-Mail <strong>ist nicht gültig</strong>
         </mat-error>
