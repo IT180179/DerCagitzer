@@ -29,7 +29,7 @@ export class ReservationPageComponent implements OnInit {
     console.log(this.test)
 
     this.addressForm = new UntypedFormGroup({
-      nachname: new UntypedFormControl(null,
+      name: new UntypedFormControl(null,
          Validators.required),
       telefonnummer: new UntypedFormControl(null, Validators.required),
       tischnummer: new UntypedFormControl(this.data.tablenr, Validators.max(3)),

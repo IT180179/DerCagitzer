@@ -1,5 +1,5 @@
+
 .datepicker{
-  padding: 1%;
   width: 100%;
   border: solid 1px #d0d0d0;
   border-radius: 5px;
@@ -7,7 +7,6 @@
 .datepicker-input{
   border-radius: 6px;
   color: grey;
-  padding: 1%;
   width: 100%;
   border: none;
 
@@ -19,6 +18,7 @@
   align-content:flex-start;
 }
 form{
+
   padding: 1%;
   border-radius: 5px;
   overflow: hidden;
@@ -30,7 +30,6 @@ form{
   margin-left: 5%;
 }
 #title {
-  font-family: 'Noto Sans Bengali';
   font-style: normal;
   font-weight: 700;
   font-size: 65px;
@@ -41,9 +40,14 @@ form{
   color: #32482D;
 }
 
+#abbruch{
+  background-color: white;
+  color: #32482D;
+  border-color: #32482D;
+}
 
 div{
-  font-family: Roboto, 'Noto Sans', sans-serif;
+  font-family: "Trebuchet MS";
   color: #32482D;
 }
 
@@ -67,36 +71,36 @@ p{
   font-size: 150%;
 }
 
-form{
-  margin: 5%;
-}
-
-.mat-form-field{
-  background: rgba(81, 154, 64, 0.2);
-  border-radius: 20px;
-  padding-right:1%;
-  padding-left:1%;
-  margin-bottom: 0.5%;
-  font-size: 110%;
-  width: 50%;
-  color: #32482D;
-  height: 5%;
-}
 
 .datepicker{
   border:none;
-  border-radius: 20px;
-  padding-right:1%;
-  padding-left:1%;
-  margin-bottom: 0.5%;
+  border-radius: 15px;
   font-size: 110%;
   width: 50%;
   color: #32482D;
+  font-style: normal;
+  font-weight: 400;
+  color: #32482D;
+  font-size: 150%;
 }
 
 .datepicker-input{
+  font-family: "Trebuchet MS";
   border:none;
-  background: rgba(81, 154, 64, 0.2);
-  padding: 5%;
-  border-radius: 20px;
+  border-radius: 15px;
 }
+
+input{
+  padding: 1%;
+}
+
+.datepicker-input{
+  padding: 4%;
+  background-color: #b6ccb6;
+  color: #32482D;
+  font-style: normal;
+  font-weight: 400;
+  color: #32482D;
+
+}
+
