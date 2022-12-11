@@ -94,7 +94,7 @@
     </mat-form-field>
     </div>
     <br>
-    <button type="submit" class="form-control button" style="margin-left: 20%;  border-radius: 15px; padding:2.5%" id="reservieren">Reservieren</button>
+    <button [disabled]="addressForm.valid" type="submit" class="form-control button" style="margin-left: 20%;  border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" id="reservieren">Reservieren</button>
     <button (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
 
   </form>
