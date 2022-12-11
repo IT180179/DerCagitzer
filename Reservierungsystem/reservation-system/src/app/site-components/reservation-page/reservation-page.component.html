@@ -7,11 +7,11 @@
   <script src="https://unpkg.com/bulma-calendar@6.0.7/dist/js/bulma-calendar.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
-  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
+  <form style="margin: 5%;" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 id="title">Neue Reservierung</h2>
 
     <p>Name:</p>
-    <mat-form-field required style="width: 100%;" >
+    <mat-form-field required style="width: 100%;">
       <input matInput type="text" name="name" formControlName="name" id="name" >
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
         Name <strong>wird benötigt</strong>
@@ -19,70 +19,80 @@
     </mat-form-field>
 
     <div class="pickers">
+      <div style=" float:left;width: 50%; margin-right:4%;">
       <p for="datum">Datum:</p>
-      <div class="datepicker"  style="width: 50%; float:left;">
-        <input  [valueAsDate]="data.date" class="datepicker-input" id="date" type="date" name="datum" formControlName="datum" >
+      <div class="datepicker"  style="width: 100%;">
+        <input  [valueAsDate]="data.date" class="datepicker-input" id="datum" type="date" name="datum" formControlName="datum" >
       </div>
-
-      <p  for="startzeit">Startzeit:</p><br><br>
-      <div class="datepicker" style="width: 25%;">
+    </div>
+      <div style=" float:left; width: 22%;margin-right:4%;">
+      <p for="startzeit">Startzeit:</p>
+      <div class="datepicker" style="width: 100%;">
         <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit">
       </div>
-
-      <p for="endzeit">Endzeit:</p><br><br>
-      <div class="datepicker" style="width: 25%;">
-        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
       </div>
 
+      <div style=" float:left; width: 22%;margin-right:4%;">
+      <p for="endzeit">Endzeit:</p>
+      <div class="datepicker" style="width: 100%;">
+        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
+      </div>
+      </div>
     </div>
 
+    <div style="float: left; width: 48%; margin-right:4%;">
+      <p>Personenanzahl:</p>
+      <mat-form-field  style="width: 100%;" >
+        <mat-select formControlName="personenanzahl">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+          <mat-option value="6">6</mat-option>
+          <mat-option value="7">7</mat-option>
+          <mat-option value="8">8</mat-option>
+          <mat-option value="9">9</mat-option>
+          <mat-option value="10">10</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <p>Personenanzahl:</p>
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
-      <mat-label>Telefonnummer</mat-label>
+    <div>
+      <p>Tischnummer:</p>
+      <mat-form-field  style="width: 48%;">
+      <input matInput type="number" name="tischnummer" formControlName="tischnummer">
+      <mat-error *ngIf="addressForm.controls['tischnummer'].hasError('max')">
+        Maximal 3 Ziffern
+      </mat-error>
+    </mat-form-field>
+    </div>
+
+<div  style="float: left; width: 48%; margin-right:4%;">
+  <p>Telefonnummer:</p>
+    <mat-form-field style="width: 100%;">
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
         Telefonnummer <strong>wird benötigt</strong>
       </mat-error>
     </mat-form-field>
+</div>
 
-    <mat-form-field style="width: 45%; padding:0 2% 0 2%;" >
-      <mat-label>E-Mail</mat-label>
-      <input matInput type="text" name="email" formControlName="email">
-    </mat-form-field >
+    <div>
+      <p>E-Mail:</p>
+      <mat-form-field style="width: 48%;">
+        <input matInput type="text" name="email" formControlName="email">
+      </mat-form-field >
+    </div>
 
-    <mat-form-field  style="width: 45%; padding:0 2% 0 2%;"  >
-      <mat-label>Tischnummer</mat-label>
-      <input matInput type="number" name="tischnummer" formControlName="tischnummer">
-      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('max')">
-        Maximal 3 Ziffern
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" style="width: 45%; padding:0 2% 0 2%;" >
-      <mat-label>Personenanzahl</mat-label>
-      <mat-select formControlName="personenanzahl">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-        <mat-option value="6">6</mat-option>
-        <mat-option value="7">7</mat-option>
-        <mat-option value="8">8</mat-option>
-        <mat-option value="9">9</mat-option>
-        <mat-option value="10">10</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" style="width: 90%; padding:0 2% 0 2%;" >
-      <mat-label>Anmerkungen</mat-label>
+    <div>
+      <p>Anmerkungen:</p>
+    <mat-form-field style="width: 100%;">
       <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
     </mat-form-field>
-
+    </div>
     <br>
-
-    <button type="submit" class="form-control button" id="reservieren" style="margin-left: 20%;" [disabled]="!addressForm.valid" routerLink="">Reservieren</button>
-    <button (click)="onNoClick()" type='button' class="form-control button" id="abbruch" routerLink="">Abbruch</button>
+    <button type="submit" class="form-control button" style="margin-left: 20%;" [disabled]="!addressForm.valid">Reservieren</button>
+    <button (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
 
   </form>
