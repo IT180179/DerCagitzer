@@ -21,53 +21,44 @@
       </mat-error>
     </mat-form-field>
 
+    <br>
+    <br>
+
     <div class="pickers">
       <div style=" float:left;width: 50%; margin-right:4%;">
       <p for="datum">Datum:</p>
       <div class="datepicker"  style="width: 100%;">
-        <input  [valueAsDate]="data.date" class="datepicker-input" id="datum" type="date" name="datum" formControlName="datum" >
+        <input [valueAsDate]="data.date" class="datepicker-input" id="datum" type="date" name="datum" formControlName="datum" >
       </div>
     </div>
-      <div style=" float:left; width: 22%;margin-right:4%;">
-      <p for="startzeit">Startzeit:</p>
+      <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
+      <p for="startzeit" style="text-align: center">Startzeit:</p>
       <div class="datepicker" style="width: 100%;">
-        <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit">
+        <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit" style="padding:8.5%">
       </div>
       </div>
 
-      <div style=" float:left; width: 22%;margin-right:4%;">
-      <p for="endzeit">Endzeit:</p>
+      <div style=" float:left; width: 22%;margin-right:1%; margin-top:0.2%;">
+      <p for="endzeit" style="text-align: center">Endzeit:</p>
       <div class="datepicker" style="width: 100%;">
-        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit">
+        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit" style="padding:8.5%">
       </div>
       </div>
     </div>
+<br>
 
-    <div style="float: left; width: 48%; margin-right:4%;">
+    <div style="float: left; width: 48%;">
       <p>Personenanzahl:</p>
-      <mat-form-field  style="width: 100%;" >
-        <mat-select formControlName="personenanzahl">
-          <mat-option value="1">1</mat-option>
-          <mat-option value="2">2</mat-option>
-          <mat-option value="3">3</mat-option>
-          <mat-option value="4">4</mat-option>
-          <mat-option value="5">5</mat-option>
-          <mat-option value="6">6</mat-option>
-          <mat-option value="7">7</mat-option>
-          <mat-option value="8">8</mat-option>
-          <mat-option value="9">9</mat-option>
-          <mat-option value="10">10</mat-option>
-        </mat-select>
+      <mat-form-field  style="width: 100%;">
+        <input matInput type="number" name="personenanzahl" formControlName="personenanzahl">
       </mat-form-field>
     </div>
 
+
     <div>
-      <p>Tischnummer:</p>
-      <mat-form-field  style="width: 48%;">
+      <p id="tischnummer">Tischnummer:</p>
+      <mat-form-field  style="width: 48%;margin-left:3.5%;">
       <input matInput type="number" name="tischnummer" formControlName="tischnummer">
-      <mat-error *ngIf="addressForm.controls['tischnummer'].hasError('max')">
-        Maximal 3 Ziffern
-      </mat-error>
     </mat-form-field>
     </div>
 
@@ -97,6 +88,8 @@
       </mat-form-field >
     </div>
 
+    <br>
+
     <div>
       <p>Anmerkungen:</p>
     <mat-form-field style="width: 100%;">
@@ -104,7 +97,7 @@
     </mat-form-field>
     </div>
     <br>
-    <button type="submit" class="form-control button" style="margin-left: 20%;" [disabled]="!addressForm.valid">Reservieren</button>
+    <button type="submit" class="form-control button" style="margin-left: 20%;  border-radius: 15px;" id="reservieren">Reservieren</button>
     <button (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
 
   </form>

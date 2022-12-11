@@ -18,7 +18,6 @@
   align-content:flex-start;
 }
 form{
-
   padding: 1%;
   border-radius: 5px;
   overflow: hidden;
@@ -32,7 +31,7 @@ form{
 #title {
   font-style: normal;
   font-weight: 700;
-  font-size: 65px;
+  font-size: 300%;
   line-height: 86px;
   text-align: center;
   letter-spacing: -0.02em;
@@ -44,6 +43,7 @@ form{
   background-color: white;
   color: #32482D;
   border-color: #32482D;
+  border-radius: 15px;
 }
 
 div{
@@ -104,3 +104,14 @@ input{
 
 }
 
+#reservieren{
+  background-color: #32482D;
+}
+
+#reservieren:hover{
+  color:white;
+}
+
+#tischnummer{
+  margin-left: 52%;
+}
