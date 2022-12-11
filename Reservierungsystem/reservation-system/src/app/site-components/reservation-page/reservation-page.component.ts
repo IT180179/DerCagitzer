@@ -1,5 +1,13 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {Form, FormGroup, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
+import {Component, ErrorHandler, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+import {
+  Form,
+  FormBuilder,
+  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators
+} from '@angular/forms';
 import {Reservation} from "../../shared/reservation";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
@@ -13,32 +21,43 @@ import {Dialog} from "../dayview-page/dayview-page.component";
 })
 export class ReservationPageComponent implements OnInit {
 
+  addressForm: FormGroup;
+  errors: any = {};
+
   @Input() reservation?: Reservation;
   @Output() submitReservation = new EventEmitter<Reservation>();
-    reactiveForm: UntypedFormGroup;
 
   today = new Date();
   test: Date;
-   addressForm: UntypedFormGroup;
-  constructor(public dialogRef: MatDialogRef<Dialog>, public http: HttpClient, private fb: UntypedFormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,private route: ActivatedRoute, private router: Router) { }
 
 
-  ngOnInit(){
+  constructor(private fb: FormBuilder,
+              private errorHandler:ErrorHandler,
+              public dialogRef: MatDialogRef<Dialog>,
+              public http: HttpClient,
+              @Inject(MAT_DIALOG_DATA) public data: any,private route: ActivatedRoute,
+              private router: Router
+              ) { }
+
+
+  ngOnInit(): void{
+
+
     this.test = this.data.date.toLocaleDateString()
 
     console.log(this.test)
 
     this.addressForm = new UntypedFormGroup({
       name: new UntypedFormControl(null,
-         Validators.required),
-      telefonnummer: new UntypedFormControl(null, Validators.required),
+         [Validators.required, Validators.minLength(2)]),
+      telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
       tischnummer: new UntypedFormControl(this.data.tablenr, Validators.max(3)),
       startzeit: new UntypedFormControl(this.data.starttime),
       endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.test),
       personenanzahl: new UntypedFormControl('2'),
       vorname: new UntypedFormControl(null),
-      email: new UntypedFormControl(null),
+      email: new UntypedFormControl(null, [Validators.required, Validators.email]),
       anmerkungen: new UntypedFormControl(null)
     });
 
@@ -47,6 +66,8 @@ export class ReservationPageComponent implements OnInit {
 
     this.addressForm.patchValue({datum: this.test})
     this.addressForm.patchValue({tischnummer: this.data.tablenr})
+
+
   }
 newdata: any
   onSubmit(data: any) {
