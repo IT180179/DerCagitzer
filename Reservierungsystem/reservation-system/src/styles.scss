@@ -334,6 +334,15 @@ hr{
   visibility: hidden;
 }
 
+
+.container mat-tab-group mat-tab{
+  height:200%;
+  font-size: 300%;
+  padding: 20%;
+}
+
+
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
   background-color: green;
   color: green;
@@ -346,6 +355,10 @@ hr{
 
 }
 
+.mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color:white;
+  background-color: green;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
