@@ -37,7 +37,7 @@ export class ReservationPageComponent implements OnInit {
               public http: HttpClient,
               @Inject(MAT_DIALOG_DATA) public data: any,private route: ActivatedRoute,
               private router: Router
-              ) { }
+  ) { }
 
 
   ngOnInit(): void{
@@ -49,7 +49,7 @@ export class ReservationPageComponent implements OnInit {
 
     this.addressForm = new UntypedFormGroup({
       name: new UntypedFormControl(null,
-         [Validators.required, Validators.minLength(2)]),
+        [Validators.required, Validators.minLength(2)]),
       telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
       tischnummer: new UntypedFormControl(this.data.tablenr, Validators.max(3)),
       startzeit: new UntypedFormControl(this.data.starttime),
@@ -61,7 +61,7 @@ export class ReservationPageComponent implements OnInit {
       anmerkungen: new UntypedFormControl(null)
     });
 
-  console.log(this.addressForm.get('datum').value)
+    console.log(this.addressForm.get('datum').value)
 
 
     this.addressForm.patchValue({datum: this.test})
@@ -69,7 +69,7 @@ export class ReservationPageComponent implements OnInit {
 
 
   }
-newdata: any
+  newdata: any
   onSubmit(data: any) {
     const formValue = this.addressForm.value;
     const newReservation: Reservation = {
@@ -79,7 +79,7 @@ newdata: any
 
     this.newdata = {
       customer: null,
-      customer_name: data.nachname,
+      customer_name: data.name,
       start_time: data.startzeit,
       end_time: data.endzeit,
       reservation_date: data.datum,

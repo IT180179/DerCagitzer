@@ -18,14 +18,14 @@ export class CalendarComponent implements OnInit {
 
   firstDate = new Date();
 
-  secondDate = new Date();
-  month2 = this.firstDate.getMonth()+1;
+  //secondDate = new Date();
+//  month2 = this.firstDate.getMonth()+1;
 
-  setSecondMonthRight = this.secondDate.setMonth(this.month2);
+ // setSecondMonthRight = this.secondDate.setMonth(this.month2);
 
-  thirdDate = new Date();
-  month3 = this.secondDate.getMonth()+1;
-  setThirdMonthRight = this.thirdDate.setMonth(this.month3);
+ // thirdDate = new Date();
+ // month3 = this.secondDate.getMonth()+1;
+ // setThirdMonthRight = this.thirdDate.setMonth(this.month3);
 
 
   weekendsDatesFilter = (d: Date): boolean => {

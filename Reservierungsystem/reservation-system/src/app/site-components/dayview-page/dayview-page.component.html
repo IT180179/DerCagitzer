@@ -1,9 +1,10 @@
   <div id="nav" style="padding-top: 2%">
   <!-- <p><a><mat-icon></mat-icon></a></p>
    <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
-   <p class="long-box today"><a>{{today}}</a></p>
+
    <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
    <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
+    <p class="long-box today"><a>{{date.toLocaleDateString()}}</a></p>
 </div>
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
 
@@ -46,7 +47,7 @@
               <!--
               [ngStyle]="{'transform': 'translateY(' + (res.tableEntity.tableno * 50) + 'px)'}"-->
 
-              <div (mouseover)="getInformation(res)" #myHandle class="drag-block-handle" >
+              <div (click)="getInformation(res)" #myHandle class="drag-block-handle" >
                 <p class="reservationNachname">&nbsp;&nbsp;{{res.customer_name}},&nbsp;&nbsp;&nbsp;{{res.person_amount}}&nbsp;Personen</p>
               </div>
             </div>
