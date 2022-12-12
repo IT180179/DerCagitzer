@@ -79,7 +79,7 @@ newdata: any
 
     this.newdata = {
       customer: null,
-      customer_name: data.nachname,
+      customer_name: data.name,
       start_time: data.startzeit,
       end_time: data.endzeit,
       reservation_date: data.datum,
