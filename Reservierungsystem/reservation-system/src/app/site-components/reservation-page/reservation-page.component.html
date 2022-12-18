@@ -15,50 +15,45 @@
     <mat-form-field required style="width: 100%;">
       <input matInput type="text" name="name" formControlName="name" id="name" >
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
-        Name <strong>eingeben</strong>
+        Name muss <b>eingeben</b> werden!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['name'].hasError('minlength') ">
-        Name <strong>ist nicht gültig</strong>
+        Name <b>ist nicht gültig</b>
       </mat-error>
     </mat-form-field>
     </div>
     <br>
-
     <div class="pickers">
       <div style=" float:left;width: 50%; margin-right:4%;">
       <p for="datum">Datum:</p>
       <div class="datepicker"  style="width: 100%;">
-        <input value="2022-12-14" class="datepicker-input" id="datum" type="date" name="datum" formControlName="datum" >
+        <input class="datepicker-input" id="datum" [min]="today" type="date" name="datum" formControlName="datum" value="{{this.data.date}}">
       </div>
     </div>
       <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
       <p for="startzeit" style="text-align: center">Startzeit:</p>
       <div class="datepicker" style="width: 100%;">
-        <input class=" datepicker-input"  type="time" name="startzeit" formControlName="startzeit" style="padding:8.5%">
+        <input  [(ngModel)]="selectedOption" style="padding:8.5%" id="start" (change)="setEndTime(selectedOption)"  class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" step="900" >
       </div>
       </div>
-
       <div style=" float:left; width: 22%;margin-right:1%; margin-top:0.2%;">
       <p for="endzeit" style="text-align: center">Endzeit:</p>
       <div class="datepicker" style="width: 100%;">
-        <input class=" datepicker-input " type="time" name="endzeit" formControlName="endzeit" style="padding:8.5%">
+        <input style="padding:8.5%" id="timeinput"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
       </div>
     </div>
-<br>
-
+    <br>
     <div style="float: left; width: 48%;">
       <p>Personenanzahl:</p>
       <mat-form-field  style="width: 100%;">
-        <input matInput type="number" name="personenanzahl" formControlName="personenanzahl" >
+        <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >
       </mat-form-field>
     </div>
-
-
     <div>
       <p id="tischnummer">Tischnummer:</p>
       <mat-form-field  style="width: 48%;margin-left:3.5%;">
-      <input matInput type="number" name="tischnummer" formControlName="tischnummer">
+      <input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer">
     </mat-form-field>
     </div>
 
@@ -67,10 +62,10 @@
     <mat-form-field style="width: 100%;">
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
-        Telefonnummer <strong>wird benötigt</strong>
+        Telefonnummer muss <b>eingegeben</b> werden!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('minlength')">
-        Telefonnummer <strong>ist nicht gültig</strong>
+        Telefonnummer <b>ist nicht gültig</b>
       </mat-error>
     </mat-form-field>
 </div>
@@ -80,7 +75,7 @@
       <mat-form-field style="width: 48%;">
         <input matInput type="text" name="email" formControlName="email">
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
-          E-Mail <strong>ist nicht gültig</strong>
+          E-Mail <b>ist nicht gültig</b>
         </mat-error>
       </mat-form-field >
     </div>
