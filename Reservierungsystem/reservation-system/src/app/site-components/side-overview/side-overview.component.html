@@ -22,6 +22,7 @@
     <p class="info">Personenanzahl: <span style="font-weight: normal">{{infoReservation.person_amount}} Personen</span></p>
     <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
     <p class="info">Tischnummer: <span style="font-weight: normal">{{infoReservation.tableEntity.tableno}}</span></p>
+    <p class="info" id="bearbeitenButton" (click)="changeReservation(infoReservation.reservation_id)">Bearbeiten</p>
   </div>
   <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
 </div>

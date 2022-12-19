@@ -34,6 +34,10 @@ export class SideOverviewComponent implements OnInit {
 
   }
 
+  changeReservation(id: number) {
+
+  }
+
   reservationsPerDayNoon(date: String) {
     this.rs.countReservationsPerDayNoon(date).subscribe(
       (r: number) => {
