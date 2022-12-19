@@ -34,8 +34,15 @@ export class SideOverviewComponent implements OnInit {
 
   }
 
-  changeReservation(id: number) {
+  updateReservation(id: number) {
 
+  }
+
+  deleteReservation(id: number) {
+    this.rs.delete(id).subscribe({
+      complete: () => {
+      }
+    });
   }
 
   reservationsPerDayNoon(date: String) {

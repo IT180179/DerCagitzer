@@ -77,3 +77,20 @@
   border: 2px solid green;
   cursor: pointer;
 }
+
+#loeschenButton {
+  border-radius: 5px;
+  background-color: red;
+  color: #ffffff;
+  width: 86%;
+  text-align: center;
+  padding: 2%;
+  border: 2px solid red;
+}
+
+#loeschenButton:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: red;
+  border: 2px solid red;
+  cursor: pointer;
+}

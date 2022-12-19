@@ -130,8 +130,8 @@ public class ReservationResource {
 
     @DELETE
     @Transactional
-    @Path("/delete")
-    public Response delete(Long id) {
+    @Path("/delete/{id}")
+    public Response delete(@PathParam("id") Long id) {
         reservationRepo.deleteById(id);
         return Response.ok(id).build();
     }
