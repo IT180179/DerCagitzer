@@ -28,13 +28,16 @@ export class SideOverviewComponent implements OnInit {
     this.reservationsPerWeek((this._date.getDate() - this._date.getDate() + 3).toLocaleString(), (this._date.getDate() - this._date.getDate() + 3).toLocaleString() + 7);
   }
 
+
   constructor(private rs: ReservationService) {}
 
   ngOnInit(): void {
 
   }
 
+
   reservationsPerDayNoon(date: String) {
+
     this.rs.countReservationsPerDayNoon(date).subscribe(
       (r: number) => {
         this.resultPerDayNoon = Math.round(r * 100);
