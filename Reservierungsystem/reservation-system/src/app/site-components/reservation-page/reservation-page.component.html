@@ -31,10 +31,10 @@
       </div>
     </div>
       <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
-      <p for="startzeit" style="text-align: center">Startzeit:</p>
-      <div class="datepicker" style="width: 100%;">
-        <input  [(ngModel)]="selectedOption" style="padding:8.5%" id="start" (change)="setEndTime(selectedOption)"  class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" step="900" >
-      </div>
+        <p for="startzeit" style="text-align: center">Startzeit:</p>
+        <div class="datepicker" style="width: 100%;">
+          <input style="padding:8.5%" id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" step="900" >
+        </div>
       </div>
       <div style=" float:left; width: 22%;margin-right:1%; margin-top:0.2%;">
       <p for="endzeit" style="text-align: center">Endzeit:</p>
@@ -53,7 +53,7 @@
     <div>
       <p id="tischnummer">Tischnummer:</p>
       <mat-form-field  style="width: 48%;margin-left:3.5%;">
-      <input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer">
+      <input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer" >
     </mat-form-field>
     </div>
 
