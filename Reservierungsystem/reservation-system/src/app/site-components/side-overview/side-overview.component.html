@@ -18,12 +18,26 @@
   <div *ngIf="infoReservation" id="reservationInfo">
     <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
     <h3>Reservierung</h3>
-    <p class="info">Nachname: <span style="font-weight: normal">{{infoReservation.customer_name}}</span></p>
-    <p class="info">Personenanzahl: <span style="font-weight: normal">{{infoReservation.person_amount}} Personen</span></p>
-    <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
-    <p class="info">Tischnummer: <span style="font-weight: normal">{{infoReservation.tableEntity.tableno}}</span></p>
-    <p class="info" id="bearbeitenButton" (click)="updateReservation(infoReservation.reservation_id)">Bearbeiten</p>
-    <p class="info" id="loeschenButton" (click)="deleteReservation(infoReservation.reservation_id)">Löschen</p>
+    <form  (ngSubmit)="updateReservation()" [formGroup]="updateForm" >
+
+      <p class="info">Name: <span><input matInput type="text" name="name" formControlName="name" id="name" ></span></p>
+        <mat-error *ngIf="updateForm.controls['name'].hasError('required') ">
+          Name muss <b>eingeben</b> werden!
+        </mat-error>
+        <mat-error *ngIf="updateForm.controls['name'].hasError('minlength') ">
+          Name <b>ist nicht gültig</b>
+        </mat-error>
+
+    <p class="info">Personenanzahl: <span style="font-weight: normal"><input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >Personen</span></p>
+
+        <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
+
+      <p class="info">Tischnummer: <span style="font-weight: normal"><input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer" >
+      </span></p>
+
+    <p class="info" type="submit" id="bearbeitenButton" (click)="updateReservation()">Bearbeiten</p>
+    <p class="info" type="button" id="loeschenButton" (click)="deleteReservation(infoReservation.reservation_id)">Löschen</p>
+  </form>
   </div>
   <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
 </div>

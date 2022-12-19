@@ -1,14 +1,25 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {Reservation} from "../../shared/reservation";
 import {ReservationService} from "../../shared/reservation.service";
 import {MatCalendar} from "@angular/material/datepicker";
+import {FormBuilder, FormGroup, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-side-overview',
   templateUrl: './side-overview.component.html',
   styleUrls: ['./side-overview.component.scss'],
 })
-export class SideOverviewComponent implements OnInit {
+export class SideOverviewComponent implements OnChanges {
 
   @Input() infoReservation: Reservation;
   resultPerDayNoon: number;
@@ -17,6 +28,8 @@ export class SideOverviewComponent implements OnInit {
   _date: Date;
   start_date: Date;
   end_date: Date;
+  updateForm: FormGroup
+
   @Input() set date(value: Date) {
     this._date = value;
     const _date2 = this._date;
@@ -29,13 +42,34 @@ export class SideOverviewComponent implements OnInit {
   }
 
 
-  constructor(private rs: ReservationService) {}
 
-  ngOnInit(): void {
 
+
+  constructor(private rs: ReservationService, private fb: FormBuilder) {}
+
+
+  ngOnChanges(): void {
+    this.updateForm = new UntypedFormGroup({
+      name: new UntypedFormControl(this.infoReservation.customer_name,
+        [Validators.required, Validators.minLength(2)]),
+      tischnummer: new UntypedFormControl(this.infoReservation.tableEntity.tableno, Validators.max(3)),
+      personenanzahl: new UntypedFormControl(this.infoReservation.person_amount),
+
+    });
   }
 
-  updateReservation(id: number) {
+
+
+  updateReservation() {
+    this.infoReservation.customer_name = this.updateForm.get('name').value
+    this.infoReservation.tableEntity.tableno = this.updateForm.get('tischnummer').value
+    this.infoReservation.person_amount = this.updateForm.get('personenanzahl').value
+
+    this.rs.update(this.infoReservation).subscribe({
+      complete: () => {
+
+      }
+    });
 
   }
 
@@ -45,6 +79,8 @@ export class SideOverviewComponent implements OnInit {
       }
     });
   }
+
+
 
   reservationsPerDayNoon(date: String) {
 
