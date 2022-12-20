@@ -13,6 +13,7 @@ import {Reservation} from "../../shared/reservation";
 import {ReservationService} from "../../shared/reservation.service";
 import {MatCalendar} from "@angular/material/datepicker";
 import {FormBuilder, FormGroup, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-overview',
@@ -45,7 +46,7 @@ export class SideOverviewComponent implements OnChanges {
 
 
 
-  constructor(private rs: ReservationService, private fb: FormBuilder) {}
+  constructor(private rs: ReservationService, private fb: FormBuilder, private router: Router) {}
 
 
   ngOnChanges(): void {
@@ -79,8 +80,6 @@ export class SideOverviewComponent implements OnChanges {
       }
     });
   }
-
-
 
   reservationsPerDayNoon(date: String) {
 
