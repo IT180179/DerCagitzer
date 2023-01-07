@@ -70,7 +70,6 @@ export class SideOverviewComponent implements OnChanges {
 
       }
     });
-
   }
 
   deleteReservation(id: number) {

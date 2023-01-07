@@ -27,8 +27,14 @@
       <div style=" float:left;width: 50%; margin-right:4%;">
       <p for="datum">Datum:</p>
       <div class="datepicker"  style="width: 100%;">
-        <input class="datepicker-input" id="datum" [min]="today" type="date" name="datum" formControlName="datum" value="{{this.data.date}}">
-      </div>
+        <mat-form-field>
+          <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" placeholder="Date"
+                 autocomplete="off"
+                 name="date" formControlName="datum">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker [startAt]="data.date" #picker></mat-datepicker>
+        </mat-form-field>
+        </div>
     </div>
       <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
         <p for="startzeit" style="text-align: center">Startzeit:</p>
