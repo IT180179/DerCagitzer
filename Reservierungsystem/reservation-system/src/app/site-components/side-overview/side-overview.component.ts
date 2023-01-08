@@ -14,6 +14,7 @@ import {ReservationService} from "../../shared/reservation.service";
 import {MatCalendar} from "@angular/material/datepicker";
 import {FormBuilder, FormGroup, UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {EventEmitterService} from "../../shared/event-emitter.service";
 
 @Component({
   selector: 'app-side-overview',
@@ -46,7 +47,7 @@ export class SideOverviewComponent implements OnChanges {
 
 
 
-  constructor(private rs: ReservationService, private fb: FormBuilder, private router: Router) {}
+  constructor(private rs: ReservationService, private fb: FormBuilder, private router: Router, private eventemitter: EventEmitterService) {}
 
 
   ngOnChanges(): void {
@@ -76,6 +77,8 @@ export class SideOverviewComponent implements OnChanges {
   deleteReservation(id: number) {
     this.rs.delete(id).subscribe({
       complete: () => {
+        this.eventemitter.onDelete()
+        this.infoReservation = null
       }
     });
   }

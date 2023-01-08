@@ -13,13 +13,12 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Dialog} from "../dayview-page/dayview-page.component";
-import {Time} from "@angular/common";
-import {Runtime} from "inspector";
+import {DatePipe, Time} from "@angular/common";
 
 @Component({
   selector: 'app-reservation-page',
   templateUrl: './reservation-page.component.html',
-  styleUrls: ['./reservation-page.component.scss']
+  styleUrls: ['./reservation-page.component.scss'],
 })
 export class ReservationPageComponent implements OnInit {
 
@@ -89,7 +88,7 @@ export class ReservationPageComponent implements OnInit {
       customer_name: data.name,
       start_time: data.startzeit,
       end_time: data.endzeit,
-      reservation_date: data.datum,
+      reservation_date: data.datum.toLocaleDateString(),
       person_amount: Number(data.personenanzahl),
       tableEntity: {
         tableno: Number(data.tischnummer)
@@ -106,9 +105,7 @@ export class ReservationPageComponent implements OnInit {
         console.log(result)
       });
     this.dialogRef.close();
-
     this.addressForm.reset();
-
   }
 
 

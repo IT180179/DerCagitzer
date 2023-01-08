@@ -8,6 +8,7 @@ import {ResizeEvent} from "angular-resizable-element";
 import {DomSanitizer, SafeStyle} from "@angular/platform-browser";
 import {Element} from "@angular/compiler";
 import {DataService} from "../../services/data.service";
+import {EventEmitterService} from "../../shared/event-emitter.service";
 
 
 @Component({
@@ -44,7 +45,7 @@ export class DayviewPageComponent implements AfterViewInit{
     console.log(this.resize.nativeElement.offsetWidth )
   })
 
-  constructor(private rs: ReservationService, public dialog: MatDialog, public dataService: DataService) {
+  constructor(private rs: ReservationService, public dialog: MatDialog, public dataService: DataService, private eventemitter: EventEmitterService) {
   }
 
   infoReservation: Reservation;
@@ -67,6 +68,13 @@ export class DayviewPageComponent implements AfterViewInit{
 
   ngOnInit(): void {
 
+    if(this.eventemitter.sub == undefined) {
+      this.eventemitter.sub = this.eventemitter.invokefunction.subscribe(
+        () => {
+          this.loadReservations()
+        }
+      )
+    }
     console.log(this.Room)
 
     this.tabels = this.dataService.getTabels(this.Room)
@@ -360,6 +368,7 @@ export class DayviewPageComponent implements AfterViewInit{
 
 
   loadReservations(){
+    this.reservations = []
     this.rs.getAll().subscribe(
       (r: Reservation[]) => {
 

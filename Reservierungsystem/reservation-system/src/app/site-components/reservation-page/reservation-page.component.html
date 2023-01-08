@@ -26,24 +26,22 @@
     <div class="pickers">
       <div style=" float:left;width: 50%; margin-right:4%;">
       <p for="datum">Datum:</p>
-      <div class="datepicker"  style="width: 100%;">
+      <div class="datepicker" style="width: 100%;">
         <mat-form-field>
-          <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" placeholder="Date"
-                 autocomplete="off"
-                 name="date" formControlName="datum">
+          <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" autocomplete="off" name="date" formControlName="datum">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker [startAt]="data.date" #picker></mat-datepicker>
         </mat-form-field>
         </div>
     </div>
       <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
-        <p for="startzeit" style="text-align: center">Startzeit:</p>
+        <p for="startzeit" style="text-align: left">Startzeit:</p>
         <div class="datepicker" style="width: 100%;">
           <input style="padding:8.5%" id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="5">
         </div>
       </div>
       <div style=" float:left; width: 22%;margin-right:1%; margin-top:0.2%;">
-      <p for="endzeit" style="text-align: center">Endzeit:</p>
+      <p for="endzeit" style="text-align: left">Endzeit:</p>
       <div class="datepicker" style="width: 100%;">
         <input style="padding:8.5%" id="timeinput"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
@@ -95,7 +93,6 @@
     </mat-form-field>
     </div>
     <br>
-    <button [disabled]="addressForm.valid" type="submit" class="form-control button" style="margin-left: 20%;  border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" id="reservieren">Reservieren</button>
-    <button (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
-
+    <button style="margin-left: 20%;  border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
+    <button style="border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" [disabled]="!addressForm.valid" type="submit" class="form-control button" id="reservieren">Reservieren</button>
   </form>
