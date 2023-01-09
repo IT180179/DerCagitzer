@@ -54,7 +54,7 @@ export class ReservationPageComponent implements OnInit {
       name: new UntypedFormControl(null,
         [Validators.required, Validators.minLength(2)]),
       telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
-      tischnummer: new UntypedFormControl(this.data.tablenr, Validators.max(3)),
+      tischnummer: new UntypedFormControl(this.data.tablenr, Validators.required),
       startzeit: new UntypedFormControl(this.data.starttime),
       endzeit: new UntypedFormControl(this.data.endtime),
       datum: new UntypedFormControl(this.data.date),
