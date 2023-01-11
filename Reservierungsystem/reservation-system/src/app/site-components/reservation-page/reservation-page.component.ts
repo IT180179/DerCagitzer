@@ -25,6 +25,7 @@ export class ReservationPageComponent implements OnInit {
   addressForm: FormGroup;
   errors: any = {};
 
+
   @Input() reservation?: Reservation;
   @Output() submitReservation = new EventEmitter<Reservation>();
 
@@ -63,6 +64,8 @@ export class ReservationPageComponent implements OnInit {
       email: new UntypedFormControl(null, Validators.email),
       anmerkungen: new UntypedFormControl(null)
     });
+
+    console.log(this.data.tablenr)
 
 
 

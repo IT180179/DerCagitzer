@@ -32,16 +32,20 @@ form{
   width: 27%;
   margin-left: 5%;
 }
-#title {
+.title {
   font-style: normal;
   font-family: "Trebuchet MS";
-  font-weight: 700;
-  font-size: 300%;
-  line-height: 86px;
+  font-size: 250%;
+  font-weight: bold;
   text-align: center;
-  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #32482D;
+}
+
+.subtitle{
+  font-family: "Trebuchet MS";
+  font-size: 150%;
+  text-align: center;
 }
 
 #abbruch{

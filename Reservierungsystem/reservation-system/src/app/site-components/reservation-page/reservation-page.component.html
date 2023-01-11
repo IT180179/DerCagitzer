@@ -8,7 +8,9 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
   <form style="margin: 5%;" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
-      <h2 id="title">Neue Reservierung</h2>
+      <h2 class="title">Neue Reservierung</h2>
+      <h2 class="subtitle">Tischnummer: {{data.tablenr}}</h2>
+
 
     <div>
     <p>Name:</p>
@@ -53,12 +55,6 @@
       <mat-form-field  style="width: 100%;">
         <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >
       </mat-form-field>
-    </div>
-    <div>
-      <p id="tischnummer">Tischnummer:</p>
-      <mat-form-field  style="width: 48%;margin-left:3.5%;">
-      <input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer" >
-    </mat-form-field>
     </div>
 
 <div  style="float: left; width: 48%; margin-right:4%;">
