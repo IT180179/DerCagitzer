@@ -13,6 +13,8 @@ import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Reservation.ReservationRepo;
 import org.acme.workloads.Table_Entity.TableEntityRepo;
 
+import java.util.Objects;
+
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/reservation")
@@ -115,6 +117,13 @@ public class ReservationResource {
     public Response add(Reservation reservation){
         if (reservation == null){
             return Response.status(404).build();
+        }
+        var reservationCheck = this.reservationRepo.listAll();
+        var length = reservationCheck.toArray();
+        for(int i = 0; i < length.length; i++) {
+            if (Objects.equals(reservationCheck.get(i).getReservation_date(), reservation.getReservation_date()) && Objects.equals(reservationCheck.get(i).getTableEntity().getTableno(), reservation.getTableEntity().getTableno())) {
+                return Response.ok("already reservated").build();
+            }
         }
         this.reservationRepo.persist(reservation);
         return Response.ok(reservation).build();
