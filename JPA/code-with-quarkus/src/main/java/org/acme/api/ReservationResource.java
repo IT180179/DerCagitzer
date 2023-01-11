@@ -120,8 +120,8 @@ public class ReservationResource {
         }
         var reservationCheck = this.reservationRepo.listAll();
         var length = reservationCheck.toArray();
-        for(int i = 0; i < length.length; i++) {
-            if (Objects.equals(reservationCheck.get(i).getReservation_date(), reservation.getReservation_date()) && Objects.equals(reservationCheck.get(i).getTableEntity().getTableno(), reservation.getTableEntity().getTableno())) {
+        for (int i = 0; i < length.length; i++) {
+            if(this.reservationRepo.checkReservation(reservationCheck.get(i).getReservation_date(), reservationCheck.get(i).getTableEntity().getTableno(), reservationCheck.get(i).getStart_time(), reservationCheck.get(i).getEnd_time())) {
                 return Response.ok("already reservated").build();
             }
         }
