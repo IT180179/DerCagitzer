@@ -122,7 +122,7 @@ public class ReservationResource {
         var length = reservationCheck.toArray();
         for (int i = 0; i < length.length; i++) {
             if(this.reservationRepo.checkReservation(reservationCheck.get(i).getReservation_date(), reservationCheck.get(i).getTableEntity().getTableno(), reservationCheck.get(i).getStart_time(), reservationCheck.get(i).getEnd_time())) {
-                return Response.ok("already reservated").build();
+                return Response.ok("not free").build();
             }
         }
         this.reservationRepo.persist(reservation);
