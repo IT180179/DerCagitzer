@@ -438,6 +438,7 @@ export class DayviewPageComponent implements AfterViewInit{
     var endtime = et * 50 + element.x
 
     console.log(starttime)
+    console.log(endtime)
 
     for (let i = 0; i < this.data.length; i++){
       if (this.data[i].time == (starttime / 50)){
@@ -451,14 +452,17 @@ export class DayviewPageComponent implements AfterViewInit{
     }
 
     reservation.tableEntity.tableno = reservation.tableEntity.tableno + element.y / 50;
+    console.log(element.y)
     reservation.start_time = st_full;
     reservation.end_time = et_full;
 
-    if (element.x != 0 && element.y != 0  ){
+
+    if (element.x != 0 || element.y != 0  ){
       this.rs.update(reservation).subscribe(() =>{
         console.log(reservation)
         this.loadReservations();
       })
+
     }
 
 
