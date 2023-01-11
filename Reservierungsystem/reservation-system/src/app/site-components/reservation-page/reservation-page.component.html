@@ -7,17 +7,17 @@
   <script src="https://unpkg.com/bulma-calendar@6.0.7/dist/js/bulma-calendar.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
-  <form style="margin: 5%;" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
+  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 class="title">Neue Reservierung</h2>
       <h2 class="subtitle">Tischnummer: {{data.tablenr}}</h2>
 
 
     <div>
     <p>Name:</p>
-    <mat-form-field required style="width: 100%;">
+    <mat-form-field>
       <input matInput type="text" name="name" formControlName="name" id="name" >
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
-        Name muss <b>eingeben</b> werden!
+        Name muss <b>eingegeben</b> werden!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['name'].hasError('minlength') ">
         Name <b>ist nicht gültig</b>
@@ -26,9 +26,9 @@
     </div>
     <br>
     <div class="pickers">
-      <div style=" float:left;width: 50%; margin-right:4%;">
+      <div>
       <p for="datum">Datum:</p>
-      <div class="datepicker" style="width: 100%;">
+      <div class="datepicker">
         <mat-form-field>
           <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" autocomplete="off" name="date" formControlName="datum">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -36,30 +36,30 @@
         </mat-form-field>
         </div>
     </div>
-      <div style=" float:left; width: 22%;margin-right:5%;margin-top:0.2%;">
-        <p for="startzeit" style="text-align: left">Startzeit:</p>
-        <div class="datepicker" style="width: 100%;">
-          <input style="padding:8.5%" id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="5">
+      <div>
+        <p for="startzeit"></p>
+        <div class="datepicker">
+          <input id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="5">
         </div>
       </div>
-      <div style=" float:left; width: 22%;margin-right:1%; margin-top:0.2%;">
-      <p for="endzeit" style="text-align: left">Endzeit:</p>
-      <div class="datepicker" style="width: 100%;">
-        <input style="padding:8.5%" id="timeinput"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+      <div>
+      <p for="endzeit">Endzeit:</p>
+      <div class="datepicker">
+        <input id="timeinput"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
       </div>
     </div>
     <br>
-    <div style="float: left; width: 48%;">
+    <div>
       <p>Personenanzahl:</p>
-      <mat-form-field  style="width: 100%;">
+      <mat-form-field>
         <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >
       </mat-form-field>
     </div>
 
-<div  style="float: left; width: 48%; margin-right:4%;">
+<div>
   <p>Telefonnummer:</p>
-    <mat-form-field style="width: 100%;">
+    <mat-form-field>
       <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
         Telefonnummer muss <b>eingegeben</b> werden!
@@ -72,7 +72,7 @@
 
     <div>
       <p>E-Mail:</p>
-      <mat-form-field style="width: 48%;">
+      <mat-form-field>
         <input matInput type="text" name="email" formControlName="email">
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
           E-Mail <b>ist nicht gültig</b>
@@ -84,11 +84,11 @@
 
     <div>
       <p>Anmerkungen:</p>
-    <mat-form-field style="width: 100%;">
+    <mat-form-field>
       <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
     </mat-form-field>
     </div>
     <br>
-    <button style="margin-left: 20%;  border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
-    <button style="border-radius: 15px; padding:2.5%; font-family: 'Trebuchet MS';" [disabled]="!addressForm.valid" type="submit" class="form-control button" id="reservieren">Reservieren</button>
+    <button  (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
+    <button [disabled]="!addressForm.valid" type="submit" class="form-control button" id="reservieren">Reservieren</button>
   </form>

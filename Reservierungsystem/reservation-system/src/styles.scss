@@ -45,8 +45,7 @@ $reservation-system-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Work Sans
-, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Trebuchet MS"; }
 
 .timetable section .time-seconds-label {
   visibility: hidden;
@@ -151,36 +150,6 @@ span span{
   text-shadow: 0 0 10px lightgrey, 0 0 10px lightgrey;
 }
 
-/*RESERVIERUNG*/
-
-
-#headline{
-  color:rgb(38, 95, 25);
-}
-
-label{
-  font-size:18px;
-  font-weight:bold;
-  color:rgb(38, 95, 25)
-}
-
-input[type=submit]{
-  background-color: rgba(81, 154, 64, 0.2);
-  border:none;
-  color:rgb(38, 95, 25);
-  font-weight:bold;
-}
-
-input[type=button]{
-  background-color: rgba(81, 154, 64, 0.2);
-  border:none;
-  color:rgb(38, 95, 25);
-  font-weight:bold;
-}
-
-.d-flex{
-  margin-top: 3%;
-}
 
 #overview{
   margin-top: 1.5%;
@@ -340,8 +309,6 @@ hr{
   padding: 20%;
 }
 
-
-
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
   background-color: green;
   color: green;
@@ -369,7 +336,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-progress-bar-fill::after {
   background-color: green;
 }
-.mat-form-field-flex{
-  background-color: #b6ccb6;
-  border-radius: 15px;
-}
+
