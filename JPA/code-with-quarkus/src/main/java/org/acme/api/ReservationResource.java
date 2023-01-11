@@ -120,8 +120,16 @@ public class ReservationResource {
         }
         var reservationCheck = this.reservationRepo.listAll();
         var length = reservationCheck.toArray();
-        for(int i = 0; i < length.length; i++) {
-            if (Objects.equals(reservationCheck.get(i).getReservation_date(), reservation.getReservation_date()) && Objects.equals(reservationCheck.get(i).getTableEntity().getTableno(), reservation.getTableEntity().getTableno())) {
+        var timeslot = "";
+        boolean time = false;
+        for (int i = 0; i < length.length; i++) {
+            timeslot = reservationCheck.get(i).getStart_time() + reservationCheck.get(i).getEnd_time();
+            if (timeslot.equals(reservation.getStart_time() + reservation.getEnd_time())) {
+                time = true;
+            }else{
+                time = false;
+            }
+            if (Objects.equals(reservationCheck.get(i).getReservation_date(), reservation.getReservation_date()) && Objects.equals(reservationCheck.get(i).getTableEntity().getTableno(), reservation.getTableEntity().getTableno()) && time) {
                 return Response.ok("already reservated").build();
             }
         }
