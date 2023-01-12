@@ -8,11 +8,11 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
   <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
-      <h2 class="title">Neue Reservierung</h2>
-      <h2 class="subtitle">Tischnummer: {{data.tablenr}}</h2>
+      <h2 id="title">Neue Reservierung</h2>
+      <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
 
 
-    <div>
+    <div id="nameForm">
     <p>Name:</p>
     <mat-form-field>
       <input matInput type="text" name="name" formControlName="name" id="name" >

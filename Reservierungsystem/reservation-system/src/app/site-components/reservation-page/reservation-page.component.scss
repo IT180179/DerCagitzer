@@ -1,0 +1,32 @@
+
+html, body { height: 100%;}
+body { margin: 0; font-family: "Trebuchet MS"; }
+
+
+#title{
+  text-align:center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size:250%;
+  color:green;
+}
+
+#subtitle{
+  text-align:center;
+  font-size:150%;
+  color:green;
+}
+
+form{
+  margin-left:5%;
+}
+
+input[type=text]{
+  background-color:green;
+}
+
+
+#nameForm mat-form-field{
+  width:95%;
+}
+
