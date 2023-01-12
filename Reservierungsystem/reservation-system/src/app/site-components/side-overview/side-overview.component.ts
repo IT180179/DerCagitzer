@@ -66,12 +66,12 @@ export class SideOverviewComponent implements OnChanges {
     this.infoReservation.customer_name = this.updateForm.get('name').value
     this.infoReservation.tableEntity.tableno = this.updateForm.get('tischnummer').value
     this.infoReservation.person_amount = this.updateForm.get('personenanzahl').value
-
-    this.rs.update(this.infoReservation).subscribe({
-      complete: () => {
-
+    this.rs.update(this.infoReservation).subscribe(value =>{
+      if(value.statusText == "not free") {
+        this.eventemitter.onDelete()
       }
-    });
+      this.eventemitter.onDelete()
+    })
   }
 
   deleteReservation(id: number) {
@@ -84,7 +84,6 @@ export class SideOverviewComponent implements OnChanges {
   }
 
   reservationsPerDayNoon(date: String) {
-
     this.rs.countReservationsPerDayNoon(date).subscribe(
       (r: number) => {
         this.resultPerDayNoon = Math.round(r * 100);
