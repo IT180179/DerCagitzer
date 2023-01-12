@@ -66,14 +66,12 @@ export class SideOverviewComponent implements OnChanges {
     this.infoReservation.customer_name = this.updateForm.get('name').value
     this.infoReservation.tableEntity.tableno = this.updateForm.get('tischnummer').value
     this.infoReservation.person_amount = this.updateForm.get('personenanzahl').value
-    this.rs.update(this.infoReservation).subscribe({
-      complete: () => {
+    this.rs.update(this.infoReservation).subscribe(value =>{
+      if(value.statusText == "not free") {
         this.eventemitter.onDelete()
-        this.infoReservation = null
       }
-    });
-    this.eventemitter.onDelete()
-    this.infoReservation = null
+      this.eventemitter.onDelete()
+    })
   }
 
   deleteReservation(id: number) {

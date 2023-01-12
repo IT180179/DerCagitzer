@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {Reservation} from "./reservation";
 import {throwError, Observable, catchError} from "rxjs";
 
@@ -68,7 +68,7 @@ export class ReservationService {
       );
   }
 
-  update(reservation: Reservation){
+  update(reservation: Reservation): Observable<HttpResponse<any>>{
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
@@ -76,7 +76,7 @@ export class ReservationService {
       'Access-Control-Allow-Origin': 'http://localhost:8080',
       'Access-Control-Allow-Credentials': 'true',
     });
-    return this.httpClient.put("http://localhost:8080/reservation/update", reservation, { headers: httpHeaders })
+    return this.httpClient.put<any>("http://localhost:8080/reservation/update", reservation, { headers: httpHeaders, observe: "response" })
   }
 
   delete(id: number): Observable<any> {
