@@ -462,10 +462,7 @@ export class DayviewPageComponent implements AfterViewInit{
         console.log(reservation)
         this.loadReservations();
       })
-
     }
-
-
 
   }
 
