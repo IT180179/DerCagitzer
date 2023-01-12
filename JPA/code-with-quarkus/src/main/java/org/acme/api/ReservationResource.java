@@ -130,7 +130,7 @@ public class ReservationResource {
     @Path("/update")
     public Response update(Reservation reservation) {
         if(this.reservationRepo.checkReservation(reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
-            return Response.ok("not free").build();
+            return Response.ok().status(200, "not free").build();
         }
         reservationRepo.update(reservation);
         return Response.ok(reservation).build();
