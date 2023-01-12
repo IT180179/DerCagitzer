@@ -1,8 +1,8 @@
 <div class="calendar">
-  <mat-calendar #calendar [startAt]="firstDate" [(selected)]="firstDate" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
- <!-- <hr>
-  <mat-calendar #calendar [startAt]="secondDate" [(selected)]="secondDate" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <mat-calendar #calendar [startAt]="firstDate" [(selected)]="firstDate" (selectedChange)="dateChanged('date1')"  [dateFilter]="weekendsDatesFilter"></mat-calendar>
   <hr>
-  <mat-calendar #calendar [startAt]="thirdDate"  [(selected)]="thirdDate" (selectedChange)="dateChanged()" [dateFilter]="weekendsDatesFilter"></mat-calendar>
--->
+  <mat-calendar #calendar [startAt]="start2" [(selected)]="secondDate" (selectedChange)="dateChanged('date2')" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <hr>
+  <mat-calendar #calendar [startAt]="start3"  [(selected)]="thirdDate" (selectedChange)="dateChanged('date3')" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+
 </div>
