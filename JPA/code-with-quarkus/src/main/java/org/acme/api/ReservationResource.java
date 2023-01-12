@@ -118,12 +118,8 @@ public class ReservationResource {
         if (reservation == null){
             return Response.status(404).build();
         }
-        var reservationCheck = this.reservationRepo.listAll();
-        var length = reservationCheck.toArray();
-        for (int i = 0; i < length.length; i++) {
-            if(this.reservationRepo.checkReservation(reservationCheck.get(i).getReservation_date(), reservationCheck.get(i).getTableEntity().getTableno(), reservationCheck.get(i).getStart_time(), reservationCheck.get(i).getEnd_time())) {
-                return Response.ok("not free").build();
-            }
+        if(this.reservationRepo.checkReservation(reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
+            return Response.ok("not free").build();
         }
         this.reservationRepo.persist(reservation);
         return Response.ok(reservation).build();
@@ -133,6 +129,9 @@ public class ReservationResource {
     @Transactional
     @Path("/update")
     public Response update(Reservation reservation) {
+        if(this.reservationRepo.checkReservation(reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
+            return Response.ok("not free").build();
+        }
         reservationRepo.update(reservation);
         return Response.ok(reservation).build();
     }

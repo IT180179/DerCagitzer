@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ApplicationScoped
@@ -24,12 +25,12 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
     }
 
     public Boolean checkReservation(String date, Long table, String start_time, String end_time) {
-        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and r.start_time between :start_time and :end_time or r.end_time between :start_time and :end_time")
+        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and :start_time between r.start_time and r.end_time and :end_time between r.start_time and r.end_time")
                 .setParameter("date", date)
                 .setParameter("table", table)
                 .setParameter("start_time", start_time)
                 .setParameter("end_time", end_time);
-        if(query.getResultStream().count() > 0) {
+        if(query.getResultStream().findAny().isPresent()) {
             return true;
         }else{
             return false;
