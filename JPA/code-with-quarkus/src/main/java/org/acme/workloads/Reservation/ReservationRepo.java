@@ -25,7 +25,7 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
     }
 
     public Boolean checkReservation(String date, Long table, String start_time, String end_time) {
-        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and :start_time between r.start_time and r.end_time and :end_time between r.start_time and r.end_time")
+        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and (:start_time between r.start_time and r.end_time or :end_time between r.start_time and r.end_time)")
                 .setParameter("date", date)
                 .setParameter("table", table)
                 .setParameter("start_time", start_time)
