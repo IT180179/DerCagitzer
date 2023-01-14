@@ -13,7 +13,8 @@
 
 
     <div id="nameForm">
-    <p>Name:</p>
+      <label for="name">Name:</label>
+      <br>
     <mat-form-field>
       <input matInput type="text" name="name" formControlName="name" id="name" >
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
@@ -24,10 +25,10 @@
       </mat-error>
     </mat-form-field>
     </div>
-    <br>
 
     <div id="telForm">
-      <p>Telefonnummer:</p>
+      <label for="tel">Telefonnummer:</label>
+      <br>
       <mat-form-field>
         <input matInput type="text" name="telefonnummer" formControlName="telefonnummer" id="tel">
         <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
@@ -40,7 +41,8 @@
     </div>
 
     <div id="emailForm">
-      <p>E-Mail:</p>
+      <label for="email">E-Mail</label>
+      <br>
       <mat-form-field>
         <input matInput type="text" name="email" formControlName="email" id="email">
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
@@ -48,35 +50,35 @@
         </mat-error>
       </mat-form-field>
     </div>
-    <div class="pickers">
+
+
       <div>
-      <p for="datum">Datum:</p>
+        <div class="datepicker">
+          <input id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="5">
+        </div>
+      </div>
+
+      <div>
+      <div class="datepicker">
+        <input id="end"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+      </div>
+      </div>
+
+    <div>
       <div class="datepicker">
         <mat-form-field>
           <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" autocomplete="off" name="date" formControlName="datum">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker [startAt]="data.date" #picker></mat-datepicker>
         </mat-form-field>
-        </div>
-    </div>
-      <div>
-        <p for="startzeit"></p>
-        <div class="datepicker">
-          <input id="start" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="5">
-        </div>
-      </div>
-      <div>
-      <p for="endzeit">Endzeit:</p>
-      <div class="datepicker">
-        <input id="end"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
-      </div>
       </div>
     </div>
-    <br>
+    
     <div>
-      <p>Personenanzahl:</p>
+      <label for="personenanzahl">Personenanzahl:</label>
+      <br>
       <mat-form-field>
-        <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >
+        <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" id="personenanzahl">
       </mat-form-field>
     </div>
     <div>
