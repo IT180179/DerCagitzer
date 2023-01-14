@@ -19,6 +19,7 @@ body { margin: 0; font-family: "Trebuchet MS"; }
 
 form{
   margin-left:5%;
+  margin-right:5%;
 }
 
 input[type=text]{
@@ -40,20 +41,67 @@ form{
 
 #telForm  mat-form-field{
   width:42.5%;
+  margin-right:10%;
+  float:left;
 }
 
 #tel {
-  padding: 2%;
+  padding: 2.5%;
 }
 
 #emailForm mat-form-field{
   width:42.5%;
+  margin-top:-1.5%;
 }
 
 #email{
-  padding: 2%;
+  padding: 2.5%;
+  float:left;
 }
 
 input[type=text]{
+  padding:1.2%;
+  border-radius: 5px;
+  background-color:green;
+}
+
+input[type=time]{
+  width:44.6%;
   padding:1%;
+  background-color:green;
+  border:solid green 1px;
+  border-radius: 5px;
+}
+
+#startzeit{
+  float:left;
+  margin-right:8%;
+}
+#endInput{
+  margin-top:-1.5%;
+}
+
+#emailLabel{
+  paddinh-botom:10%;
+}
+
+label{
+  font-size:120%;
+  font-weight:bold;
+  color:green;
+  text-transform: uppercase;
+}
+
+#anmerkungArea mat-form-field{
+  width: 97%;
+  background-color:green;
+  border-radius: 5px;
+}
+
+#datum{
+
+}
+
+input[type=number]{
+  width: 100%;
 }
