@@ -25,6 +25,29 @@
     </mat-form-field>
     </div>
     <br>
+
+    <div id="telForm">
+      <p>Telefonnummer:</p>
+      <mat-form-field>
+        <input matInput type="text" name="telefonnummer" formControlName="telefonnummer" id="tel">
+        <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
+          Telefonnummer muss <b>eingegeben</b> werden!
+        </mat-error>
+        <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('minlength')">
+          Telefonnummer <b>ist nicht gültig</b>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div id="emailForm">
+      <p>E-Mail:</p>
+      <mat-form-field>
+        <input matInput type="text" name="email" formControlName="email" id="email">
+        <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
+          E-Mail <b>ist nicht gültig</b>
+        </mat-error>
+      </mat-form-field>
+    </div>
     <div class="pickers">
       <div>
       <p for="datum">Datum:</p>
@@ -45,7 +68,7 @@
       <div>
       <p for="endzeit">Endzeit:</p>
       <div class="datepicker">
-        <input id="timeinput"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+        <input id="end"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
       </div>
     </div>
@@ -56,32 +79,6 @@
         <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >
       </mat-form-field>
     </div>
-
-<div>
-  <p>Telefonnummer:</p>
-    <mat-form-field>
-      <input matInput type="text" name="telefonnummer" formControlName="telefonnummer">
-      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
-        Telefonnummer muss <b>eingegeben</b> werden!
-      </mat-error>
-      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('minlength')">
-        Telefonnummer <b>ist nicht gültig</b>
-      </mat-error>
-    </mat-form-field>
-</div>
-
-    <div>
-      <p>E-Mail:</p>
-      <mat-form-field>
-        <input matInput type="text" name="email" formControlName="email">
-        <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
-          E-Mail <b>ist nicht gültig</b>
-        </mat-error>
-      </mat-form-field >
-    </div>
-
-    <br>
-
     <div>
       <p>Anmerkungen:</p>
     <mat-form-field>

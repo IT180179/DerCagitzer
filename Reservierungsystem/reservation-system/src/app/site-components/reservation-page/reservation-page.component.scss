@@ -30,3 +30,34 @@ input[type=text]{
   width:95%;
 }
 
+form{
+  margin-top:2%;
+}
+
+#nameForm mat-form-field{
+  width:95%;
+}
+
+#telForm  mat-form-field{
+  width:42.5%;
+}
+
+#tel {
+  padding: 2%;
+}
+
+#emailForm mat-form-field{
+  width:42.5%;
+}
+
+#telForm{
+  float:left;
+}
+
+#email{
+  padding: 2%;
+}
+
+input[type=text]{
+  padding:1%;
+}
