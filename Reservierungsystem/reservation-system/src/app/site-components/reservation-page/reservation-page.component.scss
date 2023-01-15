@@ -7,13 +7,13 @@ body { margin: 0; font-family: "Trebuchet MS"; }
   text-align:center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size:250%;
+  font-size:230%;
   color:green;
 }
 
 #subtitle{
   text-align:center;
-  font-size:170%;
+  font-size:150%;
   color: green;
 }
 
@@ -123,4 +123,30 @@ label{
 
 #anzLabel{
   margin-left:35.3%;
+}
+
+#abbruch{
+  background-color: green;
+  color:#a5cea5;
+  padding:2.5%;
+  width:25%;
+  font-size:110%;
+  margin-left:20%;
+  margin-right:5%;
+  font-weight:bold;
+}
+
+#reservieren{
+  background-color: #a5cea5;
+  color: green;
+  padding:2.5%;
+  width:25%;
+  font-weight: bold;
+  font-size:100%;
+  border-color: green;
+}
+
+mat-error{
+  margin-top: -0.1%;
+  margin-bottom: 1%;
 }

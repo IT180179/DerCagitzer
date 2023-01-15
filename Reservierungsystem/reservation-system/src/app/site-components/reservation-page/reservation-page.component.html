@@ -77,7 +77,7 @@
       <mat-form-field>
         <input class="input" matInput type="text" name="email" formControlName="email" id="email">
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
-          E-Mail <b>ist nicht gültig</b>
+          E-Mail <b>ist nicht gültig!</b>
         </mat-error>
       </mat-form-field>
     </div>
@@ -89,6 +89,6 @@
     </mat-form-field>
     </div>
     <br>
-    <button  (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
+    <button  (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbrechen</button>
     <button [disabled]="!addressForm.valid" type="submit" class="form-control button" id="reservieren">Reservieren</button>
   </form>
