@@ -33,13 +33,13 @@
       <div id="startInput">
           <label for="startzeit">Startzeit:</label>
         <br>
-          <input (change)="timeChanged()" class="input" id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
+          <input class="input" id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
       </div>
 
       <div id="endInput">
         <label for="endzeit">Endzeit:</label>
         <br>
-        <input class="input" id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+        <input (change)="timeChanged()" class="input" id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
 
     <br>

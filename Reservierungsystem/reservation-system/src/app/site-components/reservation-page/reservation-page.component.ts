@@ -31,6 +31,7 @@ export class ReservationPageComponent implements OnInit {
 
   today = new Date();
   test: Date;
+  private endzeit: any;
 
 
   constructor(private fb: FormBuilder,
@@ -128,19 +129,24 @@ export class ReservationPageComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  setEndTime(selectedOption: Time) {
-    console.log(selectedOption)
-    //console.log( String( selectedOption.hours+  2 * 60 * 60 * 1000))
-    document.getElementById("timeinput").innerText = String(selectedOption);
-
-
-  }
 
   timeChanged() {
 
-    this.startZeit=this.addressForm.get("startzeit").getRawValue()
-    console.log(this.startZeit.get)
-    this.startZeit += 2;
+    var array = this.startZeit.split(":");
+    var seconds = (parseInt(array[0], 10) * 60 * 60) + (parseInt(array[1], 10) * 60) + parseInt(array[2], 10)
+
+    console.log(seconds)
+
+   // var array = this.startZeit.split(":");
+   // var seconds = (parseInt(array[0], 10) * 60 * 60) + (parseInt(array[1], 10) * 60) + parseInt(array[2], 10)
+
+
+    this.startZeit = this.addressForm.get("startzeit").value
     console.log(this.startZeit)
+
+    this.endzeit=this.addressForm.get("endzeit").value
+    console.log(this.endzeit)
+
+    console.log(this.startZeit.toNumber() - this.endzeit.toNumber() )
   }
 }
