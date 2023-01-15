@@ -1,4 +1,5 @@
 import {Component, ErrorHandler, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+
 import {
   AbstractControl,
   Form,
@@ -16,6 +17,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Dialog} from "../dayview-page/dayview-page.component";
 import {DatePipe, Time} from "@angular/common";
 import {distinctUntilChanged} from "rxjs";
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 
 @Component({
   selector: 'app-reservation-page',
@@ -41,14 +43,13 @@ export class ReservationPageComponent implements OnInit {
               public dialogRef: MatDialogRef<Dialog>,
               public http: HttpClient,
               @Inject(MAT_DIALOG_DATA) public data: any, private route: ActivatedRoute,
-              private router: Router
+              private router: Router,
   ) {
   }
 
 
-
   ngOnInit(): void {
-
+    
     console.log(this.startZeit)
 
     this.today = new Date()

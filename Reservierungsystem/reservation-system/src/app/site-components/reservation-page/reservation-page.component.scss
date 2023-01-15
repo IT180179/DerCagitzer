@@ -7,14 +7,14 @@ body { margin: 0; font-family: "Trebuchet MS"; }
   text-align:center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size:250%;
+  font-size:230%;
   color:green;
 }
 
 #subtitle{
   text-align:center;
-  font-size:170%;
-  color: #a5cea5;
+  font-size:150%;
+  color: green;
 }
 
 form{
@@ -29,20 +29,18 @@ input[type=text]{
 
 #nameForm mat-form-field{
   width:95%;
+  font-size:120%;
 }
 
 form{
   margin-top:2%;
 }
 
-#nameForm mat-form-field{
-  width:95%;
-}
-
 #telForm  mat-form-field{
   width:42.5%;
   margin-right:10%;
   float:left;
+  font-size:120%;
 }
 
 #tel {
@@ -52,6 +50,7 @@ form{
 #emailForm mat-form-field{
   width:42.5%;
   margin-top:-1.5%;
+  font-size:120%;
 }
 
 #email{
@@ -63,14 +62,16 @@ input[type=text]{
   padding:1.2%;
   border-radius: 5px;
   background-color: #a5cea5;
+  font-size:120%;
 }
 
 input[type=time]{
   width:44.6%;
-  padding:1%;
+  padding:2%;
   background-color: #a5cea5;
   border:solid #a5cea5 1px;
   border-radius: 5px;
+  font-size:120%;
 }
 
 #startzeit{
@@ -79,10 +80,6 @@ input[type=time]{
 }
 #endInput{
   margin-top:-1.5%;
-}
-
-#emailLabel{
-  paddinh-botom:10%;
 }
 
 label{
@@ -96,18 +93,56 @@ label{
   width: 97%;
   background-color: #a5cea5;
   border-radius: 5px;
+  font-size:120%;
+  padding-left:2%;
+}
+
+#anzInput input[type=number]{
+  margin-left:235%;
+  background-color: #a5cea5;
+  padding-right: 190%;
+  padding-bottom:16%;
+  padding-top: 16%;
+  padding-left:8%;
+  border-radius: 5px;
+  font-size:120%;
 }
 
 #dateInput{
-  padding: 2.5%;
   float:left;
-  width: 40%;
 }
 
-input[type=number]{
-  width: 100%;
+#dateInput .datepicker-input{
+  background-color: #a5cea5;
+  padding-right: 190%;
+  padding-bottom:16%;
+  padding-top: 16%;
+  padding-left:8%;
+  border-radius: 5px;
+  font-size:120%;
 }
 
-#anzInput{
-  width:40%;
+#anzLabel{
+  margin-left:35.3%;
+}
+
+#abbruch{
+  background-color: green;
+  color:#a5cea5;
+  padding:2%;
+  width:25%;
+  font-size:100%;
+  margin-left:20%;
+  margin-right:5%;
+  font-weight:bold;
+}
+
+#reservieren{
+  background-color: #a5cea5;
+  color: green;
+  padding:2%;
+  width:25%;
+  font-weight: bold;
+  font-size:100%;
+  border-color: green;
 }
