@@ -46,6 +46,8 @@ export class ReservationPageComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log(this.startZeit)
+
     this.today = new Date()
     this.test = this.data.date.toLocaleDateString()
 
@@ -119,6 +121,7 @@ export class ReservationPageComponent implements OnInit {
     return day !== 1 && day !== 2;
   }
   selectedOption: any;
+  startZeit: any;
 
   onNoClick(): void {
 
@@ -131,5 +134,13 @@ export class ReservationPageComponent implements OnInit {
     document.getElementById("timeinput").innerText = String(selectedOption);
 
 
+  }
+
+  timeChanged() {
+
+    this.startZeit=this.addressForm.get("startzeit").getRawValue()
+    console.log(this.startZeit.get)
+    this.startZeit += 2;
+    console.log(this.startZeit)
   }
 }

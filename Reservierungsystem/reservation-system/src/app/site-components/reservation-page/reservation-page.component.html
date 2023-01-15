@@ -13,14 +13,14 @@
 
   <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
       <h2 id="title">Neue Reservierung</h2>
-      <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
+      <h2 id="subtitle">Tischnummer {{data.tablenr}}</h2>
 
 
     <div id="nameForm">
       <label for="name">Name:</label>
       <br>
     <mat-form-field>
-      <input matInput type="text" name="name" formControlName="name" id="name" >
+      <input class="input" matInput type="text" name="name" formControlName="name" id="name" >
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
         Name muss <b>eingegeben</b> werden!
       </mat-error>
@@ -33,16 +33,19 @@
       <div id="startInput">
           <label for="startzeit">Startzeit:</label>
         <br>
-          <input id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
+          <input (change)="timeChanged()" class="input" id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
       </div>
 
       <div id="endInput">
         <label for="endzeit">Endzeit:</label>
         <br>
-        <input id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+        <input class="input" id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
       </div>
 
-    <div>
+    <br>
+    <div id="dateInput">
+      <label for="datum">Datum:</label>
+      <br>
         <mat-form-field>
           <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" autocomplete="off" name="date" formControlName="datum">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -50,7 +53,7 @@
         </mat-form-field>
     </div>
 
-    <div>
+    <div id="anzInput">
       <label for="personenanzahl">Personenanzahl:</label>
       <br>
       <mat-form-field>
@@ -58,11 +61,15 @@
       </mat-form-field>
     </div>
 
+    <br>
+    <br>
+    <br>
+    <br>
     <div id="telForm">
       <label for="tel" id="telLabel">Telefonnummer:</label>
       <br>
       <mat-form-field>
-        <input matInput type="text" name="telefonnummer" formControlName="telefonnummer" id="tel">
+        <input class="input" matInput type="text" name="telefonnummer" formControlName="telefonnummer" id="tel">
         <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
           Telefonnummer muss <b>eingegeben</b> werden!
         </mat-error>
@@ -74,9 +81,8 @@
 
     <div id="emailForm">
       <label for="email" id="emailLabel">E-Mail:</label>
-      <br>
       <mat-form-field>
-        <input matInput type="text" name="email" formControlName="email" id="email">
+        <input class="input" matInput type="text" name="email" formControlName="email" id="email">
         <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
           E-Mail <b>ist nicht gültig</b>
         </mat-error>
@@ -85,8 +91,6 @@
 
     <div id="anmerkungArea">
       <label for="anmerkung">Anmerkungen:</label>
-      <br>
-      <br>
     <mat-form-field>
       <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
     </mat-form-field>
