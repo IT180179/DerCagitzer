@@ -19,7 +19,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
-import {MAT_DATE_FORMATS, MatNativeDateModule} from "@angular/material/core";
+import {MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {AngularDraggableModule} from "angular2-draggable";
 import { ResizableModule } from 'angular-resizable-element';
@@ -29,6 +29,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { TabsComponent } from './site-components/tabs/tabs.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {EventEmitterService} from "./shared/event-emitter.service";
+
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import {EventEmitterService} from "./shared/event-emitter.service";
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
-    EventEmitterService
+    EventEmitterService,
   ],
   bootstrap: [AppComponent]
 })

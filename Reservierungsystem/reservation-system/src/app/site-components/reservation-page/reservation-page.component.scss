@@ -94,6 +94,7 @@ label{
   background-color: #a5cea5;
   border-radius: 5px;
   font-size:120%;
+  padding-left:2%;
 }
 
 #anzInput input[type=number]{
@@ -128,9 +129,9 @@ label{
 #abbruch{
   background-color: green;
   color:#a5cea5;
-  padding:2.5%;
+  padding:2%;
   width:25%;
-  font-size:110%;
+  font-size:100%;
   margin-left:20%;
   margin-right:5%;
   font-weight:bold;
@@ -139,14 +140,9 @@ label{
 #reservieren{
   background-color: #a5cea5;
   color: green;
-  padding:2.5%;
+  padding:2%;
   width:25%;
   font-weight: bold;
   font-size:100%;
   border-color: green;
-}
-
-mat-error{
-  margin-top: -0.1%;
-  margin-bottom: 1%;
 }
