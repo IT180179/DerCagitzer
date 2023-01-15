@@ -34,12 +34,18 @@
           <label for="startzeit">Startzeit:</label>
         <br>
           <input class="input" id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
+          <mat-error *ngIf="!this.checkTime ">
+          Startzeit <b>ist nicht gültig</b>
+          </mat-error>
       </div>
 
       <div id="endInput">
         <label for="endzeit">Endzeit:</label>
         <br>
         <input (change)="timeChanged()" class="input" id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
+        <mat-error *ngIf="!this.checkTime ">
+          Endzeit <b>ist nicht gültig</b>
+        </mat-error>
       </div>
 
     <br>
@@ -97,5 +103,5 @@
     </div>
     <br>
     <button  (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
-    <button [disabled]="!addressForm.valid" type="submit" class="form-control button" id="reservieren">Reservieren</button>
+    <button [disabled]="!addressForm.valid || !this.checkTime" type="submit" class="form-control button" id="reservieren">Reservieren</button>
   </form>
