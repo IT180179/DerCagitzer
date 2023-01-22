@@ -47,7 +47,10 @@ export class ReservationPageComponent implements OnInit {
   }
 
 
+  seats: any;
   ngOnInit(): void {
+
+    console.log( this.data.table)
 
     console.log(this.startZeit)
 
@@ -56,17 +59,19 @@ export class ReservationPageComponent implements OnInit {
 
     console.log(this.test)
 
+    this.seats = this.data.table.seats;
+
 
 
     this.addressForm = new UntypedFormGroup({
       name: new UntypedFormControl(null,
         [Validators.required, Validators.minLength(2)]),
       telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
-      tischnummer: new UntypedFormControl(this.data.tablenr, [Validators.required, Validators.max(10), Validators.min(1)]),
+      tischnummer: new UntypedFormControl(this.data.tablenr, [Validators.required, Validators.min(1)]),
       startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
       endzeit: new UntypedFormControl(this.data.endtime,  [Validators.required]),
       datum: new UntypedFormControl(this.data.date),
-      personenanzahl: new UntypedFormControl('2'),
+      personenanzahl: new UntypedFormControl('2', [Validators.required, Validators.max(this.seats), Validators.min(1)]),
       email: new UntypedFormControl(null, Validators.email),
       anmerkungen: new UntypedFormControl(null)
     });

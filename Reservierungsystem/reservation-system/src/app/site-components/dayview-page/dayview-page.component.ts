@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import {TimetableEvent, TimetableLocation, TimetableSchedule, TimetableScope} from "ng2-wf-timetable";
 import {ReservationService} from "../../shared/reservation.service";
-import {Reservation} from "../../shared/reservation";
+import {Reservation, TableEntity} from "../../shared/reservation";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
 import {ResizeEvent} from "angular-resizable-element";
@@ -333,7 +333,7 @@ export class DayviewPageComponent implements AfterViewInit{
   }
 
 
-  openReservation(time: number, table: number, date: Date): void {
+  openReservation(time: number, table: TableEntity, date: Date): void {
     console.log(date)
   /*
     var style = window.getComputedStyle(element.target);
@@ -362,7 +362,7 @@ export class DayviewPageComponent implements AfterViewInit{
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '90%',
-      data: {tablenr: table, starttime: t, endtime: et, date: date},
+      data: {table: table, starttime: t, endtime: et, date: date},
       backdropClass: 'backdropBackground'
     });
 
