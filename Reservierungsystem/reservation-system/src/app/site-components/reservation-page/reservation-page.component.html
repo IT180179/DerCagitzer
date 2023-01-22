@@ -21,32 +21,14 @@
         Name <b>ist nicht gültig</b> / Name ist zu kurz!
       </mat-error>
     </mat-form-field>
-    </div>
-
-      <div id="startInput">
-          <label for="startzeit">Startzeit:</label>
-        <br>
-          <input class="input" id="startzeit" class="datepicker-input" name="startzeit" step="900" formControlName="startzeit" type="time" stepMinute="20">
-          <mat-error *ngIf="!this.checkTime ">
-          Startzeit <b>ist nicht gültig</b>
-          </mat-error>
-      </div>
-
-      <div id="endInput">
-        <label for="endzeit">Endzeit:</label>
-        <br>
-        <input (change)="timeChanged()" class="input" id="endzeit"  class="datepicker-input" name="endzeit" step="900" formControlName="endzeit"  type="time" step="900" value="08:00">
-        <mat-error *ngIf="!this.checkTime ">
-          Endzeit <b>ist nicht gültig</b>
-        </mat-error>
-      </div>
   </div>
+
   <!--TODO: Start und Endzeit überprüfen-->
   <div id="startInput">
     <label for="startzeit">Startzeit:</label>
     <br>
-    <input class="input" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}"
-           class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit" type="time">
+    <input class="input" class="datepicker-input" formControlName="startzeit"
+           id="startzeit" max="{{'21:00:00' | date:'HH:mm:ss'}}" min="{{'11:00:00' | date:'HH:mm:ss'}}" name="startzeit" type="time">
     <mat-error *ngIf="!this.checkTime ">
       Startzeit muss vor<b> Endzeit </b>sein!
     </mat-error>
@@ -54,10 +36,11 @@
       Startzeit muss <b>eingegeben</b> werden!
     </mat-error>
   </div>
+
   <div id="endInput">
     <label for="endzeit">Endzeit:</label><br>
-    <input (change)="timeChanged()" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}"
-           class="input" class="datepicker-input" formControlName="endzeit" id="endzeit" name="endzeit" type="time">
+    <input (change)="timeChanged()" class="input" class="datepicker-input"
+           formControlName="endzeit" id="endzeit" max="{{'21:00:00' | date:'HH:mm:ss'}}" min="{{'11:00:00' | date:'HH:mm:ss'}}" name="endzeit" type="time">
     <mat-error *ngIf="!this.checkTime ">
       Endzeit muss nach <b>Startzeit</b> sein!
     </mat-error>
@@ -70,7 +53,8 @@
     <label for="datum">Datum:</label>
     <br>
     <mat-form-field>
-      <input [matDatepicker]="picker" autocomplete="off" class="datepicker-input" formControlName="datum" id="datum" matInput
+      <input [matDatepicker]="picker" autocomplete="off" class="datepicker-input" formControlName="datum" id="datum"
+             matInput
              name="date" name="datum">
       <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #picker [startAt]="data.date"></mat-datepicker>
@@ -121,7 +105,8 @@
       <textarea class="full-width-field" formControlName="anmerkungen" id="anmerkung" matInput
                 name="anmerkung"></textarea>
     </mat-form-field>
-  </div><br>
+  </div>
+  <br>
   <button (click)="onNoClick()" class="form-control button" id="abbruch" type='button'>Abbruch</button>
   <button [disabled]="!addressForm.valid || !this.checkTime" class="form-control button" id="reservieren" type="submit">
     Reservieren
