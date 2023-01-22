@@ -23,13 +23,15 @@
       </mat-error>
     </mat-form-field>
   </div>
+
+  <!--TODO: Start und Endzeit überprüfen-->
   <div id="startInput">
     <label for="startzeit">Startzeit:</label>
     <br>
-    <input class="input" min="11:00" max="20:00" class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit"
+    <input class="input" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}" class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit"
            type="time">
     <mat-error *ngIf="!this.checkTime ">
-      Startzeit <b>ist nicht gültig</b>
+      Startzeit muss vor<b> Endzeit </b>sein!
     </mat-error>
     <mat-error *ngIf="addressForm.controls['startzeit'].hasError('required') ">
       Startzeit muss <b>eingegeben</b> werden!
@@ -39,10 +41,10 @@
   <div id="endInput">
     <label for="endzeit">Endzeit:</label>
     <br>
-    <input (change)="timeChanged()" class="input" class="datepicker-input" formControlName="endzeit" id="endzeit"
+    <input (change)="timeChanged()" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}" class="input" class="datepicker-input" formControlName="endzeit" id="endzeit"
            name="endzeit" type="time">
     <mat-error *ngIf="!this.checkTime ">
-      Endzeit <b>ist nicht gültig</b>
+      Endzeit muss nach <b>Startzeit</b> sein!
     </mat-error>
     <mat-error *ngIf="addressForm.controls['endzeit'].hasError('required') ">
       Endzeit muss <b>eingegeben</b> werden!
