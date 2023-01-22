@@ -42,7 +42,6 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
                 .setParameter("table", table)
                 .setParameter("start_time", String.valueOf(startArray[0] + ":" + (startMinutes + 1)))
                 .setParameter("end_time", String.valueOf(endHours + ":" + (endMinutes - 1)));
-        System.out.println(String.valueOf(startArray[0] + ":" + (startMinutes + 1)));
         if(query.getResultStream().findAny().isPresent()) {
             return true;
         }else{
@@ -56,28 +55,31 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
     }
 
     public Long countReservationsPerDayNoon(String date) {
-        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date and r.start_time = '11:00' or r.start_time = '13:00'", Long.class)
+        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date and (r.start_time = '11:00' or r.start_time = '13:00')", Long.class)
                 .setParameter("date", date);
-        Long reservations = (Long) query1.getSingleResult();
-        return reservations;
+        if(query1.getSingleResult() == null) {
+            return 0L;
+        }
+        return (Long) query1.getSingleResult();
     }
 
     public Long countReservationsPerDayEvening(String date) {
-        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date and r.end_time = '19:00' or r.end_time = '21:00'", Long.class)
+        Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date = :date and (r.end_time = '19:00' or r.end_time = '21:00')", Long.class)
                 .setParameter("date", date);
-        Long reservations = (Long) query1.getSingleResult();
-        return reservations;
+        if(query1.getSingleResult() == null) {
+            return 0L;
+        }
+        return (Long) query1.getSingleResult();
     }
 
     public Long countReservationsPerWeek(String start_date, String end_date) {
         Query query1 = this.entityManager.createQuery("select sum(r.person_amount) from Reservation r where r.reservation_date between :start_date and :end_date", Long.class)
                 .setParameter("start_date", start_date)
                 .setParameter("end_date", end_date);
-        Long reservations = (Long) query1.getSingleResult();
-        if(reservations == null) {
-            return 1L;
+        if(query1.getSingleResult() == null) {
+            return 0L;
         }
-        return reservations;
+        return (Long) query1.getSingleResult();
     }
 
     public Long countReservationsPerTimeslot(String start_time, String end_time, String date) {

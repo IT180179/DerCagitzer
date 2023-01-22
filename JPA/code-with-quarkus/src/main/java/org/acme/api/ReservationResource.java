@@ -13,6 +13,7 @@ import org.acme.workloads.Reservation.Reservation;
 import org.acme.workloads.Reservation.ReservationRepo;
 import org.acme.workloads.Table_Entity.TableEntityRepo;
 
+import java.awt.geom.CubicCurve2D;
 import java.util.Objects;
 
 @Produces(MediaType.APPLICATION_JSON)
@@ -90,6 +91,9 @@ public class ReservationResource {
         var usageNoon = this.reservationRepo.countReservationsPerDayNoon(date);
         var seats = this.tableEntityRepo.countSeats();
         Double resultNoon = Double.valueOf(usageNoon) / (seats * 2);
+        if(usageNoon == 0L) {
+            return Response.ok(0).build();
+        }
         return Response.ok(resultNoon).build();
     }
 
@@ -99,6 +103,9 @@ public class ReservationResource {
         var usageEvening = this.reservationRepo.countReservationsPerDayEvening(date);
         var seats = this.tableEntityRepo.countSeats();
         Double resultEvening = Double.valueOf(usageEvening) / (seats * 2);
+        if(usageEvening == 0L) {
+            return Response.ok(0).build();
+        }
         return Response.ok(resultEvening).build();
     }
 
@@ -108,6 +115,9 @@ public class ReservationResource {
         var usageWeek = this.reservationRepo.countReservationsPerWeek(start_date, end_date);
         var seats = this.tableEntityRepo.countSeats();
         Double resultEvening = Double.valueOf(usageWeek) / ((seats * 4) * 5);
+        if(usageWeek == 0L) {
+            return Response.ok(0).build();
+        }
         return Response.ok(resultEvening).build();
     }
 
