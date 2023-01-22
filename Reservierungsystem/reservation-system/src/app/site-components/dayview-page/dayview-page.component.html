@@ -4,7 +4,7 @@
 
    <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
    <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
-    <p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date.toLocaleDateString()}}</a></p>
+    <p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date | date: 'EEEE, d. MMMM y'}}</a></p>
 </div>
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
 
