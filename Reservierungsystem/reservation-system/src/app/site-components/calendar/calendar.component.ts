@@ -24,6 +24,7 @@ export class CalendarComponent implements AfterViewInit {
   @Output()
   monthSelected: EventEmitter<Date> = new EventEmitter();
 
+
   firstDate = new Date();
   start0 = new Date()
   start1 = new Date()
@@ -65,9 +66,17 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   prevMonth(){
-    this.calendar.activeDate.setMonth(this.calendar.activeDate.getMonth()-1)
-    this.calendar2.activeDate.setMonth(this.calendar2.activeDate.getMonth()-1)
-    this.calendar3.activeDate.setMonth(this.calendar3.activeDate.getMonth()-1)
+    const startDate = new Date()
+    startDate.setMonth(this.calendar.activeDate.getMonth()-1)
+    const startDate2 = new Date()
+    startDate2.setMonth(this.calendar2.activeDate.getMonth()-1)
+    const startDate3 = new Date()
+    startDate3.setMonth(this.calendar3.activeDate.getMonth()-1)
+
+
+    this.calendar.activeDate = startDate
+    this.calendar2.activeDate = startDate2
+    this.calendar3.activeDate = startDate3
     this.monthChanged(this.calendar.activeDate)
     this.month2Changed(this.calendar2.activeDate)
     this.month3Changed(this.calendar3.activeDate)
@@ -75,28 +84,35 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   nextMonth(){
-    this.calendar.activeDate.setMonth(this.calendar.activeDate.getMonth()+1)
-    this.calendar2.activeDate.setMonth(this.calendar2.activeDate.getMonth()+1)
-    this.calendar3.activeDate.setMonth(this.calendar3.activeDate.getMonth()+1)
+    const startDate = new Date()
+    startDate.setMonth(this.calendar.activeDate.getMonth()+1)
+    const startDate2 = new Date()
+    startDate2.setMonth(this.calendar2.activeDate.getMonth()+1)
+    const startDate3 = new Date()
+    startDate3.setMonth(this.calendar3.activeDate.getMonth()+1)
+
+
+    this.calendar.activeDate = startDate
+    this.calendar2.activeDate = startDate2
+    this.calendar3.activeDate = startDate3
     this.monthChanged(this.calendar.activeDate)
     this.month2Changed(this.calendar2.activeDate)
     this.month3Changed(this.calendar3.activeDate)
   }
 
-  monthChanged(date: Date){
-    this.calendar.activeDate = date
-    this.monthSelected.emit(date)
-    console.log(date)
+  monthChanged(date1: Date){
+    this.calendar.activeDate
+    this.monthSelected.emit(date1)
+
   }
-  month2Changed(date: Date){
-    this.calendar2.activeDate = date
-    this.monthSelected.emit(date)
-    console.log(date)
+  month2Changed(date2: Date){
+    this.calendar2.activeDate = date2
+    this.monthSelected.emit(date2)
   }
-  month3Changed(date: Date){
-    this.calendar3.activeDate = date
-    this.monthSelected.emit(date)
-    console.log(date)
+  month3Changed(date3: Date){
+    this.calendar3.activeDate = date3
+    this.monthSelected.emit(date3)
+
   }
 
   dateChanged(dateString: String) {

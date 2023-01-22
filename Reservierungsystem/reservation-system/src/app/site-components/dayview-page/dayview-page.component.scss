@@ -85,4 +85,24 @@
 .tableNrBox a {
   padding: 2%;
 }
+span{
+  color: white;
+  opacity: 0.5;
+  background-color: green;
+  text-align: center;
+  display:none;
+  padding: 10%;
+  border-radius: 15px;
+
+}
+span:after{
+  content:'';
+  position:absolute;
+  left:50%;
+  transform:rotate(45deg);
+}
+
+.tableNr:hover span{
+  display:block;
+}
 

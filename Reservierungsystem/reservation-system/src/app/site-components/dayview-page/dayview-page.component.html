@@ -58,17 +58,19 @@
       </ng-container>
 
     <div *ngIf="Room!=0">
-      <div *ngFor="let i of tabels;">
+      <div class="tableNr" *ngFor="let i of tabels;">
         <div class="tableNrBox">
           <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{i.number}}</p>
         </div>
+        <span>{{i.room.room_name}} Sitze: {{i.seats}}</span>
       </div>
     </div>
-    <div *ngIf="Room==0">
-      <div *ngFor="let i of alltabels;">
+    <div  *ngIf="Room==0">
+      <div  class="tableNr"  *ngFor="let i of alltabels;">
         <div class="tableNrBox">
           <p style="color: black; text-align: center; font-size: 1vw; font-weight: bold; padding: 0; margin: 0;">{{i.number}}</p>
         </div>
+        <span>{{i.room.room_name}} Sitze: {{i.seats}}</span>
       </div>
     </div>
 
@@ -82,7 +84,7 @@
         '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' :
         '0px', 'border-top-right-radius': (elements.time == 22)? '10px' :
         '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
-             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, table.tableno, date)">
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)=" openReservation(elements.time, table, date)">
           <small style="visibility: hidden">grid</small>
         </div>
       </div>
@@ -94,7 +96,7 @@
         '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' :
         '0px', 'border-top-right-radius': (elements.time == 22)? '10px' :
         '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
-                 [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, i.tableno, date)">
+                 [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, i, date)">
               <small style="visibility: hidden">grid</small>
             </div>
 
