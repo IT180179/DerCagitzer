@@ -49,7 +49,7 @@ export class ReservationPageComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+
     console.log(this.startZeit)
 
     this.today = new Date()
@@ -62,12 +62,11 @@ export class ReservationPageComponent implements OnInit {
       name: new UntypedFormControl(null,
         [Validators.required, Validators.minLength(2)]),
       telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
-      tischnummer: new UntypedFormControl(this.data.tablenr, Validators.required),
-      startzeit: new UntypedFormControl(this.data.starttime ),
-      endzeit: new UntypedFormControl(this.data.endtime),
+      tischnummer: new UntypedFormControl(this.data.tablenr, [Validators.required, Validators.max(10), Validators.min(1)]),
+      startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
+      endzeit: new UntypedFormControl(this.data.endtime,  [Validators.required]),
       datum: new UntypedFormControl(this.data.date),
       personenanzahl: new UntypedFormControl('2'),
-      vorname: new UntypedFormControl(null),
       email: new UntypedFormControl(null, Validators.email),
       anmerkungen: new UntypedFormControl(null)
     });
