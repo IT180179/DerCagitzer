@@ -103,9 +103,6 @@ export class SideOverviewComponent implements OnChanges {
     this.rs.countReservationsPerWeek(start_date, end_date).subscribe(
       (r: number) => {
         this.resultPerWeek = Math.round(r * 100);
-        if(this.resultPerWeek == 0) {
-          this.resultPerWeek = 1;
-        }
       }
     )
   }
