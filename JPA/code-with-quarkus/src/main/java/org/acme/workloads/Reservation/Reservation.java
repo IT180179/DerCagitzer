@@ -34,7 +34,7 @@ public class Reservation extends PanacheEntityBase {
 
     private String reservation_date;
     private Timestamp reservation_timestamp;
-    private Integer person_amount;
+    private int person_amount;
 
     @ManyToOne
     @JoinColumn(name = "tableno")
@@ -112,13 +112,11 @@ public class Reservation extends PanacheEntityBase {
         this.reservation_timestamp = reservation_timestamp;
     }
 
-    public Integer getPerson_amount() {
+    public int getPerson_amount() {
         return person_amount;
     }
 
-    public void setPerson_amount(Integer person_amount) {
+    public void setPerson_amount(int person_amount) {
         this.person_amount = person_amount;
     }
-
-
 }
