@@ -21,6 +21,25 @@
         Name <b>ist nicht gültig</b> / Name ist zu kurz!
       </mat-error>
     </mat-form-field>
+    </div>
+
+      <div id="startInput">
+          <label for="startzeit">Startzeit:</label>
+        <br>
+          <input class="input" id="startzeit" class="datepicker-input" name="startzeit" step="900" formControlName="startzeit" type="time" stepMinute="20">
+          <mat-error *ngIf="!this.checkTime ">
+          Startzeit <b>ist nicht gültig</b>
+          </mat-error>
+      </div>
+
+      <div id="endInput">
+        <label for="endzeit">Endzeit:</label>
+        <br>
+        <input (change)="timeChanged()" class="input" id="endzeit"  class="datepicker-input" name="endzeit" step="900" formControlName="endzeit"  type="time" step="900" value="08:00">
+        <mat-error *ngIf="!this.checkTime ">
+          Endzeit <b>ist nicht gültig</b>
+        </mat-error>
+      </div>
   </div>
   <!--TODO: Start und Endzeit überprüfen-->
   <div id="startInput">

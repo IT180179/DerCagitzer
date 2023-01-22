@@ -1,8 +1,12 @@
 <div class="calendar">
-  <mat-calendar #calendar [startAt]="firstDate" [(selected)]="firstDate" (selectedChange)="dateChanged('date1')"  [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <div class="example-button-row">
+  <button mat-button (click)="prevMonth()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+  <button mat-button (click)="nextMonth()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>
+  <mat-calendar #calendar [startAt]="firstDate" [(selected)]="firstDate" (selectedChange)="dateChanged('date1')" (monthSelected)="monthChanged($event)"  [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
   <hr>
-  <mat-calendar #calendar [startAt]="start2" [(selected)]="secondDate" (selectedChange)="dateChanged('date2')" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <mat-calendar #calender2 [startAt]="start2" [(selected)]="secondDate" (selectedChange)="dateChanged('date2')" (monthSelected)="monthChanged($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
   <hr>
-  <mat-calendar #calendar [startAt]="start3"  [(selected)]="thirdDate" (selectedChange)="dateChanged('date3')" [dateFilter]="weekendsDatesFilter"></mat-calendar>
+  <mat-calendar #calendar3 [startAt]="start3"  [(selected)]="thirdDate" (selectedChange)="dateChanged('date3')" (monthSelected)="monthChanged($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
 
 </div>
