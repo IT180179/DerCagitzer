@@ -8,7 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm">
-  <h2 id="title">Neue Reservierung (Tischnummer: {{data.tablenr}})</h2>
+  <h2 id="title">Neue Reservierung (Tischnummer: {{data.table.number}})</h2>
   <div id="nameForm">
     <label for="name">Name:</label><br>
     <mat-form-field>
@@ -58,8 +58,7 @@
     <label for="personenanzahl" id="anzLabel">Personenanzahl:</label>
     <br>
     <mat-form-field>
-      <input formControlName="personenanzahl" id="personenanzahl" matInput max="10" min="1" name="personenanzahl"
-             type="number">
+      <input formControlName="personenanzahl" id="personenanzahl" matInput max="{{seats}}" min="1" name="personenanzahl" type="number">
       <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('required')">
         Personen-Anzahl muss <b>eingegeben</b> werden!
       </mat-error>
