@@ -1,100 +1,117 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
-  <link href="https://unpkg.com/bulma-calendar@6.0.7/dist/css/bulma-calendar.min.css" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/bulma-calendar@6.0.7/dist/css/bulma-calendar.min.css" rel="stylesheet"/>
   <script src="https://unpkg.com/bulma-calendar@6.0.7/dist/js/bulma-calendar.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm">
+  <h2 id="title">Neue Reservierung</h2>
+  <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
 
-  <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm" >
-      <h2 id="title">Neue Reservierung</h2>
-      <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
-
-
-    <div id="nameForm">
-      <label for="name">Name:</label>
-      <br>
+  <div id="nameForm">
+    <label for="name">Name:</label><br>
     <mat-form-field>
-      <input class="input" matInput type="text" name="name" formControlName="name" id="name" >
+      <input class="input" formControlName="name" id="name" matInput name="name" type="text">
       <mat-error *ngIf="addressForm.controls['name'].hasError('required') ">
         Name muss <b>eingegeben</b> werden!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['name'].hasError('minlength') ">
-        Name <b>ist nicht gültig</b>
+        Name <b>ist nicht gültig</b> / Name ist zu kurz!
       </mat-error>
     </mat-form-field>
-    </div>
-
-      <div id="startInput">
-          <label for="startzeit">Startzeit:</label>
-        <br>
-          <input class="input" id="startzeit" class="datepicker-input" name="startzeit" formControlName="startzeit" type="time" stepMinute="20">
-          <mat-error *ngIf="!this.checkTime ">
-          Startzeit <b>ist nicht gültig</b>
-          </mat-error>
-      </div>
-
-      <div id="endInput">
-        <label for="endzeit">Endzeit:</label>
-        <br>
-        <input (change)="timeChanged()" class="input" id="endzeit"  class="datepicker-input" name="endzeit" formControlName="endzeit"  type="time" step="900" value="08:00">
-        <mat-error *ngIf="!this.checkTime ">
-          Endzeit <b>ist nicht gültig</b>
-        </mat-error>
-      </div>
-
+  </div>
+  <div id="startInput">
+    <label for="startzeit">Startzeit:</label>
     <br>
-    <div id="dateInput">
-      <label for="datum">Datum:</label>
-      <br>
-        <mat-form-field>
-          <input class="datepicker-input" name="datum" id="datum" matInput [matDatepicker]="picker" autocomplete="off" name="date" formControlName="datum">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker [startAt]="data.date" #picker></mat-datepicker>
-        </mat-form-field>
-    </div>
+    <input class="input" min="11:00" max="20:00" class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit"
+           type="time">
+    <mat-error *ngIf="!this.checkTime ">
+      Startzeit <b>ist nicht gültig</b>
+    </mat-error>
+    <mat-error *ngIf="addressForm.controls['startzeit'].hasError('required') ">
+      Startzeit muss <b>eingegeben</b> werden!
+    </mat-error>
+  </div>
 
-    <div id="anzInput">
-      <label for="personenanzahl" id="anzLabel">Personenanzahl:</label>
-      <br>
-      <mat-form-field>
-        <input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" id="personenanzahl">
-      </mat-form-field>
-    </div>
+  <div id="endInput">
+    <label for="endzeit">Endzeit:</label>
+    <br>
+    <input (change)="timeChanged()" class="input" class="datepicker-input" formControlName="endzeit" id="endzeit"
+           name="endzeit" type="time">
+    <mat-error *ngIf="!this.checkTime ">
+      Endzeit <b>ist nicht gültig</b>
+    </mat-error>
+    <mat-error *ngIf="addressForm.controls['endzeit'].hasError('required') ">
+      Endzeit muss <b>eingegeben</b> werden!
+    </mat-error>
+  </div>
 
-    <div id="telForm">
-      <label for="tel" id="telLabel">Telefonnummer:</label>
-      <br>
-      <mat-form-field>
-        <input class="input" matInput type="text" name="telefonnummer" formControlName="telefonnummer" id="tel">
-        <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
-          Telefonnummer muss <b>eingegeben</b> werden!
-        </mat-error>
-        <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('minlength')">
-          Telefonnummer <b>ist nicht gültig</b>
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div id="emailForm">
-      <label for="email" id="emailLabel">E-Mail:</label>
-      <mat-form-field>
-        <input class="input" matInput type="text" name="email" formControlName="email" id="email">
-        <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
-          E-Mail <b>ist nicht gültig!</b>
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div id="anmerkungArea">
-      <label for="anmerkung">Anmerkungen:</label>
+  <br>
+  <div id="dateInput">
+    <label for="datum">Datum:</label>
+    <br>
     <mat-form-field>
-      <textarea id="anmerkung" class="full-width-field" name="anmerkung" formControlName="anmerkungen" matInput></textarea>
+      <input [matDatepicker]="picker" autocomplete="off" class="datepicker-input" formControlName="datum" id="datum" matInput
+             name="date" name="datum">
+      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #picker [startAt]="data.date"></mat-datepicker>
     </mat-form-field>
-    </div>
+  </div>
+
+  <div id="anzInput">
+    <label for="personenanzahl" id="anzLabel">Personenanzahl:</label>
     <br>
-    <button  (click)="onNoClick()" type='button' class="form-control button" id="abbruch">Abbruch</button>
-    <button [disabled]="!addressForm.valid || !this.checkTime" type="submit" class="form-control button" id="reservieren">Reservieren</button>
-  </form>
+    <mat-form-field>
+      <input formControlName="personenanzahl" id="personenanzahl" matInput max="10" min="1" name="personenanzahl"
+             type="number">
+      <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('required')">
+        Personen-Anzahl muss <b>eingegeben</b> werden!
+      </mat-error>
+      <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('min')">
+        Personenanzahl muss zwischen <b>1-10 Personen</b> liegen!
+      </mat-error>
+      <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('max')">
+        Personenanzahl muss zwischen <b>1-10 Personen</b> liegen!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div id="telForm">
+    <label for="tel" id="telLabel">Telefonnummer:</label>
+    <br>
+    <mat-form-field>
+      <input class="input" formControlName="telefonnummer" id="tel" matInput name="telefonnummer" type="text">
+      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
+        Telefonnummer muss <b>eingegeben</b> werden!
+      </mat-error>
+      <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('minlength')">
+        Telefonnummer <b>ist nicht gültig</b>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div id="emailForm">
+    <label for="email" id="emailLabel">E-Mail:</label>
+    <mat-form-field>
+      <input class="input" formControlName="email" id="email" matInput name="email" type="text">
+      <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
+        E-Mail <b>ist nicht gültig!</b>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div id="anmerkungArea">
+    <label for="anmerkung">Anmerkungen:</label>
+    <mat-form-field>
+      <textarea class="full-width-field" formControlName="anmerkungen" id="anmerkung" matInput
+                name="anmerkung"></textarea>
+    </mat-form-field>
+  </div><br>
+  <button (click)="onNoClick()" class="form-control button" id="abbruch" type='button'>Abbruch</button>
+  <button [disabled]="!addressForm.valid || !this.checkTime" class="form-control button" id="reservieren" type="submit">
+    Reservieren
+  </button>
+</form>
