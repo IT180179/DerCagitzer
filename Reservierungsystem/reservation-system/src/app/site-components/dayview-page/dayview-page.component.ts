@@ -10,6 +10,11 @@ import {Element} from "@angular/compiler";
 import {DataService} from "../../services/data.service";
 import {EventEmitterService} from "../../shared/event-emitter.service";
 
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import {LOCALE_ID, NgModule} from '@angular/core';
+
+registerLocaleData(localeDe);
 
 @Component({
   selector: 'app-dayview-page',
@@ -22,6 +27,8 @@ export class DayviewPageComponent implements AfterViewInit{
   @ViewChild('resize') resize: ElementRef;
 
   @Input() Room: any;
+
+
 
 
   style: SafeStyle;
@@ -57,6 +64,7 @@ export class DayviewPageComponent implements AfterViewInit{
   data: any;
   tablenr: any;
   date = new Date();
+
   alltabels: any;
 
   ngAfterViewInit() {

@@ -10,7 +10,6 @@
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm">
   <h2 id="title">Neue Reservierung</h2>
   <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
-
   <div id="nameForm">
     <label for="name">Name:</label><br>
     <mat-form-field>
@@ -23,13 +22,12 @@
       </mat-error>
     </mat-form-field>
   </div>
-
   <!--TODO: Start und Endzeit überprüfen-->
   <div id="startInput">
     <label for="startzeit">Startzeit:</label>
     <br>
-    <input class="input" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}" class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit"
-           type="time">
+    <input class="input" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}"
+           class="datepicker-input" formControlName="startzeit" id="startzeit" name="startzeit" type="time">
     <mat-error *ngIf="!this.checkTime ">
       Startzeit muss vor<b> Endzeit </b>sein!
     </mat-error>
@@ -37,12 +35,10 @@
       Startzeit muss <b>eingegeben</b> werden!
     </mat-error>
   </div>
-
   <div id="endInput">
-    <label for="endzeit">Endzeit:</label>
-    <br>
-    <input (change)="timeChanged()" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}" class="input" class="datepicker-input" formControlName="endzeit" id="endzeit"
-           name="endzeit" type="time">
+    <label for="endzeit">Endzeit:</label><br>
+    <input (change)="timeChanged()" min="{{'11:00:00' | date:'HH:mm:ss'}}" max="{{'21:00:00' | date:'HH:mm:ss'}}"
+           class="input" class="datepicker-input" formControlName="endzeit" id="endzeit" name="endzeit" type="time">
     <mat-error *ngIf="!this.checkTime ">
       Endzeit muss nach <b>Startzeit</b> sein!
     </mat-error>
@@ -50,7 +46,6 @@
       Endzeit muss <b>eingegeben</b> werden!
     </mat-error>
   </div>
-
   <br>
   <div id="dateInput">
     <label for="datum">Datum:</label>
@@ -62,7 +57,6 @@
       <mat-datepicker #picker [startAt]="data.date"></mat-datepicker>
     </mat-form-field>
   </div>
-
   <div id="anzInput">
     <label for="personenanzahl" id="anzLabel">Personenanzahl:</label>
     <br>
@@ -80,7 +74,6 @@
       </mat-error>
     </mat-form-field>
   </div>
-
   <div id="telForm">
     <label for="tel" id="telLabel">Telefonnummer:</label>
     <br>
@@ -94,7 +87,6 @@
       </mat-error>
     </mat-form-field>
   </div>
-
   <div id="emailForm">
     <label for="email" id="emailLabel">E-Mail:</label>
     <mat-form-field>
@@ -104,7 +96,6 @@
       </mat-error>
     </mat-form-field>
   </div>
-
   <div id="anmerkungArea">
     <label for="anmerkung">Anmerkungen:</label>
     <mat-form-field>
