@@ -51,6 +51,7 @@ body { margin: 0; font-family: "Trebuchet MS"; }
   visibility: hidden;
 }
 
+
 .timetable {
   width:60%;
   float: left;
@@ -336,4 +337,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-progress-bar-fill::after {
   background-color: green;
 }
+
+.mat-icon {
+  vertical-align: middle;
+}
+.highlight-dates > .mat-calendar-body-cell-content, .mat-date-range-input-separator{
+  color: rgba(0, 0, 0, 0.38);
+  border-radius: 100%;
+}
+
+.mat-calendar-previous-button, .mat-calendar-next-button {
+  visibility: hidden;
+}
+
+
 
