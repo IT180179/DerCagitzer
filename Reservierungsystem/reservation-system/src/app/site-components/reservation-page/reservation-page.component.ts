@@ -87,6 +87,20 @@ export class ReservationPageComponent implements OnInit {
         console.log(this.checkTime);
     }
     )
+    this.addressForm.get('endzeit').valueChanges.subscribe(value => {
+
+
+        var checkStart = this.formatTime(value, "h:m");
+        console.log(checkStart)
+        var checkEnd = this.formatTime(this.addressForm.get('endzeit').value,"h:m");
+        if (checkStart >= checkEnd){
+          this.checkTime = false
+        }else {
+          this.checkTime = true
+        }
+        console.log(this.checkTime);
+      }
+    )
 
     this.addressForm.patchValue({datum: this.data.date})
     this.addressForm.patchValue({tischnummer: this.data.tablenr})

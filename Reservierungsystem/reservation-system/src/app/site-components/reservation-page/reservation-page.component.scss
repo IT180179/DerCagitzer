@@ -1,7 +1,8 @@
 
-html, body { height: 100%;}
+html, body {
+  height: 100%;
+}
 body { margin: 0; font-family: "Trebuchet MS"; }
-
 
 #title{
   text-align:center;
@@ -26,6 +27,9 @@ input[type=text]{
   background-color: #a5cea5;
 }
 
+#nameForm {
+  margin-bottom: 1%;
+}
 
 #nameForm mat-form-field{
   width:95%;
@@ -36,8 +40,13 @@ form{
   margin-top:2%;
 }
 
-#telForm  mat-form-field{
+#telForm {
+  float: left;
   width:42.5%;
+}
+
+#telForm mat-form-field{
+  width:100%;
   margin-right:10%;
   float:left;
   font-size:120%;
@@ -47,9 +56,14 @@ form{
   padding: 2.5%;
 }
 
+#emailForm {
+  float: left;
+  width: 42.5%;
+  margin-left: 10%;
+}
+
 #emailForm mat-form-field{
-  width:42.5%;
-  margin-top:-1.5%;
+  width:100%;
   font-size:120%;
 }
 
@@ -60,7 +74,8 @@ form{
 
 input[type=text]{
   padding:1.2%;
-  border-radius: 5px;
+  border: solid green 3px;
+  border-radius: 20px;
   background-color: #a5cea5;
   font-size:120%;
 }
@@ -69,8 +84,8 @@ input[type=time]{
   width:44.6%;
   padding:2%;
   background-color: #a5cea5;
-  border:solid #a5cea5 1px;
-  border-radius: 5px;
+  border: solid green 3px;
+  border-radius: 20px;
   font-size:120%;
 }
 
@@ -78,8 +93,9 @@ input[type=time]{
   float:left;
   margin-right:8%;
 }
+
 #endInput{
-  margin-top:-1.5%;
+  margin-top:-2%;
 }
 
 label{
@@ -92,57 +108,74 @@ label{
 #anmerkungArea mat-form-field{
   width: 97%;
   background-color: #a5cea5;
-  border-radius: 5px;
+  border: solid green 3px;
+  border-radius: 20px;
   font-size:120%;
   padding-left:2%;
 }
 
 #anzInput input[type=number]{
-  margin-left:235%;
+  width: 90%;
+  margin-left: 65%;
   background-color: #a5cea5;
   padding-right: 190%;
   padding-bottom:16%;
   padding-top: 16%;
   padding-left:8%;
-  border-radius: 5px;
+  border: solid green 3px;
+  border-radius: 20px;
   font-size:120%;
+  float: left;
 }
 
 #dateInput{
   float:left;
+  width: 42.5%;
+  margin-top: 2%;
 }
 
 #dateInput .datepicker-input{
   background-color: #a5cea5;
-  padding-right: 190%;
-  padding-bottom:16%;
-  padding-top: 16%;
-  padding-left:8%;
-  border-radius: 5px;
-  font-size:120%;
+  padding-bottom: 6%;
+  padding-top: 6%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border: solid green 3px;
+  border-radius: 20px;
+  font-size: 120%;
+}
+
+#anzInput {
+  margin-top: 2%;
 }
 
 #anzLabel{
-  margin-left:35.3%;
+  margin-left: 10.5%;
 }
 
 #abbruch{
-  background-color: green;
-  color:#a5cea5;
+  background-color: #a5cea5;
+  color: #000;
   padding:2%;
   width:25%;
   font-size:100%;
   margin-left:20%;
   margin-right:5%;
   font-weight:bold;
+  border-radius: 20px;
 }
 
 #reservieren{
-  background-color: #a5cea5;
-  color: green;
+  background-color: green;
+  color: #fff;
   padding:2%;
   width:25%;
   font-weight: bold;
   font-size:100%;
   border-color: green;
+  border-radius: 20px;
+}
+
+#emailLabel {
+  margin-top: -100%;
 }

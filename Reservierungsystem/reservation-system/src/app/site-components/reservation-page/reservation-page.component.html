@@ -8,8 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm">
-  <h2 id="title">Neue Reservierung</h2>
-  <h2 id="subtitle">Tischnummer: {{data.tablenr}}</h2>
+  <h2 id="title">Neue Reservierung (Tischnummer: {{data.tablenr}})</h2>
   <div id="nameForm">
     <label for="name">Name:</label><br>
     <mat-form-field>
@@ -22,24 +21,21 @@
       </mat-error>
     </mat-form-field>
     </div>
-  <!--TODO: Start und Endzeit überprüfen-->
   <div id="startInput">
     <label for="startzeit">Startzeit:</label>
     <br>
-    <input class="input" class="datepicker-input" formControlName="startzeit"
+    <input style="margin-top: 1%" class="input" class="datepicker-input" formControlName="startzeit"
            id="startzeit" max="{{'21:00:00' | date:'HH:mm:ss'}}" min="{{'11:00:00' | date:'HH:mm:ss'}}" name="startzeit" type="time">
-    <mat-error *ngIf="!this.checkTime ">
-      Startzeit muss vor<b> Endzeit </b>sein!
-    </mat-error>
     <mat-error *ngIf="addressForm.controls['startzeit'].hasError('required') ">
       Startzeit muss <b>eingegeben</b> werden!
     </mat-error>
   </div>
+
   <div id="endInput">
-    <label for="endzeit">Endzeit:</label><br>
-    <input (change)="timeChanged()" class="input" class="datepicker-input"
+    <label style="margin-left: 53%" for="endzeit">Endzeit:</label><br>
+    <input style="margin-top: 1%" (change)="timeChanged()" class="input" class="datepicker-input"
            formControlName="endzeit" id="endzeit" max="{{'21:00:00' | date:'HH:mm:ss'}}" min="{{'11:00:00' | date:'HH:mm:ss'}}" name="endzeit" type="time">
-    <mat-error *ngIf="!this.checkTime ">
+    <mat-error style="float: left;" *ngIf="!this.checkTime ">
       Endzeit muss nach <b>Startzeit</b> sein!
     </mat-error>
     <mat-error *ngIf="addressForm.controls['endzeit'].hasError('required') ">
@@ -50,7 +46,7 @@
   <div id="dateInput">
     <label for="datum">Datum:</label>
     <br>
-    <mat-form-field>
+    <mat-form-field style="width: 100%">
       <input [matDatepicker]="picker" autocomplete="off" class="datepicker-input" formControlName="datum" id="datum"
              matInput
              name="date" name="datum">
@@ -73,13 +69,13 @@
       <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('max')">
         Personenanzahl muss zwischen <b>1-10 Personen</b> liegen!
       </mat-error>
+      <br>
     </mat-form-field>
   </div>
   <div id="telForm">
     <label for="tel" id="telLabel">Telefonnummer:</label>
-    <br>
     <mat-form-field>
-      <input class="input" formControlName="telefonnummer" id="tel" matInput name="telefonnummer" type="text">
+      <input style="margin-top: 1%" class="input" formControlName="telefonnummer" id="tel" matInput name="telefonnummer" type="text">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
         Telefonnummer muss <b>eingegeben</b> werden!
       </mat-error>
@@ -91,7 +87,7 @@
   <div id="emailForm">
     <label for="email" id="emailLabel">E-Mail:</label>
     <mat-form-field>
-      <input class="input" formControlName="email" id="email" matInput name="email" type="text">
+      <input style="margin-top: 1%" class="input" formControlName="email" id="email" matInput name="email" type="text">
       <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
         E-Mail <b>ist nicht gültig!</b>
       </mat-error>
@@ -99,7 +95,7 @@
   </div>
   <div id="anmerkungArea">
     <label for="anmerkung">Anmerkungen:</label>
-    <mat-form-field>
+    <mat-form-field style="margin-top: 1%">
       <textarea class="full-width-field" formControlName="anmerkungen" id="anmerkung" matInput
                 name="anmerkung"></textarea>
     </mat-form-field>
