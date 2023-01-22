@@ -63,10 +63,10 @@
         Personen-Anzahl muss <b>eingegeben</b> werden!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('min')">
-        Personenanzahl muss zwischen <b>1-10 Personen</b> liegen!
+        Personenanzahl muss zwischen <b>1-{{seats}} Personen</b> liegen!
       </mat-error>
       <mat-error *ngIf="addressForm.controls['personenanzahl'].hasError('max')">
-        Personenanzahl muss zwischen <b>1-10 Personen</b> liegen!
+        Personenanzahl muss zwischen <b>1-{{seats}}  Personen</b> liegen!
       </mat-error>
       <br>
     </mat-form-field>
