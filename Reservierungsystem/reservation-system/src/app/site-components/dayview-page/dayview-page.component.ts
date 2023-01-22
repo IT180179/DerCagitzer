@@ -100,7 +100,6 @@ export class DayviewPageComponent implements AfterViewInit{
 
     this.getTablesperRoom();
     this.getReservationperRoom();
-
     this.loadReservations()
 
 
