@@ -5,8 +5,8 @@
   </div>
   <mat-calendar #calendar [startAt]="firstDate" [(selected)]="firstDate" (selectedChange)="dateChanged('date1')" (monthSelected)="monthChanged($event)"  [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
   <hr>
-  <mat-calendar #calender2 [startAt]="start2" [(selected)]="secondDate" (selectedChange)="dateChanged('date2')" (monthSelected)="monthChanged($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
+  <mat-calendar #calender2 [startAt]="start2" [(selected)]="secondDate" (selectedChange)="dateChanged('date2')" (monthSelected)="month2Changed($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
   <hr>
-  <mat-calendar #calendar3 [startAt]="start3"  [(selected)]="thirdDate" (selectedChange)="dateChanged('date3')" (monthSelected)="monthChanged($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
+  <mat-calendar #calendar3 [startAt]="start3"  [(selected)]="thirdDate" (selectedChange)="dateChanged('date3')" (monthSelected)="month3Changed($event)" [dateFilter]="weekendsDatesFilter" [dateClass]="dateClass"></mat-calendar>
 
 </div>

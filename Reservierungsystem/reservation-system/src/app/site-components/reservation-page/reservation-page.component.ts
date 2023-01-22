@@ -37,7 +37,6 @@ export class ReservationPageComponent implements OnInit {
   test: Date;
   private endzeit: any;
 
-
   constructor(private fb: FormBuilder,
               private errorHandler: ErrorHandler,
               public dialogRef: MatDialogRef<Dialog>,
@@ -58,6 +57,7 @@ export class ReservationPageComponent implements OnInit {
     console.log(this.test)
 
 
+
     this.addressForm = new UntypedFormGroup({
       name: new UntypedFormControl(null,
         [Validators.required, Validators.minLength(2)]),
@@ -74,7 +74,6 @@ export class ReservationPageComponent implements OnInit {
 
 
     this.addressForm.get('startzeit').valueChanges.subscribe(value => {
-
 
       var checkStart = this.formatTime(value, "h:m");
       console.log(checkStart)

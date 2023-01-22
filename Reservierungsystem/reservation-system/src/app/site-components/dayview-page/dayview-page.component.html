@@ -82,7 +82,7 @@
         '0px', 'border-bottom-right-radius': (elements.time == 22)? '10px' :
         '0px', 'border-top-right-radius': (elements.time == 22)? '10px' :
         '0px', 'display': (elements.time == 23)? 'none' : 'block'}"
-             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)="openReservation(elements.time, table.tableno, date)">
+             [ngDraggable]="false" [position]="{x: elements, y: tablenr }" [preventDefaultEvent]="true" class="box" (click)=" openReservation(elements.time, table.tableno, date)">
           <small style="visibility: hidden">grid</small>
         </div>
       </div>
