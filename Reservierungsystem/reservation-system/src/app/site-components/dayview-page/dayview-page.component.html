@@ -4,8 +4,10 @@
 
    <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
    <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
+    <img src="assets/images/Logo_Cagitz.png">
     <p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date | date: 'EEEE, d. MMMM y'}}</a></p>
 </div>
+  <br>
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
 
 <div class="timetable">
