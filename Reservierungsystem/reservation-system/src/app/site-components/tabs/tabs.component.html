@@ -6,5 +6,10 @@
     <mat-tab [disabled]="isWinter(room.summer_winter)" *ngFor="let room of rooms" label="{{room.room_name}}">
       <app-dayview-page [Room]="room.room_id"></app-dayview-page>
     </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>settings</mat-icon>
+      </ng-template>
+    </mat-tab>
   </mat-tab-group>
 </div>
