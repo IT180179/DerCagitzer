@@ -148,7 +148,7 @@ export class ReservationPageComponent implements OnInit {
       reservation_date: data.datum.toLocaleDateString(),
       person_amount: Number(data.personenanzahl),
       tableEntity: {
-        tableno: Number(data.tischnummer)
+        tableno: Number(this.data.table.tableno)
       },
       employee: {
         employee_id: 1
