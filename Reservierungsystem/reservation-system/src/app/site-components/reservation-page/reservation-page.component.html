@@ -77,7 +77,7 @@
   <div id="telForm">
     <label for="tel" id="telLabel">Telefonnummer:</label>
     <mat-form-field>
-      <input style="margin-top: 1%" class="input" formControlName="telefonnummer" id="tel" matInput name="telefonnummer" type="text">
+      <input class="input" formControlName="telefonnummer" id="tel" matInput name="telefonnummer" type="text">
       <mat-error *ngIf="addressForm.controls['telefonnummer'].hasError('required')">
         Telefonnummer muss <b>eingegeben</b> werden!
       </mat-error>
@@ -89,7 +89,7 @@
   <div id="emailForm">
     <label for="email" id="emailLabel">E-Mail:</label>
     <mat-form-field>
-      <input style="margin-top: 1%" class="input" formControlName="email" id="email" matInput name="email" type="text">
+      <input class="input" formControlName="email" id="email" matInput name="email" type="text">
       <mat-error *ngIf="addressForm.controls['email'].hasError('email') ">
         E-Mail <b>ist nicht gültig!</b>
       </mat-error>
@@ -103,7 +103,7 @@
     </mat-form-field>
   </div>
   <br>
-  <button (click)="onNoClick()" class="form-control button" id="abbruch" type='button'>Abbruch</button>
+  <button (click)="onNoClick()" class="form-control button" id="abbruch" type='button'>Abbrechen</button>
   <button [disabled]="!addressForm.valid || !this.checkTime" class="form-control button" id="reservieren" type="submit">
     Reservieren
   </button>

@@ -39,10 +39,6 @@ input[type=text]{
   height: 20%;
 }
 
-#nameForm {
-  margin-bottom: 1%;
-}
-
 #nameForm mat-form-field{
   width:95%;
   font-size:120%;
@@ -143,7 +139,7 @@ label{
 #dateInput{
   float:left;
   width: 42.5%;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 #dateInput .datepicker-input{
@@ -158,7 +154,7 @@ label{
 }
 
 #anzInput {
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 #anzLabel{
