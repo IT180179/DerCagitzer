@@ -66,7 +66,7 @@ export class ReservationPageComponent implements OnInit {
     this.addressForm = new UntypedFormGroup({
       name: new UntypedFormControl(null,
         [Validators.required, Validators.minLength(2)]),
-      telefonnummer: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
+      telefonnummer: new UntypedFormControl(null, [Validators.minLength(8)]),
       startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
       endzeit: new UntypedFormControl(this.data.endtime,  [Validators.required]),
       datum: new UntypedFormControl(this.data.date),
