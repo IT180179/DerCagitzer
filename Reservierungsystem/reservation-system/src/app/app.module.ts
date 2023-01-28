@@ -29,6 +29,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { TabsComponent } from './site-components/tabs/tabs.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {EventEmitterService} from "./shared/event-emitter.service";
+import { ConfigComponent } from './site-components/config/config.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {EventEmitterService} from "./shared/event-emitter.service";
     CalendarComponent,
     CalendarComponent,
     RoomCardsComponent,
-    TabsComponent
+    TabsComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,

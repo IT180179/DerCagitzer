@@ -106,50 +106,7 @@
       </div>
     </div>
   </div>
-  <!--
-  <div class="tisch1" style="margin-right: 1.75%">
-    <mat-icon>schedule</mat-icon>
-  </div>
-  <ng-container *ngFor="let element of data; index as i">
-    <div class="time" *ngIf="i == 0 || i == 1 || i == 2 || i == 3 || i == 6 || i == 7 || i == 8 || i == 9; else noSlot"
-         style="background-color: green; -webkit-box-shadow: 0px 0px 2.5px 0px green; box-shadow: 0px 0px 2.5px 0px green;">{{element.time}}</div>
-    <ng-template #noSlot>
-      <div class="time">{{element.time}}</div>
-    </ng-template>
-  </ng-container>
-  <br>
-  <br>
-  <br>
-  <div class="wrapper">
-    <div style="display: grid; grid-template-columns: repeat(1, 1fr); width: 7%; margin: 0">
-      <div style="margin-bottom: 70%;" *ngFor="let element of tablenr">
-        <div style="width: 80%; height: 200%;" class="tisch">{{element.nr}}</div>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(12, 1fr); width: 83%;">
 
-
-
-        <ng-container *ngFor="let data of data">
-        <ng-container *ngFor="let tablenr of tablenr">
-          <ng-container *ngIf="reservations.length > 0; else noRes">
-              <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
-            <ng-container *ngFor="let res of reservations; index as i">
-              <div class="box" style="background-color: green;"
-                   *ngIf="res.start_time == data.fulltime && res.tableEntity.tableno == tablenr.nr"
-                   (click)="resInfo(res)"><a></a></div>
-            </ng-container>
-          </ng-container>
-        </ng-container>
-      </ng-container>
-
-
-
-      <ng-template #noRes>
-        <div class="box" (click)="openReservation(tablenr, data, date)"><a></a></div>
-      </ng-template>
-    </div>
-  </div>-->
 </div>
 
 <app-side-overview [infoReservation] = "infoReservation" [date] = "date"></app-side-overview>
