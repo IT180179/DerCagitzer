@@ -4,17 +4,17 @@ import {ReservationService} from "../../shared/reservation.service";
 import {Reservation, TableEntity} from "../../shared/reservation";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ReservationPageComponent} from "../reservation-page/reservation-page.component";
-import {ResizeEvent} from "angular-resizable-element";
 import {DomSanitizer, SafeStyle} from "@angular/platform-browser";
-import {Element} from "@angular/compiler";
 import {DataService} from "../../services/data.service";
 import {EventEmitterService} from "../../shared/event-emitter.service";
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
-import {LOCALE_ID, NgModule} from '@angular/core';
 import {Component} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import {start} from "repl";
+import {HttpClient} from "@angular/common/http";
+import * as http from "http";
 
 
 registerLocaleData(localeDe);
@@ -37,9 +37,6 @@ export class ConfigComponent {
 
   @Input() Room: any;
 
-
-
-
   style: SafeStyle;
 
   reservations: Reservation[] = [];
@@ -61,7 +58,7 @@ export class ConfigComponent {
     console.log(this.resize.nativeElement.offsetWidth )
   })
 
-  constructor(private rs: ReservationService, public dialog: MatDialog, public dataService: DataService, private eventemitter: EventEmitterService) {
+  constructor(public http:HttpClient, private rs: ReservationService, public dialog: MatDialog, public dataService: DataService, private eventemitter: EventEmitterService) {
   }
 
   infoReservation: Reservation;
@@ -491,6 +488,27 @@ export class ConfigComponent {
   }
 
   public getTablesperRoom() {
+
+  }
+
+  newdata:any
+  summertime: any
+
+  setSommer() {
+    this.newdata = {
+      name: "string",
+      start_date: this.range.value.start,
+      end_date: this.range.value.end
+    };
+
+    this.http.post("http://localhost:8080/summerwinter/add", this.newdata).subscribe(data => {
+      console.log(data)
+    });
+
+    this.http.get("http://localhost:8080/summerwinter/getByID/" + 1).subscribe(data => {
+      this.summertime = data;
+      console.log(data)
+    });
 
   }
 }

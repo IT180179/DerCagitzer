@@ -1,19 +1,11 @@
-<div id="nav" style="padding-top: 2%">
-  <!-- <p><a><mat-icon></mat-icon></a></p>
-   <p class="long-box arrow" (click)="back()"><a><mat-icon>arrow_back</mat-icon></a></p>
 
-   <p class="long-box arrow" (click)="forward()"><a><mat-icon>arrow_forward</mat-icon></a></p>
-   <p><a (click)="openReservation()"><mat-icon>add</mat-icon></a></p>-->
+<div id="nav" style="padding-top: 2%">
  <img src="assets/images/Logo_Cagitz.png">
   <p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date | date: 'EEEE, d. MMMM y'}}</a></p>
 </div>
 <br>
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
-
-
-
 <div class="config">
-
   <h1>Wähle den Zeitraum der Sommerzeit:</h1>
   <mat-form-field style="width:100%;" appearance="outline">
     <mat-label>Wähle den Sommer-Zeitraum:</mat-label>
@@ -23,12 +15,16 @@
     </mat-date-range-input>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>
-
     <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Falsches Start-Datum</mat-error>
     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Falsches End-Datum</mat-error>
   </mat-form-field>
-
+  <button class="mat-button" (click)="setSommer()">Festlegen</button>
   <!--<p>Ausgewählter Sommer-Zeitraum: {{range.value | json}}</p>-->
-</div>
+  <div>
 
+    <h1>Gesetzte Sommerzeit:</h1>
+    <li>{{summertime.start_date}} - {{summertime.end_date}}</li>
+
+  </div>
+</div>
 <app-side-overview [infoReservation] = "infoReservation" [date] = "date"></app-side-overview>

@@ -64,6 +64,7 @@ import { ConfigComponent } from './site-components/config/config.component';
     ResizableModule,
     MatCardModule,
     MatInputModule,
+    HttpClientModule,
     MatButtonModule, MatProgressBarModule, MatTabsModule
   ],
   providers: [
