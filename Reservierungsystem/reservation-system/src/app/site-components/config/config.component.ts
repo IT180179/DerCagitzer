@@ -82,6 +82,13 @@ export class ConfigComponent {
 
   ngOnInit(): void {
 
+
+    this.http.get("http://localhost:8080/summerwinter/getByID/" + 1).subscribe(data => {
+      this.summertime = data;
+      console.log(data)
+    });
+
+
     if(this.eventemitter.sub == undefined) {
       this.eventemitter.sub = this.eventemitter.invokefunction.subscribe(
         () => {
@@ -504,12 +511,6 @@ export class ConfigComponent {
     this.http.post("http://localhost:8080/summerwinter/add", this.newdata).subscribe(data => {
       console.log(data)
     });
-
-    this.http.get("http://localhost:8080/summerwinter/getByID/" + 1).subscribe(data => {
-      this.summertime = data;
-      console.log(data)
-    });
-
   }
 }
 

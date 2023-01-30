@@ -1,7 +1,7 @@
 
 <div id="nav" style="padding-top: 2%">
  <img src="assets/images/Logo_Cagitz.png">
-  <p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date | date: 'EEEE, d. MMMM y'}}</a></p>
+  <!--<p  style="margin-top: -1%; margin-bottom: 2%" class="long-box today"><a>{{date | date: 'EEEE, d. MMMM y'}}</a></p>-->
 </div>
 <br>
 <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
@@ -22,9 +22,9 @@
   <!--<p>Ausgewählter Sommer-Zeitraum: {{range.value | json}}</p>-->
   <div>
 
-    <h1>Gesetzte Sommerzeit:</h1>
-    <li>{{summertime.start_date}} - {{summertime.end_date}}</li>
+   <!-- <h1>Gesetzte Sommerzeit:</h1>-->
+    <!--<li >{{summertime.start_date || "null"}} - {{summertime.end_date || "null"}}</li>-->
 
   </div>
 </div>
-<app-side-overview [infoReservation] = "infoReservation" [date] = "date"></app-side-overview>
+<app-side-overview  ></app-side-overview>
