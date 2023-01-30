@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import org.acme.workloads.Customer.Customer;
 import org.acme.workloads.Employee.Employee;
 import org.acme.workloads.Table_Entity.TableEntity;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.sql.Date;

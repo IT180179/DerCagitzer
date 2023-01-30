@@ -20,7 +20,6 @@ public class TableEntity extends PanacheEntityBase {
 
     @Column(nullable = false)
     private int seats;
-
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
