@@ -26,10 +26,12 @@ export class CalendarComponent implements AfterViewInit {
 
 
   firstDate = new Date();
-  start0 = new Date()
+  start0 = new Date(2023, 1, 28)
   start1 = new Date()
 
-  start2 = new Date(this.start0.setMonth(this.firstDate.getMonth()+1));
+
+
+  start2 = new Date(this.start0);
   start3 = new Date(this.start1.setMonth(this.firstDate.getMonth()+2));
   secondDate?: Date
   thirdDate?: Date
