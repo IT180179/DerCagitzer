@@ -26,24 +26,15 @@ export class CalendarComponent implements AfterViewInit {
 
 
   firstDate = new Date();
-  start0 = new Date(2023, 1, 28)
+  start0 = new Date()
   start1 = new Date()
 
 
 
-  start2 = new Date(this.start0);
+  start2 = new Date(this.start0.setMonth(this.firstDate.getMonth()+1));
   start3 = new Date(this.start1.setMonth(this.firstDate.getMonth()+2));
   secondDate?: Date
   thirdDate?: Date
-
-  //secondDate = new Date();
-//  month2 = this.firstDate.getMonth()+1;
-
- // setSecondMonthRight = this.secondDate.setMonth(this.month2);
-
- // thirdDate = new Date();
- // month3 = this.secondDate.getMonth()+1;
- // setThirdMonthRight = this.thirdDate.setMonth(this.month3);
 
 
   weekendsDatesFilter = (d: Date): boolean => {

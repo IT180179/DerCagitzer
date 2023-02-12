@@ -6,14 +6,17 @@ import {ReservationPageComponent} from "./site-components/reservation-page/reser
 import {RoomCardsComponent} from "./site-components/room-cards/room-cards.component";
 import {TabsComponent} from "./site-components/tabs/tabs.component";
 import {ConfigComponent} from "./site-components/config/config.component";
+import {TableplanComponent} from "./site-components/tableplan/tableplan.component";
 
 const routes: Routes = [
+  { path: 'tableplan/:tableno', component: TableplanComponent},
   { path: 'dashboard', component: DayviewPageComponent },
   { path: 'reservation', component: ReservationPageComponent },
   { path: 'cards', component: RoomCardsComponent },
   { path: 'tabs', component: TabsComponent },
   { path: 'config', component: ConfigComponent },
-  { path: '', redirectTo: '/tabs', pathMatch: 'full'}
+  { path: '', redirectTo: '/tabs', pathMatch: 'full'},
+  { path: '**', redirectTo: '/tabs', pathMatch: 'full'}
 ];
 
 @NgModule({

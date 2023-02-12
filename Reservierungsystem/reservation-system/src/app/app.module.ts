@@ -30,6 +30,7 @@ import { TabsComponent } from './site-components/tabs/tabs.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {EventEmitterService} from "./shared/event-emitter.service";
 import { ConfigComponent } from './site-components/config/config.component';
+import { TableplanComponent } from './site-components/tableplan/tableplan.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ConfigComponent } from './site-components/config/config.component';
     CalendarComponent,
     RoomCardsComponent,
     TabsComponent,
-    ConfigComponent
+    ConfigComponent,
+    TableplanComponent
   ],
   imports: [
     BrowserModule,
