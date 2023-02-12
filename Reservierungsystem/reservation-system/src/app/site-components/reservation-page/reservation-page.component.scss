@@ -9,7 +9,10 @@ img{
 html, body {
   height: 100%;
 }
-body { margin: 0; font-family: "Trebuchet MS"; }
+body {
+  margin: 0;
+  font-family: "Trebuchet MS";
+}
 
 #title{
   text-align:center;
@@ -31,8 +34,8 @@ form{
 }
 
 input[type=text]{
-  background-color: #a5cea5;
-
+  background-color: #9bc29b;
+  color: black;
 }
 
 .input{
@@ -80,21 +83,27 @@ form{
   float:left;
 }
 
+input {
+  font-weight: bold;
+  font-size: 140%;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+}
+
 input[type=text]{
   padding:1.2%;
   border: solid green 3px;
   border-radius: 20px;
-  background-color: #a5cea5;
-  font-size:120%;
+  background-color: #9bc29b;
+  font-size: 100%;
 }
 
 input[type=time]{
   width:44.6%;
   padding:2%;
-  background-color: #a5cea5;
+  background-color: #9bc29b;
   border: solid green 3px;
   border-radius: 20px;
-  font-size:120%;
 }
 
 #startzeit{
@@ -108,24 +117,25 @@ input[type=time]{
 
 label{
   font-size:120%;
-  font-weight:bold;
   color:green;
   text-transform: uppercase;
 }
 
 #anmerkungArea mat-form-field{
   width: 97%;
-  background-color: #a5cea5;
+  background-color: #9bc29b;
   border: solid green 3px;
   border-radius: 20px;
   font-size:120%;
   padding-left:2%;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 
 #anzInput input[type=number]{
   width: 90%;
   margin-left: 65%;
-  background-color: #a5cea5;
+  background-color: #9bc29b;
   padding-right: 190%;
   padding-bottom:16%;
   padding-top: 16%;
@@ -143,7 +153,7 @@ label{
 }
 
 #dateInput .datepicker-input{
-  background-color: #a5cea5;
+  background-color: #9bc29b;
   padding-bottom: 6%;
   padding-top: 6%;
   padding-left: 5%;
@@ -162,7 +172,7 @@ label{
 }
 
 #abbruch{
-  background-color: #a5cea5;
+  background-color: #9bc29b;
   color: #000;
   padding:2%;
   width:25%;
@@ -170,7 +180,10 @@ label{
   margin-left:20%;
   margin-right:5%;
   font-weight:bold;
+  border-color: #9bc29b;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 
 #reservieren{
@@ -182,6 +195,8 @@ label{
   font-size:100%;
   border-color: green;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 
 #emailLabel {
@@ -191,5 +206,5 @@ label{
 h3{
   text-align: center;
   font-weight: bold;
-  color: #a5cea5;
+  color: green;
 }
