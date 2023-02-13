@@ -1,5 +1,5 @@
 <div id="overview">
-  <h3 style="text-align: center">Infos</h3>
+  <b><h3 style="text-align: center; text-transform: uppercase;" id="infoText">Infos</h3></b>
   <hr>
   <div class="raumauslastungInfo">
     <h3>Tagesauslastung Mittag: {{resultPerDayNoon}}%</h3>
@@ -16,8 +16,8 @@
     <mat-progress-bar class="progressBar" value="{{resultPerWeek}}" mode="determinate" style="width: 90%"></mat-progress-bar>
   </div>
   <div *ngIf="infoReservation" id="reservationInfo">
-    <hr style="margin-left: 5%; margin-right: 5%; margin-top: 5%;">
-    <h3>Reservierung</h3>
+    <hr style="margin-top:5%;border: green solid 2px">
+    <h3 style="text-align: center">Reservierung</h3>
     <form  (ngSubmit)="updateReservation()" [formGroup]="updateForm" >
 
       <p class="info">Name: <span><input matInput type="text" name="name" formControlName="name" id="name" ></span></p>
@@ -30,7 +30,7 @@
 
     <p class="info">Personenanzahl: <span style="font-weight: normal"><input matInput min="1" max="10" type="number" name="personenanzahl" formControlName="personenanzahl" >Personen</span></p>
 
-        <p class="info">Uhrzeit: <span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
+        <p class="info">Uhrzeit: <br><span style="font-weight: normal">{{infoReservation.start_time}} - {{infoReservation.end_time}} Uhr</span></p>
 
       <p class="info">Tischnummer: <span style="font-weight: normal"><input matInput min="1" max="100" type="number" name="tischnummer" formControlName="tischnummer" >
       </span></p>

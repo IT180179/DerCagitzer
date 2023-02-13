@@ -312,6 +312,8 @@ hr{
 
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
   background-color: green;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
   color: green;
 }
 
@@ -325,6 +327,8 @@ hr{
 .mat-tab-list .mat-tab-labels .mat-tab-label-active {
   color:white;
   background-color: green;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
 }
 
 html, body { height: 100%; }

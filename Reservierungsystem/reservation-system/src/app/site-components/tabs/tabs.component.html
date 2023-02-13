@@ -1,5 +1,10 @@
 <div class="container">
-  <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" mat-align-tabs="start">
+  <mat-tab-group dynamicHeight mat-stretch-tabs="false" mat-align-tabs="center" mat-tab-group mat-align-tabs="start" [selectedIndex]="1">
+    <mat-tab [disabled]="true">
+      <ng-template mat-tab-label>
+        <img style="width: 30%;" src="assets/images/Logo_Cagitz.png">
+      </ng-template>
+    </mat-tab>
     <mat-tab label="Alle">
       <app-dayview-page [Room]="0"></app-dayview-page>
     </mat-tab>
