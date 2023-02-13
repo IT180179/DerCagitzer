@@ -17,7 +17,7 @@
   </div>
   <div *ngIf="infoReservation" id="reservationInfo">
     <hr style="margin-top:5%;border: green solid 2px">
-    <h3 style="text-align: center">Reservierung</h3>
+    <h3 style="text-align: center; font-size:130%">Reservierung</h3>
     <form  (ngSubmit)="updateReservation()" [formGroup]="updateForm" >
 
       <p class="info">Name: <span><input matInput type="text" name="name" formControlName="name" id="name" ></span></p>
