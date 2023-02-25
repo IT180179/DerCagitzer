@@ -63,18 +63,32 @@ export class ReservationPageComponent implements OnInit {
 
 
 
-    this.addressForm = new UntypedFormGroup({
-      name: new UntypedFormControl(null,
-        [Validators.required, Validators.minLength(2)]),
-      telefonnummer: new UntypedFormControl(null, [Validators.minLength(8)]),
-      startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
-      endzeit: new UntypedFormControl(this.data.endtime,  [Validators.required]),
-      datum: new UntypedFormControl(this.data.date),
-      personenanzahl: new UntypedFormControl('2', [Validators.required, Validators.max(this.seats), Validators.min(1)]),
-      email: new UntypedFormControl(null, Validators.email),
-      anmerkungen: new UntypedFormControl(null)
-    });
+    if (!this.data.isUpdate) {
 
+      this.addressForm = new UntypedFormGroup({
+        name: new UntypedFormControl(null,
+          [Validators.required, Validators.minLength(2)]),
+        telefonnummer: new UntypedFormControl(null, [Validators.minLength(8)]),
+        startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
+        endzeit: new UntypedFormControl(this.data.endtime, [Validators.required]),
+        datum: new UntypedFormControl(this.data.date),
+        personenanzahl: new UntypedFormControl('2', [Validators.required, Validators.max(this.seats), Validators.min(1)]),
+        email: new UntypedFormControl(null, Validators.email),
+        anmerkungen: new UntypedFormControl(null)
+      });
+    }else {
+      this.addressForm = new UntypedFormGroup({
+        name: new UntypedFormControl(this.data.updateRes.customer_name,
+          [Validators.required, Validators.minLength(2)]),
+        telefonnummer: new UntypedFormControl(this.data.updateRes, [Validators.minLength(8)]),
+        startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
+        endzeit: new UntypedFormControl(this.data.endtime, [Validators.required]),
+        datum: new UntypedFormControl(this.data.date),
+        personenanzahl: new UntypedFormControl('2', [Validators.required, Validators.max(this.seats), Validators.min(1)]),
+        email: new UntypedFormControl(null, Validators.email),
+        anmerkungen: new UntypedFormControl(null)
+      });
+    }
 
 
     this.addressForm.get('startzeit').valueChanges.subscribe(value => {

@@ -59,6 +59,13 @@ export class DayviewPageComponent implements AfterViewInit{
 
   getInformation(reservation: Reservation) {
     this.infoReservation = reservation;
+
+    const dialogRef = this.dialog.open(ReservationPageComponent, {
+      width: '70%',
+      height: '90%',
+      data: {isUpdate: true, updateRes: reservation },
+      backdropClass: 'backdropBackground'
+    });
   }
 
   data: any;
@@ -362,7 +369,7 @@ export class DayviewPageComponent implements AfterViewInit{
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '90%',
-      data: {table: table, starttime: t, endtime: et, date: date},
+      data: {table: table, starttime: t, endtime: et, date: date, isUpdate: false},
       backdropClass: 'backdropBackground'
     });
 
