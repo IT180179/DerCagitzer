@@ -31,6 +31,8 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {EventEmitterService} from "./shared/event-emitter.service";
 import { ConfigComponent } from './site-components/config/config.component';
 import { TableplanComponent } from './site-components/tableplan/tableplan.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -67,7 +69,7 @@ import { TableplanComponent } from './site-components/tableplan/tableplan.compon
     MatCardModule,
     MatInputModule,
     HttpClientModule,
-    MatButtonModule, MatProgressBarModule, MatTabsModule
+    MatButtonModule, MatProgressBarModule, MatTabsModule, MatSnackBarModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'de'},
