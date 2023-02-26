@@ -10,7 +10,8 @@ export interface Reservation {
   reservation_timestamp: Date;
   person_amount: number;
   tableEntity: TableEntity;
-
+  telNr: string
+  note: string
 }
 export interface TableEntity{
   seats: number;

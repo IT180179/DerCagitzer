@@ -39,9 +39,20 @@ public class Reservation extends PanacheEntityBase {
     private Timestamp reservation_timestamp;
     private int person_amount;
 
+    private String note;
+
     @ManyToOne
     @JoinColumn(name = "tableno")
     private TableEntity tableEntity;
+
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 
     public String getCustomer_name() {
         return customer_name;

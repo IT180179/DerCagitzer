@@ -19,6 +19,7 @@ import {DatePipe, Time} from "@angular/common";
 import {distinctUntilChanged} from "rxjs";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {ReservationService} from "../../shared/reservation.service";
 
 @Component({
   selector: 'app-reservation-page',
@@ -36,6 +37,10 @@ export class ReservationPageComponent implements OnInit {
 
   today = new Date();
   test: Date;
+  room_name = "";
+  tablenumber;
+  tableseats;
+
   private endzeit: any;
 
   constructor(private fb: FormBuilder,
@@ -43,7 +48,8 @@ export class ReservationPageComponent implements OnInit {
               public dialogRef: MatDialogRef<Dialog>,
               public http: HttpClient,
               @Inject(MAT_DIALOG_DATA) public data: any, private route: ActivatedRoute,
-              private router: Router,private _snackBar: MatSnackBar
+              private router: Router,private _snackBar: MatSnackBar,
+              private rs: ReservationService
   ) {
   }
 
@@ -51,22 +57,31 @@ export class ReservationPageComponent implements OnInit {
   seats: any;
   ngOnInit(): void {
 
-    console.log( this.data.table)
+    console.log(this.data.updateRes)
 
-    console.log(this.startZeit)
+    if (!this.data.isUpdate){
+      this.room_name = this.data.table.room.room_name
+      this.tablenumber = this.data.table.number
+      this.tableseats = this.data.table.seats
+    }else{
+      this.room_name = this.data.updateRes.tableEntity.room.room_name
+      this.tablenumber = this.data.updateRes.tableEntity.tableno
+      this.tableseats = this.data.updateRes.tableEntity.seats
+
+    }
 
     this.today = new Date()
-    this.test = this.data.date.toLocaleDateString()
-
-    console.log(this.test)
-
-    this.seats = this.data.table.seats;
+   // this.test = this.data.date.toLocaleDateString()
+    //this.seats = this.data.table.seats;
 
 
 
     if (!this.data.isUpdate) {
+      console.log(this.data.starttime)
 
       this.addressForm = new UntypedFormGroup({
+
+
         name: new UntypedFormControl(null,
           [Validators.required, Validators.minLength(2)]),
         telefonnummer: new UntypedFormControl(null, [Validators.minLength(8)]),
@@ -77,20 +92,30 @@ export class ReservationPageComponent implements OnInit {
         email: new UntypedFormControl(null, Validators.email),
         anmerkungen: new UntypedFormControl(null)
       });
-    }else {
+    }
+    if (this.data.isUpdate) {
+      var parts = this.data.updateRes.reservation_date.split('.')
+      var tempDate = new Date(parts[2], parts[1]-1, parts[0])
+
+      console.log(this.data.updateRes.start_time)
+
       this.addressForm = new UntypedFormGroup({
         name: new UntypedFormControl(this.data.updateRes.customer_name,
           [Validators.required, Validators.minLength(2)]),
-        telefonnummer: new UntypedFormControl(this.data.updateRes, [Validators.minLength(8)]),
-        startzeit: new UntypedFormControl(this.data.starttime, [Validators.required]),
-        endzeit: new UntypedFormControl(this.data.endtime, [Validators.required]),
-        datum: new UntypedFormControl(this.data.date),
-        personenanzahl: new UntypedFormControl('2', [Validators.required, Validators.max(this.seats), Validators.min(1)]),
+        telefonnummer: new UntypedFormControl(this.data.updateRes.telNr, [Validators.minLength(8)]),
+        startzeit: new UntypedFormControl(this.data.updateRes.start_time, [Validators.required]),
+        endzeit: new UntypedFormControl(this.data.updateRes.end_time,[Validators.required]),
+        datum: new UntypedFormControl(tempDate),
+        personenanzahl: new UntypedFormControl(this.data.updateRes.person_amount, [Validators.required, Validators.max(this.seats), Validators.min(1)]),
         email: new UntypedFormControl(null, Validators.email),
-        anmerkungen: new UntypedFormControl(null)
+        anmerkungen: new UntypedFormControl(this.data.updateRes.note)
       });
+      this.addressForm.patchValue({datum: tempDate})
+
     }
 
+
+    if(!this.data.isUpdate){
 
     this.addressForm.get('startzeit').valueChanges.subscribe(value => {
 
@@ -122,20 +147,20 @@ export class ReservationPageComponent implements OnInit {
 
     this.addressForm.patchValue({datum: this.data.date})
     this.addressForm.patchValue({tischnummer: this.data.tablenr})
-
-
-  }
-
-  validateTime(control: AbstractControl){
-    var checkStart = this.formatTime(control.value('startzeit'), "h:m");
-    var checkEnd = this.formatTime(control.value('endzeit'),"h:m");
-    if (checkStart >= checkEnd){
-      return {invalidTime: true}
-    }else {
-      return null
     }
 
   }
+/*
+  validateTime(control: AbstractControl){
+    if(!this.data.isUpdate)
+      var checkStart = this.formatTime(control.value('startzeit'), "h:m");
+      var checkEnd = this.formatTime(control.value('endzeit'), "h:m");
+      if (checkStart >= checkEnd) {
+        return {invalidTime: true}
+      } else {
+        return null
+      }
+  }*/
 
   formatTime(dStr, format){
     var now = new Date();
@@ -153,39 +178,60 @@ export class ReservationPageComponent implements OnInit {
     const newReservation: Reservation = {
       ...formValue,
     }
+
+
     this.submitReservation.emit(newReservation);
 
     this.newdata = {
       customer: null,
       customer_name: data.name,
+      telNr: data.telNr,
       start_time: data.startzeit,
       end_time: data.endzeit,
       reservation_date: data.datum.toLocaleDateString(),
       person_amount: Number(data.personenanzahl),
       tableEntity: {
-        tableno: Number(this.data.table.tableno)
+        tableno: this.tablenumber
       },
       employee: {
         employee_id: 1
-      }
+      },
+      note: data.anmerkungen,
     };
 
-    console.log(this.newdata)
-    this.http.post('http://localhost:8080/reservation/add', this.newdata)
-      .subscribe((result) => {
-        this.router.navigate(['..'], {relativeTo: this.route})
-        console.log(result)
+    this.data.updateRes = this.newdata
 
-      } ,
+    console.log(this.newdata)
+    if(!this.data.isUpdate) {
+      this.http.post('http://localhost:8080/reservation/add', this.newdata)
+        .subscribe((result) => {
+            this.router.navigate(['..'], {relativeTo: this.route})
+            console.log(result)
+
+          },
+          (error) => {                              //Error callback
+            console.error('error caught in component')
+            this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "", {
+              duration: 3000
+            });
+            //throw error;   //You can also throw the error to a global error handler
+          });
+    }else {
+      this.rs.update(this.data.updateRes).subscribe(value => {
+        this.router.navigate(['..'], {relativeTo: this.route})
+        console.log(this.data.updateRes)
+      }),
         (error) => {                              //Error callback
           console.error('error caught in component')
-          this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "",{
+          this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "", {
             duration: 3000
           });
-          //throw error;   //You can also throw the error to a global error handler
-        });
+        }
+    }
     this.dialogRef.close();
     this.addressForm.reset();
+
+
   }
 
 
