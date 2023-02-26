@@ -18,6 +18,7 @@ import {Dialog} from "../dayview-page/dayview-page.component";
 import {DatePipe, Time} from "@angular/common";
 import {distinctUntilChanged} from "rxjs";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-reservation-page',
@@ -42,7 +43,7 @@ export class ReservationPageComponent implements OnInit {
               public dialogRef: MatDialogRef<Dialog>,
               public http: HttpClient,
               @Inject(MAT_DIALOG_DATA) public data: any, private route: ActivatedRoute,
-              private router: Router,
+              private router: Router,private _snackBar: MatSnackBar
   ) {
   }
 
@@ -174,7 +175,15 @@ export class ReservationPageComponent implements OnInit {
       .subscribe((result) => {
         this.router.navigate(['..'], {relativeTo: this.route})
         console.log(result)
-      });
+
+      } ,
+        (error) => {                              //Error callback
+          console.error('error caught in component')
+          this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "",{
+            duration: 3000
+          });
+          //throw error;   //You can also throw the error to a global error handler
+        });
     this.dialogRef.close();
     this.addressForm.reset();
   }
