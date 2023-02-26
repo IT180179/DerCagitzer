@@ -29,6 +29,8 @@ public class Reservation extends PanacheEntityBase {
 
     private String customer_name;
 
+    private String telNr;
+
     private String start_time;
 
     private String end_time;
@@ -119,5 +121,13 @@ public class Reservation extends PanacheEntityBase {
 
     public void setPerson_amount(int person_amount) {
         this.person_amount = person_amount;
+    }
+
+    public String getTelNr() {
+        return telNr;
+    }
+
+    public void setTelNr(String telNr) {
+        this.telNr = telNr;
     }
 }

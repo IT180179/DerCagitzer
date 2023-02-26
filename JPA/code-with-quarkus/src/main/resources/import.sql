@@ -81,10 +81,10 @@ values(1, 4, 1),
       (109, 4, 5),
       (110, 4, 5);
 
-insert into Reservation(employee_id, customer_id, customer_name, start_time, end_time, reservation_date, reservation_timestamp, person_amount, tableno)
-values(1, 1, 'Maar', '11:00', '13:00', '1.2.2023', current_timestamp, 6, 1),
-      (1, 2, 'Ursprung', '11:00', '13:00', '1.2.2023', current_timestamp, 3, 2),
-      (2, 3, 'Bikic', '13:00', '15:00', '1.2.2023', current_timestamp, 6, 8),
-      (1, 4, 'Hammer', '17:00', '19:00', '1.2.2023', current_timestamp, 5, 10),
-      (2, 5, 'Aberger', '19:00', '21:00', '1.2.2023', current_timestamp, 4, 5),
-      (2, 5, 'Precup', '19:00', '21:00', '1.2.2023', current_timestamp, 4, 12);
+insert into Reservation(employee_id, customer_id, customer_name, telNr, start_time, end_time, reservation_date, reservation_timestamp, person_amount, tableno)
+values(1, 1, 'Maar', '12345678', '11:00', '13:00', '1.2.2023', current_timestamp, 6, 1),
+      (1, 2, 'Ursprung', '12345678', '11:00', '13:00', '1.2.2023', current_timestamp, 3, 2),
+      (2, 3, 'Bikic', '12345678', '13:00', '15:00', '1.2.2023', current_timestamp, 6, 8),
+      (1, 4, 'Hammer', '12345678', '17:00', '19:00', '1.2.2023', current_timestamp, 5, 10),
+      (2, 5, 'Aberger', '12345678', '19:00', '21:00', '1.2.2023', current_timestamp, 4, 5),
+      (2, 5, 'Precup', '12345678', '19:00', '21:00', '1.2.2023', current_timestamp, 4, 12);
