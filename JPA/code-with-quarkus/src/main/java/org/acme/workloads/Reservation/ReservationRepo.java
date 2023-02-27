@@ -25,7 +25,7 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         this.entityManager.merge(reservation);
     }
 
-    public Boolean checkReservation(String date, Long table, String start_time, String end_time) {
+    public Boolean checkReservation(Long id, String date, Long table, String start_time, String end_time) {
         String[] startArray = start_time.split(":");
         String[] endArray = end_time.split(":");
         int startMinutes = Integer.parseInt(startArray[1]);
@@ -37,7 +37,8 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         if(Objects.equals(endArray[1], "00")) {
             endHours = endHours - 1;
         }
-        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and (:start_time between r.start_time and r.end_time or :end_time between r.start_time and r.end_time)")
+        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_id <> :id and r.reservation_date = :date and r.tableEntity.tableno = :table and (:start_time between r.start_time and r.end_time or :end_time between r.start_time and r.end_time)")
+                .setParameter("id", id)
                 .setParameter("date", date)
                 .setParameter("table", table)
                 .setParameter("start_time", String.valueOf(startArray[0] + ":" + (startMinutes + 1)))
