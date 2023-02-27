@@ -44,6 +44,13 @@ public class ReservationResource {
     }
 
     @GET
+    @Path("/getMaxId")
+    public Response getMaxId() {
+        var maxId = this.reservationRepo.getMaxId();
+        return Response.ok(maxId).build();
+    }
+
+    @GET
     @Path("/countReservationsPerTimeslot/{start_time}/{end_time}/{date}")
     public Response countReservationsPerTimeslot(@PathParam("start_time") String start_time, @PathParam("end_time") String end_time, @PathParam("date") String date) {
         var countedReservations = this.reservationRepo.countReservationsPerTimeslot(start_time, end_time, date);

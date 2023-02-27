@@ -25,6 +25,11 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         this.entityManager.merge(reservation);
     }
 
+    public Long getMaxId() {
+        Query query = this.entityManager.createQuery("select max(r.reservation_id) from Reservation r");
+        return (Long) query.getSingleResult();
+    }
+
     public Boolean checkReservation(Long id, String date, Long table, String start_time, String end_time) {
         String[] startArray = start_time.split(":");
         String[] endArray = end_time.split(":");
