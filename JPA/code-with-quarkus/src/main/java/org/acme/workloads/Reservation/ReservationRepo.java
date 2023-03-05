@@ -30,7 +30,31 @@ public class ReservationRepo implements PanacheRepository<Reservation> {
         return (Long) query.getSingleResult();
     }
 
-    public Boolean checkReservation(Long id, String date, Long table, String start_time, String end_time) {
+    public Boolean checkReservation(String date, Long table, String start_time, String end_time) {
+        String[] startArray = start_time.split(":");
+        String[] endArray = end_time.split(":");
+        int startMinutes = Integer.parseInt(startArray[1]);
+        int endMinutes = Integer.parseInt(endArray[1]);
+        int endHours = Integer.parseInt(endArray[0]);
+        if(Objects.equals(endArray[1], "00")) {
+            endMinutes = 60;
+        }
+        if(Objects.equals(endArray[1], "00")) {
+            endHours = endHours - 1;
+        }
+        Query query = this.getEntityManager().createQuery("select r from Reservation r where r.reservation_date = :date and r.tableEntity.tableno = :table and (:start_time between r.start_time and r.end_time or :end_time between r.start_time and r.end_time)")
+                .setParameter("date", date)
+                .setParameter("table", table)
+                .setParameter("start_time", String.valueOf(startArray[0] + ":" + (startMinutes + 1)))
+                .setParameter("end_time", String.valueOf(endHours + ":" + (endMinutes - 1)));
+        if(query.getResultStream().findAny().isPresent()) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public Boolean checkReservationUpdate(Long id, String date, Long table, String start_time, String end_time) {
         String[] startArray = start_time.split(":");
         String[] endArray = end_time.split(":");
         int startMinutes = Integer.parseInt(startArray[1]);
