@@ -20,6 +20,7 @@ import {distinctUntilChanged} from "rxjs";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {ReservationService} from "../../shared/reservation.service";
+import {EventEmitterService} from "../../shared/event-emitter.service";
 
 @Component({
   selector: 'app-reservation-page',
@@ -49,7 +50,8 @@ export class ReservationPageComponent implements OnInit {
               public http: HttpClient,
               @Inject(MAT_DIALOG_DATA) public data: any, private route: ActivatedRoute,
               private router: Router,private _snackBar: MatSnackBar,
-              private rs: ReservationService
+              private rs: ReservationService,
+              private eventemitter: EventEmitterService
   ) {
   }
 
@@ -182,7 +184,13 @@ export class ReservationPageComponent implements OnInit {
 
     this.submitReservation.emit(newReservation);
 
+    var newId = 0;
+    this.rs.getMaxId().subscribe(value => {
+      newId = value
+    })
+
     this.newdata = {
+     // reservation_id: newId+1,
       customer: null,
       customer_name: data.name,
       telNr: data.telNr,
@@ -220,6 +228,12 @@ export class ReservationPageComponent implements OnInit {
       this.rs.update(this.data.updateRes).subscribe(value => {
         this.router.navigate(['..'], {relativeTo: this.route})
         console.log(this.data.updateRes)
+
+        if(value.statusText == "not free") {
+          this.eventemitter.onDelete()
+        }
+        this.eventemitter.onDelete()
+
       }),
         (error) => {                              //Error callback
           console.error('error caught in component')
