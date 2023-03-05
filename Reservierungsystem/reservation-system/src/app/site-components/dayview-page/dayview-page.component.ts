@@ -59,7 +59,6 @@ export class DayviewPageComponent implements AfterViewInit{
 
   getInformation(reservation: Reservation) {
     this.infoReservation = reservation;
-
     const dialogRef = this.dialog.open(ReservationPageComponent, {
       width: '70%',
       height: '90%',

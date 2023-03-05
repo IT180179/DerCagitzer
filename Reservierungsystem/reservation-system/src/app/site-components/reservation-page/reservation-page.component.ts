@@ -174,6 +174,7 @@ export class ReservationPageComponent implements OnInit {
 
 
   newdata: any
+  newdataUpdate: any
 
   onSubmit(data: any) {
     const formValue = this.addressForm.value;
@@ -207,7 +208,25 @@ export class ReservationPageComponent implements OnInit {
       note: data.anmerkungen,
     };
 
-    this.data.updateRes = this.newdata
+    this.newdataUpdate = {
+      reservation_id: this.data.updateRes.reservation_id,
+      customer: null,
+      customer_name: data.name,
+      telNr: data.telNr,
+      start_time: data.startzeit,
+      end_time: data.endzeit,
+      reservation_date: data.datum.toLocaleDateString(),
+      person_amount: Number(data.personenanzahl),
+      tableEntity: {
+        tableno: this.tablenumber
+      },
+      employee: {
+        employee_id: 1
+      },
+      note: data.anmerkungen,
+    };
+
+    this.data.updateRes = this.newdataUpdate
 
     console.log(this.newdata)
     if(!this.data.isUpdate) {
@@ -227,25 +246,23 @@ export class ReservationPageComponent implements OnInit {
     }else {
       this.rs.update(this.data.updateRes).subscribe(value => {
         this.router.navigate(['..'], {relativeTo: this.route})
-        console.log(this.data.updateRes)
+        console.log(this.data.updateRes.reservation_id)
 
         if(value.statusText == "not free") {
           this.eventemitter.onDelete()
         }
         this.eventemitter.onDelete()
 
-      }),
+      },
         (error) => {                              //Error callback
           console.error('error caught in component')
           this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "", {
             duration: 3000
           });
-        }
+        });
     }
     this.dialogRef.close();
     this.addressForm.reset();
-
-
   }
 
 
