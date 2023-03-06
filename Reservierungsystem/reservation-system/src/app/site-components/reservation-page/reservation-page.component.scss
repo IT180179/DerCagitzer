@@ -16,9 +16,8 @@ body {
 
 #title{
   text-align:center;
-  text-transform: uppercase;
   font-weight: bold;
-  font-size:230%;
+  font-size:180%;
   color:green;
 }
 
@@ -44,7 +43,7 @@ input[type=text]{
 
 #nameForm mat-form-field{
   width:95%;
-  font-size:120%;
+  font-size:100%;
 }
 
 form{
@@ -60,7 +59,7 @@ form{
   width:100%;
   margin-right:10%;
   float:left;
-  font-size:120%;
+  font-size:100%;
 }
 
 #tel {
@@ -75,7 +74,7 @@ form{
 
 #emailForm mat-form-field{
   width:100%;
-  font-size:120%;
+  font-size:100%;
 }
 
 #email{
@@ -95,7 +94,8 @@ input[type=text]{
   border: solid green 3px;
   border-radius: 20px;
   background-color: #9bc29b;
-  font-size: 100%;
+  font-size: 120%;
+
 }
 
 input[type=time]{
@@ -104,6 +104,7 @@ input[type=time]{
   background-color: #9bc29b;
   border: solid green 3px;
   border-radius: 20px;
+  font-size: 120%;
 }
 
 #startzeit{
@@ -126,7 +127,8 @@ label{
   background-color: #9bc29b;
   border: solid green 3px;
   border-radius: 20px;
-  font-size:120%;
+  font-size:130%;
+  font-weight: bold;
   padding-left:2%;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
@@ -203,8 +205,14 @@ label{
   margin-top: -100%;
 }
 
-h3{
+h3, h2{
   text-align: center;
   font-weight: bold;
   color: green;
 }
+
+h2{
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
