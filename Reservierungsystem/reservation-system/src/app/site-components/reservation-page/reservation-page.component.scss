@@ -43,7 +43,7 @@ input[type=text]{
 
 #nameForm mat-form-field{
   width:95%;
-  font-size:120%;
+  font-size:100%;
 }
 
 form{
@@ -59,7 +59,7 @@ form{
   width:100%;
   margin-right:10%;
   float:left;
-  font-size:120%;
+  font-size:100%;
 }
 
 #tel {
@@ -74,7 +74,7 @@ form{
 
 #emailForm mat-form-field{
   width:100%;
-  font-size:120%;
+  font-size:100%;
 }
 
 #email{
@@ -94,7 +94,8 @@ input[type=text]{
   border: solid green 3px;
   border-radius: 20px;
   background-color: #9bc29b;
-  font-size: 100%;
+  font-size: 120%;
+
 }
 
 input[type=time]{
@@ -103,6 +104,7 @@ input[type=time]{
   background-color: #9bc29b;
   border: solid green 3px;
   border-radius: 20px;
+  font-size: 120%;
 }
 
 #startzeit{
