@@ -9,8 +9,9 @@
 </head>
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" [formGroup]="addressForm">
   <img style="margin-left: -0.5%" src="assets/images/Logo_Cagitz.png">
-  <h2 id="title">Neue Reservierung</h2>
-  <h3 class="title is-4">{{ room_name}}  /  Tischnummer {{tablenumber}}  /  max. {{tableseats}} Personen</h3>
+  <h2>{{ room_name}}  /  Tischnummer {{tablenumber}}  /  max. {{tableseats}} Personen</h2>
+  <h3 id="title">Neue Reservierung</h3>
+
 
   <div id="nameForm">
     <label for="name">Name:</label><br>

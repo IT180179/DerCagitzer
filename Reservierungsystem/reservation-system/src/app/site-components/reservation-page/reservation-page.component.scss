@@ -16,9 +16,8 @@ body {
 
 #title{
   text-align:center;
-  text-transform: uppercase;
   font-weight: bold;
-  font-size:230%;
+  font-size:180%;
   color:green;
 }
 
@@ -203,8 +202,14 @@ label{
   margin-top: -100%;
 }
 
-h3{
+h3, h2{
   text-align: center;
   font-weight: bold;
   color: green;
 }
+
+h2{
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
