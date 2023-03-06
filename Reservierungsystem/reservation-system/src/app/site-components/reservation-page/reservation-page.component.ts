@@ -73,7 +73,7 @@ export class ReservationPageComponent implements OnInit {
     }
 
     this.today = new Date()
-   // this.test = this.data.date.toLocaleDateString()
+    // this.test = this.data.date.toLocaleDateString()
     //this.seats = this.data.table.seats;
 
 
@@ -190,41 +190,43 @@ export class ReservationPageComponent implements OnInit {
       newId = value
     })
 
-    this.newdata = {
-     // reservation_id: newId+1,
-      customer: null,
-      customer_name: data.name,
-      telNr: data.telNr,
-      start_time: data.startzeit,
-      end_time: data.endzeit,
-      reservation_date: data.datum.toLocaleDateString(),
-      person_amount: Number(data.personenanzahl),
-      tableEntity: {
-        tableno: this.tablenumber
-      },
-      employee: {
-        employee_id: 1
-      },
-      note: data.anmerkungen,
-    };
-
-    this.newdataUpdate = {
-      reservation_id: this.data.updateRes.reservation_id,
-      customer: null,
-      customer_name: data.name,
-      telNr: data.telNr,
-      start_time: data.startzeit,
-      end_time: data.endzeit,
-      reservation_date: data.datum.toLocaleDateString(),
-      person_amount: Number(data.personenanzahl),
-      tableEntity: {
-        tableno: this.tablenumber
-      },
-      employee: {
-        employee_id: 1
-      },
-      note: data.anmerkungen,
-    };
+    if(!this.data.isUpdate) {
+      this.newdata = {
+        // reservation_id: newId+1,
+        customer: null,
+        customer_name: data.name,
+        telNr: data.telNr,
+        start_time: data.startzeit,
+        end_time: data.endzeit,
+        reservation_date: data.datum.toLocaleDateString(),
+        person_amount: Number(data.personenanzahl),
+        tableEntity: {
+          tableno: this.tablenumber
+        },
+        employee: {
+          employee_id: 1
+        },
+        note: data.anmerkungen,
+      };
+    }else{
+      this.newdataUpdate = {
+        reservation_id: this.data.updateRes.reservation_id,
+        customer: null,
+        customer_name: data.name,
+        telNr: data.telNr,
+        start_time: data.startzeit,
+        end_time: data.endzeit,
+        reservation_date: data.datum.toLocaleDateString(),
+        person_amount: Number(data.personenanzahl),
+        tableEntity: {
+          tableno: this.tablenumber
+        },
+        employee: {
+          employee_id: 1
+        },
+        note: data.anmerkungen,
+      };
+    }
 
     this.data.updateRes = this.newdataUpdate
 
@@ -234,14 +236,12 @@ export class ReservationPageComponent implements OnInit {
         .subscribe((result) => {
             this.router.navigate(['..'], {relativeTo: this.route})
             console.log(result)
-
           },
           (error) => {                              //Error callback
             console.error('error caught in component')
             this._snackBar.open("Reservierung konnte nicht abgeschlossen werden!", "", {
               duration: 3000
             });
-            //throw error;   //You can also throw the error to a global error handler
           });
     }else {
       this.rs.update(this.data.updateRes).subscribe(value => {
