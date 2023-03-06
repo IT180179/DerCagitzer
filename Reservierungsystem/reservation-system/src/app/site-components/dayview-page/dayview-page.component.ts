@@ -477,7 +477,7 @@ export class DayviewPageComponent implements AfterViewInit{
           this.loadReservations()
         }
         console.log(reservation)
-        this.loadReservations();
+        this.loadReservations()
       })
     }
 
