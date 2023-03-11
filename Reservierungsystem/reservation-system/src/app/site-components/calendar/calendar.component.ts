@@ -36,6 +36,7 @@ export class CalendarComponent implements AfterViewInit {
   secondDate?: Date
   thirdDate?: Date
 
+  oldDates: Date
 
   weekendsDatesFilter = (d: Date): boolean => {
     const day = d.getDay();
@@ -46,10 +47,9 @@ export class CalendarComponent implements AfterViewInit {
   }
 
   dateClass = (d: Date) => {
-      console.log(d < new Date())
-
-
-    return (d < new Date()) ? 'highlight-dates' : undefined;
+    this.oldDates = new Date()
+    this.oldDates.setDate(this.oldDates.getDate() - 1)
+    return (d < this.oldDates) ? 'highlight-dates' : undefined;
   }
 
   constructor(private renderer: Renderer2) { }
