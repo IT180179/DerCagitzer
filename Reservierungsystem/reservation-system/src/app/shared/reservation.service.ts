@@ -79,6 +79,17 @@ export class ReservationService {
     return this.httpClient.put<any>("http://localhost:8080/reservation/update", reservation, { headers: httpHeaders, observe: "response" })
   }
 
+  updateStatus(reservation: Reservation): Observable<HttpResponse<any>>{
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+
+      'Access-Control-Allow-Origin': 'http://localhost:8080',
+      'Access-Control-Allow-Credentials': 'true',
+    });
+    return this.httpClient.put<any>("http://localhost:8080/reservation/updateStatus", reservation, { headers: httpHeaders, observe: "response" })
+  }
+
   delete(id: number): Observable<any> {
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',

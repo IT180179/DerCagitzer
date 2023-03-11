@@ -471,7 +471,8 @@ export class DayviewPageComponent implements AfterViewInit{
 
 
     if (element.x != 0 || element.y != 0  ){
-      this.rs.update(reservation).subscribe(value =>{
+      console.log("geht rein")
+      this.rs.updateStatus(reservation).subscribe(value => {
         console.log(value)
         if(value.statusText == "not free") {
           this.loadReservations()
@@ -480,7 +481,6 @@ export class DayviewPageComponent implements AfterViewInit{
         this.loadReservations()
       })
     }
-
   }
 
   public getReservationperRoom() {

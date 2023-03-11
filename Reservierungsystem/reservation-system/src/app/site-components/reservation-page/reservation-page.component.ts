@@ -1,13 +1,10 @@
 import {Component, ErrorHandler, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 
 import {
-  AbstractControl,
-  Form,
   FormBuilder,
   FormGroup,
-  UntypedFormBuilder,
   UntypedFormControl,
-  UntypedFormGroup, ValidationErrors, ValidatorFn,
+  UntypedFormGroup,
   Validators
 } from '@angular/forms';
 import {Reservation} from "../../shared/reservation";
@@ -15,9 +12,6 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Dialog} from "../dayview-page/dayview-page.component";
-import {DatePipe, Time} from "@angular/common";
-import {distinctUntilChanged} from "rxjs";
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {ReservationService} from "../../shared/reservation.service";
 import {EventEmitterService} from "../../shared/event-emitter.service";
@@ -41,6 +35,7 @@ export class ReservationPageComponent implements OnInit {
   room_name = "";
   tablenumber;
   tableseats;
+  checker = "";
 
   private endzeit: any;
 
@@ -236,6 +231,9 @@ export class ReservationPageComponent implements OnInit {
         .subscribe((result) => {
             this.router.navigate(['..'], {relativeTo: this.route})
             console.log(result)
+          if(result == "not free") {
+            console.error("not free")
+          }
           },
           (error) => {                              //Error callback
             console.error('error caught in component')
@@ -248,11 +246,16 @@ export class ReservationPageComponent implements OnInit {
         this.router.navigate(['..'], {relativeTo: this.route})
         console.log(this.data.updateRes.reservation_id)
 
-        if(value.statusText == "not free") {
+        if(value.body == "not free") {
+          this.checker = "not free"
           this.eventemitter.onDelete()
         }
         this.eventemitter.onDelete()
 
+        if (this.checker == "not free") {
+          this.eventemitter.onDelete()
+          console.error("not free")
+        }
       },
         (error) => {                              //Error callback
           console.error('error caught in component')
@@ -264,7 +267,6 @@ export class ReservationPageComponent implements OnInit {
     this.dialogRef.close();
     this.addressForm.reset();
   }
-
 
   weekendsDatesFilter = (d: Date): boolean => {
     const day = d.getDay();
