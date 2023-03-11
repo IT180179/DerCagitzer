@@ -136,7 +136,7 @@ public class ReservationResource {
             return Response.status(404).build();
         }
         if(this.reservationRepo.checkReservation(reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
-            return Response.status(200, "not free").build();
+            return Response.ok("not free").build();
         }
         this.reservationRepo.persist(reservation);
         return Response.ok(reservation).build();
@@ -146,6 +146,17 @@ public class ReservationResource {
     @Transactional
     @Path("/update")
     public Response update(Reservation reservation) {
+        if(this.reservationRepo.checkReservationUpdate(reservation.getReservation_id(), reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
+            return Response.ok("not free").build();
+        }
+        reservationRepo.update(reservation);
+        return Response.ok(reservation).build();
+    }
+
+    @PUT
+    @Transactional
+    @Path("/updateStatus")
+    public Response updateStatus(Reservation reservation) {
         if(this.reservationRepo.checkReservationUpdate(reservation.getReservation_id(), reservation.getReservation_date(), reservation.getTableEntity().getTableno(), reservation.getStart_time(), reservation.getEnd_time())) {
             return Response.status(200, "not free").build();
         }
