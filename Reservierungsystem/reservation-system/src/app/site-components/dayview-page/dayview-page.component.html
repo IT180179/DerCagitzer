@@ -32,7 +32,7 @@
         <ng-container *ngFor="let time of data">
 
           <ng-container *ngIf="time.fulltime == res.start_time && (res.tableEntity.room.room_id == Room || Room == 0)">
-            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 50) + 'px, '+ (((res.tableEntity.tableno - 1)- (Room == 0 ? Room : Room-1)*10) * 50) + 'px)'}">
+            <div style="position: absolute" [ngStyle]= "{'transform': 'translate(' + (time.time * 49.5) + 'px, '+ (((res.tableEntity.tableno - 1)- (Room == 0 ? Room : Room-1)*10) * 50) + 'px)'}">
             <div
               #resize ngDraggable
               [bounds]="myBounds"
